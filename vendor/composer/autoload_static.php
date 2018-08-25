@@ -110,9 +110,9 @@ class ComposerStaticInitb870a2a542b3c86bec395f93c4aa0779
         'Composer\\Installers\\YawikInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/YawikInstaller.php',
         'Composer\\Installers\\ZendInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/ZendInstaller.php',
         'Composer\\Installers\\ZikulaInstaller' => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers/ZikulaInstaller.php',
-        'ThanksToIT\\PWCN\\Admin_Settings' => __DIR__ . '/../..' . '/src/classes/class-admin-settings.php',
-        'ThanksToIT\\PWCN\\Core' => __DIR__ . '/../..' . '/src/classes/class-core.php',
-        'ThanksToIT\\PWCN\\Modal' => __DIR__ . '/../..' . '/src/classes/class-modal.php',
+        'ThanksToIT\\PNWC\\Admin_Settings' => __DIR__ . '/../..' . '/src/classes/class-admin-settings.php',
+        'ThanksToIT\\PNWC\\Core' => __DIR__ . '/../..' . '/src/classes/class-core.php',
+        'ThanksToIT\\PNWC\\Modal' => __DIR__ . '/../..' . '/src/classes/class-modal.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

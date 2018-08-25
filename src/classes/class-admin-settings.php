@@ -1,31 +1,31 @@
 <?php
 /**
- * Pretty WooCommerce Notices (TTT) - Admin Settings
+ * Popup Notices for WooCommerce (TTT) - Admin Settings
  *
  * @version 1.0.0
  * @since   1.0.0
  * @author  Thanks to IT
  */
 
-namespace ThanksToIT\PWCN;
+namespace ThanksToIT\PNWC;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-if ( ! class_exists( 'ThanksToIT\PWCN\Admin_Settings' ) ) {
+if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 
 	class Admin_Settings extends \WC_Settings_Page {
 
 		/**
 		 * Setup settings class
 		 *
-		 * @since  1.0
+		 * @version 1.0.0
+		 * @since   1.0.0
 		 */
 		public function __construct() {
-
-			$this->id    = 'pretty-wc-notices';
-			$this->label = __( 'Notices', 'pretty-wc-notices-ttt' );
+			$this->id    = 'ttt-pnwc';
+			$this->label = __( 'Notices', 'popup-notices-for-woocommerce-ttt' );
 
 			add_filter( 'woocommerce_settings_tabs_array', array( $this, 'add_settings_page' ), 20 );
 			add_action( 'woocommerce_settings_' . $this->id, array( $this, 'output' ) );
@@ -42,8 +42,8 @@ if ( ! class_exists( 'ThanksToIT\PWCN\Admin_Settings' ) ) {
 		public function get_sections() {
 
 			$sections = array(
-				''       => __( 'Section 1', 'pretty-wc-notices-ttt' ),
-				'second' => __( 'Section 2', 'pretty-wc-notices-ttt' )
+				''       => __( 'Section 1', 'popup-notices-for-woocommerce-ttt' ),
+				'second' => __( 'Section 2', 'popup-notices-for-woocommerce-ttt' )
 			);
 
 			return apply_filters( 'woocommerce_get_sections_' . $this->id, $sections );
@@ -72,7 +72,7 @@ if ( ! class_exists( 'ThanksToIT\PWCN\Admin_Settings' ) ) {
 				$settings = apply_filters( 'myplugin_section2_settings', array(
 
 					array(
-						'name' => __( 'Group 1', 'pretty-wc-notices-ttt' ),
+						'name' => __( 'Group 1', 'popup-notices-for-woocommerce-ttt' ),
 						'type' => 'title',
 						'desc' => '',
 						'id'   => 'myplugin_group1_options',
@@ -81,8 +81,8 @@ if ( ! class_exists( 'ThanksToIT\PWCN\Admin_Settings' ) ) {
 					array(
 						'type'    => 'checkbox',
 						'id'      => 'myplugin_checkbox_1',
-						'name'    => __( 'Do a thing?', 'pretty-wc-notices-ttt' ),
-						'desc'    => __( 'Enable to do something', 'pretty-wc-notices-ttt' ),
+						'name'    => __( 'Do a thing?', 'popup-notices-for-woocommerce-ttt' ),
+						'desc'    => __( 'Enable to do something', 'popup-notices-for-woocommerce-ttt' ),
 						'default' => 'no',
 					),
 
@@ -92,7 +92,7 @@ if ( ! class_exists( 'ThanksToIT\PWCN\Admin_Settings' ) ) {
 					),
 
 					array(
-						'name' => __( 'Group 2', 'pretty-wc-notices-ttt' ),
+						'name' => __( 'Group 2', 'popup-notices-for-woocommerce-ttt' ),
 						'type' => 'title',
 						'desc' => '',
 						'id'   => 'myplugin_group2_options',
@@ -101,14 +101,14 @@ if ( ! class_exists( 'ThanksToIT\PWCN\Admin_Settings' ) ) {
 					array(
 						'type'     => 'select',
 						'id'       => 'myplugin_select_1',
-						'name'     => __( 'What should happen?', 'pretty-wc-notices-ttt' ),
+						'name'     => __( 'What should happen?', 'popup-notices-for-woocommerce-ttt' ),
 						'options'  => array(
-							'something' => __( 'Something', 'pretty-wc-notices-ttt' ),
-							'nothing'   => __( 'Nothing', 'pretty-wc-notices-ttt' ),
-							'idk'       => __( 'IDK', 'pretty-wc-notices-ttt' ),
+							'something' => __( 'Something', 'popup-notices-for-woocommerce-ttt' ),
+							'nothing'   => __( 'Nothing', 'popup-notices-for-woocommerce-ttt' ),
+							'idk'       => __( 'IDK', 'popup-notices-for-woocommerce-ttt' ),
 						),
 						'class'    => 'wc-enhanced-select',
-						'desc_tip' => __( 'Don\'t ask me!', 'pretty-wc-notices-ttt' ),
+						'desc_tip' => __( 'Don\'t ask me!', 'popup-notices-for-woocommerce-ttt' ),
 						'default'  => 'idk',
 					),
 
@@ -131,7 +131,7 @@ if ( ! class_exists( 'ThanksToIT\PWCN\Admin_Settings' ) ) {
 				$settings = apply_filters( 'myplugin_section1_settings', array(
 
 					array(
-						'name' => __( 'Important Stuff', 'pretty-wc-notices-ttt' ),
+						'name' => __( 'Important Stuff', 'popup-notices-for-woocommerce-ttt' ),
 						'type' => 'title',
 						'desc' => '',
 						'id'   => 'myplugin_important_options',
@@ -140,14 +140,14 @@ if ( ! class_exists( 'ThanksToIT\PWCN\Admin_Settings' ) ) {
 					array(
 						'type'     => 'select',
 						'id'       => 'myplugin_select_1',
-						'name'     => __( 'Choose your favorite', 'pretty-wc-notices-ttt' ),
+						'name'     => __( 'Choose your favorite', 'popup-notices-for-woocommerce-ttt' ),
 						'options'  => array(
-							'vanilla'    => __( 'Vanilla', 'pretty-wc-notices-ttt' ),
-							'chocolate'  => __( 'Chocolate', 'pretty-wc-notices-ttt' ),
-							'strawberry' => __( 'Strawberry', 'pretty-wc-notices-ttt' ),
+							'vanilla'    => __( 'Vanilla', 'popup-notices-for-woocommerce-ttt' ),
+							'chocolate'  => __( 'Chocolate', 'popup-notices-for-woocommerce-ttt' ),
+							'strawberry' => __( 'Strawberry', 'popup-notices-for-woocommerce-ttt' ),
 						),
 						'class'    => 'wc-enhanced-select',
-						'desc_tip' => __( 'Be honest!', 'pretty-wc-notices-ttt' ),
+						'desc_tip' => __( 'Be honest!', 'popup-notices-for-woocommerce-ttt' ),
 						'default'  => 'vanilla',
 					),
 

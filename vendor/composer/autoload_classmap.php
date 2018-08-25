@@ -95,7 +95,7 @@ return array(
     'Composer\\Installers\\YawikInstaller' => $vendorDir . '/composer/installers/src/Composer/Installers/YawikInstaller.php',
     'Composer\\Installers\\ZendInstaller' => $vendorDir . '/composer/installers/src/Composer/Installers/ZendInstaller.php',
     'Composer\\Installers\\ZikulaInstaller' => $vendorDir . '/composer/installers/src/Composer/Installers/ZikulaInstaller.php',
-    'ThanksToIT\\PWCN\\Admin_Settings' => $baseDir . '/src/classes/class-admin-settings.php',
-    'ThanksToIT\\PWCN\\Core' => $baseDir . '/src/classes/class-core.php',
-    'ThanksToIT\\PWCN\\Modal' => $baseDir . '/src/classes/class-modal.php',
+    'ThanksToIT\\PNWC\\Admin_Settings' => $baseDir . '/src/classes/class-admin-settings.php',
+    'ThanksToIT\\PNWC\\Core' => $baseDir . '/src/classes/class-core.php',
+    'ThanksToIT\\PNWC\\Modal' => $baseDir . '/src/classes/class-modal.php',
 );

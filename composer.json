@@ -1,7 +1,7 @@
 {
-  "name": "thanks-to-it/pretty-wc-notices-ttt",
+  "name": "thanks-to-it/popup-notices-for-woocommerce-ttt",
   "type": "wordpress-plugin",
-  "description": "Manage WordPress Admin Notices easily",
+  "description": "Turn your WooCommerce notices into popups",
   "keywords": [
     "wordpress",
     "woocommerce",
