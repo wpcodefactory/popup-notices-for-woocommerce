@@ -23,25 +23,10 @@ if ( ! class_exists( 'ThanksToIT\PWCN\Modal' ) ) {
 			add_action( 'wp_footer', array( $this, 'add_modal_main_script' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'add_scripts' ) );
 			add_action( 'wp_head', array( $this, 'add_modal_style' ) );
-
-			//add_action( 'wp_ajax_nopriv_' . 'ttt_pwcn_get_ajax_notices', array( $this, 'get_ajax_notices' ) );
-			//add_action( 'wp_ajax_' . 'ttt_pwcn_get_ajax_notices', array( $this, 'get_ajax_notices' ) );
-
-
-			/*$notice_types = apply_filters( 'woocommerce_notice_types', array( 'error', 'success', 'notice' ) );
-			foreach ( $notice_types as $type ) {
-				add_filter( 'woocommerce_add_' . $type, array( $this, 'get_notices' ) );
-			}*/
-
-			//add_action('wp_footer',array($this,'clear_ajax_notices'));
-			/*add_action('wp_footer',function(){
-				$this->clear_ajax_notices();
-            });*/
-
 		}
 
-		public function add_modal_main_script(){
-		    ?>
+		public function add_modal_main_script() {
+			?>
             <script>
                 function ttt_onElementInserted(containerSelector, selector, callback) {
                     if ("MutationObserver" in window) {
@@ -51,11 +36,11 @@ if ( ! class_exists( 'ThanksToIT\PWCN\Modal' ) ) {
                                     if (jQuery(mutation.addedNodes).length) {
                                         var ownElement = jQuery(mutation.addedNodes).filter(selector);
                                         ownElement.each(function (index) {
-                                            callback(jQuery(this), index + 1, ownElement.length);
+                                            callback(jQuery(this), index + 1, ownElement.length, selector);
                                         });
                                         var childElements = jQuery(mutation.addedNodes).find(selector);
                                         childElements.each(function (index) {
-                                            callback(jQuery(this), index + 1, childElements.length);
+                                            callback(jQuery(this), index + 1, childElements.length, selector);
                                         });
                                     }
                                 }
@@ -73,7 +58,7 @@ if ( ! class_exists( 'ThanksToIT\PWCN\Modal' ) ) {
                 }
 
                 var ttt_pwcn = {
-                    messages:[],
+                    messages: [],
                     init: function () {
                         this.initializePopup();
                         ttt_onElementInserted('body', '.woocommerce-error li', ttt_pwcn.readNotice);
@@ -89,13 +74,20 @@ if ( ! class_exists( 'ThanksToIT\PWCN\Modal' ) ) {
                         var element = jQuery(selector);
                         if (element.length) {
                             element.each(function (index) {
-                                ttt_pwcn.readNotice(jQuery(this), index + 1, element.length);
+                                ttt_pwcn.readNotice(jQuery(this), index + 1, element.length, selector);
                             });
                         }
                     },
-                    readNotice: function (element, index, total) {
+                    readNotice: function (element, index, total, selector) {
+                        var noticeType = 'message';
+                        if (selector.indexOf('error') > -1) {
+                            noticeType = 'error';
+                        } else if (selector.indexOf('info') > -1) {
+                            noticeType = 'info';
+                        }
+
                         if (index <= total) {
-                            ttt_pwcn.storeMessage(element);
+                            ttt_pwcn.storeMessage(element, noticeType);
                         }
                         if (index == total) {
                             ttt_pwcn.clearPopupMessages();
@@ -103,18 +95,20 @@ if ( ! class_exists( 'ThanksToIT\PWCN\Modal' ) ) {
                             ttt_pwcn.openPopup(element);
                         }
                     },
-                    clearPopupMessages:function(){
+                    clearPopupMessages: function () {
                         jQuery('#ttt-pwcn-notice').find('.modal__content').empty();
                     },
-                    clearMessages:function(){
-                        ttt_pwcn.messages=[];
+                    clearMessages: function () {
+                        ttt_pwcn.messages = [];
                     },
-                    storeMessage:function(notice){
-                        ttt_pwcn.messages.push(notice.html());
+                    storeMessage: function (notice, type) {
+                        //ttt_pwcn.messages.push(notice.html());
+                        ttt_pwcn.messages.push({message: notice.html(), type: type});
                     },
                     addMessagesToPopup: function (notice) {
-                        jQuery.each(ttt_pwcn.messages, function( index, value ) {
-                            jQuery('#ttt-pwcn-notice .modal__content').append("<div class='ttt-pwcn-notice'>"+value+"</div>");
+                        jQuery.each(ttt_pwcn.messages, function (index, value) {
+                            //jQuery('#ttt-pwcn-notice .modal__content').append("<div class='ttt-pwcn-notice'>" + value + "</div>");
+                            jQuery('#ttt-pwcn-notice .modal__content').append("<div class='ttt-pwcn-notice "+value.type+"'><i class='ttt-pwcn-notice-icon'></i>" + value.message + "</div>");
                         });
                     },
                     initializePopup: function () {
@@ -125,7 +119,7 @@ if ( ! class_exists( 'ThanksToIT\PWCN\Modal' ) ) {
                     openPopup: function () {
                         MicroModal.show('ttt-pwcn-notice', {
                             awaitCloseAnimation: true,
-                            onClose:function(modal){
+                            onClose: function (modal) {
                                 ttt_pwcn.clearMessages();
                             }
                         });
@@ -135,42 +129,61 @@ if ( ! class_exists( 'ThanksToIT\PWCN\Modal' ) ) {
                     ttt_pwcn.init();
                 });
             </script>
-            <?php
-        }
-
-		/*public function clear_ajax_notices() {
-			if ( ( ! defined( 'DOING_AJAX' ) || ! DOING_AJAX ) ) {
-				delete_option( 'ttt_pwcn_ajax_notices' );
-			}
-			//error_Log('clear');
-		}*/
-
-		/*public function get_ajax_notices() {
-			$notices = get_option( 'ttt_pwcn_ajax_notices' );
-			error_log('b');
-			error_log(print_r($this->notices,true));
-			wp_send_json( array(
-				'messages' => $this->format_notices( $notices )
-			) );
-		}*/
-
-		/*public function get_notices( $notice ) {
-			$this->notices[] = $notice;
-			//if ( ( defined( 'DOING_AJAX' ) && DOING_AJAX ) ) {
-				update_option( 'ttt_pwcn_ajax_notices', $this->notices );
-			//}
-
-            error_log('a');
-			error_log(print_r($this->notices,true));
-
-			return $notice;
-		}*/
+			<?php
+		}
 
 		public function add_modal_style() {
 			?>
             <style>
+                .ttt-pwcn-notice i{
+                    font-style: normal;
+                }
+
                 .ttt-pwcn-notice {
                     /*border-bottom: 1px solid #ccc;*/
+                }
+
+                .ttt-pwcn-notice * {
+                    margin: 0 10px;
+                }
+
+                .ttt-pwcn-notice-icon{
+                    display:inline-block;
+                    font-size:29px;
+                    margin-right:10px;
+                }
+
+                .ttt-pwcn-notice-icon:before{
+                    content:"\2714";
+                }
+
+                .ttt-pwcn-notice.error .ttt-pwcn-notice-icon:before {
+                    content: "\26A0";
+                }
+
+                .ttt-pwcn-notice.info .ttt-pwcn-notice-icon:before{
+                    content:"\27B2";
+                }
+
+                .ttt-pwcn-notice {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    /*justify-content: space-between;*/
+                    padding: 15px 10px;
+                    background: #f7f7f7;
+                    line-height: 15px;
+                }
+
+                .ttt-pwcn-notice:nth-child(even) {
+                    background: #eee;
+                }
+
+                .ttt-pwcn-notice .button {
+                    /*margin-left: auto;*/
+                    display: block;
+                    order: 2;
+                    margin-left: 15px;
                 }
 
                 .ttt-pwcn-notice:last-child {
@@ -196,11 +209,19 @@ if ( ! class_exists( 'ThanksToIT\PWCN\Modal' ) ) {
 
                 .modal__container {
                     background-color: #fff;
-                    padding: 30px;
-                    max-width: 500px;
+                    padding: 25px;
+                    min-width: 450px;
+                    max-width: 700px;
                     max-height: 100vh;
                     border-radius: 4px;
                     box-sizing: border-box;
+                }
+
+                @media (max-width: 600px) {
+                    .modal__container {
+                        min-width: 75%;
+                        max-width: 75%;
+                    }
                 }
 
                 .modal__header {
@@ -229,10 +250,11 @@ if ( ! class_exists( 'ThanksToIT\PWCN\Modal' ) ) {
                     width: 45px;
                     padding: 0;
                     height: 45px;
+                    font-size: 20px;
                 }
 
                 .modal__header .modal__close:before {
-                    content: "\2715";
+                    content: "\2716";
                 }
 
                 .modal__content {
@@ -348,20 +370,8 @@ if ( ! class_exists( 'ThanksToIT\PWCN\Modal' ) ) {
 			wp_enqueue_script( 'ttt_pwcn_micromodal', 'https://unpkg.com/micromodal/dist/micromodal.min.js' );
 		}
 
-		/*public function format_notices( $notices ) {
-			if ( is_array( $notices ) && count( $notices ) > 0 ) {
-				return '<div class="ttt-pwcn-notice">' . implode( "</div><div class='ttt-pwcn-notice'>", $notices ) . '</div>';
-			} else {
-				return '';
-			}
-		}*/
-
 		public function add_modal_html() {
-			/*if ( empty( $this->notices ) ) {
-				return;
-			}*/
 			?>
-
             <div class="modal micromodal-slide" id="ttt-pwcn-notice" aria-hidden="true">
                 <div class="modal__overlay" tabindex="-1" data-micromodal-close>
                     <div class="modal__container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
@@ -379,52 +389,6 @@ if ( ! class_exists( 'ThanksToIT\PWCN\Modal' ) ) {
                     </div>
                 </div>
             </div>
-
-            <script>
-                /*MicroModal.init({
-                    awaitCloseAnimation: true
-                });
-
-                document.addEventListener("DOMContentLoaded", function () {
-                    setTimeout(function () {
-                        MicroModal.show('ttt-pwcn-notice', {
-                            awaitCloseAnimation: true
-                        }); // [1]
-                    }, 300);
-                });
-
-                var ttt_pwcn_notices_ajax = {
-                    init: function () {
-                        var ajaxurl = "<?php //echo admin_url( 'admin-ajax.php' ); ?>";
-                        var data = {
-                            action: 'ttt_pwcn_get_ajax_notices'
-                        };
-                        jQuery.post(ajaxurl, data, function (response) {
-                            console.log(response)
-                            if (response.messages.length) {
-                                var container = jQuery('#ttt-pwcn-notice').find('*[data-content="true"]');
-                                container.html(response.messages);
-                                MicroModal.show('ttt-pwcn-notice', {
-                                    awaitCloseAnimation: true
-                                });
-                            }
-                        });
-                    }
-                };
-
-                jQuery(document).ajaxSuccess(function (event, xhr, settings) {
-                    console.log(settings.url)
-                    if (settings.url.indexOf('wc-ajax') !== -1) {
-                        ttt_pwcn_notices_ajax.init();
-                    }
-
-                    //if (settings.url.indexOf('admin-ajax') === -1) {
-                    //    ttt_pwcn_notices_ajax.init();
-                    //}
-                });
-                */
-
-            </script>
 			<?php
 		}
 	}
