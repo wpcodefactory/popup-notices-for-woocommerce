@@ -3,7 +3,7 @@ Contributors: karzin
 Tags: woocommerce,popup,notice,modal,notices
 Requires at least: 4.4
 Tested up to: 4.9
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -19,7 +19,7 @@ Notices are important messages WooCommerce displays on your store for customers,
 * Have a coupon
 * And so on...
 
-And sometimes, depending on the Theme, they get so discreet customers don't see it or there are cases where they are just too ugly.
+And sometimes, depending on the theme, they get so discreet customers don't see it or there are cases where they are just too ugly.
 
 **Popup Notices for WooCommercee** adds WooCommerce Notices into beautiful Popups that will be noticed and appreciated.
 
@@ -42,10 +42,13 @@ If you are interested in contributing - head over to the [Popup Notices for WooC
 
 == Changelog ==
 
+= 1.0.1 - 29/08/2018 =
+* Fix plugin slug and text domain
+
 = 1.0.0 - 25/08/2018 =
 * Initial Release.
 
 == Upgrade Notice ==
 
-= 1.0.0 =
-* Initial Release.
+= 1.0.1 =
+* Fix plugin slug and text domain

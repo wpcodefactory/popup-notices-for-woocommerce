@@ -2,12 +2,12 @@
 /**
  * Plugin Name: Popup Notices for WooCommerce
  * Description: Turn your WooCommerce Notices into Popups
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Thanks to IT
  * Author URI: https://github.com/thanks-to-it
  * License: GNU General Public License v3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
- * Text Domain: popup-notices-for-woocommerce-ttt
+ * Text Domain: popup-notices-for-woocommerce
  * Domain Path: /languages
  * WC requires at least: 3.0.0
  * WC tested up to: 3.4
