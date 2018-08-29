@@ -12,7 +12,7 @@ Turn your WooCommerce Notices into Popups
 
 == Description ==
 
-Notices are important messages WooCommerce displays on your store to customers, like:
+Notices are important messages WooCommerce displays on your store for customers, like:
 
 * Product has been added to cart
 * Field Name is a required field
