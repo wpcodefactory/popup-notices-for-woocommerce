@@ -124,7 +124,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 				'<a href="' . admin_url( 'admin.php?page=wc-settings&tab=ttt-pnwc' ) . '">Settings</a>',
 			);
 
-			if ( false === apply_filters( 'ttt_pnwc_license_type_data', true, 'is_free' ) ) {
+			if ( true === apply_filters( 'ttt_pnwc_license_type_data', true, 'is_free', 'free' ) ) {
 				$mylinks[] = '<a href="https://wpfactory.com/item/popup-notices-for-woocommerce/">' . __( 'Unlock All', 'product-input-fields-for-woocommerce' ) . '</a>';
 			}
 

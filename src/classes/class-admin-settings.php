@@ -149,7 +149,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'id'                => 'ttt_pnwc_opt_default_notices_enable',
 						'name'              => __( 'Hide default notices', 'popup-notices-for-woocommerce' ),
 						'desc'              => __( 'Hides default WooCommerce notices', 'popup-notices-for-woocommerce' ),
-						'custom_attributes' => apply_filters( 'ttt_pnwc_license_type_data', array( 'disabled' => 'disabled' ), 'disabled_attribute_if_free' ),
+						'custom_attributes' => apply_filters( 'ttt_pnwc_license_type_data', array( 'disabled' => 'disabled' ), 'disabled_attribute', 'free' ),
 						'default'           => 'no',
 					),
 					array(
@@ -158,7 +158,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'name'              => __( 'AJAX Popup', 'popup-notices-for-woocommerce' ),
 						'desc'              => __( 'Displays Popup notices from AJAX requests', 'popup-notices-for-woocommerce' ),
 						'desc_tip'          => __( 'Notices displayed without reloading the page.', 'popup-notices-for-woocommerce' ) . '<br />' . __( 'e.g Error notices displayed on cart update or if something goes wrong in checkout', 'popup-notices-for-woocommerce' ),
-						'custom_attributes' => apply_filters( 'ttt_pnwc_license_type_data', array( 'disabled' => 'disabled' ), 'disabled_attribute_if_free' ),
+						'custom_attributes' => apply_filters( 'ttt_pnwc_license_type_data', array( 'disabled' => 'disabled' ), 'disabled_attribute', 'free' ),
 						'default'           => 'no',
 					),
 					array(
