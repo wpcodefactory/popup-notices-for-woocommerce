@@ -7,7 +7,8 @@
     "woocommerce",
     "notice",
     "notices",
-    "cart"
+    "modal",
+    "popup"
   ],
   "license": "MIT",
   "authors": [
@@ -36,6 +37,10 @@
     "classmap": [
       "src/classes/"
     ],
-    "exclude-from-classmap": ["/Tests/", "/test/", "/tests/"]
+    "exclude-from-classmap": [
+      "/Tests/",
+      "/test/",
+      "/tests/"
+    ]
   }
 }

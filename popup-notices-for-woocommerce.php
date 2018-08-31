@@ -32,4 +32,6 @@ $plugin = \ThanksToIT\PNWC\Core::instance();
 $plugin->setup( array(
 	'path' => __FILE__
 ) );
-$plugin->init();
+if ( true === apply_filters( 'ttt_pnwc_init', true ) ) {
+	$plugin->init();
+}
