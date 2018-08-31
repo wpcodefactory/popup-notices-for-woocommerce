@@ -38,7 +38,6 @@ var ttt_pnwc = {
         ttt_pnwc.checkExistingElements('.woocommerce-error li');
         ttt_pnwc.checkExistingElements('.woocommerce-message');
         ttt_pnwc.checkExistingElements('.woocommerce-info');
-
     },
     checkExistingElements: function (selector) {
         var element = jQuery(selector);
@@ -49,20 +48,23 @@ var ttt_pnwc = {
         }
     },
     readNotice: function (element, index, total, selector) {
-        var noticeType = 'message';
+        var noticeType = 'success';
+
         if (selector.indexOf('error') > -1) {
             noticeType = 'error';
         } else if (selector.indexOf('info') > -1) {
             noticeType = 'info';
         }
 
-        if (index <= total) {
-            ttt_pnwc.storeMessage(element, noticeType);
-        }
-        if (index == total) {
-            ttt_pnwc.clearPopupMessages();
-            ttt_pnwc.addMessagesToPopup();
-            ttt_pnwc.openPopup(element);
+        if (ttt_pnwc_info.types[noticeType] === 'yes') {
+            if (index <= total) {
+                ttt_pnwc.storeMessage(element, noticeType);
+            }
+            if (index == total) {
+                ttt_pnwc.clearPopupMessages();
+                ttt_pnwc.addMessagesToPopup();
+                ttt_pnwc.openPopup(element);
+            }
         }
     },
     clearPopupMessages: function () {

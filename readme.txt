@@ -30,7 +30,7 @@ If you are interested in contributing - head over to the [Popup Notices for WooC
 
 == Installation ==
 
-1. Upload the entire 'popup-notices-for-woocommerce-ttt' folder to the '/wp-content/plugins/' directory.
+1. Upload the entire 'popup-notices-for-woocommerce' folder to the '/wp-content/plugins/' directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Start by visiting plugin settings at WooCommerce > Settings > Wish List.
 
@@ -42,8 +42,12 @@ If you are interested in contributing - head over to the [Popup Notices for WooC
 
 == Changelog ==
 
-= 1.0.1 - 29/08/2018 =
+= 1.0.1 - 30/08/2018 =
 * Fix plugin slug and text domain
+* Add settings page
+* Add error notices option
+* Add success notices option
+* Add info notices option
 
 = 1.0.0 - 25/08/2018 =
 * Initial Release.
@@ -52,3 +56,7 @@ If you are interested in contributing - head over to the [Popup Notices for WooC
 
 = 1.0.1 =
 * Fix plugin slug and text domain
+* Add settings page
+* Add error notices option
+* Add success notices option
+* Add info notices option

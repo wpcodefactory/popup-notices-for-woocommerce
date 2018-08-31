@@ -2,7 +2,7 @@
 /**
  * Popup Notices for WooCommerce (TTT) - Core Class
  *
- * @version 1.0.0
+ * @version 1.0.1
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -79,23 +79,61 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 		/**
 		 * Initializes
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.1
 		 * @since 1.0.0
 		 *
 		 * @return Core
 		 */
 		public function init() {
-			//add_filter( 'woocommerce_get_settings_pages', array( $this, 'create_admin_settings' ), 15 );
-			add_action( 'wp_enqueue_scripts', array( $this, 'add_scripts' ) );
+			$this->set_admin();
 
-			// Modal
-			$modal = new Modal();
-			$modal->init();
+			if ( 'yes' === get_option( 'ttt_pnwc_opt_enable', 'yes' ) ) {
+				add_action( 'wp_enqueue_scripts', array( $this, 'add_scripts' ) );
+
+				// Modal
+				$modal = new Modal();
+				$modal->init();
+			}
+		}
+
+		/**
+		 * Sets admin
+		 * @version 1.0.1
+		 * @since 1.0.1
+		 */
+		private function set_admin() {
+			add_filter( 'woocommerce_get_settings_pages', array( $this, 'create_admin_settings' ), 15 );
+
+			// Add settings link on plugins page
+			$path = $this->plugin_info['path'];
+			add_filter( 'plugin_action_links_' . plugin_basename( $path ), array( $this, 'add_action_links' ) );
+		}
+
+		/**
+		 * Adds action links
+		 *
+		 * @version 1.0.1
+		 * @since 1.0.1
+		 *
+		 * @param $links
+		 *
+		 * @return array
+		 */
+		public function add_action_links( $links ) {
+			$mylinks = array(
+				'<a href="' . admin_url( 'admin.php?page=wc-settings&tab=ttt-pnwc' ) . '">Settings</a>',
+			);
+
+			if ( false === apply_filters( 'ttt_pnwc_license_type_data', true, 'is_free' ) ) {
+				$mylinks[] = '<a href="https://wpfactory.com/item/popup-notices-for-woocommerce/">' . __( 'Unlock All', 'product-input-fields-for-woocommerce' ) . '</a>';
+			}
+
+			return array_merge( $mylinks, $links );
 		}
 
 		/**
 		 * Adds scripts
-		 * @version 1.0.0
+		 * @version 1.0.1
 		 * @since   1.0.0
 		 */
 		public function add_scripts() {
@@ -115,6 +153,17 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 			$js_ver  = date( "ymd-Gis", filemtime( $plugin_dir . $js_file ) );
 			wp_register_script( 'ttt-pnwc', $plugin_url . $js_file, array( 'jquery' ), $js_ver, true );
 			wp_enqueue_script( 'ttt-pnwc' );
+
+			// Localize script
+			$localize_script = array(
+				'types' => array(
+					'error'   => get_option( 'ttt_pnwc_opt_type_error_enable', 'yes' ),
+					'info'    => get_option( 'ttt_pnwc_opt_type_info_enable', 'yes' ),
+					'success' => get_option( 'ttt_pnwc_opt_type_success_enable', 'yes' ),
+				)
+			);
+			wp_localize_script( 'ttt-pnwc', 'ttt_pnwc_info', apply_filters( 'ttt_pnwc_localize_script', $localize_script ) );
+
 		}
 
 		/**
