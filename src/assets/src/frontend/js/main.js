@@ -100,4 +100,8 @@ var ttt_pnwc = {
 };
 document.addEventListener('DOMContentLoaded', function () {
     ttt_pnwc.init();
+    jQuery('body').trigger({
+        type: 'ttt_pnwc',
+        obj: ttt_pnwc
+    });
 });
