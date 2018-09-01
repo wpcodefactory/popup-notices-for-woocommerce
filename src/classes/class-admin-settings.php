@@ -146,7 +146,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 					),
 					array(
 						'type'              => 'checkbox',
-						'id'                => 'ttt_pnwc_opt_default_notices_enable',
+						'id'                => 'ttt_pnwc_opt_hide_default_notices',
 						'name'              => __( 'Hide default notices', 'popup-notices-for-woocommerce' ),
 						'desc'              => __( 'Hides default WooCommerce notices', 'popup-notices-for-woocommerce' ),
 						'custom_attributes' => apply_filters( 'ttt_pnwc_license_type_data', array( 'disabled' => 'disabled' ), 'disabled_attribute', 'free' ),
