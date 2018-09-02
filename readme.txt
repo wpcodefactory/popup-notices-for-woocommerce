@@ -25,6 +25,16 @@ And sometimes, depending on the theme, they get so discreet customers don't see 
 
 == Frequently Asked Questions ==
 
+= Premium Version Link =
+[https://wpfactory.com/item/popup-notices-for-woocommerce/](https://wpfactory.com/item/popup-notices-for-woocommerce/)
+
+= Premium Version Features =
+**AJAX POPUP**
+Even notices that appear without page reload can be displayed as Popups. e.g Notices that are displayed on cart update or if something goes wrong on checkout
+
+**Hide default WooCommerce notices**
+As you can display all your notices as Popups, you can choose to simply hide the native WooCommerce notices if you want
+
 = How can I contribute? Is there a github repository? =
 If you are interested in contributing - head over to the [Popup Notices for WooCommerce plugin GitHub Repository](https://github.com/thanks-to-it/popup-notices-for-woocommerce) to find out how you can pitch in.
 
@@ -32,7 +42,7 @@ If you are interested in contributing - head over to the [Popup Notices for WooC
 
 1. Upload the entire 'popup-notices-for-woocommerce' folder to the '/wp-content/plugins/' directory.
 2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Start by visiting plugin settings at WooCommerce > Settings > Wish List.
+3. Start by visiting plugin settings at WooCommerce > Settings > Popup Notices.
 
 == Screenshots ==
 
@@ -42,12 +52,13 @@ If you are interested in contributing - head over to the [Popup Notices for WooC
 
 == Changelog ==
 
-= 1.0.1 - 30/08/2018 =
+= 1.0.1 - 02/09/2018 =
 * Fix plugin slug and text domain
 * Add settings page
 * Add error notices option
 * Add success notices option
 * Add info notices option
+* Improve plugin description
 
 = 1.0.0 - 25/08/2018 =
 * Initial Release.
@@ -60,3 +71,4 @@ If you are interested in contributing - head over to the [Popup Notices for WooC
 * Add error notices option
 * Add success notices option
 * Add info notices option
+* Improve plugin description
