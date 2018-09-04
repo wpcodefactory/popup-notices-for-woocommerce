@@ -3,7 +3,7 @@ Contributors: karzin
 Tags: woocommerce,popup,notice,modal,notices
 Requires at least: 4.4
 Tested up to: 4.9
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -29,7 +29,7 @@ And sometimes, depending on the theme, they get so discreet customers don't see 
 [https://wpfactory.com/item/popup-notices-for-woocommerce/](https://wpfactory.com/item/popup-notices-for-woocommerce/)
 
 = Premium Version Features =
-**AJAX POPUP**
+**AJAX Popup**
 Even notices that appear without page reload can be displayed as Popups. e.g Notices that are displayed on cart update or if something goes wrong on checkout
 
 **Hide default WooCommerce notices**
@@ -52,6 +52,9 @@ If you are interested in contributing - head over to the [Popup Notices for WooC
 
 == Changelog ==
 
+= 1.0.2 - 04/09/2018 =
+* Improve plugin description
+
 = 1.0.1 - 02/09/2018 =
 * Fix plugin slug and text domain
 * Add settings page
@@ -65,10 +68,5 @@ If you are interested in contributing - head over to the [Popup Notices for WooC
 
 == Upgrade Notice ==
 
-= 1.0.1 =
-* Fix plugin slug and text domain
-* Add settings page
-* Add error notices option
-* Add success notices option
-* Add info notices option
+= 1.0.2 =
 * Improve plugin description
