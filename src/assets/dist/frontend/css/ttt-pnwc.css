@@ -150,11 +150,16 @@ button.ttt-pnwc-close {
   height: 45px;
   font-size: 20px;
   color: #333;
-  -webkit-transition: all .25s ease-in-out;
-  -o-transition: all .25s ease-in-out;
-  transition: all .25s ease-in-out;
+  -webkit-transition: all .15s ease-in-out;
+  -o-transition: all .15s ease-in-out;
+  transition: all .15s ease-in-out;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+  -webkit-filter: blur(0px);
+  filter: blur(0px);
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 button.ttt-pnwc-close:hover {

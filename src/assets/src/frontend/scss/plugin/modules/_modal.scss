@@ -130,8 +130,11 @@ button.ttt-pnwc-close {
   height: 45px;
   font-size: 20px;
   color:#333;
-  transition:all .25s ease-in-out;
+  transition:all .15s ease-in-out;
   backface-visibility:hidden;
+  filter: blur(.0px);
+  transform: translateZ(0);
+  -webkit-font-smoothing: subpixel-antialiased;
 
   &:hover{
     background-color: #eee;
