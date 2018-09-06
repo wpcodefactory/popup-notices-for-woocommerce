@@ -129,6 +129,15 @@
   padding: 0;
   height: 45px;
   font-size: 20px;
+  color:#333;
+  transition:all .25s ease-in-out;
+
+  &:hover{
+    background-color: #eee;
+    color:#333;
+    filter: brightness(110%);
+    transform: scale(1.2);
+  }
 }
 
 .ttt-pnwc-header .ttt-pnwc-close:before {
