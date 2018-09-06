@@ -61,6 +61,8 @@
   background: #eee;
   position: absolute;
   z-index: -1;
+  left: 0;
+  top: 0;
 }
 
 .ttt-pnwc-notice:nth-child(odd):after {
