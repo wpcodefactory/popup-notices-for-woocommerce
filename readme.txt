@@ -55,6 +55,7 @@ If you are interested in contributing - head over to the [Popup Notices for WooC
 = 1.0.2 - 05/09/2018 =
 * Improve plugin description
 * Change notice background
+* Change close button hover
 
 = 1.0.1 - 02/09/2018 =
 * Fix plugin slug and text domain

@@ -136,7 +136,7 @@
   box-sizing: border-box;
 }
 
-.ttt-pnwc-close {
+button.ttt-pnwc-close {
   background: transparent;
   background-color: #eee;
   border: 0;
@@ -155,7 +155,7 @@
   transition: all .25s ease-in-out;
 }
 
-.ttt-pnwc-close:hover {
+button.ttt-pnwc-close:hover {
   background-color: #eee;
   color: #333;
   -webkit-filter: brightness(110%);
