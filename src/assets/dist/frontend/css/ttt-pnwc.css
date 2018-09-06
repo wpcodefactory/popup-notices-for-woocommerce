@@ -165,8 +165,6 @@ button.ttt-pnwc-close {
 button.ttt-pnwc-close:hover {
   background-color: #eee;
   color: #333;
-  -webkit-filter: brightness(110%);
-  filter: brightness(110%);
   -webkit-transform: scale(1.2);
   -ms-transform: scale(1.2);
   transform: scale(1.2);
