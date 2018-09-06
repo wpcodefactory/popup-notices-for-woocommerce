@@ -153,6 +153,8 @@ button.ttt-pnwc-close {
   -webkit-transition: all .25s ease-in-out;
   -o-transition: all .25s ease-in-out;
   transition: all .25s ease-in-out;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 button.ttt-pnwc-close:hover {

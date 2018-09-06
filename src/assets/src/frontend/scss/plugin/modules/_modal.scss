@@ -131,6 +131,7 @@ button.ttt-pnwc-close {
   font-size: 20px;
   color:#333;
   transition:all .25s ease-in-out;
+  backface-visibility:hidden;
 
   &:hover{
     background-color: #eee;
