@@ -29,13 +29,13 @@ And sometimes, depending on the theme, they get so discreet customers don't see 
 **Style options**
 Style the Popup the way you want with ton of options using the Customizer
 
-= Premium Version Link =
-[https://wpfactory.com/item/popup-notices-for-woocommerce/](https://wpfactory.com/item/popup-notices-for-woocommerce/)
-
 **Hide default WooCommerce notices**
 As you can display all your notices as Popups, you can choose to simply hide the native WooCommerce notices if you want
 
 **Support**
+
+= Premium Version Link =
+[https://wpfactory.com/item/popup-notices-for-woocommerce/](https://wpfactory.com/item/popup-notices-for-woocommerce/)
 
 = How can I contribute? Is there a github repository? =
 If you are interested in contributing - head over to the [Popup Notices for WooCommerce plugin GitHub Repository](https://github.com/thanks-to-it/popup-notices-for-woocommerce) to find out how you can pitch in.
