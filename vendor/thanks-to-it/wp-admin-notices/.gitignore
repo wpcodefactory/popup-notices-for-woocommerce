@@ -1,0 +1,9 @@
+.idea
+.idea/*
+
+**/.sass-cache
+**/.sass-cache/*
+tasks/node_modules
+tasks/node_modules/*
+
+**/*.log

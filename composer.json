@@ -23,7 +23,8 @@
   },
   "require": {
     "php": ">=5.3.2",
-    "composer/installers": ">=v1.2.0"
+    "composer/installers": ">=v1.2.0",
+    "thanks-to-it/wp-admin-notices": "dev-master"
   },
   "extra": {
     "installer-paths": {

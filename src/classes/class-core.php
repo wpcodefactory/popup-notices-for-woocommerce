@@ -79,13 +79,15 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 		/**
 		 * Initializes
 		 *
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * @since 1.0.0
 		 *
 		 * @return Core
 		 */
 		public function init() {
 			$this->set_admin();
+			$this->set_wp_admin_notices();
+			add_action( 'template_redirect', array( $this, 'add_license_query_string_on_admin_settings' ) );
 
 			if ( 'yes' === get_option( 'ttt_pnwc_opt_enable', 'yes' ) ) {
 				add_action( 'wp_enqueue_scripts', array( $this, 'add_scripts' ) );
@@ -93,7 +95,66 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 				// Modal
 				$modal = new Modal();
 				$modal->init();
+
+				//add_filter( 'ttt_pnwc_localize_script', array( $this, 'localize_js_options' ) );
+
+				add_action( 'admin_init', array( $this, 'add_license_query_string_on_admin_settings' ), 1 );
+
+				add_filter( 'ttt_pnwc_license_data', array( $this, 'setup_license_data' ), 10, 2 );
 			}
+		}
+
+		public function setup_license_data( $value, $data_type = 'is_free' ) {
+			switch ( $data_type ) {
+				case 'disabled_attribute':
+					$value = array( 'disabled' => 'disabled' );
+				break;
+				case 'premium_info':
+					$value = sprintf( __( "Unlock it using the <a target='_blank' href='%s'>Premium</a> version", 'popup-notices-for-woocommerce' ), 'https://wpfactory.com/item/popup-notices-for-woocommerce/' );
+				break;
+				default:
+					$value = true;
+				break;
+			}
+
+			return $value;
+		}
+
+		/**
+		 * Adds query string on admin settings regarding free plugin
+		 * @version 1.0.2
+		 * @since 1.0.2
+		 */
+		public function add_license_query_string_on_admin_settings() {
+			if (
+				! is_admin() ||
+				true !== apply_filters( 'ttt_pnwc_license_data', true, 'is_free' ) ||
+				! isset( $_REQUEST['page'] ) ||
+				! isset( $_REQUEST['tab'] ) ||
+				$_REQUEST['page'] != 'wc-settings' ||
+				$_REQUEST['tab'] != 'ttt-pnwc' ||
+				( isset( $_REQUEST['license'] ) && $_REQUEST['license'] == 'free' )
+			) {
+				return;
+			}
+
+			$new_url = add_query_arg(
+				array( 'license' => 'free' ),
+				'admin.php?page=wc-settings&tab=ttt-pnwc'
+			);
+
+			wp_redirect( admin_url( $new_url ), 301 );
+			exit;
+		}
+
+		/**
+		 * Sets admin
+		 * @version 1.0.2
+		 * @since 1.0.2
+		 */
+		private function set_wp_admin_notices() {
+			$notices = new Notices();
+			$notices->init();
 		}
 
 		/**
@@ -124,16 +185,17 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 				'<a href="' . admin_url( 'admin.php?page=wc-settings&tab=ttt-pnwc' ) . '">Settings</a>',
 			);
 
-			if ( true === apply_filters( 'ttt_pnwc_license_type_data', true, 'is_free', 'free' ) ) {
-				$mylinks[] = '<a href="https://wpfactory.com/item/popup-notices-for-woocommerce/">' . __( 'Unlock All', 'product-input-fields-for-woocommerce' ) . '</a>';
-			}
+			//if ( true === apply_filters( 'ttt_pnwc_license_data', true, 'is_free') ) {
+			$mylinks[] = '<a href="https://wpfactory.com/item/popup-notices-for-woocommerce/">' . __( 'Unlock All', 'product-input-fields-for-woocommerce' ) . '</a>';
+
+			//}
 
 			return array_merge( $mylinks, $links );
 		}
 
 		/**
 		 * Adds scripts
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * @since   1.0.0
 		 */
 		public function add_scripts() {
@@ -155,15 +217,30 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 			wp_enqueue_script( 'ttt-pnwc' );
 
 			// Localize script
-			$localize_script = array(
-				'types' => array(
-					'error'   => get_option( 'ttt_pnwc_opt_type_error_enable', 'yes' ),
-					'info'    => get_option( 'ttt_pnwc_opt_type_info_enable', 'yes' ),
-					'success' => get_option( 'ttt_pnwc_opt_type_success_enable', 'yes' ),
-				)
-			);
+			$localize_script = array();
 			wp_localize_script( 'ttt-pnwc', 'ttt_pnwc_info', apply_filters( 'ttt_pnwc_localize_script', $localize_script ) );
 
+		}
+
+		/**
+		 * Passes admin settings to JS
+		 *
+		 * @version 1.0.2
+		 * @since 1.0.2
+		 *
+		 * @param $data
+		 *
+		 * @return mixed
+		 */
+		public function localize_js_options( $data ) {
+			$data['types']    = array(
+				'error'   => get_option( 'ttt_pnwc_opt_type_error_enable', 'yes' ),
+				'info'    => get_option( 'ttt_pnwc_opt_type_info_enable', 'yes' ),
+				'success' => get_option( 'ttt_pnwc_opt_type_success_enable', 'yes' ),
+			);
+			$data['ajax_opt'] = get_option( 'ttt_pnwc_opt_ajax', 'no' );
+
+			return $data;
 		}
 
 		/**

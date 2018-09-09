@@ -31,8 +31,29 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 			add_action( 'woocommerce_settings_' . $this->id, array( $this, 'output' ) );
 			add_action( 'woocommerce_settings_save_' . $this->id, array( $this, 'save' ) );
 			add_action( 'woocommerce_sections_' . $this->id, array( $this, 'output_sections' ) );
+			add_filter( 'ttt_pnwc_settings_general', array( $this, 'handle_admin_license_settings' ), PHP_INT_MAX );
 		}
 
+		/**
+		 * Handles admin settings regarding free plugin
+		 *
+		 * @version 1.0.2
+		 * @since 1.0.2
+		 *
+		 * @param $settings
+		 *
+		 * @return mixed
+		 */
+		public function handle_admin_license_settings( $settings ) {
+			if ( true !== apply_filters( 'ttt_pnwc_license_data', '', 'is_free' ) ) {
+				return $settings;
+			}
+			$index                                   = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_hide_default_notices' ) ) );
+			$settings[ $index ]['desc_tip']          = apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+			$settings[ $index ]['custom_attributes'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
+
+			return $settings;
+		}
 
 		/**
 		 * Get sections
@@ -149,7 +170,6 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'id'                => 'ttt_pnwc_opt_hide_default_notices',
 						'name'              => __( 'Hide default notices', 'popup-notices-for-woocommerce' ),
 						'desc'              => __( 'Hides default WooCommerce notices', 'popup-notices-for-woocommerce' ),
-						'custom_attributes' => apply_filters( 'ttt_pnwc_license_type_data', array( 'disabled' => 'disabled' ), 'disabled_attribute', 'free' ),
 						'default'           => 'no',
 					),
 					array(
@@ -158,7 +178,6 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'name'              => __( 'AJAX Popup', 'popup-notices-for-woocommerce' ),
 						'desc'              => __( 'Displays Popup notices from AJAX requests', 'popup-notices-for-woocommerce' ),
 						'desc_tip'          => __( 'Notices displayed without reloading the page.', 'popup-notices-for-woocommerce' ) . '<br />' . __( 'e.g Error notices displayed on cart update or if something goes wrong in checkout', 'popup-notices-for-woocommerce' ),
-						'custom_attributes' => apply_filters( 'ttt_pnwc_license_type_data', array( 'disabled' => 'disabled' ), 'disabled_attribute', 'free' ),
 						'default'           => 'no',
 					),
 					array(
@@ -200,6 +219,8 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 					),
 
 				) );
+
+
 
 			}
 

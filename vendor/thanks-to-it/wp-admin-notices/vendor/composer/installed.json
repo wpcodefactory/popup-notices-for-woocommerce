@@ -1,0 +1,170 @@
+[
+    {
+        "name": "composer/installers",
+        "version": "v1.5.0",
+        "version_normalized": "1.5.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/composer/installers.git",
+            "reference": "049797d727261bf27f2690430d935067710049c2"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/composer/installers/zipball/049797d727261bf27f2690430d935067710049c2",
+            "reference": "049797d727261bf27f2690430d935067710049c2",
+            "shasum": ""
+        },
+        "require": {
+            "composer-plugin-api": "^1.0"
+        },
+        "replace": {
+            "roundcube/plugin-installer": "*",
+            "shama/baton": "*"
+        },
+        "require-dev": {
+            "composer/composer": "1.0.*@dev",
+            "phpunit/phpunit": "^4.8.36"
+        },
+        "time": "2017-12-29T09:13:20+00:00",
+        "type": "composer-plugin",
+        "extra": {
+            "class": "Composer\\Installers\\Plugin",
+            "branch-alias": {
+                "dev-master": "1.0-dev"
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Composer\\Installers\\": "src/Composer/Installers"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Kyle Robinson Young",
+                "email": "kyle@dontkry.com",
+                "homepage": "https://github.com/shama"
+            }
+        ],
+        "description": "A multi-framework Composer library installer",
+        "homepage": "https://composer.github.io/installers/",
+        "keywords": [
+            "Craft",
+            "Dolibarr",
+            "Eliasis",
+            "Hurad",
+            "ImageCMS",
+            "Kanboard",
+            "Lan Management System",
+            "MODX Evo",
+            "Mautic",
+            "Maya",
+            "OXID",
+            "Plentymarkets",
+            "Porto",
+            "RadPHP",
+            "SMF",
+            "Thelia",
+            "WolfCMS",
+            "agl",
+            "aimeos",
+            "annotatecms",
+            "attogram",
+            "bitrix",
+            "cakephp",
+            "chef",
+            "cockpit",
+            "codeigniter",
+            "concrete5",
+            "croogo",
+            "dokuwiki",
+            "drupal",
+            "eZ Platform",
+            "elgg",
+            "expressionengine",
+            "fuelphp",
+            "grav",
+            "installer",
+            "itop",
+            "joomla",
+            "kohana",
+            "laravel",
+            "lavalite",
+            "lithium",
+            "magento",
+            "majima",
+            "mako",
+            "mediawiki",
+            "modulework",
+            "modx",
+            "moodle",
+            "osclass",
+            "phpbb",
+            "piwik",
+            "ppi",
+            "puppet",
+            "pxcms",
+            "reindex",
+            "roundcube",
+            "shopware",
+            "silverstripe",
+            "sydes",
+            "symfony",
+            "typo3",
+            "wordpress",
+            "yawik",
+            "zend",
+            "zikula"
+        ]
+    },
+    {
+        "name": "tareq1988/wordpress-settings-api-class",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/tareq1988/wordpress-settings-api-class.git",
+            "reference": "243544eeb83be10e629dd89eb487b96e4170ed57"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/tareq1988/wordpress-settings-api-class/zipball/243544eeb83be10e629dd89eb487b96e4170ed57",
+            "reference": "243544eeb83be10e629dd89eb487b96e4170ed57",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.2.4"
+        },
+        "time": "2018-05-01T19:33:47+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPLv2"
+        ],
+        "authors": [
+            {
+                "name": "Tareq Hasan",
+                "email": "tareq@wedevs.com",
+                "homepage": "http://tareq.wedevs.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "WordPress settings API Abstraction Class",
+        "homepage": "https://github.com/tareq1988/wordpress-settings-api-class",
+        "keywords": [
+            "settings-api",
+            "wordpress",
+            "wp"
+        ]
+    }
+]

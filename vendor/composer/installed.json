@@ -120,5 +120,67 @@
             "zend",
             "zikula"
         ]
+    },
+    {
+        "name": "thanks-to-it/wp-admin-notices",
+        "version": "dev-master",
+        "version_normalized": "9999999-dev",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/thanks-to-it/wp-admin-notices.git",
+            "reference": "0b4c597be2a8479dddc614cf471d52497d7f5504"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/thanks-to-it/wp-admin-notices/zipball/0b4c597be2a8479dddc614cf471d52497d7f5504",
+            "reference": "0b4c597be2a8479dddc614cf471d52497d7f5504",
+            "shasum": ""
+        },
+        "require": {
+            "composer/installers": ">=v1.2.0",
+            "php": ">=5.3.2"
+        },
+        "time": "2018-09-08T20:10:12+00:00",
+        "type": "library",
+        "extra": {
+            "installer-paths": {
+                "vendor/{$vendor}/{$name}": [
+                    "type:wordpress-plugin",
+                    "type:wordpress-muplugin"
+                ]
+            }
+        },
+        "installation-source": "dist",
+        "autoload": {
+            "classmap": [
+                "src/classes/"
+            ],
+            "files": [
+                "src/functions/functions.php"
+            ],
+            "exclude-from-classmap": [
+                "/Tests/",
+                "/test/",
+                "/tests/",
+                "wp-admin-notices.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "Pablo Pacheco",
+                "email": "pablo.sg.pacheco@gmail.com"
+            }
+        ],
+        "description": "Manage WordPress Admin Notices easily",
+        "keywords": [
+            "admin",
+            "notice",
+            "notices",
+            "wordpress"
+        ]
     }
 ]

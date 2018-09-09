@@ -152,9 +152,9 @@ button.ttt-pnwc-close {
   height: 45px;
   font-size: 20px;
   color: #333;
-  -webkit-transition: all .15s ease-in-out;
-  -o-transition: all .15s ease-in-out;
-  transition: all .15s ease-in-out;
+  -webkit-transition: all .1s ease-in-out;
+  -o-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-filter: blur(0px);

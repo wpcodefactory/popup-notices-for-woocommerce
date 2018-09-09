@@ -29,11 +29,13 @@ And sometimes, depending on the theme, they get so discreet customers don't see 
 [https://wpfactory.com/item/popup-notices-for-woocommerce/](https://wpfactory.com/item/popup-notices-for-woocommerce/)
 
 = Premium Version Features =
-**AJAX Popup**
-Even notices that appear without page reload can be displayed as Popups. e.g Notices that are displayed on cart update or if something goes wrong on checkout
+**Style options**
+Style the Popup the way you want with ton of options using the Customizer
 
 **Hide default WooCommerce notices**
 As you can display all your notices as Popups, you can choose to simply hide the native WooCommerce notices if you want
+
+**Support**
 
 = How can I contribute? Is there a github repository? =
 If you are interested in contributing - head over to the [Popup Notices for WooCommerce plugin GitHub Repository](https://github.com/thanks-to-it/popup-notices-for-woocommerce) to find out how you can pitch in.
@@ -52,7 +54,8 @@ If you are interested in contributing - head over to the [Popup Notices for WooC
 
 == Changelog ==
 
-= 1.0.2 - 05/09/2018 =
+= 1.0.2 - 08/09/2018 =
+* Add 'AJAX popup' option on free plugin
 * Improve plugin description
 * Change notice background
 * Change close button hover
@@ -71,4 +74,7 @@ If you are interested in contributing - head over to the [Popup Notices for WooC
 == Upgrade Notice ==
 
 = 1.0.2 =
+* Add 'AJAX popup' option on free plugin
 * Improve plugin description
+* Change notice background
+* Change close button hover

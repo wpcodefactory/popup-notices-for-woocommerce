@@ -1,0 +1,42 @@
+{
+  "name": "thanks-to-it/wp-admin-notices",
+  "description": "Manage WordPress Admin Notices easily",
+  "keywords": [
+    "wordpress",
+    "admin",
+    "notice",
+    "notices"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pablo Pacheco",
+      "email": "pablo.sg.pacheco@gmail.com"
+    }
+  ],
+  "config": {
+    "preferred-install": "dist",
+    "optimize-autoloader": true
+  },
+  "require": {
+    "php": ">=5.3.2",
+    "composer/installers": ">=v1.2.0"
+  },
+  "extra": {
+    "installer-paths": {
+      "vendor/{$vendor}/{$name}": [
+        "type:wordpress-plugin",
+        "type:wordpress-muplugin"
+      ]
+    }
+  },
+  "autoload": {
+    "classmap": [
+      "src/classes/"
+    ],
+    "files": [
+      "src/functions/functions.php"
+    ],
+    "exclude-from-classmap": ["/Tests/", "/test/", "/tests/", "wp-admin-notices.php"]
+  }
+}

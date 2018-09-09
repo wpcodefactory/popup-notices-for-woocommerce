@@ -6,6 +6,10 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitb870a2a542b3c86bec395f93c4aa0779
 {
+    public static $files = array (
+        '1609d6f3e293af2b810977796160a51d' => __DIR__ . '/..' . '/thanks-to-it/wp-admin-notices/src/functions/functions.php',
+    );
+
     public static $prefixLengthsPsr4 = array (
         'C' => 
         array (
@@ -113,6 +117,12 @@ class ComposerStaticInitb870a2a542b3c86bec395f93c4aa0779
         'ThanksToIT\\PNWC\\Admin_Settings' => __DIR__ . '/../..' . '/src/classes/class-admin-settings.php',
         'ThanksToIT\\PNWC\\Core' => __DIR__ . '/../..' . '/src/classes/class-core.php',
         'ThanksToIT\\PNWC\\Modal' => __DIR__ . '/../..' . '/src/classes/class-modal.php',
+        'ThanksToIT\\PNWC\\Notices' => __DIR__ . '/../..' . '/src/classes/class-notices.php',
+        'ThanksToIT\\WPAN\\Ajax' => __DIR__ . '/..' . '/thanks-to-it/wp-admin-notices/src/classes/class-ajax.php',
+        'ThanksToIT\\WPAN\\Display_Rules' => __DIR__ . '/..' . '/thanks-to-it/wp-admin-notices/src/classes/class-display-rules.php',
+        'ThanksToIT\\WPAN\\Javascript' => __DIR__ . '/..' . '/thanks-to-it/wp-admin-notices/src/classes/class-javascript.php',
+        'ThanksToIT\\WPAN\\Notice' => __DIR__ . '/..' . '/thanks-to-it/wp-admin-notices/src/classes/class-notice.php',
+        'ThanksToIT\\WPAN\\Notices_Manager' => __DIR__ . '/..' . '/thanks-to-it/wp-admin-notices/src/classes/class-notices-manager.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
