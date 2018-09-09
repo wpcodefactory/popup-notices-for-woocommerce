@@ -96,7 +96,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 				$modal = new Modal();
 				$modal->init();
 
-				//add_filter( 'ttt_pnwc_localize_script', array( $this, 'localize_js_options' ) );
+				add_filter( 'ttt_pnwc_localize_script', array( $this, 'localize_js_options' ) );
 
 				add_action( 'admin_init', array( $this, 'add_license_query_string_on_admin_settings' ), 1 );
 
