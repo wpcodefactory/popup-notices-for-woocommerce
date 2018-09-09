@@ -21,7 +21,7 @@ add_action( 'admin_notices', function () {
 ## Initialization
 In order to make it work perfectly, you need to **initialize** it like this:
 ```php
-add_action( 'wp_ajax_' . 'wpanttwp_dismiss_persist', array( 'ThanksToIT\WPAN\Notices_Manager', 'ajax_dismiss' ) );
+add_action( 'wp_ajax_' . 'tttwpan_dismiss_persist', array( 'ThanksToIT\WPAN\Notices_Manager', 'ajax_dismiss' ) );
 add_action( 'activated_plugin', array( 'ThanksToIT\WPAN\Notices_Manager', 'set_activated_plugin' ) );
 add_action( 'upgrader_process_complete', array( 'ThanksToIT\WPAN\Notices_Manager', 'set_upgrader_process' ), 10, 2 );
 ```

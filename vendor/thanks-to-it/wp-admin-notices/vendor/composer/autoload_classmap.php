@@ -100,5 +100,4 @@ return array(
     'ThanksToIT\\WPAN\\Javascript' => $baseDir . '/src/classes/class-javascript.php',
     'ThanksToIT\\WPAN\\Notice' => $baseDir . '/src/classes/class-notice.php',
     'ThanksToIT\\WPAN\\Notices_Manager' => $baseDir . '/src/classes/class-notices-manager.php',
-    'WeDevs_Settings_API' => $vendorDir . '/tareq1988/wordpress-settings-api-class/src/class.settings-api.php',
 );

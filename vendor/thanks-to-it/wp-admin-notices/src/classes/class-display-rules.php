@@ -108,20 +108,21 @@ if ( ! class_exists( 'ThanksToIT\WPAN\Display_Rules' ) ) {
 				return false;
 			}
 
+			$match = true;
 			foreach ( $conditions as $condition ) {
 				$key   = isset( $condition['key'] ) ? $condition['key'] : '';
 				$value = isset( $condition['value'] ) ? $condition['value'] : '';
+
 				if (
-					isset( $_REQUEST[ $key ] ) &&
-					! empty( $_REQUEST[ $key ] ) &&
-					$_REQUEST[ $key ] == $value
+					! isset( $_REQUEST[ $key ] ) ||
+					( isset( $_REQUEST[ $key ] ) && $_REQUEST[ $key ] != $value )
 				) {
-					return true;
+					return false;
 					break;
 				}
 			}
 
-			return false;
+			return $match;
 		}
 
 		public function rule_updated_plugin_match( $match = false, $plugins ) {

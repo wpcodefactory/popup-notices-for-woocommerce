@@ -132,12 +132,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thanks-to-it/wp-admin-notices.git",
-                "reference": "f7f801214a0f866f1094ba595d24044a200f8ad2"
+                "reference": "2f114c981540f66623faad7773f0891b534ac5d5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thanks-to-it/wp-admin-notices/zipball/f7f801214a0f866f1094ba595d24044a200f8ad2",
-                "reference": "f7f801214a0f866f1094ba595d24044a200f8ad2",
+                "url": "https://api.github.com/repos/thanks-to-it/wp-admin-notices/zipball/2f114c981540f66623faad7773f0891b534ac5d5",
+                "reference": "2f114c981540f66623faad7773f0891b534ac5d5",
                 "shasum": ""
             },
             "require": {
@@ -184,7 +184,7 @@
                 "notices",
                 "wordpress"
             ],
-            "time": "2018-09-08T22:45:19+00:00"
+            "time": "2018-09-09T03:35:24+00:00"
         }
     ],
     "packages-dev": [],

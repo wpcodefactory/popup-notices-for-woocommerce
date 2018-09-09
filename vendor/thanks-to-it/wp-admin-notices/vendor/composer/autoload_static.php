@@ -7,7 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInit1a5351d4a3ca0db7cc4cf83d851272c4
 {
     public static $files = array (
-        'fe46a0ddaa65733be13a0a9d5c699119' => __DIR__ . '/../..' . '/src/functions/functions.php',
+        '1609d6f3e293af2b810977796160a51d' => __DIR__ . '/../..' . '/src/functions/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -119,7 +119,6 @@ class ComposerStaticInit1a5351d4a3ca0db7cc4cf83d851272c4
         'ThanksToIT\\WPAN\\Javascript' => __DIR__ . '/../..' . '/src/classes/class-javascript.php',
         'ThanksToIT\\WPAN\\Notice' => __DIR__ . '/../..' . '/src/classes/class-notice.php',
         'ThanksToIT\\WPAN\\Notices_Manager' => __DIR__ . '/../..' . '/src/classes/class-notices-manager.php',
-        'WeDevs_Settings_API' => __DIR__ . '/..' . '/tareq1988/wordpress-settings-api-class/src/class.settings-api.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
