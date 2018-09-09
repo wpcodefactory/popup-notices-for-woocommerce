@@ -25,12 +25,12 @@ And sometimes, depending on the theme, they get so discreet customers don't see 
 
 == Frequently Asked Questions ==
 
-= Premium Version Link =
-[https://wpfactory.com/item/popup-notices-for-woocommerce/](https://wpfactory.com/item/popup-notices-for-woocommerce/)
-
 = Premium Version Features =
 **Style options**
 Style the Popup the way you want with ton of options using the Customizer
+
+= Premium Version Link =
+[https://wpfactory.com/item/popup-notices-for-woocommerce/](https://wpfactory.com/item/popup-notices-for-woocommerce/)
 
 **Hide default WooCommerce notices**
 As you can display all your notices as Popups, you can choose to simply hide the native WooCommerce notices if you want
@@ -54,7 +54,7 @@ If you are interested in contributing - head over to the [Popup Notices for WooC
 
 == Changelog ==
 
-= 1.0.2 - 08/09/2018 =
+= 1.0.2 - 09/09/2018 =
 * Add 'AJAX popup' option on free plugin
 * Improve plugin description
 * Change notice background
