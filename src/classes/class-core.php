@@ -138,12 +138,12 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 				case 'premium_info':
 					$value = '<span class="ttt-wpan-premium">'.sprintf( __( "Unlock it using the <a target='_blank' href='%s'>Premium</a> version", 'popup-notices-for-woocommerce' ), 'https://wpfactory.com/item/popup-notices-for-woocommerce/' ).'</span>';
 				break;
-				case 'customizer_popup_panel_url':
+				/*case 'customizer_popup_panel_url':
 					$query['autofocus[panel]'] = 'ttt_pnwc';
 					$panel_link = add_query_arg( $query, admin_url( 'customize.php' ) );
 					//$value = admin_url( 'customize.php' );
 					$value = $panel_link;
-				break;
+				break;*/
 				default:
 					$value = true;
 				break;

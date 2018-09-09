@@ -228,21 +228,13 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 					array(
 						'type' => 'sectionend',
 						'id'   => 'ttt_pnwc_opt_types'
-					),
-
-					/*$query = array();
-				$query['autofocus[panel]'] = 'ttt_pnwc';
-				$panel_link = add_query_arg( $query, admin_url( 'customize.php' ) );
-				$mylinks = array(
-					'<a href="' . admin_url( 'admin.php?page=wc-settings&tab=ttt-pnwc' ) . '">Settings</a>',
-					'<a href="' . $panel_link . '">Custom Style</a>',
-				);*/
+					),					
 
 					// Custom style
 					array(
 						'name' => __( 'Custom style', 'popup-notices-for-woocommerce' ),
 						'type' => 'title',
-						'desc' => sprintf( __( 'Style the popup using the <a href="%s">Customizer</a>', 'popup-notices-for-woocommerce' ), apply_filters( 'ttt_pnwc_license_data', '', 'customizer_popup_panel_url' ) ),
+						'desc' => sprintf( __( 'Style the popup using the <a href="%s">Customizer</a>', 'popup-notices-for-woocommerce' ), add_query_arg( array('autofocus[panel]'=>'ttt_pnwc'), admin_url( 'customize.php' ) ) ),
 						'id'   => 'ttt_pnwc_opt_style',
 					),
 					array(
