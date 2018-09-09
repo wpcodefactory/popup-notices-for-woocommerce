@@ -101,7 +101,33 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 				add_action( 'admin_init', array( $this, 'add_license_query_string_on_admin_settings' ), 1 );
 
 				add_filter( 'ttt_pnwc_license_data', array( $this, 'setup_license_data' ), 10, 2 );
+
+				add_action('admin_head',array($this,'admin_style'));
 			}
+		}
+
+		public function admin_style(){
+			if(
+				!isset($_REQUEST['tab']) ||
+				!isset($_REQUEST['page']) ||
+				$_REQUEST['tab']!='ttt-pnwc' ||
+				$_REQUEST['page']!='wc-settings'
+			){
+				return;
+			}
+			?>
+			<style>
+			.ttt-wpan-premium{
+				background:#e8e8e8;
+				padding:4px 9px 6px;
+				display:inline-block;
+				margin:5px 0;
+				color:#999;
+				font-size:13px;
+			}
+			</style>
+			<?php
+
 		}
 
 		public function setup_license_data( $value, $data_type = 'is_free' ) {
@@ -110,7 +136,13 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 					$value = array( 'disabled' => 'disabled' );
 				break;
 				case 'premium_info':
-					$value = sprintf( __( "Unlock it using the <a target='_blank' href='%s'>Premium</a> version", 'popup-notices-for-woocommerce' ), 'https://wpfactory.com/item/popup-notices-for-woocommerce/' );
+					$value = '<span class="ttt-wpan-premium">'.sprintf( __( "Unlock it using the <a target='_blank' href='%s'>Premium</a> version", 'popup-notices-for-woocommerce' ), 'https://wpfactory.com/item/popup-notices-for-woocommerce/' ).'</span>';
+				break;
+				case 'customizer_popup_panel_url':
+					$query['autofocus[panel]'] = 'ttt_pnwc';
+					$panel_link = add_query_arg( $query, admin_url( 'customize.php' ) );
+					//$value = admin_url( 'customize.php' );
+					$value = $panel_link;
 				break;
 				default:
 					$value = true;

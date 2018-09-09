@@ -48,9 +48,21 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 			if ( true !== apply_filters( 'ttt_pnwc_license_data', '', 'is_free' ) ) {
 				return $settings;
 			}
+
+			// Hide default notices
 			$index                                   = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_hide_default_notices' ) ) );
-			$settings[ $index ]['desc_tip']          = apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+			$settings[ $index ]['desc']              .= '<br />'.apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+			//$settings[ $index ]['desc_tip']          = apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
 			$settings[ $index ]['custom_attributes'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
+
+			// Style
+			$index                      = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_style' ) ) );
+			$settings[ $index ]['desc'] .= '<br />'.apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+			//$settings[ $index ]['desc_tip']          = apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+			//$settings[ $index ]['custom_attributes'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
+
+			//error_log(print_r($index,true));
+
 
 			return $settings;
 		}
@@ -166,19 +178,19 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'default' => 'yes',
 					),
 					array(
-						'type'              => 'checkbox',
-						'id'                => 'ttt_pnwc_opt_hide_default_notices',
-						'name'              => __( 'Hide default notices', 'popup-notices-for-woocommerce' ),
-						'desc'              => __( 'Hides default WooCommerce notices', 'popup-notices-for-woocommerce' ),
-						'default'           => 'no',
+						'type'    => 'checkbox',
+						'id'      => 'ttt_pnwc_opt_hide_default_notices',
+						'name'    => __( 'Hide default notices', 'popup-notices-for-woocommerce' ),
+						'desc'    => __( 'Hides default WooCommerce notices', 'popup-notices-for-woocommerce' ),
+						'default' => 'no',
 					),
 					array(
-						'type'              => 'checkbox',
-						'id'                => 'ttt_pnwc_opt_ajax',
-						'name'              => __( 'AJAX Popup', 'popup-notices-for-woocommerce' ),
-						'desc'              => __( 'Displays Popup notices from AJAX requests', 'popup-notices-for-woocommerce' ),
-						'desc_tip'          => __( 'Notices displayed without reloading the page.', 'popup-notices-for-woocommerce' ) . '<br />' . __( 'e.g Error notices displayed on cart update or if something goes wrong in checkout', 'popup-notices-for-woocommerce' ),
-						'default'           => 'no',
+						'type'     => 'checkbox',
+						'id'       => 'ttt_pnwc_opt_ajax',
+						'name'     => __( 'AJAX Popup', 'popup-notices-for-woocommerce' ),
+						'desc'     => __( 'Displays Popup notices from AJAX requests', 'popup-notices-for-woocommerce' ),
+						'desc_tip' => __( 'Notices displayed without reloading the page.', 'popup-notices-for-woocommerce' ) . '<br />' . __( 'e.g Error notices displayed on cart update or if something goes wrong in checkout', 'popup-notices-for-woocommerce' ),
+						'default'  => 'no',
 					),
 					array(
 						'type' => 'sectionend',
@@ -218,8 +230,27 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'id'   => 'ttt_pnwc_opt_types'
 					),
 
-				) );
+					/*$query = array();
+				$query['autofocus[panel]'] = 'ttt_pnwc';
+				$panel_link = add_query_arg( $query, admin_url( 'customize.php' ) );
+				$mylinks = array(
+					'<a href="' . admin_url( 'admin.php?page=wc-settings&tab=ttt-pnwc' ) . '">Settings</a>',
+					'<a href="' . $panel_link . '">Custom Style</a>',
+				);*/
 
+					// Custom style
+					array(
+						'name' => __( 'Custom style', 'popup-notices-for-woocommerce' ),
+						'type' => 'title',
+						'desc' => sprintf( __( 'Style the popup using the <a href="%s">Customizer</a>', 'popup-notices-for-woocommerce' ), apply_filters( 'ttt_pnwc_license_data', '', 'customizer_popup_panel_url' ) ),
+						'id'   => 'ttt_pnwc_opt_style',
+					),
+					array(
+						'type' => 'sectionend',
+						'id'   => 'ttt_pnwc_opt_style'
+					),
+
+				) );
 
 
 			}

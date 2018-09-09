@@ -13,7 +13,7 @@ if ( ! class_exists( 'ThanksToIT\WPAN\Ajax' ) ) {
 
 	class Ajax {
 		public $action_dismiss_persistently = 'tttwpan_dismiss_persist';
-		public $action_dismiss_persistently_security = 'tttwpand_dismiss_sec';
+		public $action_dismiss_persistently_security = 'tttwpan_dismiss_sec';
 
 		public function dismiss() {
 			if ( ! check_ajax_referer( $this->action_dismiss_persistently_security, 'security' ) ) {

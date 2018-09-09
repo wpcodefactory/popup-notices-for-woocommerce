@@ -18,7 +18,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 	class Notices {
 		public function init() {
 			// Initializes WP Admin Notices
-			add_action( 'wp_ajax_' . 'wpanttwp_dismiss_persist', array( 'ThanksToIT\WPAN\Notices_Manager', 'ajax_dismiss' ) );
+			add_action( 'wp_ajax_' . 'tttwpan_dismiss_persist', array( 'ThanksToIT\WPAN\Notices_Manager', 'ajax_dismiss' ) );
 			add_action( 'activated_plugin', array( 'ThanksToIT\WPAN\Notices_Manager', 'set_activated_plugin' ) );
 			add_action( 'upgrader_process_complete', array( 'ThanksToIT\WPAN\Notices_Manager', 'set_upgrader_process' ), 10, 2 );
 
@@ -64,6 +64,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 			$notices_manager->create_notice( array(
 				'id'         => 'ttt-pnwc-free-notice-plugin-activation',
 				'content'    => $this->get_feedback_notice_content(),
+				'dismissal_expiration' => WEEK_IN_SECONDS,
 				'display_on' => array(
 					'activated_plugin' => array( 'popup-notices-for-woocommerce/popup-notices-for-woocommerce.php' )
 				),
@@ -71,6 +72,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 			$notices_manager->create_notice( array(
 				'id'         => 'ttt-pnwc-free-notice-plugin-update',
 				'content'    => $this->get_feedback_notice_content(),
+				'dismissal_expiration' => WEEK_IN_SECONDS,
 				'display_on' => array(
 					'updated_plugin' => array( 'popup-notices-for-woocommerce/popup-notices-for-woocommerce.php' )
 				),
@@ -80,6 +82,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 			$notices_manager->create_notice( array(
 				'id'         => 'ttt-pnwc-premium-info-plugin-activation',
 				'content'    => $this->get_premium_notice_content(),
+				'dismissal_expiration' => WEEK_IN_SECONDS,
 				'display_on' => array(
 					'activated_plugin' => array( 'popup-notices-for-woocommerce/popup-notices-for-woocommerce.php' )
 				),
@@ -87,6 +90,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 			$notices_manager->create_notice( array(
 				'id'         => 'ttt-pnwc-premium-info-plugin-update',
 				'content'    => $this->get_premium_notice_content(),
+				'dismissal_expiration' => WEEK_IN_SECONDS,
 				'display_on' => array(
 					'updated_plugin' => array( 'popup-notices-for-woocommerce/popup-notices-for-woocommerce.php' )
 				),
