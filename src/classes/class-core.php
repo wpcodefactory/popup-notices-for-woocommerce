@@ -2,7 +2,7 @@
 /**
  * Popup Notices for WooCommerce (TTT) - Core Class
  *
- * @version 1.0.1
+ * @version 1.0.4
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -85,6 +85,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 		 * @return Core
 		 */
 		public function init() {
+		    $this->handle_localization();
 			$this->set_admin();
 			$this->set_wp_admin_notices();
 			add_action( 'template_redirect', array( $this, 'add_license_query_string_on_admin_settings' ) );
@@ -255,9 +256,25 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 		}
 
 		/**
+		 * Handle Localization
+		 *
+		 * @version 1.0.4
+		 * @since   1.0.4
+		 */
+		public function handle_localization(){
+			$domain = 'popup-notices-for-woocommerce';
+			$locale = apply_filters( 'plugin_locale', get_locale(), $domain );
+			if ( $loaded = load_textdomain( $domain, trailingslashit( WP_LANG_DIR ) . 'plugins' . '/' . $domain . '/' . $domain . '-' . $locale . '.mo' ) ) {
+				return $loaded;
+			} else {
+				load_plugin_textdomain( $domain, false, dirname( plugin_basename( $this->plugin_info['path'] ) ) . '/src/languages/' );
+			}
+		}
+
+		/**
 		 * Passes admin settings to JS
 		 *
-		 * @version 1.0.2
+		 * @version 1.0.4
 		 * @since 1.0.2
 		 *
 		 * @param $data
@@ -270,7 +287,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 				'info'    => get_option( 'ttt_pnwc_opt_type_info_enable', 'yes' ),
 				'success' => get_option( 'ttt_pnwc_opt_type_success_enable', 'yes' ),
 			);
-			$data['ajax_opt'] = get_option( 'ttt_pnwc_opt_ajax', 'no' );
+			$data['ajax_opt'] = get_option( 'ttt_pnwc_opt_ajax', 'yes' );
 
 			return $data;
 		}

@@ -2,7 +2,7 @@
 /**
  * Popup Notices for WooCommerce (TTT) - Notices
  *
- * @version 1.0.2
+ * @version 1.0.4
  * @since   1.0.2
  * @author  Thanks to IT
  */
@@ -66,7 +66,8 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 				'content'    => $this->get_feedback_notice_content(),
 				'dismissal_expiration' => WEEK_IN_SECONDS,
 				'display_on' => array(
-					'activated_plugin' => array( 'popup-notices-for-woocommerce/popup-notices-for-woocommerce.php' )
+					'activated_plugin' => array( 'popup-notices-for-woocommerce/popup-notices-for-woocommerce.php' ),
+					'screen_id' => array( 'plugins' ),
 				),
 			) );
 			$notices_manager->create_notice( array(
@@ -74,7 +75,8 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 				'content'    => $this->get_feedback_notice_content(),
 				'dismissal_expiration' => WEEK_IN_SECONDS,
 				'display_on' => array(
-					'updated_plugin' => array( 'popup-notices-for-woocommerce/popup-notices-for-woocommerce.php' )
+					'updated_plugin' => array( 'popup-notices-for-woocommerce/popup-notices-for-woocommerce.php' ),
+					'screen_id' => array( 'plugins' ),
 				),
 			) );
 
@@ -84,7 +86,8 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 				'content'    => $this->get_premium_notice_content(),
 				'dismissal_expiration' => WEEK_IN_SECONDS,
 				'display_on' => array(
-					'activated_plugin' => array( 'popup-notices-for-woocommerce/popup-notices-for-woocommerce.php' )
+					'activated_plugin' => array( 'popup-notices-for-woocommerce/popup-notices-for-woocommerce.php' ),
+					'screen_id' => array( 'plugins' ),
 				),
 			) );
 			$notices_manager->create_notice( array(
@@ -92,7 +95,8 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 				'content'    => $this->get_premium_notice_content(),
 				'dismissal_expiration' => WEEK_IN_SECONDS,
 				'display_on' => array(
-					'updated_plugin' => array( 'popup-notices-for-woocommerce/popup-notices-for-woocommerce.php' )
+					'updated_plugin' => array( 'popup-notices-for-woocommerce/popup-notices-for-woocommerce.php' ),
+					'screen_id' => array( 'plugins' ),
 				),
 			) );
 		}

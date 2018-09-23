@@ -190,7 +190,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'name'     => __( 'AJAX Popup', 'popup-notices-for-woocommerce' ),
 						'desc'     => __( 'Displays Popup notices from AJAX requests', 'popup-notices-for-woocommerce' ),
 						'desc_tip' => __( 'Notices displayed without reloading the page.', 'popup-notices-for-woocommerce' ) . '<br />' . __( 'e.g Error notices displayed on cart update or if something goes wrong in checkout', 'popup-notices-for-woocommerce' ),
-						'default'  => 'no',
+						'default'  => 'yes',
 					),
 					array(
 						'type' => 'sectionend',

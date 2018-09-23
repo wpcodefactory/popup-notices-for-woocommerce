@@ -3,7 +3,7 @@ Contributors: karzin
 Tags: popup,notices,woocommerce,modal
 Requires at least: 4.4
 Tested up to: 4.9
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -71,6 +71,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
+= 1.0.4 - 22/09/2018 =
+* Handle translation
+* Set Ajax Popup as enabled by default
+* Fix duplicated notice
+
 = 1.0.3 - 10/09/2018 =
 * Include Micromodal credits and License
 
@@ -93,5 +98,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Upgrade Notice ==
 
-= 1.0.3 =
-* Include Micromodal credits and License
+= 1.0.4 =
+* Handle translation
+* Set Ajax Popup as enabled by default
+* Fix duplicated notice

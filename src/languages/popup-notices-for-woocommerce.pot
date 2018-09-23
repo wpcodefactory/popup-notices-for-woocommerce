@@ -1,0 +1,166 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Popup Notices for WooCommerce\n"
+"POT-Creation-Date: 2018-09-22 22:37-0300\n"
+"PO-Revision-Date: 2017-01-17 13:05-0200\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_ex:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;eschtml_e;esc_html_x:1,2c;esc_html_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: assets\n"
+"X-Poedit-SearchPathExcluded-1: tasks\n"
+"X-Poedit-SearchPathExcluded-2: vendor\n"
+
+#: classes/class-admin-settings.php:28
+msgid "Popup Notices"
+msgstr ""
+
+#: classes/class-admin-settings.php:78
+msgid "General"
+msgstr ""
+
+#: classes/class-admin-settings.php:167
+msgid "Popup Notices General Options"
+msgstr ""
+
+#: classes/class-admin-settings.php:175
+msgid "Enable Plugin"
+msgstr ""
+
+#: classes/class-admin-settings.php:176
+#, php-format
+msgid "Enables %s plugin"
+msgstr ""
+
+#: classes/class-admin-settings.php:176
+msgid "Popup Notices for WooCommerce"
+msgstr ""
+
+#: classes/class-admin-settings.php:183 classes/class-notices.php:49
+msgid "Hide default notices"
+msgstr ""
+
+#: classes/class-admin-settings.php:184
+msgid "Hides default WooCommerce notices"
+msgstr ""
+
+#: classes/class-admin-settings.php:190
+msgid "AJAX Popup"
+msgstr ""
+
+#: classes/class-admin-settings.php:191
+msgid "Displays Popup notices from AJAX requests"
+msgstr ""
+
+#: classes/class-admin-settings.php:192
+msgid "Notices displayed without reloading the page."
+msgstr ""
+
+#: classes/class-admin-settings.php:192
+msgid "e.g Error notices displayed on cart update or if something goes wrong in checkout"
+msgstr ""
+
+#: classes/class-admin-settings.php:202
+msgid "Notice Types"
+msgstr ""
+
+#: classes/class-admin-settings.php:204
+msgid "Notice types that can be displayed on Popups"
+msgstr ""
+
+#: classes/class-admin-settings.php:210
+msgid "Enable error notices"
+msgstr ""
+
+#: classes/class-admin-settings.php:211
+msgid "Enables error notices"
+msgstr ""
+
+#: classes/class-admin-settings.php:217
+msgid "Enable success notices"
+msgstr ""
+
+#: classes/class-admin-settings.php:218
+msgid "Enables success notices"
+msgstr ""
+
+#: classes/class-admin-settings.php:224
+msgid "Enable info notices"
+msgstr ""
+
+#: classes/class-admin-settings.php:225
+msgid "Enables info notices"
+msgstr ""
+
+#: classes/class-admin-settings.php:235
+msgid "Custom style"
+msgstr ""
+
+#: classes/class-admin-settings.php:237
+#, php-format
+msgid "Style the popup using the <a href=\"%s\">Customizer</a>"
+msgstr ""
+
+#: classes/class-core.php:140
+#, php-format
+msgid "Unlock it using the <a target='_blank' href='%s'>Premium</a> version"
+msgstr ""
+
+#: classes/class-core.php:222
+msgid "Unlock All"
+msgstr ""
+
+#: classes/class-notices.php:31
+msgid "Popup Notices Feedback"
+msgstr ""
+
+#: classes/class-notices.php:33
+#, php-format
+msgid "Enjoying <strong>Popup Notices</strong>? Would you mind <a href='%s' target='_blank'>writing a review</a>? I would really appreciate it :)"
+msgstr ""
+
+#: classes/class-notices.php:35
+#, php-format
+msgid "Feel free to submit your <a href='%s' target='_blank'>ideas and suggestions</a> too"
+msgstr ""
+
+#: classes/class-notices.php:40
+msgid "Popup Notices Premium"
+msgstr ""
+
+#: classes/class-notices.php:42
+msgid "Do you like the free version of this plugin?"
+msgstr ""
+
+#: classes/class-notices.php:44
+#, php-format
+msgid "Did you know We also have a <a href='%s' target='_blank'>Premium one</a>?"
+msgstr ""
+
+#: classes/class-notices.php:48
+msgid "Customize Popup style using the Customizer"
+msgstr ""
+
+#: classes/class-notices.php:50
+msgid "Support"
+msgstr ""
+
+#: classes/class-notices.php:52
+msgid "Buying it will allow you managing and customizing the popup entirely, helping maintaining the development of this plugin."
+msgstr ""
+
+#: classes/class-notices.php:54
+msgid "And besides you aren't going to see these annoying messages anymore :)"
+msgstr ""
+
+#: classes/class-notices.php:56
+msgid "Upgrade to Premium version"
+msgstr ""
