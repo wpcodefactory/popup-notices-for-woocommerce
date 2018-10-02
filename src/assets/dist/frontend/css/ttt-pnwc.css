@@ -141,11 +141,12 @@
 button.ttt-pnwc-close {
   background: transparent;
   background-color: #eee;
-  border: 0;
-  right: -23px;
-  top: -23px;
+  cursor: pointer !important;
+  border: 0 !important;
+  right: -23px !important;
+  top: -23px !important;
   display: block;
-  position: absolute;
+  position: absolute !important;
   border-radius: 50px;
   width: 45px;
   padding: 0;
