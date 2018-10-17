@@ -1,17 +1,24 @@
-function ttt_onElementInserted(containerSelector, selector, callback) {
+function ttt_onElementInserted(containerSelector, selector,childSelector, callback) {
     if ("MutationObserver" in window) {
         var onMutationsObserved = function (mutations) {
             mutations.forEach(function (mutation) {
                 if (mutation.addedNodes.length) {
                     if (jQuery(mutation.addedNodes).length) {
+                        var finalSelector = selector;
                         var ownElement = jQuery(mutation.addedNodes).filter(selector);
-                        ownElement.each(function (index) {
-                            callback(jQuery(this), index + 1, ownElement.length, selector);
+                        if(childSelector!=''){
+                            ownElement = ownElement.find(childSelector);                            
+                            finalSelector = selector + ' ' + childSelector;
+                        }
+                        ownElement.each(function (index) {    
+                            callback(jQuery(this), index + 1, ownElement.length, finalSelector);
                         });
-                        var childElements = jQuery(mutation.addedNodes).find(selector);
-                        childElements.each(function (index) {
-                            callback(jQuery(this), index + 1, childElements.length, selector);
-                        });
+                        if(!ownElement.length){                                                        
+                            var childElements = jQuery(mutation.addedNodes).find(finalSelector);                        
+                            childElements.each(function (index) {
+                                callback(jQuery(this), index + 1, childElements.length, finalSelector);
+                            });
+                        }                        
                     }
                 }
             });
@@ -42,9 +49,9 @@ var ttt_pnwc = {
     init: function () {
         this.initializePopup();
         if (ttt_pnwc_info.ajax_opt === 'yes') {
-            ttt_onElementInserted('body', '.woocommerce-error li', ttt_pnwc.readNotice);
-            ttt_onElementInserted('body', '.woocommerce-message', ttt_pnwc.readNotice);
-            ttt_onElementInserted('body', '.woocommerce-info', ttt_pnwc.readNotice);
+            ttt_onElementInserted('body', '.woocommerce-error','li', ttt_pnwc.readNotice);
+            ttt_onElementInserted('body', '.woocommerce-message','', ttt_pnwc.readNotice);
+            ttt_onElementInserted('body', '.woocommerce-info','', ttt_pnwc.readNotice);
         }
         ttt_pnwc.checkExistingElements('.woocommerce-error li');
         ttt_pnwc.checkExistingElements('.woocommerce-message');

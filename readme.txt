@@ -3,7 +3,7 @@ Contributors: karzin
 Tags: popup,notices,woocommerce,modal
 Requires at least: 4.4
 Tested up to: 4.9
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -27,7 +27,7 @@ And sometimes, depending on the theme, they get so discreet customers don't see 
 
 = Premium Version Features =
 * **Style options**
-Style the Popup the way you want with ton of options using the Customizer
+Style the Popup the way you want with tons of options using the Customizer
 
 * **Hide default WooCommerce notices**
 As you can display all your notices as Popups, you can choose to simply hide the native WooCommerce notices if you want
@@ -70,6 +70,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 3. An example of a WooCommerce Notice info on the Popup
 
 == Changelog ==
+
+= 1.0.6 - 17/10/2018 =
+* Fix missing coupon error message
 
 = 1.0.5 - 02/10/2018 =
 * Force close button style preventing theme's overriding
