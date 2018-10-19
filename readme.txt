@@ -3,7 +3,7 @@ Contributors: karzin
 Tags: popup,notices,woocommerce,modal
 Requires at least: 4.4
 Tested up to: 4.9
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -71,6 +71,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
+= 1.0.7 - 19/10/2018 =
+* Avoid duplicated messages
+
 = 1.0.6 - 17/10/2018 =
 * Fix missing coupon error message
 
@@ -104,5 +107,5 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Upgrade Notice ==
 
-= 1.0.5 =
-* Force close button style preventing theme's overriding
+= 1.0.7 =
+* Avoid duplicated messages

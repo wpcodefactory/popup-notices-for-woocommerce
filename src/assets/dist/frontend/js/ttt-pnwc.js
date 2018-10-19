@@ -103,9 +103,18 @@ var ttt_pnwc = {
     clearMessages: function () {
         ttt_pnwc.messages = [];
     },
+    removeDuplicatedMessages:function(){
+       var obj = {};
+       for ( var i=0, len=ttt_pnwc.messages.length; i < len; i++ )
+           obj[ttt_pnwc.messages[i]['message']] = ttt_pnwc.messages[i];
+
+       ttt_pnwc.messages = new Array();
+       for ( var key in obj )
+           ttt_pnwc.messages.push(obj[key]);
+    },
     storeMessage: function (notice, type) {
-        //ttt_pnwc.messages.push(notice.html());
         ttt_pnwc.messages.push({message: notice.html(), type: type});
+        ttt_pnwc.removeDuplicatedMessages();        
     },
     addMessagesToPopup: function (notice) {
         jQuery.each(ttt_pnwc.messages, function (index, value) {
@@ -118,7 +127,7 @@ var ttt_pnwc = {
             awaitCloseAnimation: true,
         });
     },
-    openPopup: function () {
+    openPopup: function () {        
         MicroModal.show('ttt-pnwc-notice', {
             awaitCloseAnimation: true,
             onClose: function (modal) {
