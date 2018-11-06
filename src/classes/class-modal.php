@@ -1,6 +1,6 @@
 <?php
 /**
- * Popup Notices for WooCommerce (TTT) - Modal
+ * Pop-up Notices for WooCommerce (TTT) - Modal
  *
  * @version 1.0.0
  * @since   1.0.0

@@ -1,6 +1,6 @@
 <?php
 /**
- * Popup Notices for WooCommerce (TTT) - Core Class
+ * Pop-up Notices for WooCommerce (TTT) - Core Class
  *
  * @version 1.0.4
  * @since   1.0.0

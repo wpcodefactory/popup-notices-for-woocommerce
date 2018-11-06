@@ -1,9 +1,9 @@
-=== Popup Notices for WooCommerce ===
+=== Pop-up Notices for WooCommerce ===
 Contributors: karzin
-Tags: popup,notices,woocommerce,modal
+Tags: popup,notices,woocommerce,notice,modal
 Requires at least: 4.4
 Tested up to: 4.9
-Stable tag: 1.0.7
+Stable tag: 1.0.8
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -16,7 +16,7 @@ Notices are important messages WooCommerce displays on your store for customers,
 
 * Product has been added to cart
 * Field Name is a required field
-* Have a coupon
+* Have a coupon?
 * And so on...
 
 And sometimes, depending on the theme, they get so discreet customers don't see it or there are cases where they are just too ugly.
@@ -71,6 +71,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
+= 1.0.8 - 06/11/2018 =
+* Improve translation strings
+
 = 1.0.7 - 19/10/2018 =
 * Avoid duplicated messages
 
@@ -107,5 +110,5 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Upgrade Notice ==
 
-= 1.0.7 =
-* Avoid duplicated messages
+= 1.0.8 =
+* Improve translation strings

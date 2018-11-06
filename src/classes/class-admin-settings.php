@@ -1,8 +1,8 @@
 <?php
 /**
- * Popup Notices for WooCommerce (TTT) - Admin Settings
+ * Pop-up Notices for WooCommerce (TTT) - Admin Settings
  *
- * @version 1.0.0
+ * @version 1.0.8
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -25,7 +25,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 		 */
 		public function __construct() {
 			$this->id    = 'ttt-pnwc';
-			$this->label = __( 'Popup Notices', 'popup-notices-for-woocommerce' );
+			$this->label = __( 'Pop-up Notices', 'popup-notices-for-woocommerce' );
 
 			add_filter( 'woocommerce_settings_tabs_array', array( $this, 'add_settings_page' ), 20 );
 			add_action( 'woocommerce_settings_' . $this->id, array( $this, 'output' ) );
@@ -85,7 +85,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 		/**
 		 * Get settings array
 		 *
-		 * @since 1.0.0
+		 * @since 1.0.8
 		 *
 		 * @param string $current_section Optional. Defaults to empty string.
 		 *
@@ -164,7 +164,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 				$settings = apply_filters( 'ttt_pnwc_settings_general', array(
 
 					array(
-						'name' => __( 'Popup Notices General Options', 'popup-notices-for-woocommerce' ),
+						'name' => __( 'Pop-up Notices General Options', 'popup-notices-for-woocommerce' ),
 						'type' => 'title',
 						//'desc' => __( 'General Options', 'popup-notices-for-woocommerce' ),
 						'id'   => 'ttt_pnwc_opt_general',
@@ -173,7 +173,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'type'    => 'checkbox',
 						'id'      => 'ttt_pnwc_opt_enable',
 						'name'    => __( 'Enable Plugin', 'popup-notices-for-woocommerce' ),
-						'desc'    => sprintf( __( 'Enables %s plugin', 'popup-notices-for-woocommerce' ), '<strong>' . __( 'Popup Notices for WooCommerce', 'popup-notices-for-woocommerce' ) . '</strong>' ),
+						'desc'    => sprintf( __( 'Enables %s plugin', 'popup-notices-for-woocommerce' ), '<strong>' . __( 'Pop-up Notices for WooCommerce', 'popup-notices-for-woocommerce' ) . '</strong>' ),
 						//'class'    => 'wc-enhanced-select',
 						'default' => 'yes',
 					),
@@ -187,8 +187,8 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 					array(
 						'type'     => 'checkbox',
 						'id'       => 'ttt_pnwc_opt_ajax',
-						'name'     => __( 'AJAX Popup', 'popup-notices-for-woocommerce' ),
-						'desc'     => __( 'Displays Popup notices from AJAX requests', 'popup-notices-for-woocommerce' ),
+						'name'     => __( 'AJAX pop-up', 'popup-notices-for-woocommerce' ),
+						'desc'     => __( 'Displays Pop-up notices from AJAX requests', 'popup-notices-for-woocommerce' ),
 						'desc_tip' => __( 'Notices displayed without reloading the page.', 'popup-notices-for-woocommerce' ) . '<br />' . __( 'e.g Error notices displayed on cart update or if something goes wrong in checkout', 'popup-notices-for-woocommerce' ),
 						'default'  => 'yes',
 					),
@@ -201,7 +201,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 					array(
 						'name' => __( 'Notice Types', 'popup-notices-for-woocommerce' ),
 						'type' => 'title',
-						'desc' => __( 'Notice types that can be displayed on Popups', 'popup-notices-for-woocommerce' ),
+						'desc' => __( 'Notice types that can be displayed on Pop-ups', 'popup-notices-for-woocommerce' ),
 						'id'   => 'ttt_pnwc_opt_types',
 					),
 					array(
@@ -234,7 +234,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 					array(
 						'name' => __( 'Custom style', 'popup-notices-for-woocommerce' ),
 						'type' => 'title',
-						'desc' => sprintf( __( 'Style the popup using the <a href="%s">Customizer</a>', 'popup-notices-for-woocommerce' ), add_query_arg( array('autofocus[panel]'=>'ttt_pnwc'), admin_url( 'customize.php' ) ) ),
+						'desc' => sprintf( __( 'Style the pop-up using the <a href="%s">Customizer</a>', 'popup-notices-for-woocommerce' ), add_query_arg( array('autofocus[panel]'=>'ttt_pnwc'), admin_url( 'customize.php' ) ) ),
 						'id'   => 'ttt_pnwc_opt_style',
 					),
 					array(

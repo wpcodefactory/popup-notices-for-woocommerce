@@ -1,6 +1,6 @@
 <?php
 /**
- * Popup Notices for WooCommerce (TTT) - Notices
+ * Pop-up Notices for WooCommerce (TTT) - Notices
  *
  * @version 1.0.4
  * @since   1.0.2
@@ -28,16 +28,16 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 		}
 
 		public function get_feedback_notice_content() {
-			return "<h3 class='title'>" . __( "Popup Notices Feedback", 'popup-notices-for-woocommerce' ) . "</h3>"
+			return "<h3 class='title'>" . __( "Pop-up Notices Feedback", 'popup-notices-for-woocommerce' ) . "</h3>"
 			       . "<p style='margin-bottom:15px;'>" .
-			       sprintf( __( "Enjoying <strong>Popup Notices</strong>? Would you mind <a href='%s' target='_blank'>writing a review</a>? I would really appreciate it :)", 'popup-notices-for-woocommerce' ), 'https://wordpress.org/support/plugin/popup-notices-for-woocommerce/reviews/#new-post' ) . ""
+			       sprintf( __( "Enjoying <strong>Pop-up Notices</strong>? Would you mind <a href='%s' target='_blank'>writing a review</a>? I would really appreciate it :)", 'popup-notices-for-woocommerce' ), 'https://wordpress.org/support/plugin/popup-notices-for-woocommerce/reviews/#new-post' ) . ""
 			       . "<br />" .
 			       sprintf( __( "Feel free to submit your <a href='%s' target='_blank'>ideas and suggestions</a> too", 'popup-notices-for-woocommerce' ), 'https://wordpress.org/support/plugin/popup-notices-for-woocommerce/' )
 			       . "</p>";
 		}
 
 		public function get_premium_notice_content() {
-			return "<h3 class='title'>" . __( "Popup Notices Premium", 'popup-notices-for-woocommerce' ) . "</h3>"
+			return "<h3 class='title'>" . __( "Pop-up Notices Premium", 'popup-notices-for-woocommerce' ) . "</h3>"
 			       . "<p>"
 			       . __( "Do you like the free version of this plugin?", 'popup-notices-for-woocommerce' )
 			       . "<br />"
@@ -45,7 +45,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 			       . "</br>"
 			       . "<h4>Check some of its features for now:</h4>"
 			       . "<ul style='list-style:disc inside;'>"
-			       . "<li>" . __( "Customize Popup style using the Customizer", 'popup-notices-for-woocommerce' ) . "</li>"
+			       . "<li>" . __( "Customize Pop-up style using the Customizer", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Hide default notices", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Support", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<p style='margin-top:15px'>"
