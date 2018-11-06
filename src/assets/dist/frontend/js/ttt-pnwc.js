@@ -47,7 +47,7 @@ function ttt_getParameterByName(name, url) {
 var ttt_pnwc = {
     messages: [],
     init: function () {
-        this.initializePop-up();
+        this.initializePopup();
         if (ttt_pnwc_info.ajax_opt === 'yes') {
             ttt_onElementInserted('body', '.woocommerce-error','li', ttt_pnwc.readNotice);
             ttt_onElementInserted('body', '.woocommerce-message','', ttt_pnwc.readNotice);
@@ -61,12 +61,12 @@ var ttt_pnwc = {
         query_parameter = query_parameter || 'ttt_pnwc';
         var query_string_value = ttt_getParameterByName(query_parameter);
         if (query_string_value !== null && query_string_value !== '') {
-            ttt_pnwc.clearPop-upMessages();
-            ttt_pnwc.messages.push({message: 'Customize Pop-up Notices style easily!', type: 'success'});
+            ttt_pnwc.clearPopupMessages();
+            ttt_pnwc.messages.push({message: 'Customize Popup Notices style easily!', type: 'success'});
             ttt_pnwc.messages.push({message: 'Please take a look at an error message', type: 'error'});
             ttt_pnwc.messages.push({message: 'And a default one too', type: 'info'});
-            ttt_pnwc.addMessagesToPop-up();
-            ttt_pnwc.openPop-up();
+            ttt_pnwc.addMessagesToPopup();
+            ttt_pnwc.openPopup();
         }
     },
     checkExistingElements: function (selector) {
@@ -91,13 +91,13 @@ var ttt_pnwc = {
                 ttt_pnwc.storeMessage(element, noticeType);
             }
             if (index == total) {
-                ttt_pnwc.clearPop-upMessages();
-                ttt_pnwc.addMessagesToPop-up();
-                ttt_pnwc.openPop-up(element);
+                ttt_pnwc.clearPopupMessages();
+                ttt_pnwc.addMessagesToPopup();
+                ttt_pnwc.openPopup(element);
             }
         }
     },
-    clearPop-upMessages: function () {
+    clearPopupMessages: function () {
         jQuery('#ttt-pnwc-notice').find('.ttt-pnwc-content').empty();
     },
     clearMessages: function () {
@@ -116,18 +116,18 @@ var ttt_pnwc = {
         ttt_pnwc.messages.push({message: notice.html(), type: type});
         ttt_pnwc.removeDuplicatedMessages();        
     },
-    addMessagesToPop-up: function (notice) {
+    addMessagesToPopup: function (notice) {
         jQuery.each(ttt_pnwc.messages, function (index, value) {
             //jQuery('#ttt-pnwc-notice .ttt-pnwc-content').append("<div class='ttt-pnwc-notice'>" + value + "</div>");
             jQuery('#ttt-pnwc-notice .ttt-pnwc-content').append("<div class='ttt-pnwc-notice "+value.type+"'><i class='ttt-pnwc-notice-icon'></i>" + value.message + "</div>");
         });
     },
-    initializePop-up: function () {
+    initializePopup: function () {
         MicroModal.init({
             awaitCloseAnimation: true,
         });
     },
-    openPop-up: function () {        
+    openPopup: function () {        
         MicroModal.show('ttt-pnwc-notice', {
             awaitCloseAnimation: true,
             onClose: function (modal) {
