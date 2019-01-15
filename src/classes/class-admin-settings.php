@@ -255,7 +255,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 				<header class="ttt-pnwc-header">
 					<button class="ttt-pnwc-close" aria-label="Close modal" data-micromodal-close></button>
 				</header>
-				<main class="ttt-pnwc-content" id="modal-1-content" data-content="true"></main>
+				<div class="ttt-pnwc-content" id="modal-1-content" data-content="true"></div>
 			</div>
 		</div>
 	</div>
