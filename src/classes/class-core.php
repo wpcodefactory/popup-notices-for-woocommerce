@@ -134,7 +134,8 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 		public function setup_license_data( $value, $data_type = 'is_free' ) {
 			switch ( $data_type ) {
 				case 'disabled_attribute':
-					$value = array( 'disabled' => 'disabled' );
+					$value = 'disabled';
+					//$value = array( 'disabled' => 'disabled' );
 				break;
 				case 'premium_info':
 					$value = '<span class="ttt-wpan-premium">'.sprintf( __( "Unlock it using the <a target='_blank' href='%s'>Premium</a> version", 'popup-notices-for-woocommerce' ), 'https://wpfactory.com/item/popup-notices-for-woocommerce/' ).'</span>';
