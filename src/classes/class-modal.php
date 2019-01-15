@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Modal
  *
- * @version 1.0.0
+ * @version 1.1.0
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -42,12 +42,13 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Modal' ) ) {
 		/**
 		 * Adds modal html
 		 *
-		 * @version 1.0.0
+		 * @version 1.1.0
 		 * @since   1.0.0
 		 */
 		public function add_modal_html() {
-			?>
-            <div class="ttt-pnwc-modal micromodal-slide" id="ttt-pnwc-notice" aria-hidden="true">
+			$default_template =
+			'
+		    <div class="ttt-pnwc-modal micromodal-slide" id="ttt-pnwc-notice" aria-hidden="true">
                 <div class="ttt-pnwc-overlay" tabindex="-1" data-micromodal-close>
                     <div class="ttt-pnwc-container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
                         <div class="ttt-pnwc-wrapper">
@@ -57,12 +58,14 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Modal' ) ) {
                                 <button class="ttt-pnwc-close" aria-label="Close modal" data-micromodal-close></button>
                             </header>
                             <main class="ttt-pnwc-content" id="modal-1-content" data-content="true">
-                            </main>
+                            </main>                            
                         </div>
                     </div>
                 </div>
-            </div>
-			<?php
+            </div>		    
+		    ';
+			$template = apply_filters( 'ttt_pnwc_modal_template', $default_template );
+			echo $template;
 		}
 	}
 }

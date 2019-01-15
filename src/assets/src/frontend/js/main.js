@@ -53,6 +53,8 @@ var ttt_pnwc = {
             ttt_onElementInserted('body', '.woocommerce-message','', ttt_pnwc.readNotice);
             ttt_onElementInserted('body', '.woocommerce-info','', ttt_pnwc.readNotice);
         }
+
+		//ttt_pnwc.checkExistingElements('.woo-wallet-transactions-items li');
         ttt_pnwc.checkExistingElements('.woocommerce-error li');
         ttt_pnwc.checkExistingElements('.woocommerce-message');
         ttt_pnwc.checkExistingElements('.woocommerce-info');
