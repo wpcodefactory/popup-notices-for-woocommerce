@@ -71,10 +71,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
-= 1.1.0 - 15/01/2019 =
+= 1.1.0 - 16/01/2019 =
 * Fix close button z-index
 * Add option for customizing the modal template
 * Add `ttt_pnwc_modal_template` filter
+* Improve responsive CSS by hiding icons on small devices
+* Add container for messages
 
 = 1.0.9 - 23/12/2018 =
 * Update WooCommerce 'Tested up to' 3.5
@@ -123,3 +125,5 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 * Fix close button z-index
 * Add option for customizing the modal template
 * Add `ttt_pnwc_modal_template` filter
+* Improve responsive CSS by hiding icons on small devices
+* Add container for messages

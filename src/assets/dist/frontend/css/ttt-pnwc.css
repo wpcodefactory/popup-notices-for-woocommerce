@@ -1,7 +1,7 @@
 /*!
  * Pop-up Notices for WooCommerce style
  *
- * @version 1.0.0
+ * @version 1.1.0
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -12,18 +12,22 @@
   font-style: normal;
 }
 
-.ttt-pnwc-notice {
-  /*border-bottom: 1px solid #ccc;*/
-}
-
-.ttt-pnwc-notice * {
-  margin: 0 10px;
-}
-
 .ttt-pnwc-notice-icon {
-  display: inline-block;
+  display: block;
   font-size: 29px;
-  margin-right: 10px;
+  margin: 5px 10px 5px 5px;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+}
+
+@media (max-width: 550px) {
+  .ttt-pnwc-notice-icon {
+    display: none;
+  }
+}
+
+.ttt-pnwc-message {
+  line-height: 16px;
 }
 
 .ttt-pnwc-notice-icon:before {
@@ -39,6 +43,7 @@
 }
 
 .ttt-pnwc-notice {
+  /*border-bottom: 1px solid #ccc;*/
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -48,8 +53,7 @@
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  /*justify-content: space-between;*/
-  padding: 15px 10px;
+  padding: 15px 15px 15px 10px;
   line-height: 15px;
   position: relative;
 }
@@ -65,17 +69,23 @@
   top: 0;
 }
 
+@media (max-width: 550px) {
+  .ttt-pnwc-notice {
+    display: block;
+  }
+}
+
 .ttt-pnwc-notice:nth-child(odd):after {
   opacity: 0.65;
 }
 
 .ttt-pnwc-notice .button {
-  /*margin-left: auto;*/
+  float: right;
   display: block;
   -webkit-box-ordinal-group: 3;
   -ms-flex-order: 2;
   order: 2;
-  margin-left: 15px;
+  margin: 5px 10px 5px 10px;
 }
 
 .ttt-pnwc-notice:last-child {
@@ -109,7 +119,7 @@
   background-color: #fff;
   padding: 25px;
   min-width: 450px;
-  max-width: 700px;
+  max-width: 80%;
   max-height: 100vh;
   border-radius: 4px;
   -webkit-box-sizing: border-box;
