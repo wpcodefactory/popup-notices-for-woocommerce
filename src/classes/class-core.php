@@ -251,7 +251,12 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 			wp_enqueue_script( 'ttt-pnwc' );
 
 			// Localize script
-			$localize_script = array();
+			$localize_script = array(
+				'icon_default_class' => 'default-icon',
+				'error_icon_class'   => '',
+				'info_icon_class'    => '',
+				'success_icon_class' => '',
+			);
 			wp_localize_script( 'ttt-pnwc', 'ttt_pnwc_info', apply_filters( 'ttt_pnwc_localize_script', $localize_script ) );
 
 		}

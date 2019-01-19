@@ -30,15 +30,15 @@
   line-height: 16px;
 }
 
-.ttt-pnwc-notice-icon:before {
+.ttt-pnwc-notice-icon.default-icon:before {
   content: "\2714";
 }
 
-.ttt-pnwc-notice.error .ttt-pnwc-notice-icon:before {
+.ttt-pnwc-notice.error .ttt-pnwc-notice-icon.default-icon:before {
   content: "\26A0";
 }
 
-.ttt-pnwc-notice.info .ttt-pnwc-notice-icon:before {
+.ttt-pnwc-notice.info .ttt-pnwc-notice-icon.default-icon:before {
   content: "\27B2";
 }
 

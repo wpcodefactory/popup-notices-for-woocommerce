@@ -118,9 +118,26 @@ var ttt_pnwc = {
         ttt_pnwc.messages.push({message: notice.html(), type: type});
         ttt_pnwc.removeDuplicatedMessages();        
     },
+    getAdditionalIconClass:function(noticeType){
+        var iconClass="";
+        switch (noticeType){
+            case "success":
+				iconClass = ttt_pnwc_info.success_icon_class;
+                break;
+			case "error":
+				iconClass = ttt_pnwc_info.error_icon_class;
+				break;
+			case "info":
+				iconClass = ttt_pnwc_info.info_icon_class;
+				break;
+        }
+        iconClass+=" "+ttt_pnwc_info.icon_default_class;
+        return icon_class;
+    },
     addMessagesToPopup: function (notice) {
         jQuery.each(ttt_pnwc.messages, function (index, value) {
-            jQuery('#ttt-pnwc-notice .ttt-pnwc-content').append("<div class='ttt-pnwc-notice "+value.type+"'><i class='ttt-pnwc-notice-icon'></i><div class='ttt-pnwc-message'>" + value.message + "</div></div>");
+            var additional_icon_class=ttt_pnwc.getAdditionalIconClass(value.type);
+            jQuery('#ttt-pnwc-notice .ttt-pnwc-content').append("<div class='ttt-pnwc-notice "+value.type+"'><i class='ttt-pnwc-notice-icon " + additional_icon_class + "'></i><div class='ttt-pnwc-message'>" + value.message + "</div></div>");
         });
     },
     initializePopup: function () {
