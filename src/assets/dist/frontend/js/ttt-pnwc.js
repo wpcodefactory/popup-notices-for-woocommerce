@@ -132,7 +132,7 @@ var ttt_pnwc = {
 				break;
         }
         iconClass+=" "+ttt_pnwc_info.icon_default_class;
-        return icon_class;
+        return iconClass;
     },
     addMessagesToPopup: function (notice) {
         jQuery.each(ttt_pnwc.messages, function (index, value) {
