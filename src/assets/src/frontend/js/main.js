@@ -131,7 +131,9 @@ var ttt_pnwc = {
 				iconClass = ttt_pnwc_info.info_icon_class;
 				break;
         }
-        iconClass+=" "+ttt_pnwc_info.icon_default_class;
+        if(iconClass!=""){
+			iconClass+=" "+ttt_pnwc_info.icon_default_class;
+        }
         return iconClass;
     },
     addMessagesToPopup: function (notice) {
