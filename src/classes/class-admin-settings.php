@@ -263,7 +263,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'type'     => 'text',
 						'id'       => 'ttt_pnwc_opt_fa_url',
 						'name'     => __( 'Font Awesome URL', 'popup-notices-for-woocommerce' ),
-						'desc_tip' => __( 'URL used to load Font Awesome', 'popup-notices-for-woocommerce' ),
+						'desc_tip' => __( 'Leave it empty if you are already using Font Awesome from somewhere else and do not want to load it twice', 'popup-notices-for-woocommerce' ),
 						'default'  => '//use.fontawesome.com/releases/v5.5.0/css/all.css'
 					),
 					array(
