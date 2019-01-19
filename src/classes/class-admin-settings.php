@@ -37,7 +37,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 		/**
 		 * Handles admin settings regarding free plugin
 		 *
-		 * @version 1.0.2
+		 * @version 1.1.0
 		 * @since 1.0.2
 		 *
 		 * @param $settings
@@ -50,19 +50,29 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 			}
 
 			// Hide default notices
-			$index                                   = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_hide_default_notices' ) ) );
-			$settings[ $index ]['desc']              .= '<br />'.apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+			$index                      = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_hide_default_notices' ) ) );
+			$settings[ $index ]['desc'] .= '<br />' . apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
 			//$settings[ $index ]['desc_tip']          = apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
 			$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
 
 			// Style
 			$index                      = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_style' ) ) );
-			$settings[ $index ]['desc'] .= '<br />'.apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+			$settings[ $index ]['desc'] .= '<br />' . apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+
+			//Font Awesome
+			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_fa' ) ) );
+			$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
+			$settings[ $index ]['desc']                          .= '<br />' . apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+
+			//Font Awesome URL
+			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_fa_url' ) ) );
+			$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
+			$settings[ $index ]['desc']                          .= '<br />' . apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
 
 			// Modal Template
-			$index                      = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_modal_template' ) ) );
-			$settings[ $index ]['desc']              .= apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
-			$settings[ $index ]['custom_attributes']['disabled']  = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
+			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_modal_template' ) ) );
+			$settings[ $index ]['desc']                          .= apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+			$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
 			//$settings[ $index ]['desc_tip']          = apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
 			//$settings[ $index ]['custom_attributes'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
 
@@ -239,27 +249,30 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 					array(
 						'name' => __( 'Custom style', 'popup-notices-for-woocommerce' ),
 						'type' => 'title',
-						'desc' => sprintf( __( 'Style the pop-up using the <a href="%s">Customizer</a>', 'popup-notices-for-woocommerce' ), add_query_arg( array('autofocus[panel]'=>'ttt_pnwc'), admin_url( 'customize.php' ) ) ),
+						'desc' => sprintf( __( 'Style the pop-up using the <a href="%s">Customizer</a>', 'popup-notices-for-woocommerce' ), add_query_arg( array( 'autofocus[panel]' => 'ttt_pnwc' ), admin_url( 'customize.php' ) ) ),
 						'id'   => 'ttt_pnwc_opt_style',
 					),
 					array(
-						'type'              => 'textarea',
-						'id'                => 'ttt_pnwc_opt_modal_template',
-						'name'              => __( 'Modal Template', 'popup-notices-for-woocommerce' ),
-						'desc_tip'          => __( 'HTML template reponsible for displaying the modal', 'popup-notices-for-woocommerce' ),
-						'css'               => 'min-height:250px;width:100%',
-						'default'           => '<div class="ttt-pnwc-modal micromodal-slide" id="ttt-pnwc-notice" aria-hidden="true">
-	<div class="ttt-pnwc-overlay" tabindex="-1" data-micromodal-close>
-		<div class="ttt-pnwc-container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
-			<div class="ttt-pnwc-wrapper">
-				<header class="ttt-pnwc-header">
-					<button class="ttt-pnwc-close" aria-label="Close modal" data-micromodal-close></button>
-				</header>
-				<div class="ttt-pnwc-content" id="modal-1-content" data-content="true"></div>
-			</div>
-		</div>
-	</div>
-</div>',
+						'type'     => 'checkbox',
+						'id'       => 'ttt_pnwc_opt_fa',
+						'name'     => __( 'Use Font Awesome', 'popup-notices-for-woocommerce' ),
+						'desc' => __( 'Check if you want to choose icons from FontAwesome', 'popup-notices-for-woocommerce' ),
+						'default'  => 'no'
+					),
+					array(
+						'type'     => 'text',
+						'id'       => 'ttt_pnwc_opt_fa_url',
+						'name'     => __( 'Font Awesome URL', 'popup-notices-for-woocommerce' ),
+						'desc_tip' => __( 'URL used to load Font Awesome', 'popup-notices-for-woocommerce' ),
+						'default'  => '//use.fontawesome.com/releases/v5.5.0/css/all.css'
+					),
+					array(
+						'type'     => 'textarea',
+						'id'       => 'ttt_pnwc_opt_modal_template',
+						'name'     => __( 'Modal Template', 'popup-notices-for-woocommerce' ),
+						'desc_tip' => __( 'HTML template reponsible for displaying the modal', 'popup-notices-for-woocommerce' ),
+						'css'      => 'min-height:250px;width:100%',
+						'default'  => $this->get_default_template(),
 					),
 					array(
 						'type' => 'sectionend',
@@ -280,6 +293,21 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 			 */
 			return apply_filters( 'woocommerce_get_settings_' . $this->id, $settings, $current_section );
 
+		}
+
+		public function get_default_template(){
+						return '<div class="ttt-pnwc-modal micromodal-slide" id="ttt-pnwc-notice" aria-hidden="true">
+				<div class="ttt-pnwc-overlay" tabindex="-1" data-micromodal-close>
+					<div class="ttt-pnwc-container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
+						<div class="ttt-pnwc-wrapper">
+							<header class="ttt-pnwc-header">
+								<button class="ttt-pnwc-close" aria-label="Close modal" data-micromodal-close></button>
+							</header>
+							<div class="ttt-pnwc-content" id="modal-1-content" data-content="true"></div>
+						</div>
+					</div>
+				</div>
+			</div>';
 		}
 
 

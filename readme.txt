@@ -77,6 +77,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 * Add `ttt_pnwc_modal_template` filter
 * Improve responsive CSS by hiding icons on small devices
 * Add container for messages
+* Add options for Font Awesome
 
 = 1.0.9 - 23/12/2018 =
 * Update WooCommerce 'Tested up to' 3.5
@@ -127,3 +128,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 * Add `ttt_pnwc_modal_template` filter
 * Improve responsive CSS by hiding icons on small devices
 * Add container for messages
+* Add options for Font Awesome
