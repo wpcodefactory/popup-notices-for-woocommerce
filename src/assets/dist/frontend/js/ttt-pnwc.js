@@ -131,7 +131,7 @@ var ttt_pnwc = {
 				iconClass = ttt_pnwc_info.info_icon_class;
 				break;
         }
-        if(iconClass!=""){
+        if(iconClass==""){
 			iconClass+=" "+ttt_pnwc_info.icon_default_class;
         }
         return iconClass;
