@@ -243,7 +243,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 					array(
 						'type' => 'sectionend',
 						'id'   => 'ttt_pnwc_opt_types'
-					),					
+					),
 
 					// Custom style
 					array(
@@ -253,11 +253,11 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'id'   => 'ttt_pnwc_opt_style',
 					),
 					array(
-						'type'     => 'checkbox',
-						'id'       => 'ttt_pnwc_opt_fa',
-						'name'     => __( 'Use Font Awesome', 'popup-notices-for-woocommerce' ),
-						'desc' => __( 'Check if you want to choose icons from FontAwesome', 'popup-notices-for-woocommerce' ),
-						'default'  => 'no'
+						'type'    => 'checkbox',
+						'id'      => 'ttt_pnwc_opt_fa',
+						'name'    => __( 'Use Font Awesome', 'popup-notices-for-woocommerce' ),
+						'desc'    => __( 'Check if you want to choose icons from FontAwesome', 'popup-notices-for-woocommerce' ),
+						'default' => 'no'
 					),
 					array(
 						'type'     => 'text',
@@ -295,21 +295,10 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 
 		}
 
-		public function get_default_template(){
-						return '<div class="ttt-pnwc-modal micromodal-slide" id="ttt-pnwc-notice" aria-hidden="true">
-				<div class="ttt-pnwc-overlay" tabindex="-1" data-micromodal-close>
-					<div class="ttt-pnwc-container" role="dialog" aria-modal="true" aria-labelledby="modal-1-title">
-						<div class="ttt-pnwc-wrapper">
-							<header class="ttt-pnwc-header">
-								<button class="ttt-pnwc-close" aria-label="Close modal" data-micromodal-close></button>
-							</header>
-							<div class="ttt-pnwc-content" id="modal-1-content" data-content="true"></div>
-						</div>
-					</div>
-				</div>
-			</div>';
+		public function get_default_template() {
+			$template_obj = new Template();
+			return $template_obj->get_default_template();
 		}
-
 
 		/**
 		 * Output the settings

@@ -18,6 +18,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 	class Core {
 
 		public $plugin_info = array();
+		public $modal;
 
 		/**
 		 * Call this method to get singleton
@@ -96,14 +97,12 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 				// Modal
 				$modal = new Modal();
 				$modal->init();
+				$this->modal = $modal;
 
 				add_filter( 'ttt_pnwc_localize_script', array( $this, 'localize_js_options' ) );
-
 				add_action( 'admin_init', array( $this, 'add_license_query_string_on_admin_settings' ), 1 );
-
 				add_filter( 'ttt_pnwc_license_data', array( $this, 'setup_license_data' ), 10, 2 );
-
-				add_action('admin_head',array($this,'admin_style'));
+				add_action( 'admin_head', array( $this, 'admin_style' ) );
 			}
 		}
 
