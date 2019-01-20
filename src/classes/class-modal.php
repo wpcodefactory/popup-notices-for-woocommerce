@@ -25,14 +25,14 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Modal' ) ) {
 		public function init() {
 			add_action( 'wp_footer', array( $this, 'add_modal_html' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'add_modal_scripts' ) );
-			add_filter( 'ttt_pnwc_modal_template', array( $this, 'replace_template_variables' ) );
+			//add_filter( 'ttt_pnwc_modal_template', array( $this, 'replace_template_variables' ) );
 		}
 
-		public function replace_template_variables( $template ) {
+		/*public function replace_template_variables( $template ) {
 			$template_obj     = new Template();
 			$default_template = $template_obj->replace_template_variables( $template );
 			return $default_template;
-		}
+		}*/
 
 		/**
 		 * Adds modal scripts
@@ -56,6 +56,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Modal' ) ) {
 			$template_obj     = new Template();
 			$default_template = $template_obj->get_default_template();
 			$template         = apply_filters( 'ttt_pnwc_modal_template', $default_template );
+			$template         = $template_obj->replace_template_variables( $template );
 			echo $template;
 		}
 	}
