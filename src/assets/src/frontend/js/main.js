@@ -46,6 +46,7 @@ function ttt_getParameterByName(name, url) {
 
 var ttt_pnwc = {
     messages: [],
+    open:false,
     init: function () {
         this.initializePopup();
         if (ttt_pnwc_info.ajax_opt === 'yes') {
@@ -147,13 +148,18 @@ var ttt_pnwc = {
             awaitCloseAnimation: true,
         });
     },
-    openPopup: function () {        
-        MicroModal.show('ttt-pnwc-notice', {
-            awaitCloseAnimation: true,
-            onClose: function (modal) {
-                ttt_pnwc.clearMessages();
-            }
-        });
+    openPopup: function () {
+        if(!ttt_pnwc.open){
+			ttt_pnwc.open=true;
+			MicroModal.show('ttt-pnwc-notice', {
+				awaitCloseAnimation: true,
+				onClose: function (modal) {
+					ttt_pnwc.open=false;
+					ttt_pnwc.clearMessages();
+				}
+			});
+        }
+
     }
 };
 document.addEventListener('DOMContentLoaded', function () {
