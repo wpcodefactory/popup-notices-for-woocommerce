@@ -18,6 +18,11 @@
 
 .ttt-pnwc-message{
   line-height:16px;
+  direction:rtl;
+}
+
+.ttt-pnwc-message *{
+ direction:ltr; 
 }
 
 .ttt-pnwc-notice-icon.default-icon:before{
@@ -67,11 +72,11 @@
 }
 
 .ttt-pnwc-notice .button {
-  float:right;
-  display: block;
+  //float:right;
+  display: inline-block;
   order: 2;
   //margin-left: 15px;
-  margin:5px 10px 5px 10px;
+  margin:5px 0 5px 10px;
 }
 
 .ttt-pnwc-notice:last-child {

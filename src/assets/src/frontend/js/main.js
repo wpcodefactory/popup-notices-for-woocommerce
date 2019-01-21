@@ -140,7 +140,7 @@ var ttt_pnwc = {
     addMessagesToPopup: function (notice) {
         jQuery.each(ttt_pnwc.messages, function (index, value) {
             var additional_icon_class=ttt_pnwc.getAdditionalIconClass(value.type);
-            jQuery('#ttt-pnwc-notice .ttt-pnwc-content').append("<div class='ttt-pnwc-notice "+value.type+"'><i class='ttt-pnwc-notice-icon " + additional_icon_class + "'></i><div class='ttt-pnwc-message'>" + value.message + "</div></div>");
+            jQuery('#ttt-pnwc-notice .ttt-pnwc-content').append("<div class='ttt-pnwc-notice "+value.type+"'><i class='ttt-pnwc-notice-icon " + additional_icon_class + "'></i><div class='ttt-pnwc-message'>" + value.message + "&lrm;</div></div>");
         });
     },
     initializePopup: function () {
