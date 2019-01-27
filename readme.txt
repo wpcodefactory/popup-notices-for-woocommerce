@@ -79,6 +79,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 * Add container for messages
 * Add options for Font Awesome
 * Improve button style inside message
+* Add cookie options
 
 = 1.0.9 - 23/12/2018 =
 * Update WooCommerce 'Tested up to' 3.5
@@ -131,3 +132,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 * Add container for messages
 * Add options for Font Awesome
 * Improve button style inside message
+* Add cookie options

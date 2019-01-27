@@ -51,28 +51,48 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 
 			// Hide default notices
 			$index                      = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_hide_default_notices' ) ) );
-			$settings[ $index ]['desc'] .= '<br />' . apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+			$settings[ $index ]['desc'] .= apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
 			//$settings[ $index ]['desc_tip']          = apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
 			$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
 
 			// Style
 			$index                      = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_style' ) ) );
-			$settings[ $index ]['desc'] .= '<br />' . apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+			$settings[ $index ]['desc'] .= apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
 
 			//Font Awesome
 			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_fa' ) ) );
 			$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
-			$settings[ $index ]['desc']                          .= '<br />' . apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+			$settings[ $index ]['desc']                          .= apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
 
 			//Font Awesome URL
 			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_fa_url' ) ) );
 			$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
-			$settings[ $index ]['desc']                          .= '<br />' . apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+			$settings[ $index ]['desc']                          .= apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
 
 			// Modal Template
 			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_modal_template' ) ) );
 			$settings[ $index ]['desc']                          .= apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
 			$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
+
+			// Cookie
+			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_cookie_enabled' ) ) );
+			$settings[ $index ]['desc']                          .= apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+			$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
+
+			// Cookie Expiration Time
+			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_cookie_time' ) ) );
+			$settings[ $index ]['desc']                          .= apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+			$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
+
+			// Cookie Origin
+			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_cookie_msg_origin' ) ) );
+			$settings[ $index ]['desc']                          .= apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+			$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
+
+
+
+
+
 			//$settings[ $index ]['desc_tip']          = apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
 			//$settings[ $index ]['custom_attributes'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
 
@@ -278,6 +298,44 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'type' => 'sectionend',
 						'id'   => 'ttt_pnwc_opt_style'
 					),
+
+					// Cookie
+					array(
+						'name' => __( 'Cookies', 'popup-notices-for-woocommerce' ),
+						'type' => 'title',
+						'desc'    => __( "Options regarding Browser's Cookies, that will try to prevent messages to be displayed repeatedly inside popups", 'popup-notices-for-woocommerce' ),
+						'id'   => 'ttt_pnwc_opt_cookie',
+					),
+					array(
+						'type'    => 'checkbox',
+						'id'      => 'ttt_pnwc_opt_cookie_enabled',
+						'name'    => __( 'Enable', 'popup-notices-for-woocommerce' ),
+						'desc'    => __( "Save messages in Browser's Cookies", 'popup-notices-for-woocommerce' ),
+						'default' => 'no'
+					),
+					array(
+						'type'    => 'number',
+						'id'      => 'ttt_pnwc_opt_cookie_time',
+						'name'    => __( 'Expiration Time', 'popup-notices-for-woocommerce' ),
+						'desc'    => __( "Time in Hours messages will be kept in Cookies", 'popup-notices-for-woocommerce' ),
+						'default' => 0.5
+					),
+					array(
+						'type'    => 'select',
+						'id'      => 'ttt_pnwc_opt_cookie_msg_origin',
+						'name'    => __( 'Message Origin', 'popup-notices-for-woocommerce' ),
+						'desc'    => __( "Type of messages that will be kept on Cookies, static or dynamic, i.e created on ajax", 'popup-notices-for-woocommerce' ),
+						'options' => array(
+							'static'=>__( 'Static', 'popup-notices-for-woocommerce' ),
+							'dynamic'=>__( 'Dynamic', 'popup-notices-for-woocommerce' ),
+							'all'=>__( 'All', 'popup-notices-for-woocommerce' ),
+						),
+						'default' => 'static'
+					),
+					array(
+						'type' => 'sectionend',
+						'id'   => 'ttt_pnwc_opt_cookie'
+					)
 
 				) );
 

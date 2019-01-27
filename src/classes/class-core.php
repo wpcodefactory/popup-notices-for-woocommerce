@@ -136,7 +136,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 					//$value = array( 'disabled' => 'disabled' );
 				break;
 				case 'premium_info':
-					$value = '<span class="ttt-wpan-premium">'.sprintf( __( "Unlock it using the <a target='_blank' href='%s'>Premium</a> version", 'popup-notices-for-woocommerce' ), 'https://wpfactory.com/item/popup-notices-for-woocommerce/' ).'</span>';
+					$value = ' <span class="ttt-wpan-premium">'.sprintf( __( "Unlock it using the <a target='_blank' href='%s'>Premium</a> version", 'popup-notices-for-woocommerce' ), 'https://wpfactory.com/item/popup-notices-for-woocommerce/' ).'</span>';
 				break;
 				/*case 'customizer_popup_panel_url':
 					$query['autofocus[panel]'] = 'ttt_pnwc';
@@ -294,7 +294,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 			$data['ajax_opt']              = get_option( 'ttt_pnwc_opt_ajax', 'yes' );
 			$data['cookie_opt']['enabled'] = 'no';
 			$data['cookie_opt']['time']    = 1;
-			$data['cookie_opt']['origin']  = 'dynamic';
+			$data['cookie_opt']['message_origin']  = 'dynamic';
 			return $data;
 		}
 

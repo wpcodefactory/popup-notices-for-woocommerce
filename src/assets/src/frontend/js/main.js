@@ -151,8 +151,8 @@ var ttt_pnwc = {
 	isMessageValid: function (message, dynamic) {
 		if (
 			ttt_pnwc_info.cookie_opt.enabled !== 'yes' ||
-			(ttt_pnwc_info.cookie_opt.origin.search('dynamic') != -1 && dynamic) ||
-			(ttt_pnwc_info.cookie_opt.origin.search('fixed') != -1 && !dynamic)
+			(ttt_pnwc_info.cookie_opt.message_origin.search('dynamic') != -1 && dynamic) ||
+			(ttt_pnwc_info.cookie_opt.message_origin.search('static') != -1 && !dynamic)
 		) {
 			return true;
 		}
@@ -195,7 +195,7 @@ var ttt_pnwc = {
 	addMessagesToPopup: function (notice) {
 		jQuery.each(ttt_pnwc.messages, function (index, value) {
 			var additional_icon_class = ttt_pnwc.getAdditionalIconClass(value.type);
-			var dynamicClass = value.dynamic ? 'ttt-dynamic' : 'ttt-fixed';
+			var dynamicClass = value.dynamic ? 'ttt-dynamic' : 'ttt-static';
 			jQuery('#ttt-pnwc-notice .ttt-pnwc-content').append("<div class='ttt-pnwc-notice " + value.type + ' ' + dynamicClass + " '><i class='ttt-pnwc-notice-icon " + additional_icon_class + "'></i><div class='ttt-pnwc-message'>" + value.message + " &lrm;</div></div>");
 		});
 	},
