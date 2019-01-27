@@ -106,28 +106,27 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 			}
 		}
 
-		public function admin_style(){
-			if(
-				!isset($_REQUEST['tab']) ||
-				!isset($_REQUEST['page']) ||
-				$_REQUEST['tab']!='ttt-pnwc' ||
-				$_REQUEST['page']!='wc-settings'
-			){
+		public function admin_style() {
+			if (
+				! isset( $_REQUEST['tab'] ) ||
+				! isset( $_REQUEST['page'] ) ||
+				$_REQUEST['tab'] != 'ttt-pnwc' ||
+				$_REQUEST['page'] != 'wc-settings'
+			) {
 				return;
 			}
 			?>
-			<style>
-			.ttt-wpan-premium{
-				background:#e8e8e8;
-				padding:4px 9px 6px;
-				display:inline-block;
-				margin:5px 0;
-				color:#999;
-				font-size:13px;
-			}
-			</style>
+            <style>
+                .ttt-wpan-premium {
+                    background: #e8e8e8;
+                    padding: 4px 9px 6px;
+                    display: inline-block;
+                    margin: 5px 0;
+                    color: #999;
+                    font-size: 13px;
+                }
+            </style>
 			<?php
-
 		}
 
 		public function setup_license_data( $value, $data_type = 'is_free' ) {
@@ -287,13 +286,15 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 		 * @return mixed
 		 */
 		public function localize_js_options( $data ) {
-			$data['types']    = array(
+			$data['types']                 = array(
 				'error'   => get_option( 'ttt_pnwc_opt_type_error_enable', 'yes' ),
 				'info'    => get_option( 'ttt_pnwc_opt_type_info_enable', 'yes' ),
 				'success' => get_option( 'ttt_pnwc_opt_type_success_enable', 'yes' ),
 			);
-			$data['ajax_opt'] = get_option( 'ttt_pnwc_opt_ajax', 'yes' );
-
+			$data['ajax_opt']              = get_option( 'ttt_pnwc_opt_ajax', 'yes' );
+			$data['cookie_opt']['enabled'] = 'no';
+			$data['cookie_opt']['time']    = 1;
+			$data['cookie_opt']['origin']  = 'dynamic';
 			return $data;
 		}
 

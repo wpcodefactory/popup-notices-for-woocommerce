@@ -28,11 +28,7 @@
 
 .ttt-pnwc-message {
   line-height: 16px;
-  direction: rtl;
-}
-
-.ttt-pnwc-message * {
-  direction: ltr;
+  text-align: left;
 }
 
 .ttt-pnwc-notice-icon.default-icon:before {
@@ -85,11 +81,35 @@
 }
 
 .ttt-pnwc-notice .button {
+  /*//float:right;
   display: inline-block;
-  -webkit-box-ordinal-group: 3;
-  -ms-flex-order: 2;
   order: 2;
-  margin: 5px 0 5px 10px;
+  //margin-left: 15px;
+  margin:5px 0 5px 10px;
+  vertical-align:middle;*/
+  position: relative;
+  float: right;
+  padding: 0 0 0 14px;
+  background: 0 0;
+  color: #fff;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  line-height: 19px;
+  padding-left: 1em;
+  border-width: 0;
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: #999;
+  border-radius: 0;
+  color: #000;
+  margin: 0 0 0 12px;
+}
+
+.ttt-pnwc-notice .button:hover {
+  opacity: 1;
+  background: 0 0;
+  border-left-color: #999;
+  color: #000;
 }
 
 .ttt-pnwc-notice:last-child {
@@ -123,7 +143,7 @@
   background-color: #fff;
   padding: 25px;
   min-width: 450px;
-  max-width: 80%;
+  max-width: 600px;
   max-height: 100vh;
   border-radius: 4px;
   -webkit-box-sizing: border-box;
