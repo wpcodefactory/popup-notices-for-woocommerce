@@ -220,9 +220,12 @@ button.ttt-pnwc-close:hover {
 }
 
 .ttt-pnwc-close-internal {
+  border: none;
+  text-transform: uppercase;
   margin-top: 20px;
   border-radius: 7px;
-  padding: 7px 25px;
+  padding: 4px 17px;
+  cursor: pointer;
 }
 
 .ttt-pnwc-btn {
