@@ -226,6 +226,7 @@ button.ttt-pnwc-close:hover {
   border-radius: 7px;
   padding: 4px 17px;
   cursor: pointer;
+  font-size: 13px;
 }
 
 .ttt-pnwc-btn {
