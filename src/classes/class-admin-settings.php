@@ -318,7 +318,10 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'id'      => 'ttt_pnwc_opt_cookie_time',
 						'name'    => __( 'Expiration Time', 'popup-notices-for-woocommerce' ),
 						'desc'    => __( "Time in Hours messages will be kept in Cookies", 'popup-notices-for-woocommerce' ),
-						'default' => 0.5
+						'default' => 0.5,
+						'custom_attributes'=>array(
+							'step'=>'.01'
+						)
 					),
 					array(
 						'type'    => 'select',
