@@ -151,8 +151,8 @@ var ttt_pnwc = {
 	isMessageValid: function (message, dynamic) {
 		if (
 			ttt_pnwc_info.cookie_opt.enabled !== 'yes' ||
-			(ttt_pnwc_info.cookie_opt.message_origin.search('dynamic') != -1 && dynamic) ||
-			(ttt_pnwc_info.cookie_opt.message_origin.search('static') != -1 && !dynamic)
+			(ttt_pnwc_info.cookie_opt.message_origin.search('dynamic') != -1 && !dynamic) ||
+			(ttt_pnwc_info.cookie_opt.message_origin.search('static') != -1 && dynamic)
 		) {
 			return true;
 		}

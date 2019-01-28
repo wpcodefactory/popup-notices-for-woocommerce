@@ -293,8 +293,8 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 			);
 			$data['ajax_opt']              = get_option( 'ttt_pnwc_opt_ajax', 'yes' );
 			$data['cookie_opt']['enabled'] = 'no';
-			$data['cookie_opt']['time']    = 1;
-			$data['cookie_opt']['message_origin']  = 'dynamic';
+			$data['cookie_opt']['time']    = 0.5;
+			$data['cookie_opt']['message_origin']  = 'static';
 			return $data;
 		}
 
