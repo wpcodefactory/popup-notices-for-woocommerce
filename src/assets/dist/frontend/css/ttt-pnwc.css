@@ -31,6 +31,10 @@
   text-align: left;
 }
 
+.ttt-pnwc-message p {
+  margin: 0;
+}
+
 .ttt-pnwc-notice-icon.default-icon:before {
   content: "\2714";
 }
