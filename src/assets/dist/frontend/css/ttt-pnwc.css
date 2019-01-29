@@ -1,7 +1,7 @@
 /*!
  * Pop-up Notices for WooCommerce style
  *
- * @version 1.1.0
+ * @version 1.1.1
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -35,6 +35,12 @@
   margin: 0;
 }
 
+@media (max-width: 550px) {
+  .ttt-pnwc-message {
+    text-align: left;
+  }
+}
+
 .ttt-pnwc-notice-icon.default-icon:before {
   content: "\2714";
 }
@@ -55,6 +61,7 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  text-align: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;

@@ -24,6 +24,10 @@
   p{
     margin:0;
   }
+
+  @media (max-width: 550px) {
+    text-align: left;
+  }
 }
 
 .ttt-pnwc-notice-icon.default-icon:before {
@@ -43,6 +47,7 @@
   //margin: 0 10px;
   display: flex;
   align-items: center;
+  text-align: center;
 
   justify-content: center;
   //justify-content: space-between;

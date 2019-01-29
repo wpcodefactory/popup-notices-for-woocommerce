@@ -3,7 +3,7 @@ Contributors: karzin
 Tags: popup,notices,woocommerce,notice,modal
 Requires at least: 4.4
 Tested up to: 5.0
-Stable tag: 1.1.0
+Stable tag: 1.1.1
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -71,6 +71,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
+
+= 1.1.1 - 29/01/2019 =
+* Fix alignment on small screen
+
 = 1.1.0 - 28/01/2019 =
 * Fix close button z-index
 * Add option for customizing the modal template
@@ -124,12 +128,5 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Upgrade Notice ==
 
-= 1.1.0 =
-* Fix close button z-index
-* Add option for customizing the modal template
-* Add `ttt_pnwc_modal_template` filter
-* Improve responsive CSS by hiding icons on small devices
-* Add container for messages
-* Add options for Font Awesome
-* Improve button style inside message
-* Add cookie options
+= 1.1.1 =
+* Fix alignment on small screen
