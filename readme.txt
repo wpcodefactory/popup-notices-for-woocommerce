@@ -71,7 +71,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
-
 = 1.1.1 - 04/02/2019 =
 * Fix alignment on small screen
 * Add option to ignore messages
