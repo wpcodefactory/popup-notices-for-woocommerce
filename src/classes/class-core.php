@@ -120,10 +120,10 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
                 .ttt-wpan-premium {
                     background: #e8e8e8;
                     padding: 4px 9px 6px;
-                    display: inline-block;
-                    margin: 5px 0;
                     color: #999;
                     font-size: 13px;
+                    vertical-align: middle;
+                    margin: 0 0 0 10px;
                 }
             </style>
 			<?php
@@ -133,6 +133,15 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 			switch ( $data_type ) {
 				case 'disabled_attribute':
 					$value = 'disabled';
+					//$value = array( 'disabled' => 'disabled' );
+				break;
+				case 'readonly_attribute':
+					$value = 'readonly';
+					//$value = array( 'disabled' => 'disabled' );
+				break;
+				case 'multiline_info':
+					$value = ' <span class="ttt-wpan-premium">'.sprintf( __( "The <a target='_blank' href='%s'>Premium</a> version will unlock a textarea field with multiple values possibility", 'popup-notices-for-woocommerce' ), 'https://wpfactory.com/item/popup-notices-for-woocommerce/' ).'</span>';
+					//$value = 'readonly';
 					//$value = array( 'disabled' => 'disabled' );
 				break;
 				case 'premium_info':
