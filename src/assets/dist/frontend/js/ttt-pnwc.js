@@ -149,7 +149,39 @@ var ttt_pnwc = {
 		return "";
 	},
 	isMessageValid: function (message, dynamic) {
+		// Ignored Messages
+		if (ttt_pnwc_info.ignored_msg.field && ttt_pnwc_info.ignored_msg.field !== "") {
+			if (ttt_pnwc_info.ignored_msg.regex === "yes") {
+				var matches = ttt_pnwc_info.ignored_msg.field.filter(function (pattern) {
+					return new RegExp(pattern, ttt_pnwc_info.ignored_msg.regex_flags).test(message);
+				});
+				if (matches.length > 0) {
+					return false;
+				}
+			} else {
+				var matches = ttt_pnwc_info.ignored_msg.field.filter(function (string_check) {
+					return message.indexOf(string_check) !== -1;
+				});
+				if (matches.length > 0) {
+					return false;
+				}
+			}
+		}
+
+		// Cookie Opt
 		if (
+
+			ttt_pnwc_info.cookie_opt.enabled === 'yes' &&
+			((ttt_pnwc_info.cookie_opt.message_origin.search('dynamic') != -1 && dynamic) ||
+			(ttt_pnwc_info.cookie_opt.message_origin.search('static') != -1 && !dynamic))
+		) {
+			console.log(ttt_pnwc_info.cookie_opt.enabled);
+			if (ttt_pnwc.getCookie(ttt_pnwc.hashMessage(message))) {
+				return false;
+			}
+		}
+
+		/*if (
 			ttt_pnwc_info.cookie_opt.enabled !== 'yes' ||
 			(ttt_pnwc_info.cookie_opt.message_origin.search('dynamic') != -1 && !dynamic) ||
 			(ttt_pnwc_info.cookie_opt.message_origin.search('static') != -1 && dynamic)
@@ -158,7 +190,7 @@ var ttt_pnwc = {
 		}
 		if (ttt_pnwc.getCookie(ttt_pnwc.hashMessage(message))) {
 			return false;
-		}
+		}*/
 		return true;
 	},
 	saveMessageInCookie: function (message) {

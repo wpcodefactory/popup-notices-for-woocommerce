@@ -243,6 +243,42 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'id'   => 'ttt_pnwc_opt_types'
 					),
 
+					// Ignore Messages
+					array(
+						'name'            => __( 'Ignore Messages', 'popup-notices-for-woocommerce' ),
+						'type'            => 'title',
+						'desc'            => __( "Messages or notices that will be ignored and will not be displayed inside the pop-up", 'popup-notices-for-woocommerce' ),
+						'id'              => 'ttt_pnwc_opt_ignore_msg',
+					),
+					array(
+						'type'          => 'text',
+						'id'            => 'ttt_pnwc_opt_ignore_msg_field',
+						'name'          => __( 'Ignored Messages', 'popup-notices-for-woocommerce' ),
+						'desc'          => '',
+						//'desc' => __( 'HTML template reponsible for displaying the modal', 'popup-notices-for-woocommerce' ),
+						//'css'      => 'min-height:223px;width:100%',
+						//'default'  => $this->get_default_template(),
+					),
+					array(
+						'name'            => __( 'Regular Expression', 'popup-notices-for-woocommerce' ),
+						'type'            => 'checkbox',
+						'desc'            => __( "Use Regular Expressions on your search", 'popup-notices-for-woocommerce' ),
+						'id'              => 'ttt_pnwc_opt_ignore_msg_regex',
+						'default'         => 'yes'
+					),
+					array(
+						'name'            => __( 'Regular Expression Flags', 'popup-notices-for-woocommerce' ),
+						'type'            => 'text',
+						'desc'            => __( "Flags used on Regular Expression", 'popup-notices-for-woocommerce' ),
+						'desc_tip'        => __( "Requires Regular Expression to be enabled", 'popup-notices-for-woocommerce' ),
+						'id'              => 'ttt_pnwc_opt_ignore_msg_regex_f',
+						'default'         => 'i'
+					),
+					array(
+						'type' => 'sectionend',
+						'id'   => 'ttt_pnwc_opt_ignore_msg'
+					),
+
 					// Custom style
 					array(
 						'name'            => __( 'Custom style', 'popup-notices-for-woocommerce' ),
@@ -334,32 +370,6 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'type' => 'sectionend',
 						'id'   => 'ttt_pnwc_opt_cookie'
 					),
-
-					// Ignore Messages
-					array(
-						'name'            => __( 'Ignore Messages', 'popup-notices-for-woocommerce' ),
-						'type'            => 'title',
-						'desc'            => __( "Messages or notices that will be ignored and will not be displayed inside the pop-up", 'popup-notices-for-woocommerce' ),
-						'id'              => 'ttt_pnwc_opt_ignore_msg',
-					),
-					array(
-						'type'          => 'text',
-						'id'            => 'ttt_pnwc_opt_ignore_msg_field',
-						'name'          => __( 'Ignored Messages', 'popup-notices-for-woocommerce' ),
-						//'desc' => __( 'HTML template reponsible for displaying the modal', 'popup-notices-for-woocommerce' ),
-						//'css'      => 'min-height:223px;width:100%',
-						//'default'  => $this->get_default_template(),
-					),
-					array(
-						'name'            => __( 'Regular Expression', 'popup-notices-for-woocommerce' ),
-						'type'            => 'checkbox',
-						'desc'            => __( "Use Regular Expressions on your search", 'popup-notices-for-woocommerce' ),
-						'id'              => 'ttt_pnwc_opt_ignore_msg_regex',
-					),
-					array(
-						'type' => 'sectionend',
-						'id'   => 'ttt_pnwc_opt_ignore_msg'
-					)
 
 				) );
 

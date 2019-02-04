@@ -57,7 +57,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Modal' ) ) {
 			$default_template = $template_obj->get_default_template();
 			$template         = apply_filters( 'ttt_pnwc_modal_template', $default_template );
 			$template         = $template_obj->replace_template_variables( $template );
-			echo $template;
+			echo wp_kses( $template, wp_kses_allowed_html( 'post' ) );
 		}
 	}
 }

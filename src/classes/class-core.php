@@ -140,7 +140,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 					//$value = array( 'disabled' => 'disabled' );
 				break;
 				case 'multiline_info':
-					$value = ' <span class="ttt-wpan-premium">'.sprintf( __( "The <a target='_blank' href='%s'>Premium</a> version will unlock a textarea field with multiple values possibility", 'popup-notices-for-woocommerce' ), 'https://wpfactory.com/item/popup-notices-for-woocommerce/' ).'</span>';
+					$value = ' <span class="ttt-wpan-premium">'.sprintf( __( "The <a target='_blank' href='%s'>Premium</a> version will unlock a textarea field with possibility for multiple values", 'popup-notices-for-woocommerce' ), 'https://wpfactory.com/item/popup-notices-for-woocommerce/' ).'</span>';
 					//$value = 'readonly';
 					//$value = array( 'disabled' => 'disabled' );
 				break;
@@ -295,15 +295,28 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 		 * @return mixed
 		 */
 		public function localize_js_options( $data ) {
-			$data['types']                 = array(
+
+		    // Notice Types
+			$data['types'] = array(
 				'error'   => get_option( 'ttt_pnwc_opt_type_error_enable', 'yes' ),
 				'info'    => get_option( 'ttt_pnwc_opt_type_info_enable', 'yes' ),
 				'success' => get_option( 'ttt_pnwc_opt_type_success_enable', 'yes' ),
 			);
-			$data['ajax_opt']              = get_option( 'ttt_pnwc_opt_ajax', 'yes' );
-			$data['cookie_opt']['enabled'] = 'no';
-			$data['cookie_opt']['time']    = 0.5;
-			$data['cookie_opt']['message_origin']  = 'static';
+
+			// Ajax opt
+			$data['ajax_opt']                     = get_option( 'ttt_pnwc_opt_ajax', 'yes' );
+
+			// Cookie opt
+			$data['cookie_opt']['enabled']        = 'no';
+			$data['cookie_opt']['time']           = 0.5;
+			$data['cookie_opt']['message_origin'] = 'static';
+
+			// Ignored Messages
+			$ignored_messages_field             = get_option( 'ttt_pnwc_opt_ignore_msg_field', '' );
+			$data['ignored_msg']['field']       = ! empty( $ignored_messages_field ) ? explode( "\n", str_replace( "\r", "", $ignored_messages_field ) ) : '';
+			$data['ignored_msg']['regex']       = get_option( 'ttt_pnwc_opt_ignore_msg_regex', '' );
+			$data['ignored_msg']['regex_flags'] = get_option( 'ttt_pnwc_opt_ignore_msg_regex_f', 'i' );
+
 			return $data;
 		}
 
