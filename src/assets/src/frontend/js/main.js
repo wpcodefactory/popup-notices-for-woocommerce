@@ -175,7 +175,6 @@ var ttt_pnwc = {
 			((ttt_pnwc_info.cookie_opt.message_origin.search('dynamic') != -1 && dynamic) ||
 			(ttt_pnwc_info.cookie_opt.message_origin.search('static') != -1 && !dynamic))
 		) {
-			console.log(ttt_pnwc_info.cookie_opt.enabled);
 			if (ttt_pnwc.getCookie(ttt_pnwc.hashMessage(message))) {
 				return false;
 			}
