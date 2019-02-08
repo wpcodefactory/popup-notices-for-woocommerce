@@ -71,6 +71,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
+= 1.1.2 - 08/02/2019 =
+* Improve Ignored Messages field
+
 = 1.1.1 - 05/02/2019 =
 * Fix alignment on small screen
 * Add option to ignore messages
@@ -129,7 +132,5 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Upgrade Notice ==
 
-= 1.1.1 =
-* Fix alignment on small screen
-* Add option to ignore messages
-* Improve settings page
+= 1.1.2 =
+* Improve Ignored Messages field

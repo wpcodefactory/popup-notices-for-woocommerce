@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Admin Settings
  *
- * @version 1.1.0
+ * @version 1.1.2
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -32,6 +32,64 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 			add_action( 'woocommerce_settings_save_' . $this->id, array( $this, 'save' ) );
 			add_action( 'woocommerce_sections_' . $this->id, array( $this, 'output_sections' ) );
 			add_filter( 'ttt_pnwc_settings_general', array( $this, 'handle_admin_license_settings' ), PHP_INT_MAX );
+
+			// Allow regex values using allow_raw_values
+			add_filter( 'woocommerce_admin_settings_sanitize_option', array( $this, 'sanitize_raw_values' ), 10, 3 );
+			add_action( 'woocommerce_settings_' . $this->id, array( $this, 'output_raw_values' ), 1 );
+
+		}
+
+		/**
+		 * Outputs raw values on 'allow_raw_values' fields
+		 *
+		 * @version 1.1.2
+		 * @since 1.1.2
+		 */
+		public function output_raw_values() {
+			global $current_section;
+			$settings   = $this->get_settings( $current_section );
+			$raw_values = wp_list_filter( $settings, array( 'allow_raw_values' => true ) );
+			$new_values = array();
+			foreach ( $raw_values as $key => $field ) {
+				$new_values[ $field['id'] ] = html_entity_decode( get_option( $field['id'], isset( $field['default'] ) ? $field['default'] : '' ) );
+			}
+			?>
+			<script>
+				let lrv = {
+					newValues:<?php echo wp_json_encode( $new_values )?>,
+					init: function () {
+						var newValues = this.newValues;
+						Object.keys(newValues).map(function (objectKey, index) {
+							var value = newValues[objectKey];
+							document.getElementById(objectKey).value = value;
+						});
+					}
+				};
+				document.addEventListener('DOMContentLoaded', function () {
+					lrv.init();
+				});
+			</script>
+			<?php
+		}
+
+		/**
+		 * Sanitizes raw values on 'allow_raw_values' fields with htmlentities()
+		 *
+		 * @version 1.1.2
+		 * @since 1.1.2
+		 *
+		 * @param $value
+		 * @param $option
+		 * @param $raw_value
+		 *
+		 * @return string
+		 */
+		public function sanitize_raw_values( $value, $option, $raw_value ) {
+			if ( ! isset( $option['allow_raw_values'] ) ) {
+				return $value;
+			}
+			$value = htmlentities( $raw_value );
+			return $value;
 		}
 
 		/**
@@ -97,7 +155,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 		/**
 		 * Get settings array
 		 *
-		 * @since 1.1.0
+		 * @since 1.1.2
 		 *
 		 * @param string $current_section Optional. Defaults to empty string.
 		 *
@@ -252,6 +310,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 					),
 					array(
 						'type'                    => 'text',
+						'allow_raw_values'        => true,
 						'premium_multiline_field' => true,
 						'id'                      => 'ttt_pnwc_opt_ignore_msg_field',
 						'name'                    => __( 'Ignored Messages', 'popup-notices-for-woocommerce' ),

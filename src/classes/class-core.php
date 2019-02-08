@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Core Class
  *
- * @version 1.0.4
+ * @version 1.1.2
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -287,7 +287,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 		/**
 		 * Passes admin settings to JS
 		 *
-		 * @version 1.0.4
+		 * @version 1.1.2
 		 * @since 1.0.2
 		 *
 		 * @param $data
@@ -312,7 +312,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 			$data['cookie_opt']['message_origin'] = 'static';
 
 			// Ignored Messages
-			$ignored_messages_field             = get_option( 'ttt_pnwc_opt_ignore_msg_field', '' );
+			$ignored_messages_field             = html_entity_decode( get_option( 'ttt_pnwc_opt_ignore_msg_field', '' ) );
 			$data['ignored_msg']['field']       = ! empty( $ignored_messages_field ) ? explode( "\n", str_replace( "\r", "", $ignored_messages_field ) ) : '';
 			$data['ignored_msg']['regex']       = get_option( 'ttt_pnwc_opt_ignore_msg_regex', '' );
 			$data['ignored_msg']['regex_flags'] = get_option( 'ttt_pnwc_opt_ignore_msg_regex_f', 'i' );
