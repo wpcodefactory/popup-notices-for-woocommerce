@@ -149,7 +149,6 @@ var ttt_pnwc = {
 		return "";
 	},
 	isMessageValid: function (message, dynamic) {
-		console.log(ttt_pnwc_info.ignored_msg.field)
 		// Ignored Messages
 		if (ttt_pnwc_info.ignored_msg.field && ttt_pnwc_info.ignored_msg.field !== "") {
 			if (ttt_pnwc_info.ignored_msg.regex === "yes") {
