@@ -318,14 +318,12 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 			$data['cookie_opt']['message_origin'] = 'static';
 
 			// Ignored Messages
-			$ignored_messages_field             = html_entity_decode( get_option( 'ttt_pnwc_opt_ignore_msg_field', '' ) );
-			$data['ignored_msg']['field']       = ! empty( $ignored_messages_field ) ? explode( "\n", str_replace( "\r", "", $ignored_messages_field ) ) : '';
-			$data['ignored_msg']['regex']       = get_option( 'ttt_pnwc_opt_ignore_msg_regex', '' );
-			$data['ignored_msg']['regex_flags'] = get_option( 'ttt_pnwc_opt_ignore_msg_regex_f', 'i' );
+			$data['ignored_msg']['field']       = '';
+			$data['ignored_msg']['regex']       = '';
+			$data['ignored_msg']['regex_flags'] = '';
 
 			// Audio
-			//$ignored_messages_field         = get_option( 'ttt_pnwc_opt_audio_enable', 'no' );
-			$data['audio']['enabled']       = 'yes';
+			$data['audio']['enabled']       = 'no';
 			$data['audio']['opening']       = '';
 			$data['audio']['closing']       = ''; //'http://freesound.org/data/previews/220/220170_4100837-lq.mp3';
 
