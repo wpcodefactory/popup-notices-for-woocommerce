@@ -71,8 +71,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
-= 1.1.2 - 08/02/2019 =
+= 1.1.2 - 10/02/2019 =
 * Improve Ignored Messages field
+* Add sounds section on settings
+* Improve premium notices on admin
 
 = 1.1.1 - 05/02/2019 =
 * Fix alignment on small screen
@@ -134,3 +136,5 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 = 1.1.2 =
 * Improve Ignored Messages field
+* Add sounds section on settings
+* Improve premium notices on admin

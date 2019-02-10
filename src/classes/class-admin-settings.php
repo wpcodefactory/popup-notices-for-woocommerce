@@ -431,6 +431,35 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'id'   => 'ttt_pnwc_opt_cookie'
 					),
 
+					// Sounds
+					array(
+						'name'            => __( 'Sounds', 'popup-notices-for-woocommerce' ),
+						'premium_section' => true,
+						'type'            => 'title',
+						'desc'            => __( "Play Sounds on Pop-up", 'popup-notices-for-woocommerce' ),
+						'id'              => 'ttt_pnwc_opt_sounds',
+					),
+					array(
+						'type'          => 'text',
+						'id'            => 'ttt_pnwc_opt_sounds_opening',
+						'premium_field' => true,
+						'name'          => __( 'Opening', 'popup-notices-for-woocommerce' ),
+						'desc'      => __( 'Sound URL when Pop-up opens', 'popup-notices-for-woocommerce' ),
+						'default'       => ''
+					),
+					array(
+						'type'          => 'text',
+						'id'            => 'ttt_pnwc_opt_sounds_closing',
+						'premium_field' => true,
+						'name'          => __( 'Closing', 'popup-notices-for-woocommerce' ),
+						'desc'      => __( 'Sound URL when Pop-up closes', 'popup-notices-for-woocommerce' ),
+						'default'       => ''
+					),
+					array(
+						'type' => 'sectionend',
+						'id'   => 'ttt_pnwc_opt_sounds'
+					),
+
 				) );
 
 

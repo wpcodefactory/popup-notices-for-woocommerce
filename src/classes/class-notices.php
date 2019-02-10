@@ -59,78 +59,84 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 
 		public function add_plugins_page_notices() {
 			$notices_manager = \ThanksToIT\WPAN\get_notices_manager();
+			$chance          = mt_rand( 0, 1 );
 
-			// Feedback notice
-			$notices_manager->create_notice( array(
-				'id'         => 'ttt-pnwc-free-notice-plugin-activation',
-				'content'    => $this->get_feedback_notice_content(),
-				'dismissal_expiration' => WEEK_IN_SECONDS,
-				'display_on' => array(
-					'activated_plugin' => array( 'popup-notices-for-woocommerce/popup-notices-for-woocommerce.php' ),
-					'screen_id' => array( 'plugins' ),
-				),
-			) );
-			$notices_manager->create_notice( array(
-				'id'         => 'ttt-pnwc-free-notice-plugin-update',
-				'content'    => $this->get_feedback_notice_content(),
-				'dismissal_expiration' => WEEK_IN_SECONDS,
-				'display_on' => array(
-					'updated_plugin' => array( 'popup-notices-for-woocommerce/popup-notices-for-woocommerce.php' ),
-					'screen_id' => array( 'plugins' ),
-				),
-			) );
-
-			// Premium notice
-			$notices_manager->create_notice( array(
-				'id'         => 'ttt-pnwc-premium-info-plugin-activation',
-				'content'    => $this->get_premium_notice_content(),
-				'dismissal_expiration' => WEEK_IN_SECONDS,
-				'display_on' => array(
-					'activated_plugin' => array( 'popup-notices-for-woocommerce/popup-notices-for-woocommerce.php' ),
-					'screen_id' => array( 'plugins' ),
-				),
-			) );
-			$notices_manager->create_notice( array(
-				'id'         => 'ttt-pnwc-premium-info-plugin-update',
-				'content'    => $this->get_premium_notice_content(),
-				'dismissal_expiration' => WEEK_IN_SECONDS,
-				'display_on' => array(
-					'updated_plugin' => array( 'popup-notices-for-woocommerce/popup-notices-for-woocommerce.php' ),
-					'screen_id' => array( 'plugins' ),
-				),
-			) );
+			if ( $chance == 0 ) {
+				// Feedback notice
+				$notices_manager->create_notice( array(
+					'id'                   => 'ttt-pnwc-free-notice-plugin-activation',
+					'content'              => $this->get_feedback_notice_content(),
+					'dismissal_expiration' => WEEK_IN_SECONDS,
+					'display_on'           => array(
+						'activated_plugin' => array( 'popup-notices-for-woocommerce/popup-notices-for-woocommerce.php' ),
+						'screen_id'        => array( 'plugins' ),
+					),
+				) );
+				$notices_manager->create_notice( array(
+					'id'                   => 'ttt-pnwc-free-notice-plugin-update',
+					'content'              => $this->get_feedback_notice_content(),
+					'dismissal_expiration' => WEEK_IN_SECONDS,
+					'display_on'           => array(
+						'updated_plugin' => array( 'popup-notices-for-woocommerce/popup-notices-for-woocommerce.php' ),
+						'screen_id'      => array( 'plugins' ),
+					),
+				) );
+			} else {
+				// Premium notice
+				$notices_manager->create_notice( array(
+					'id'                   => 'ttt-pnwc-premium-info-plugin-activation',
+					'content'              => $this->get_premium_notice_content(),
+					'dismissal_expiration' => WEEK_IN_SECONDS,
+					'display_on'           => array(
+						'activated_plugin' => array( 'popup-notices-for-woocommerce/popup-notices-for-woocommerce.php' ),
+						'screen_id'        => array( 'plugins' ),
+					),
+				) );
+				$notices_manager->create_notice( array(
+					'id'                   => 'ttt-pnwc-premium-info-plugin-update',
+					'content'              => $this->get_premium_notice_content(),
+					'dismissal_expiration' => WEEK_IN_SECONDS,
+					'display_on'           => array(
+						'updated_plugin' => array( 'popup-notices-for-woocommerce/popup-notices-for-woocommerce.php' ),
+						'screen_id'      => array( 'plugins' ),
+					),
+				) );
+			}
 		}
 
 		public function add_settings_page_notices() {
 			$notices_manager = \ThanksToIT\WPAN\get_notices_manager();
+			$chance          = mt_rand( 0, 1 );
 
-			// Feedback notice
-			$notices_manager->create_notice( array(
-				'id'          => 'ttt-pnwc-free-notice-settings-page',
-				'content'     => $this->get_feedback_notice_content(),
-				'display_on'  => array(
-					'request' => array(
-						array( 'key' => 'page', 'value' => 'wc-settings' ),
-						array( 'key' => 'tab', 'value' => 'ttt-pnwc' ),
-						array( 'key' => 'license', 'value' => 'free' ),
-					)
-				),
-				'dismissible' => false
-			) );
-
-			// Premium notice
-			$notices_manager->create_notice( array(
-				'id'          => 'ttt-pnwc-premium-info-settings-page',
-				'content'     => $this->get_premium_notice_content(),
-				'display_on'  => array(
-					'request' => array(
-						array( 'key' => 'page', 'value' => 'wc-settings' ),
-						array( 'key' => 'tab', 'value' => 'ttt-pnwc' ),
-						array( 'key' => 'license', 'value' => 'free' ),
-					)
-				),
-				'dismissible' => false
-			) );
+			if ( $chance == 0 ) {
+				// Feedback notice
+				$notices_manager->create_notice( array(
+					'id'          => 'ttt-pnwc-free-notice-settings-page',
+					'content'     => $this->get_feedback_notice_content(),
+					'display_on'  => array(
+						'request' => array(
+							array( 'key' => 'page', 'value' => 'wc-settings' ),
+							array( 'key' => 'tab', 'value' => 'ttt-pnwc' ),
+							array( 'key' => 'license', 'value' => 'free' ),
+						)
+					),
+					'dismissible' => false
+				) );
+			} else {
+				// Premium notice
+				$notices_manager->create_notice( array(
+					'id'          => 'ttt-pnwc-premium-info-settings-page',
+					'content'     => $this->get_premium_notice_content(),
+					'display_on'  => array(
+						'request' => array(
+							array( 'key' => 'page', 'value' => 'wc-settings' ),
+							array( 'key' => 'tab', 'value' => 'ttt-pnwc' ),
+							array( 'key' => 'license', 'value' => 'free' ),
+						)
+					),
+					'dismissible' => false
+				) );
+			}
 		}
 	}
 }
