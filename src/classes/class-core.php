@@ -258,8 +258,9 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 			wp_enqueue_script( 'ttt-pnwc' );
 
 
-			wp_register_script( 'ttt-pnwc-howler', 'https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js', false, true );
-			wp_enqueue_script( 'ttt-pnwc-howler' );
+			// Audio
+			//wp_register_script( 'ttt-pnwc-howler', 'https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js', false, true );
+			//wp_enqueue_script( 'ttt-pnwc-howler' );
 
 
 			// Localize script
