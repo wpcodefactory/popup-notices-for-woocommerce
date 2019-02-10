@@ -328,7 +328,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'type'            => 'checkbox',
 						'desc'            => __( "Use Regular Expressions in your search", 'popup-notices-for-woocommerce' ),
 						'id'              => 'ttt_pnwc_opt_ignore_msg_regex',
-						'default'         => 'yes'
+						'default'         => 'no'
 					),
 					array(
 						'name'            => __( 'Regular Expression Flags', 'popup-notices-for-woocommerce' ),

@@ -310,7 +310,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 			);
 
 			// Ajax opt
-			$data['ajax_opt']                     = get_option( 'ttt_pnwc_opt_ajax', 'yes' );
+			$data['ajax_opt'] = get_option( 'ttt_pnwc_opt_ajax', 'yes' );
 
 			// Cookie opt
 			$data['cookie_opt']['enabled']        = 'no';
@@ -318,9 +318,9 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 			$data['cookie_opt']['message_origin'] = 'static';
 
 			// Ignored Messages
-			$data['ignored_msg']['field']       = '';
-			$data['ignored_msg']['regex']       = '';
-			$data['ignored_msg']['regex_flags'] = '';
+			$data['ignored_msg']['field']       = get_option( 'ttt_pnwc_opt_ignore_msg_field', '<p><.p>' );
+			$data['ignored_msg']['regex']       = 'no';
+			$data['ignored_msg']['regex_flags'] = 'i';
 
 			// Audio
 			$data['audio']['enabled']       = 'no';
