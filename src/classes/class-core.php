@@ -123,7 +123,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
                     color: #999;
                     font-size: 13px;
                     vertical-align: middle;
-                    margin: 0 0 0 10px;
+                    /*margin: 0 0 0 10px;*/
                 }
             </style>
 			<?php
@@ -140,12 +140,12 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 					//$value = array( 'disabled' => 'disabled' );
 				break;
 				case 'multiline_info':
-					$value = ' <span class="ttt-wpan-premium">'.sprintf( __( "The <a target='_blank' href='%s'>Premium</a> version will unlock a textarea field with possibility for multiple values", 'popup-notices-for-woocommerce' ), 'https://wpfactory.com/item/popup-notices-for-woocommerce/' ).'</span>';
+					$value = '<span class="ttt-wpan-premium">'.sprintf( __( "The <a target='_blank' href='%s'>Premium</a> version will unlock a textarea field adding possibility for multiple values", 'popup-notices-for-woocommerce' ), 'https://wpfactory.com/item/popup-notices-for-woocommerce/' ).'</span>';
 					//$value = 'readonly';
 					//$value = array( 'disabled' => 'disabled' );
 				break;
 				case 'premium_info':
-					$value = ' <span class="ttt-wpan-premium">'.sprintf( __( "Unlock it using the <a target='_blank' href='%s'>Premium</a> version", 'popup-notices-for-woocommerce' ), 'https://wpfactory.com/item/popup-notices-for-woocommerce/' ).'</span>';
+					$value = '<span class="ttt-wpan-premium">'.sprintf( __( "Unlock it using the <a target='_blank' href='%s'>Premium</a> version", 'popup-notices-for-woocommerce' ), 'https://wpfactory.com/item/popup-notices-for-woocommerce/' ).'</span>';
 				break;
 				/*case 'customizer_popup_panel_url':
 					$query['autofocus[panel]'] = 'ttt_pnwc';
@@ -257,6 +257,11 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 			wp_register_script( 'ttt-pnwc', $plugin_url . $js_file, array( 'jquery' ), $js_ver, true );
 			wp_enqueue_script( 'ttt-pnwc' );
 
+
+			wp_register_script( 'ttt-pnwc-howler', 'https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js', false, true );
+			wp_enqueue_script( 'ttt-pnwc-howler' );
+
+
 			// Localize script
 			$localize_script = array(
 				'icon_default_class' => 'default-icon',
@@ -316,6 +321,12 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 			$data['ignored_msg']['field']       = ! empty( $ignored_messages_field ) ? explode( "\n", str_replace( "\r", "", $ignored_messages_field ) ) : '';
 			$data['ignored_msg']['regex']       = get_option( 'ttt_pnwc_opt_ignore_msg_regex', '' );
 			$data['ignored_msg']['regex_flags'] = get_option( 'ttt_pnwc_opt_ignore_msg_regex_f', 'i' );
+
+			// Audio
+			//$ignored_messages_field         = get_option( 'ttt_pnwc_opt_audio_enable', 'no' );
+			$data['audio']['enabled']       = 'yes';
+			$data['audio']['opening']       = '';
+			$data['audio']['closing']       = ''; //'http://freesound.org/data/previews/220/220170_4100837-lq.mp3';
 
 			return $data;
 		}

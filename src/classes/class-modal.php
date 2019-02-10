@@ -24,8 +24,17 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Modal' ) ) {
 		 */
 		public function init() {
 			add_action( 'wp_footer', array( $this, 'add_modal_html' ) );
+			add_action( 'wp_footer', array( $this, 'add_audio_html' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'add_modal_scripts' ) );
 			//add_filter( 'ttt_pnwc_modal_template', array( $this, 'replace_template_variables' ) );
+		}
+
+		public function add_audio_html() {
+			if ( 'yes' !== get_option( 'ttt_pnwc_opt_sounds_enable' ) ) {
+				return;
+			}
+			$plugin = \ThanksToIT\PNWC\Core::instance();
+			echo '<iframe src="' . $plugin->get_plugin_url() . 'src/assets/dist/frontend/audio/silence.mp3' . '" allow="autoplay" id="ttt-pnwc-audio" style="display:none"></iframe>';
 		}
 
 		/*public function replace_template_variables( $template ) {

@@ -110,7 +110,8 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 			// Add info on premium sections
 			$premium_sections = wp_list_filter( $settings, array( 'premium_section' => true ) );
 			foreach ( $premium_sections as $key => $section ) {
-				$settings[ $key ]['desc'] .= apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+			    $premium_info=apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+				$settings[ $key ]['desc'] = empty($settings[ $key ]['desc']) ? $premium_info : $settings[ $key ]['desc'].'  '.$premium_info;
 			}
 
 			// Disable premium fields
@@ -126,7 +127,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 			// Hide default notices
 			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_hide_default_notices' ) ) );
 			$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
-			$settings[ $index ]['desc']                          .= apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+			$settings[ $index ]['desc']                          .= "  ".apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
 
 			// Ignored Messages
 			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_ignore_msg_field' ) ) );
@@ -305,7 +306,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 					array(
 						'name'            => __( 'Ignore Messages', 'popup-notices-for-woocommerce' ),
 						'type'            => 'title',
-						'desc'            => __( "Messages or notices that will be ignored and will not be displayed inside the pop-up", 'popup-notices-for-woocommerce' ),
+						'desc'            => __( "Messages or notices that will be ignored and will not be displayed inside the Pop-up", 'popup-notices-for-woocommerce' ),
 						'id'              => 'ttt_pnwc_opt_ignore_msg',
 					),
 					array(
@@ -315,6 +316,9 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'id'                      => 'ttt_pnwc_opt_ignore_msg_field',
 						'name'                    => __( 'Ignored Messages', 'popup-notices-for-woocommerce' ),
 						'desc'                    => '',
+						'default'                 => '<p><.p>',
+						'css'                     => 'width:100%',
+
 						//'desc' => __( 'HTML template reponsible for displaying the modal', 'popup-notices-for-woocommerce' ),
 						//'css'      => 'min-height:223px;width:100%',
 						//'default'  => $this->get_default_template(),
@@ -433,15 +437,23 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 
 					// Sounds
 					array(
-						'name'            => __( 'Sounds', 'popup-notices-for-woocommerce' ),
+						'name'            => __( 'Audio', 'popup-notices-for-woocommerce' ),
 						'premium_section' => true,
 						'type'            => 'title',
-						'desc'            => __( "Play Sounds on Pop-up", 'popup-notices-for-woocommerce' ),
-						'id'              => 'ttt_pnwc_opt_sounds',
+						'desc'            => __( "Play Sounds", 'popup-notices-for-woocommerce' ),
+						'id'              => 'ttt_pnwc_opt_audio',
+					),
+					array(
+						'name'            => __( 'Enable', 'popup-notices-for-woocommerce' ),
+						'premium_field' => true,
+						'type'            => 'checkbox',
+						'desc'            => __( "Enable Audio", 'popup-notices-for-woocommerce' ),
+						'id'              => 'ttt_pnwc_opt_audio_enable',
+						'default'         => 'no'
 					),
 					array(
 						'type'          => 'text',
-						'id'            => 'ttt_pnwc_opt_sounds_opening',
+						'id'            => 'ttt_pnwc_opt_audio_opening',
 						'premium_field' => true,
 						'name'          => __( 'Opening', 'popup-notices-for-woocommerce' ),
 						'desc'      => __( 'Sound URL when Pop-up opens', 'popup-notices-for-woocommerce' ),
@@ -449,7 +461,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 					),
 					array(
 						'type'          => 'text',
-						'id'            => 'ttt_pnwc_opt_sounds_closing',
+						'id'            => 'ttt_pnwc_opt_audio_closing',
 						'premium_field' => true,
 						'name'          => __( 'Closing', 'popup-notices-for-woocommerce' ),
 						'desc'      => __( 'Sound URL when Pop-up closes', 'popup-notices-for-woocommerce' ),
@@ -457,7 +469,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 					),
 					array(
 						'type' => 'sectionend',
-						'id'   => 'ttt_pnwc_opt_sounds'
+						'id'   => 'ttt_pnwc_opt_audio'
 					),
 
 				) );
