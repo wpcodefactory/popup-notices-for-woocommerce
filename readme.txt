@@ -23,19 +23,28 @@ And sometimes, depending on the theme, they get so discreet customers don't see 
 
 **Popup Notices for WooCommercee** adds WooCommerce Notices into beautiful Popups that will be noticed and appreciated.
 
-== Frequently Asked Questions ==
-
-= Premium Version Features =
+== Premium Version Features ==
 * **Style options**
-Style the Popup the way you want with tons of options using the Customizer
+Style the Pop-up the way you want with tons of options using the Customizer
 
 * **Hide default WooCommerce notices**
-As you can display all your notices as Popups, you can choose to simply hide the native WooCommerce notices if you want
+As you can display all your notices as Pop-ups, you can choose to simply hide the native WooCommerce notices if you want
 
-**Support**
+* **Ignore messages**
+Ignore particular notices you don't want to display inside the Pop-up
 
-= Premium Version Link =
+* **Avoid repeated messages**
+Use Cookies to avoid messages that keep being displayed constantly. Set a expiration time for them and they will be only displayed again after the time expires
+
+* **Play sounds**
+Play any sound you want when the popup opens or when it closes
+
+* **Support**
+
+== Premium Version Link ==
 [https://wpfactory.com/item/popup-notices-for-woocommerce/](https://wpfactory.com/item/popup-notices-for-woocommerce/)
+
+== Frequently Asked Questions ==
 
 = How can I contribute? Is there a github repository? =
 If you are interested in contributing - head over to the [Popup Notices for WooCommerce plugin GitHub Repository](https://github.com/thanks-to-it/popup-notices-for-woocommerce) to find out how you can pitch in.
@@ -76,6 +85,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 * Add sounds section on settings
 * Improve premium notices on admin
 * Add default ignored messages preventing empty popups
+* Improve readme
 
 = 1.1.1 - 05/02/2019 =
 * Fix alignment on small screen
@@ -140,3 +150,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 * Add sounds section on settings
 * Improve premium notices on admin
 * Add default ignored messages preventing empty popups
+* Improve readme
