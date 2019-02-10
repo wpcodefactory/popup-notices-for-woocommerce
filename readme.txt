@@ -30,7 +30,7 @@ Did you know We also have a [Premium Version](https://wpfactory.com/item/popup-n
 Check some of its features for now:
 
 * **Style options**
-Style the Pop-up the way you want with tons of options using the Customizer
+Style the Pop-up the way you want with tons of options using the Customizer, including Icons from FontAwesome
 
 * **Hide default WooCommerce notices**
 As you can display all your notices as Pop-ups, you can choose to simply hide the native WooCommerce notices if you want
