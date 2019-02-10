@@ -318,7 +318,8 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 			$data['cookie_opt']['message_origin'] = 'static';
 
 			// Ignored Messages
-			$data['ignored_msg']['field']       = get_option( 'ttt_pnwc_opt_ignore_msg_field', '<p><.p>' );
+			$ignored_messages_field             = html_entity_decode( get_option( 'ttt_pnwc_opt_ignore_msg_field', '<p><.p>' ) );
+			$data['ignored_msg']['field']       = ! empty( $ignored_messages_field ) ? $ignored_messages_field : '';
 			$data['ignored_msg']['regex']       = 'no';
 			$data['ignored_msg']['regex_flags'] = 'i';
 
