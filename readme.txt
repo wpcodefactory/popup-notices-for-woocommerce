@@ -23,7 +23,12 @@ And sometimes, depending on the theme, they get so discreet customers don't see 
 
 **Popup Notices for WooCommercee** adds WooCommerce Notices into beautiful Popups that will be noticed and appreciated.
 
-== Premium Version Features ==
+== Premium Version ==
+Do you like the free version of this plugin?
+Did you know We also have a [Premium Version](https://wpfactory.com/item/popup-notices-for-woocommerce/)?
+
+Check some of its features for now:
+
 * **Style options**
 Style the Pop-up the way you want with tons of options using the Customizer
 
@@ -41,8 +46,8 @@ Play any sound you want when the popup opens or when it closes
 
 * **Support**
 
-== Premium Version Link ==
-[https://wpfactory.com/item/popup-notices-for-woocommerce/](https://wpfactory.com/item/popup-notices-for-woocommerce/)
+Buy it to manage and customize the popup entirely and help maintaining the development of this plugin.
+And besides you aren't going to see any annoying messages anymore :)
 
 == Frequently Asked Questions ==
 
