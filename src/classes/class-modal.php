@@ -30,7 +30,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Modal' ) ) {
 		}
 
 		public function add_audio_html() {
-			if ( 'yes' !== get_option( 'ttt_pnwc_opt_sounds_enable' ) ) {
+			if ( 'yes' !== get_option( 'ttt_pnwc_opt_sounds_enable','no' ) ) {
 				return;
 			}
 			$plugin = \ThanksToIT\PNWC\Core::instance();
