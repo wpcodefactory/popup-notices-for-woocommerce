@@ -49,6 +49,9 @@ var ttt_pnwc = {
 	open: false,
 	sounds:{},
 	init: function () {
+		//Handle Sounds
+		this.handle_sounds();
+
 		this.initializePopup();
 		if (ttt_pnwc_info.ajax_opt === 'yes') {
 			ttt_onElementInserted('body', '.woocommerce-error', 'li', ttt_pnwc.readNotice);
@@ -60,11 +63,6 @@ var ttt_pnwc = {
 		ttt_pnwc.checkExistingElements('.woocommerce-error li');
 		ttt_pnwc.checkExistingElements('.woocommerce-message');
 		ttt_pnwc.checkExistingElements('.woocommerce-info');
-
-		//Handle Sounds
-		this.handle_sounds();
-
-		//ttt_pnwc_info.ignored_msg
 	},
 	handle_sounds: function () {
 		if (ttt_pnwc_info.audio.enabled === 'yes') {

@@ -134,6 +134,10 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 			//$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
 			$settings[ $index ]['desc']                          .= apply_filters( 'ttt_pnwc_license_data', '', 'multiline_info' );
 
+			// Ignored Messages regex
+			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_ignore_msg_regex' ) ) );
+			$settings[ $index ]['desc']                          .= "  ".apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+
 
 			return $settings;
 		}
@@ -316,7 +320,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'id'                      => 'ttt_pnwc_opt_ignore_msg_field',
 						'name'                    => __( 'Ignored Messages', 'popup-notices-for-woocommerce' ),
 						'desc'                    => '',
-						'default'                 => '<p><.p>',
+						'default'                 => '<p></p>',
 						'css'                     => 'width:100%',
 
 						//'desc' => __( 'HTML template reponsible for displaying the modal', 'popup-notices-for-woocommerce' ),
@@ -325,6 +329,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 					),
 					array(
 						'name'            => __( 'Regular Expression', 'popup-notices-for-woocommerce' ),
+						'premium_field'   => true,
 						'type'            => 'checkbox',
 						'desc'            => __( "Use Regular Expressions in your search", 'popup-notices-for-woocommerce' ),
 						'id'              => 'ttt_pnwc_opt_ignore_msg_regex',
