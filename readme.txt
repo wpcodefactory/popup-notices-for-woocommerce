@@ -32,19 +32,25 @@ Check some of its features for now:
 * **Style options**
 Style the Pop-up the way you want with tons of options using the Customizer, including Icons from FontAwesome
 
+
 * **Hide default WooCommerce notices**
 As you can display all your notices as Pop-ups, you can choose to simply hide the native WooCommerce notices if you want
+
 
 * **Ignore messages**
 Ignore particular notices you don't want to display inside the Pop-up
 
+
 * **Avoid repeated messages**
 Use Cookies to avoid messages that keep being displayed constantly. Set a expiration time for them and they will be only displayed again after the time expires
 
-* **Play sounds**
-Play any sound you want when the popup opens or when it closes
+
+* **Audio**
+Play any sound you want when the Pop-up opens or when it closes
+
 
 * **Support**
+
 
 Buy it to manage and customize the popup entirely and help maintaining the development of this plugin.
 And besides you aren't going to see any annoying messages anymore :)
