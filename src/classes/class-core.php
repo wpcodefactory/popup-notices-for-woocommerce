@@ -324,9 +324,9 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 			$data['ignored_msg']['regex_flags'] = 'i';
 
 			// Audio
-			$data['audio']['enabled']       = 'no';
-			$data['audio']['opening']       = '';
-			$data['audio']['closing']       = ''; //'http://freesound.org/data/previews/220/220170_4100837-lq.mp3';
+			$data['audio']['enabled'] = 'no';
+			$data['audio']['opening'] = '';
+			$data['audio']['closing'] = ''; //'http://freesound.org/data/previews/220/220170_4100837-lq.mp3';
 
 			return $data;
 		}
