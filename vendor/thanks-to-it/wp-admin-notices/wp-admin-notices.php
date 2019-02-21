@@ -71,6 +71,7 @@ if ( ! class_exists( 'TTTWPAN_Plugin' ) ) {
 					)
 				) );
 			} );
+			
 
 			/*
 			$manager->handle_notice( array(

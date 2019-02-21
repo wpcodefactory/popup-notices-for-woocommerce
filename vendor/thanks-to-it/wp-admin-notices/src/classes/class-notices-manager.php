@@ -27,7 +27,7 @@ if ( ! class_exists( 'ThanksToIT\WPAN\Notices_Manager' ) ) {
 		}
 
 		public function create_notice( $args ) {
-			$args = wp_parse_args( $args, array(
+			$args        = wp_parse_args( $args, array(
 				'id'                   => '',
 				'type'                 => 'notice-info', // | 'notice-warning' | 'notice-success' | 'notice-error' | 'notice-info',
 				'dismissible'          => true,

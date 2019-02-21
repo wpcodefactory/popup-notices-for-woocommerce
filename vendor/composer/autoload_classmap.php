@@ -16,6 +16,7 @@ return array(
     'Composer\\Installers\\BonefishInstaller' => $vendorDir . '/composer/installers/src/Composer/Installers/BonefishInstaller.php',
     'Composer\\Installers\\CakePHPInstaller' => $vendorDir . '/composer/installers/src/Composer/Installers/CakePHPInstaller.php',
     'Composer\\Installers\\ChefInstaller' => $vendorDir . '/composer/installers/src/Composer/Installers/ChefInstaller.php',
+    'Composer\\Installers\\CiviCrmInstaller' => $vendorDir . '/composer/installers/src/Composer/Installers/CiviCrmInstaller.php',
     'Composer\\Installers\\ClanCatsFrameworkInstaller' => $vendorDir . '/composer/installers/src/Composer/Installers/ClanCatsFrameworkInstaller.php',
     'Composer\\Installers\\CockpitInstaller' => $vendorDir . '/composer/installers/src/Composer/Installers/CockpitInstaller.php',
     'Composer\\Installers\\CodeIgniterInstaller' => $vendorDir . '/composer/installers/src/Composer/Installers/CodeIgniterInstaller.php',

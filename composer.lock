@@ -8,16 +8,16 @@
     "packages": [
         {
             "name": "composer/installers",
-            "version": "v1.5.0",
+            "version": "v1.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/composer/installers.git",
-                "reference": "049797d727261bf27f2690430d935067710049c2"
+                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/installers/zipball/049797d727261bf27f2690430d935067710049c2",
-                "reference": "049797d727261bf27f2690430d935067710049c2",
+                "url": "https://api.github.com/repos/composer/installers/zipball/cfcca6b1b60bc4974324efb5783c13dca6932b5b",
+                "reference": "cfcca6b1b60bc4974324efb5783c13dca6932b5b",
                 "shasum": ""
             },
             "require": {
@@ -124,7 +124,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2017-12-29T09:13:20+00:00"
+            "time": "2018-08-27T06:10:37+00:00"
         },
         {
             "name": "thanks-to-it/wp-admin-notices",
@@ -132,12 +132,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/thanks-to-it/wp-admin-notices.git",
-                "reference": "2f114c981540f66623faad7773f0891b534ac5d5"
+                "reference": "261d06ff2b6778b0d7b10ba3da1742f254ac282d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/thanks-to-it/wp-admin-notices/zipball/2f114c981540f66623faad7773f0891b534ac5d5",
-                "reference": "2f114c981540f66623faad7773f0891b534ac5d5",
+                "url": "https://api.github.com/repos/thanks-to-it/wp-admin-notices/zipball/261d06ff2b6778b0d7b10ba3da1742f254ac282d",
+                "reference": "261d06ff2b6778b0d7b10ba3da1742f254ac282d",
                 "shasum": ""
             },
             "require": {
@@ -184,7 +184,7 @@
                 "notices",
                 "wordpress"
             ],
-            "time": "2018-09-09T03:35:24+00:00"
+            "time": "2019-02-21T22:45:19+00:00"
         }
     ],
     "packages-dev": [],

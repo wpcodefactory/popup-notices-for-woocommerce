@@ -130,7 +130,7 @@ if ( ! class_exists( 'ThanksToIT\WPAN\Display_Rules' ) ) {
 			$options = $options === false ? array() : $options;
 			//$plugins = $this->replace_self_by_plugin_basename( $plugins );
 
-			if ( empty( $options ) ) {
+			if ( empty( $options ) || ! is_array( $options ) || ! isset( $options['plugins'] ) || ! is_array( $options['plugins'] ) ) {
 				return false;
 			}
 
