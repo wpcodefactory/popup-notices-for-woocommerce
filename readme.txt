@@ -3,7 +3,7 @@ Contributors: karzin
 Tags: popup,notices,woocommerce,notice,modal
 Requires at least: 4.4
 Tested up to: 5.0
-Stable tag: 1.1.2-dev
+Stable tag: 1.1.3
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -91,7 +91,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
-= 1.1.3 - 21/02/2019
+= 1.1.3 - 08/04/2019
+* Fix close button position on Edge and Safari
 * Check plugins array on updated_plugin rule
 
 = 1.1.2 - 11/02/2019 =
@@ -160,4 +161,5 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 == Upgrade Notice ==
 
 = 1.1.3 =
+* Fix close button position on Edge and Safari
 * Check plugins array on updated_plugin rule
