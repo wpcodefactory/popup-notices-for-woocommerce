@@ -91,7 +91,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
-= 1.1.3 - 08/04/2019
+= 1.1.3 - 08/04/2019 =
 * Fix close button position on Edge and Safari
 * Check plugins array on updated_plugin rule
 * Tested up to: 5.1
