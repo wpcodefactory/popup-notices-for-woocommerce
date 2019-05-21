@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Admin Settings
  *
- * @version 1.1.2
+ * @version 1.1.4
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -95,7 +95,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 		/**
 		 * Handles admin settings regarding free plugin
 		 *
-		 * @version 1.1.0
+		 * @version 1.1.4
 		 * @since 1.0.2
 		 *
 		 * @param $settings
@@ -126,6 +126,11 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 
 			// Hide default notices
 			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_hide_default_notices' ) ) );
+			$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
+			$settings[ $index ]['desc']                          .= "  ".apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+
+			// Prevent Scrolling
+			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_prevent_scroll' ) ) );
 			$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
 			$settings[ $index ]['desc']                          .= "  ".apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
 
@@ -258,6 +263,14 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'premium_field' => true,
 						'name'          => __( 'Hide default notices', 'popup-notices-for-woocommerce' ),
 						'desc'          => __( 'Hide default WooCommerce notices', 'popup-notices-for-woocommerce' ),
+						'default'       => 'no',
+					),
+					array(
+						'type'          => 'checkbox',
+						'premium_field' => true,
+						'id'            => 'ttt_pnwc_opt_prevent_scroll',
+						'name'          => __( 'Prevent Scrolling', 'popup-notices-for-woocommerce' ),
+						'desc'          => __( 'Prevent scrolling when WooCommerce displays notices', 'popup-notices-for-woocommerce' ),
 						'default'       => 'no',
 					),
 					array(
