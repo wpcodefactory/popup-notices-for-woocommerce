@@ -48,6 +48,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 			       . "<li>" . __( "Customize Pop-up style using the Customizer including Icons from FontAwesome", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Ignore messages", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Avoid repeated messages", 'popup-notices-for-woocommerce' ) . "</li>"
+			       . "<li>" . __( "Load the plugin at some specific pages, like cart or checkout for example.", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Play sounds when popup opens or closes", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Hide default notices", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Support", 'popup-notices-for-woocommerce' ) . "</li>"

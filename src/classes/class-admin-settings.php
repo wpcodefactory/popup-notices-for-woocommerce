@@ -302,12 +302,15 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'id'   => 'ttt_pnwc_opt_restrictive_loading',
 					),
 					array(
-						'name'          => __( 'Page(s)', 'popup-notices-for-woocommerce' ),
-						'desc_tip'      => __( 'Leave it empty to load the plugin in all pages', 'popup-notices-for-woocommerce' ),
+						'name'     => __( 'Page(s)', 'popup-notices-for-woocommerce' ),
+						'desc_tip' => __( 'Leave it empty to load the plugin in all pages', 'popup-notices-for-woocommerce' ),
 						'premium_field' => true,
-						'type'          => 'multiselect',
-						'class'         => 'chosen_select',
-						'id'            => 'ttt_pnwc_opt_restrictive_loading_pages',
+						'type'     => 'multiselect',
+						'class'    => 'chosen_select',
+						'options'  => wp_list_pluck( get_pages( array(
+							'post_status' => 'publish'
+						) ), 'post_title', 'ID' ),
+						'id'       => 'ttt_pnwc_opt_restrictive_loading_pages',
 					),
 					array(
 						'type' => 'sectionend',

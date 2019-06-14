@@ -50,6 +50,9 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Modal' ) ) {
 		 * @since   1.0.0
 		 */
 		public function add_modal_scripts() {
+			if ( ! Restrictive_Loading::is_current_page_allowed() ) {
+				return;
+			}
 			$plugin = \ThanksToIT\PNWC\Core::instance();
 			$path   = $plugin->plugin_info['path'];
 			wp_enqueue_script( 'ttt_pnwc_micromodal', '//unpkg.com/micromodal/dist/micromodal.min.js' );
@@ -62,6 +65,9 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Modal' ) ) {
 		 * @since   1.0.0
 		 */
 		public function add_modal_html() {
+			if ( ! Restrictive_Loading::is_current_page_allowed() ) {
+				return;
+			}
 			$template_obj     = new Template();
 			$default_template = $template_obj->get_default_template();
 			$template         = apply_filters( 'ttt_pnwc_modal_template', $default_template );

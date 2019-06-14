@@ -45,6 +45,10 @@ Ignore particular notices you don't want to display inside the Pop-up
 Use Cookies to avoid messages that keep being displayed constantly. Set a expiration time for them and they will be only displayed again after the time expires
 
 
+* **Restrictive Loading**
+Load the plugin at some specific moment or place, like only on Cart or Checkout
+
+
 * **Audio**
 Play any sound you want when the Pop-up opens or when it closes
 

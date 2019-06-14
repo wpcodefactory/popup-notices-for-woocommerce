@@ -119,6 +119,7 @@ class ComposerStaticInitb870a2a542b3c86bec395f93c4aa0779
         'ThanksToIT\\PNWC\\Core' => __DIR__ . '/../..' . '/src/classes/class-core.php',
         'ThanksToIT\\PNWC\\Modal' => __DIR__ . '/../..' . '/src/classes/class-modal.php',
         'ThanksToIT\\PNWC\\Notices' => __DIR__ . '/../..' . '/src/classes/class-notices.php',
+        'ThanksToIT\\PNWC\\Restrictive_Loading' => __DIR__ . '/../..' . '/src/classes/class-restrictive-loading.php',
         'ThanksToIT\\PNWC\\Template' => __DIR__ . '/../..' . '/src/classes/class-template.php',
         'ThanksToIT\\WPAN\\Ajax' => __DIR__ . '/..' . '/thanks-to-it/wp-admin-notices/src/classes/class-ajax.php',
         'ThanksToIT\\WPAN\\Display_Rules' => __DIR__ . '/..' . '/thanks-to-it/wp-admin-notices/src/classes/class-display-rules.php',

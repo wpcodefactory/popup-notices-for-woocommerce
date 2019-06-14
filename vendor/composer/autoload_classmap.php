@@ -100,6 +100,7 @@ return array(
     'ThanksToIT\\PNWC\\Core' => $baseDir . '/src/classes/class-core.php',
     'ThanksToIT\\PNWC\\Modal' => $baseDir . '/src/classes/class-modal.php',
     'ThanksToIT\\PNWC\\Notices' => $baseDir . '/src/classes/class-notices.php',
+    'ThanksToIT\\PNWC\\Restrictive_Loading' => $baseDir . '/src/classes/class-restrictive-loading.php',
     'ThanksToIT\\PNWC\\Template' => $baseDir . '/src/classes/class-template.php',
     'ThanksToIT\\WPAN\\Ajax' => $vendorDir . '/thanks-to-it/wp-admin-notices/src/classes/class-ajax.php',
     'ThanksToIT\\WPAN\\Display_Rules' => $vendorDir . '/thanks-to-it/wp-admin-notices/src/classes/class-display-rules.php',

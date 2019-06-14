@@ -236,10 +236,13 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 
 		/**
 		 * Adds scripts
-		 * @version 1.0.2
+		 * @version 1.1.5
 		 * @since   1.0.0
 		 */
 		public function add_scripts() {
+			if ( ! Restrictive_Loading::is_current_page_allowed() ) {
+				return;
+			}
 			$plugin     = \ThanksToIT\PNWC\Core::instance();
 			$suffix     = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 			$plugin_dir = $plugin->get_plugin_dir();
@@ -301,6 +304,9 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 		 * @return mixed
 		 */
 		public function localize_js_options( $data ) {
+			if ( ! Restrictive_Loading::is_current_page_allowed() ) {
+				return;
+			}
 
 		    // Notice Types
 			$data['types'] = array(
