@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Admin Settings
  *
- * @version 1.1.4
+ * @version 1.1.5
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -110,8 +110,8 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 			// Add info on premium sections
 			$premium_sections = wp_list_filter( $settings, array( 'premium_section' => true ) );
 			foreach ( $premium_sections as $key => $section ) {
-			    $premium_info=apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
-				$settings[ $key ]['desc'] = empty($settings[ $key ]['desc']) ? $premium_info : $settings[ $key ]['desc'].'  '.$premium_info;
+				$premium_info             = apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+				$settings[ $key ]['desc'] = empty( $settings[ $key ]['desc'] ) ? $premium_info : $settings[ $key ]['desc'] . '  ' . $premium_info;
 			}
 
 			// Disable premium fields
@@ -143,6 +143,13 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_ignore_msg_regex' ) ) );
 			$settings[ $index ]['desc']                          .= "  ".apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
 
+			// Restrictive Loading
+			//$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_restrictive_loading_pages' ) ) );
+			//$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
+			//$settings[ $index ]['desc']                          .= "  ".apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+
+
+
 
 			return $settings;
 		}
@@ -165,7 +172,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 		/**
 		 * Get settings array
 		 *
-		 * @since 1.1.2
+		 * @since 1.1.5
 		 *
 		 * @param string $current_section Optional. Defaults to empty string.
 		 *
@@ -285,6 +292,28 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'type' => 'sectionend',
 						'id'   => 'ttt_pnwc_opt_general'
 					),
+
+					// Notice Types
+					array(
+						'name' => __( 'Restrictive Loading', 'popup-notices-for-woocommerce' ),
+						'type' => 'title',
+						'premium_section' => true,
+						'desc' => __( 'Load the plugin at some specific moment or place', 'popup-notices-for-woocommerce' ),
+						'id'   => 'ttt_pnwc_opt_restrictive_loading',
+					),
+					array(
+						'name'          => __( 'Page(s)', 'popup-notices-for-woocommerce' ),
+						'desc_tip'      => __( 'Leave it empty to load the plugin in all pages', 'popup-notices-for-woocommerce' ),
+						'premium_field' => true,
+						'type'          => 'multiselect',
+						'class'         => 'chosen_select',
+						'id'            => 'ttt_pnwc_opt_restrictive_loading_pages',
+					),
+					array(
+						'type' => 'sectionend',
+						'id'   => 'ttt_pnwc_opt_restrictive_loading'
+					),
+
 
 					// Notice Types
 					array(
