@@ -2,8 +2,8 @@
 /**
  * Popup Notices for WooCommerce (TTT) - Restrictive Loading Class
  *
- * @version 1.1.0
- * @since   1.1.0
+ * @version 1.1.5
+ * @since   1.1.5
  * @author  Thanks to IT
  */
 
