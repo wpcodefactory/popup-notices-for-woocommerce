@@ -162,8 +162,8 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 		public function get_sections() {
 
 			$sections = array(
-				'' => __( 'General', 'popup-notices-for-woocommerce' ),
-				//'second' => __( 'Section 2', 'popup-notices-for-woocommerce' )
+				''         => __( 'General', 'popup-notices-for-woocommerce' ),
+				//'messages' => __( 'Messages', 'popup-notices-for-woocommerce' )
 			);
 
 			return apply_filters( 'woocommerce_get_sections_' . $this->id, $sections );
@@ -180,7 +180,9 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 		 */
 		public function get_settings( $current_section = '' ) {
 
-			if ( 'second' == $current_section ) {
+
+
+			//if ( 'messages' == $current_section ) {
 
 				/**
 				 * Filter Plugin Section 2 Settings
@@ -189,57 +191,57 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 				 *
 				 * @param array $settings Array of the plugin settings
 				 */
-				/*$settings = apply_filters( 'myplugin_section2_settings', array(
+				/*$settings = apply_filters( 'ttt_pnwc_settings_messages', array(
 
 					array(
-						'name' => __( 'Group 1', 'popup-notices-for-woocommerce' ),
+						'name' => __( 'Message Customization', 'popup-notices-for-woocommerce' ),
 						'type' => 'title',
 						'desc' => '',
-						'id'   => 'myplugin_group1_options',
+						'id'   => 'ttt_pnwc_opt_message_customization',
 					),
 
 					array(
 						'type'    => 'checkbox',
-						'id'      => 'myplugin_checkbox_1',
-						'name'    => __( 'Do a thing?', 'popup-notices-for-woocommerce' ),
-						'desc'    => __( 'Enable to do something', 'popup-notices-for-woocommerce' ),
+						'id'      => 'ttt_pnwc_opt_message_customization_enable',
+						'name'    => __( 'Customize Messages', 'popup-notices-for-woocommerce' ),
+						'desc'    => __( 'Customize Notice messages', 'popup-notices-for-woocommerce' ),
 						'default' => 'no',
 					),
 
 					array(
-						'type' => 'sectionend',
-						'id'   => 'myplugin_group1_options'
+						'type'              => 'number',
+						'id'                => 'ttt_pnwc_opt_message_customization_amount',
+						'name'              => __( 'Amount', 'popup-notices-for-woocommerce' ),
+						'desc'              => __( 'Number of messages you want to customize', 'popup-notices-for-woocommerce' ),
+						'custom_attributes' => array( 'min' => 1 ),
+						'default'           => 1,
 					),
 
 					array(
-						'name' => __( 'Group 2', 'popup-notices-for-woocommerce' ),
+						'type' => 'sectionend',
+						'id'   => 'ttt_pnwc_opt_message_customization'
+					),
+
+					array(
+						'name' => __( 'Messages', 'popup-notices-for-woocommerce' ),
 						'type' => 'title',
 						'desc' => '',
-						'id'   => 'myplugin_group2_options',
+						'id'   => 'ttt_pnwc_opt_custom_messages',
 					),
 
-					array(
-						'type'     => 'select',
-						'id'       => 'myplugin_select_1',
-						'name'     => __( 'What should happen?', 'popup-notices-for-woocommerce' ),
-						'options'  => array(
-							'something' => __( 'Something', 'popup-notices-for-woocommerce' ),
-							'nothing'   => __( 'Nothing', 'popup-notices-for-woocommerce' ),
-							'idk'       => __( 'IDK', 'popup-notices-for-woocommerce' ),
-						),
-						'class'    => 'wc-enhanced-select',
-						'desc_tip' => __( 'Don\'t ask me!', 'popup-notices-for-woocommerce' ),
-						'default'  => 'idk',
-					),
+					apply_filters( 'ttt_pnwc_custom_messages', array() ),
+
+					// Dynamic messages
 
 					array(
 						'type' => 'sectionend',
-						'id'   => 'myplugin_group2_options'
+						'id'   => 'ttt_pnwc_opt_custom_messages'
 					),
 
 				) );*/
 
-			} else {
+			//} else {
+			if ( $current_section == '' ) {
 
 				/**
 				 * Filter Plugin Section 1 Settings
@@ -525,6 +527,8 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 				) );
 
 
+			} else {
+				$settings = apply_filters( "ttt_pnwc_settings_{$current_section}", array() );
 			}
 
 			/**

@@ -184,6 +184,13 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 				'admin.php?page=wc-settings&tab=ttt-pnwc'
 			);
 
+			if ( ! empty( $_REQUEST['section'] ) ) {
+				$new_url = add_query_arg(
+					array( 'section' => $_REQUEST['section'] ),
+					$new_url
+				);
+			}
+
 			wp_redirect( admin_url( $new_url ), 301 );
 			exit;
 		}
