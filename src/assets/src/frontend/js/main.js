@@ -63,6 +63,16 @@ var ttt_pnwc = {
 		ttt_pnwc.checkExistingElements('.woocommerce-error li');
 		ttt_pnwc.checkExistingElements('.woocommerce-message');
 		ttt_pnwc.checkExistingElements('.woocommerce-info');
+
+		document.addEventListener('click', function(event) {
+			if (event.target.matches('.enable-terms-checkbox')) {
+				event.preventDefault();
+				ttt_pnwc.enable_terms_checkbox();
+			}
+		}, false);
+	},
+	enable_terms_checkbox(){
+		document.getElementById("terms").checked = 'checked';
 	},
 	handle_sounds: function () {
 		if (ttt_pnwc_info.audio.enabled === 'yes') {

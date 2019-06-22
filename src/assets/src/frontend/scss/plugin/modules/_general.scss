@@ -1,0 +1,15 @@
+.ttt-smart-additional-content {
+  display: none;
+}
+
+.ttt-pnwc-container {
+  .ttt-smart-additional-content {
+    display: block;
+    &.inline-block {
+      display: inline-block;
+    }
+    &.inline {
+      display: inline;
+    }
+  }
+}

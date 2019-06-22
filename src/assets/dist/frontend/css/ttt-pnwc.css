@@ -5,6 +5,22 @@
  * @since   1.0.0
  * @author  Thanks to IT
  */
+.ttt-smart-additional-content {
+  display: none;
+}
+
+.ttt-pnwc-container .ttt-smart-additional-content {
+  display: block;
+}
+
+.ttt-pnwc-container .ttt-smart-additional-content.inline-block {
+  display: inline-block;
+}
+
+.ttt-pnwc-container .ttt-smart-additional-content.inline {
+  display: inline;
+}
+
 /*.woocommerce-error{
     display:none;
 }*/
