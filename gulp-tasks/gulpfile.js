@@ -33,7 +33,6 @@ gulp.task('js-frontend-custom', function () {
         .pipe(gulp.dest(dirs.frontend.dist.js))
         .pipe(concat(scripts_name+'.min.js'))
         .pipe(uglify({
-            
         }).on('error', function(e){
             console.log(e.message); return this.end();
         }))
