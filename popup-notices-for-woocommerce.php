@@ -3,7 +3,7 @@
  * Plugin Name: Pop-up Notices for WooCommerce
  * Plugin URI: https://wordpress.org/plugins/popup-notices-for-woocommerce
  * Description: Turn your WooCommerce Notices into Popups
- * Version: 1.1.5
+ * Version: 1.1.6
  * Author: Thanks to IT
  * Author URI: https://github.com/thanks-to-it
  * License: GNU General Public License v3.0
@@ -36,11 +36,3 @@ $plugin->setup( array(
 if ( true === apply_filters( 'ttt_pnwc_init', true ) ) {
 	$plugin->init();
 }
-
-/*add_filter( 'gettext', function ( $translated_text, $text, $domain ) {
-	error_log( '----' );
-	error_log( $translated_text );
-	error_log( $text );
-	error_log( $domain );
-	return $translated_text;
-}, 10, 3 );*/

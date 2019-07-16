@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Modal
  *
- * @version 1.1.0
+ * @version 1.1.6
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -46,7 +46,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Modal' ) ) {
 		/**
 		 * Adds modal scripts
 		 *
-		 * @version 1.0.0
+		 * @version 1.1.6
 		 * @since   1.0.0
 		 */
 		public function add_modal_scripts() {
@@ -55,7 +55,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Modal' ) ) {
 			}
 			$plugin = \ThanksToIT\PNWC\Core::instance();
 			$path   = $plugin->plugin_info['path'];
-			wp_enqueue_script( 'ttt_pnwc_micromodal', '//unpkg.com/micromodal/dist/micromodal.min.js' );
+			wp_enqueue_script( 'ttt_pnwc_micromodal', 'https://unpkg.com/micromodal/dist/micromodal.min.js' );
 		}
 
 		/**

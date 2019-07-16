@@ -3,7 +3,7 @@ Contributors: karzin
 Tags: popup,notices,woocommerce,notice,modal
 Requires at least: 4.4
 Tested up to: 5.2
-Stable tag: 1.1.5
+Stable tag: 1.1.6
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -95,6 +95,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
+= 1.1.6 - 16/07/2019 =
+* Enqueue micromodal with absolute https protocol
+
 = 1.1.5 - 14/06/2019 =
 * Add "Restrictive Loading" premium option to load the plugin at some specific moment or place
 
@@ -173,5 +176,5 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Upgrade Notice ==
 
-= 1.1.5 =
-* Add "Restrictive Loading" premium option to load the plugin at some specific moment or place
+= 1.1.6 =
+* Enqueue micromodal with absolute https protocol
