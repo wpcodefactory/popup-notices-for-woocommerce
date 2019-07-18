@@ -94,6 +94,7 @@ var ttt_pnwc = {
 			ttt_pnwc.messages.push({message: 'Customize Popup Notices style easily!', type: 'success'});
 			ttt_pnwc.messages.push({message: 'Please take a look at an error message', type: 'error'});
 			ttt_pnwc.messages.push({message: 'And a default one too', type: 'info'});
+			ttt_pnwc.messages.push({message: "Don't forget the <a href='https://en.wikipedia.org/wiki/Link'>links</a> too", type: 'info'});
 			ttt_pnwc.addMessagesToPopup();
 			ttt_pnwc.openPopup();
 		}
