@@ -164,6 +164,7 @@
 
 button.ttt-pnwc-close {
   z-index: 25;
+  font-size:0;
   background: transparent;
   background-color: #eee;
   cursor: pointer !important;
@@ -176,6 +177,7 @@ button.ttt-pnwc-close {
   width: 45px;
   padding: 0;
   height: 45px;
+  line-height: 45px;
   font-size: 20px;
   color: #333;
   transition: all .1s ease-in-out;
@@ -192,6 +194,7 @@ button.ttt-pnwc-close {
 
 .ttt-pnwc-header .ttt-pnwc-close:before {
   content: "\2716";
+  font-size:20px;
 }
 
 .ttt-pnwc-content {
