@@ -21,6 +21,14 @@
   display: inline;
 }
 
+.ttt-pnwc-after {
+  margin-top: 15px;
+}
+
+.ttt-pnwc-before {
+  margin-bottom: 15px;
+}
+
 /*.woocommerce-error{
     display:none;
 }*/
