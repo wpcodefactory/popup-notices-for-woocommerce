@@ -280,6 +280,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'id'            => 'ttt_pnwc_opt_prevent_scroll',
 						'name'          => __( 'Prevent Scrolling', 'popup-notices-for-woocommerce' ),
 						'desc'          => __( 'Prevent scrolling when WooCommerce displays notices', 'popup-notices-for-woocommerce' ),
+						'desc_tip'      => __( 'Only works for AJAX notices.', 'popup-notices-for-woocommerce' ),
 						'default'       => 'no',
 					),
 					array(
