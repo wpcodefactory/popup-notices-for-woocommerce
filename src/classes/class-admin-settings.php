@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Admin Settings
  *
- * @version 1.1.5
+ * @version 1.1.7
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -125,9 +125,9 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 			}
 
 			// Hide default notices
-			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_hide_default_notices' ) ) );
+			/*$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_hide_default_notices' ) ) );
 			$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
-			$settings[ $index ]['desc']                          .= "  ".apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+			$settings[ $index ]['desc']                          .= "  ".apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );*/
 
 			// Prevent Scrolling
 			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_prevent_scroll' ) ) );
@@ -172,7 +172,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 		/**
 		 * Get settings array
 		 *
-		 * @since 1.1.5
+		 * @since 1.1.7
 		 *
 		 * @param string $current_section Optional. Defaults to empty string.
 		 *
@@ -266,14 +266,14 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						//'class'    => 'wc-enhanced-select',
 						'default' => 'yes',
 					),
-					array(
+					/*array(
 						'type'          => 'checkbox',
 						'id'            => 'ttt_pnwc_opt_hide_default_notices',
 						'premium_field' => true,
 						'name'          => __( 'Hide default notices', 'popup-notices-for-woocommerce' ),
 						'desc'          => __( 'Hide default WooCommerce notices', 'popup-notices-for-woocommerce' ),
 						'default'       => 'no',
-					),
+					),*/
 					array(
 						'type'          => 'checkbox',
 						'premium_field' => true,
@@ -319,7 +319,6 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'id'   => 'ttt_pnwc_opt_restrictive_loading'
 					),
 
-
 					// Notice Types
 					array(
 						'name' => __( 'Notice Types', 'popup-notices-for-woocommerce' ),
@@ -351,6 +350,43 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 					array(
 						'type' => 'sectionend',
 						'id'   => 'ttt_pnwc_opt_types'
+					),
+
+					// Notice Hiding
+					array(
+						'name' => __( 'Notice Hiding', 'popup-notices-for-woocommerce' ),
+						'type' => 'title',
+						'premium_section' => true,
+						'desc' => __( 'Hide default WooCommerce Notices', 'popup-notices-for-woocommerce' ),
+						'id'   => 'ttt_pnwc_opt_notice_hiding',
+					),
+					array(
+						'type'          => 'checkbox',
+						'premium_field' => true,
+						'id'            => 'ttt_pnwc_opt_hide_error_enable',
+						'name'          => __( 'Hide Error notices', 'popup-notices-for-woocommerce' ),
+						'desc'          => __( 'Hide error notices', 'popup-notices-for-woocommerce' ),
+						'default'       => 'no',
+					),
+					array(
+						'type'          => 'checkbox',
+						'premium_field' => true,
+						'id'            => 'ttt_pnwc_opt_hide_success_enable',
+						'name'          => __( 'Hide Success notices', 'popup-notices-for-woocommerce' ),
+						'desc'          => __( 'Hide success notices', 'popup-notices-for-woocommerce' ),
+						'default'       => 'no',
+					),
+					array(
+						'type'          => 'checkbox',
+						'premium_field' => true,
+						'id'            => 'ttt_pnwc_opt_hide_info_enable',
+						'name'          => __( 'Hide info notices', 'popup-notices-for-woocommerce' ),
+						'desc'          => __( 'Hide info notices', 'popup-notices-for-woocommerce' ),
+						'default'       => 'no',
+					),
+					array(
+						'type' => 'sectionend',
+						'id'   => 'ttt_pnwc_opt_notice_hiding'
 					),
 
 					// Ignore Messages
