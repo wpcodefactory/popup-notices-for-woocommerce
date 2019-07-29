@@ -42,7 +42,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 		/**
 		 * Outputs raw values on 'allow_raw_values' fields
 		 *
-		 * @version 1.1.2
+		 * @version 1.1.7
 		 * @since 1.1.2
 		 */
 		public function output_raw_values() {
@@ -51,7 +51,16 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 			$raw_values = wp_list_filter( $settings, array( 'allow_raw_values' => true ) );
 			$new_values = array();
 			foreach ( $raw_values as $key => $field ) {
-				$new_values[ $field['id'] ] = html_entity_decode( get_option( $field['id'], isset( $field['default'] ) ? $field['default'] : '' ) );
+				if ( preg_match( '/^.*\[\d{0,3}\]$/', $field['id'] ) ) {
+					$arr                        = explode( "[", $field['id'] );
+					$new_option_id              = $arr[0];
+					$new_option                 = get_option( $new_option_id );
+					$option_index_matches       = preg_match( '/\[(.*?)\]/', $field['id'], $match );
+					$new_option_value           = isset( $match[1] ) ? $new_option[ $match[1] ] : $field['default'];
+					$new_values[ $field['id'] ] = html_entity_decode( $new_option_value );
+				} else {
+					$new_values[ $field['id'] ] = html_entity_decode( get_option( $field['id'], isset( $field['default'] ) ? $field['default'] : '' ) );
+				}
 			}
 			?>
 			<script>

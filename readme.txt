@@ -97,6 +97,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 = 1.1.7 - 22/07/2019 =
 * Change the way the Notice Hiding option works
+* Improve raw_values option
 
 = 1.1.6 - 16/07/2019 =
 * Enqueue micromodal with absolute https protocol
@@ -181,3 +182,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 = 1.1.7 =
 * Change the way the Notice Hiding option works
+* Improve raw_values option
