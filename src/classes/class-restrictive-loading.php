@@ -16,17 +16,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 if ( ! class_exists( 'ThanksToIT\PNWC\Restrictive_Loading' ) ) {
 	class Restrictive_Loading {
-		public static function is_current_page_allowed() {
-			$pages_allowed = get_option( 'ttt_pnwc_opt_restrictive_loading_pages' );
-			$allowed       = false;
-			if ( empty( $pages_allowed ) ) {
-				$allowed = true;
-			} else {
-				if ( is_page( $pages_allowed ) ) {
-					$allowed = true;
-				}
-			}
-			return apply_filters( 'ttt_pnwc_current_page_allowed', $allowed, $pages_allowed );
+		public static function is_allowed_to_load() {
+			return apply_filters( 'ttt_pnwc_is_allowed_to_load', true );
 		}
 	}
 }

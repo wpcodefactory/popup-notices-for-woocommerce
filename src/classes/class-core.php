@@ -247,7 +247,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 		 * @since   1.0.0
 		 */
 		public function add_scripts() {
-			if ( ! Restrictive_Loading::is_current_page_allowed() ) {
+			if ( ! Restrictive_Loading::is_allowed_to_load() ) {
 				return;
 			}
 			$plugin     = \ThanksToIT\PNWC\Core::instance();
@@ -311,7 +311,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 		 * @return mixed
 		 */
 		public function localize_js_options( $data ) {
-			if ( ! Restrictive_Loading::is_current_page_allowed() ) {
+			if ( ! Restrictive_Loading::is_allowed_to_load() ) {
 				return;
 			}
 

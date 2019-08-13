@@ -50,7 +50,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Modal' ) ) {
 		 * @since   1.0.0
 		 */
 		public function add_modal_scripts() {
-			if ( ! Restrictive_Loading::is_current_page_allowed() ) {
+			if ( ! Restrictive_Loading::is_allowed_to_load() ) {
 				return;
 			}
 			$plugin = \ThanksToIT\PNWC\Core::instance();
@@ -65,7 +65,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Modal' ) ) {
 		 * @since   1.0.0
 		 */
 		public function add_modal_html() {
-			if ( ! Restrictive_Loading::is_current_page_allowed() ) {
+			if ( ! Restrictive_Loading::is_allowed_to_load() ) {
 				return;
 			}
 			$template_obj     = new Template();
