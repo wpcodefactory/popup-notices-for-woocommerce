@@ -176,6 +176,9 @@ var ttt_pnwc = {
 		return "";
 	},
 	isMessageValid: function (message, dynamic) {
+		if(message.trim().length==0){
+			return false;
+		}
 		// Ignored Messages
 		if (ttt_pnwc_info.ignored_msg.field && ttt_pnwc_info.ignored_msg.field !== "") {
 			if (ttt_pnwc_info.ignored_msg.regex === "yes") {
@@ -216,7 +219,7 @@ var ttt_pnwc = {
 	storeMessage: function (notice, type, dynamic) {
 		if (ttt_pnwc.isMessageValid(notice.html(),dynamic)) {
 			ttt_pnwc.saveMessageInCookie(notice.html());
-			ttt_pnwc.messages.push({message: notice.html(), type: type, dynamic:dynamic});
+			ttt_pnwc.messages.push({message: notice.html().trim(), type: type, dynamic:dynamic});
 			ttt_pnwc.removeDuplicatedMessages();
 		}
 	},
