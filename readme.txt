@@ -99,6 +99,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 * Change the way the Notice Hiding option works
 * Improve raw_values option
 * Improve empty messages validation
+* Add Conditional Options
 
 = 1.1.6 - 16/07/2019 =
 * Enqueue micromodal with absolute https protocol
@@ -185,3 +186,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 * Change the way the Notice Hiding option works
 * Improve raw_values option
 * Improve empty messages validation
+* Add Conditional Options

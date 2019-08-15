@@ -324,16 +324,14 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						) ), 'post_title', 'ID' ),
 						'id'       => 'ttt_pnwc_opt_restrictive_loading_pages',
 					),
-					/*array(
-						'name'     => __( 'WooCommerce Conditionals', 'popup-notices-for-woocommerce' ),
+					array(
+						'name'     => __( 'Conditional(s)', 'popup-notices-for-woocommerce' ),
 						'premium_field' => true,
 						'type'     => 'multiselect',
 						'class'    => 'chosen_select',
-						'options'  => wp_list_pluck( get_pages( array(
-							'post_status' => 'publish'
-						) ), 'post_title', 'ID' ),
-						'id'       => 'ttt_pnwc_opt_restrictive_loading_wc_conditionals',
-					),*/
+						'options'  => apply_filters('ttt_pnwc_conditionals_options'),
+						'id'       => 'ttt_pnwc_opt_restrictive_loading_conditionals',
+					),
 					array(
 						'type' => 'sectionend',
 						'id'   => 'ttt_pnwc_opt_restrictive_loading'
