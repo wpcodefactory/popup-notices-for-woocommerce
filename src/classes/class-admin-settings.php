@@ -326,6 +326,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 					),
 					array(
 						'name'     => __( 'Conditional(s)', 'popup-notices-for-woocommerce' ),
+						'desc_tip' => __( 'Load the plugin if some specific condition is true, including WooCommerce conditions, like if current page is product page and so on', 'popup-notices-for-woocommerce' ),
 						'premium_field' => true,
 						'type'     => 'multiselect',
 						'class'    => 'chosen_select',
