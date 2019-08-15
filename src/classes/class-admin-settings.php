@@ -329,7 +329,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'premium_field' => true,
 						'type'     => 'multiselect',
 						'class'    => 'chosen_select',
-						'options'  => apply_filters('ttt_pnwc_conditionals_options'),
+						'options'  => apply_filters( 'ttt_pnwc_conditionals_options', array() ),
 						'id'       => 'ttt_pnwc_opt_restrictive_loading_conditionals',
 					),
 					array(
