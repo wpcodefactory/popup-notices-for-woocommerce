@@ -104,6 +104,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 * Improve raw_values option
 * Improve empty messages validation
 * Add Conditional Options
+* WC tested up to: 3.7
 
 = 1.1.6 - 16/07/2019 =
 * Enqueue micromodal with absolute https protocol
@@ -191,3 +192,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 * Improve raw_values option
 * Improve empty messages validation
 * Add Conditional Options
+* WC tested up to: 3.7

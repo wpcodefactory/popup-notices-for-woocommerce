@@ -11,7 +11,7 @@
  * Text Domain: popup-notices-for-woocommerce
  * Domain Path: /src/languages
  * WC requires at least: 3.0.0
- * WC tested up to: 3.6
+ * WC tested up to: 3.7
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
