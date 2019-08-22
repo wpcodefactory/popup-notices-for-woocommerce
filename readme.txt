@@ -33,6 +33,10 @@ Check some of its features for now:
 Style the Pop-up the way you want with tons of options using the Customizer, including Icons from FontAwesome
 
 
+* **Customize Messages**
+Customize WooCommerce messages modifying or adding more content after or before them
+
+
 * **Hide default WooCommerce notices**
 As you can display all your notices as Pop-ups, you can choose to simply hide the native WooCommerce notices if you want
 

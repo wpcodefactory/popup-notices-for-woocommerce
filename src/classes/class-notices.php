@@ -30,7 +30,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 		public function get_feedback_notice_content() {
 			return "<h3 class='title'>" . __( "Pop-up Notices Feedback", 'popup-notices-for-woocommerce' ) . "</h3>"
 			       . "<p style='margin-bottom:15px;'>" .
-			       sprintf( __( "Enjoying <strong>Pop-up Notices</strong>? Would you mind <a href='%s' target='_blank'>writing a review</a>? I would really appreciate it :)", 'popup-notices-for-woocommerce' ), 'https://wordpress.org/support/plugin/popup-notices-for-woocommerce/reviews/#new-post' ) . ""
+			       sprintf( __( "Enjoying <strong>Pop-up Notices</strong>? Please consider <a href='%s' target='_blank'>writing a review</a>. It's really important :)", 'popup-notices-for-woocommerce' ), 'https://wordpress.org/support/plugin/popup-notices-for-woocommerce/reviews/#new-post' ) . ""
 			       . "<br />" .
 			       sprintf( __( "Feel free to submit your <a href='%s' target='_blank'>ideas and suggestions</a> too", 'popup-notices-for-woocommerce' ), 'https://wordpress.org/support/plugin/popup-notices-for-woocommerce/' )
 			       . "</p>";
@@ -46,6 +46,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 			       . "<h4>Check some of its features for now:</h4>"
 			       . "<ul style='list-style:disc inside;'>"
 			       . "<li>" . __( "Customize Pop-up style using the Customizer including Icons from FontAwesome", 'popup-notices-for-woocommerce' ) . "</li>"
+			       . "<li>" . __( "Customize WooCommerce Messages", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Ignore messages", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Avoid repeated messages", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Load the plugin at some specific pages, like cart or checkout for example.", 'popup-notices-for-woocommerce' ) . "</li>"
