@@ -70,7 +70,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 				$notices_manager->create_notice( array(
 					'id'                   => 'ttt-pnwc-free-notice-plugin-activation',
 					'content'              => $this->get_feedback_notice_content(),
-					'dismissal_expiration' => WEEK_IN_SECONDS,
+					'dismissal_expiration' => MONTH_IN_SECONDS,
 					'display_on'           => array(
 						'activated_plugin' => array( 'popup-notices-for-woocommerce/popup-notices-for-woocommerce.php' ),
 						'screen_id'        => array( 'plugins' ),
@@ -79,7 +79,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 				$notices_manager->create_notice( array(
 					'id'                   => 'ttt-pnwc-free-notice-plugin-update',
 					'content'              => $this->get_feedback_notice_content(),
-					'dismissal_expiration' => WEEK_IN_SECONDS,
+					'dismissal_expiration' => MONTH_IN_SECONDS,
 					'display_on'           => array(
 						'updated_plugin' => array( 'popup-notices-for-woocommerce/popup-notices-for-woocommerce.php' ),
 						'screen_id'      => array( 'plugins' ),
@@ -90,7 +90,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 				$notices_manager->create_notice( array(
 					'id'                   => 'ttt-pnwc-premium-info-plugin-activation',
 					'content'              => $this->get_premium_notice_content(),
-					'dismissal_expiration' => WEEK_IN_SECONDS,
+					'dismissal_expiration' => MONTH_IN_SECONDS,
 					'display_on'           => array(
 						'activated_plugin' => array( 'popup-notices-for-woocommerce/popup-notices-for-woocommerce.php' ),
 						'screen_id'        => array( 'plugins' ),
@@ -99,7 +99,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 				$notices_manager->create_notice( array(
 					'id'                   => 'ttt-pnwc-premium-info-plugin-update',
 					'content'              => $this->get_premium_notice_content(),
-					'dismissal_expiration' => WEEK_IN_SECONDS,
+					'dismissal_expiration' => MONTH_IN_SECONDS,
 					'display_on'           => array(
 						'updated_plugin' => array( 'popup-notices-for-woocommerce/popup-notices-for-woocommerce.php' ),
 						'screen_id'      => array( 'plugins' ),
