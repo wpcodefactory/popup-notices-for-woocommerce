@@ -2,8 +2,8 @@
 Contributors: karzin
 Tags: popup,notices,woocommerce,notice,modal
 Requires at least: 4.4
-Tested up to: 5.2
-Stable tag: 1.1.7
+Tested up to: 5.3
+Stable tag: 1.1.8
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -99,6 +99,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
+= 1.1.8 - 26/11/2019 =
+* WC tested up to: 3.8
+* Tested up to: 5.3
+
 = 1.1.7 - 21/08/2019 =
 * Change the way the Notice Hiding option works
 * Improve raw_values option
@@ -187,9 +191,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Upgrade Notice ==
 
-= 1.1.7 =
-* Change the way the Notice Hiding option works
-* Improve raw_values option
-* Improve empty messages validation
-* Add Conditional Options
-* WC tested up to: 3.7
+= 1.1.8 =
+* WC tested up to: 3.8
+* Tested up to: 5.3
