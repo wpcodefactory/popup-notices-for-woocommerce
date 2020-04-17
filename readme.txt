@@ -2,8 +2,8 @@
 Contributors: karzin
 Tags: popup,notices,woocommerce,notice,modal
 Requires at least: 4.4
-Tested up to: 5.3
-Stable tag: 1.1.8
+Tested up to: 5.4
+Stable tag: 1.1.9
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -99,6 +99,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
+= 1.1.9 - 17/04/2019 =
+* Tested up to WP 5.4
+* WC tested up to: 4.0
+
 = 1.1.8 - 26/11/2019 =
 * WC tested up to: 3.8
 * Tested up to: 5.3
@@ -191,6 +195,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Upgrade Notice ==
 
-= 1.1.8 =
-* WC tested up to: 3.8
-* Tested up to: 5.3
+= 1.1.9 =
+* Tested up to WP 5.4
+* WC tested up to: 4.0
