@@ -116,10 +116,12 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 				return $settings;
 			}
 
+			// Premium Info
+			$premium_info             = apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+
 			// Add info on premium sections
 			$premium_sections = wp_list_filter( $settings, array( 'premium_section' => true ) );
-			foreach ( $premium_sections as $key => $section ) {
-				$premium_info             = apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+			foreach ( $premium_sections as $key => $section ) {				
 				//$settings[ $key ]['desc'] = empty( $settings[ $key ]['desc'] ) ? $premium_info : $settings[ $key ]['desc'] . '  ' . $premium_info;
 			}
 
@@ -132,6 +134,10 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 					$settings[ $key ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
 				}
 			}
+
+			// General
+			$index                      = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_general' ) ) );
+			$settings[ $index ]['desc'] .= "  ".apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
 
 			// Hide default notices
 			/*$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_hide_default_notices' ) ) );
