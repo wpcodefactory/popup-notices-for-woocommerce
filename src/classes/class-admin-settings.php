@@ -517,7 +517,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'name'            => __( 'Cookies', 'popup-notices-for-woocommerce' ),
 						'premium_section' => true,
 						'type'            => 'title',
-						'desc'            => __( "Notices will be kept in Browser's cookies trying to prevent messages from being displayed repeatedly inside popups", 'popup-notices-for-woocommerce' ),
+						'desc'            => __( "Notices will be kept in Browser's cookies trying to prevent duplicated messages from being displayed repeatedly inside popups", 'popup-notices-for-woocommerce' ),
 						'id'              => 'ttt_pnwc_opt_cookie',
 					),
 					array(
