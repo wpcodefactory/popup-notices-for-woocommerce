@@ -32,7 +32,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 			       . "<p style='margin-bottom:15px;'>" .
 			       sprintf( __( "Please consider <a href='%s' target='_blank'>leaving a review</a> if you are enjoying the plugin/support. It would be much appreciated :)", 'popup-notices-for-woocommerce' ), 'https://wordpress.org/support/plugin/popup-notices-for-woocommerce/reviews/#new-post' ) . ""
 			       . "<br />" .
-			       sprintf( __( "Feel free to submit your <a href='%s' target='_blank'>ideas and suggestions</a> too", 'popup-notices-for-woocommerce' ), 'https://wordpress.org/support/plugin/popup-notices-for-woocommerce/' )
+			       __( "Feel free to submit your ideas and suggestions too.", 'popup-notices-for-woocommerce' )
 			       . "</p>";
 		}
 
