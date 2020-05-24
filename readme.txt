@@ -3,7 +3,7 @@ Contributors: karzin
 Tags: popup,notices,woocommerce,notice,modal
 Requires at least: 4.4
 Tested up to: 5.4
-Stable tag: 1.1.9
+Stable tag: 1.2.0
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -53,6 +53,10 @@ Use Cookies to avoid messages that keep being displayed constantly. Set a expira
 Load the plugin at some specific moment or place, like only on Cart or Checkout
 
 
+* **Auto-Close**
+Auto-close the popup after x seconds
+
+
 * **Audio**
 Play any sound you want when the Pop-up opens or when it closes
 
@@ -98,6 +102,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 3. An example of a WooCommerce Notice info on the Popup
 
 == Changelog ==
+
+= 1.2.0 - 23/05/2019 =
+* WC tested up to: 4.1
+* Add premium option to auto-close popup
+* Improve interface on admin settings regarding premium version
+* Fix Message Origin option from Cookie feature
+* Improve notice messages on admin
 
 = 1.1.9 - 17/04/2019 =
 * Tested up to WP 5.4
@@ -195,6 +206,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Upgrade Notice ==
 
-= 1.1.9 =
-* Tested up to WP 5.4
-* WC tested up to: 4.0
+= 1.2.0 =
+* WC tested up to: 4.1
+* Add premium option to auto-close popup
+* Improve interface on admin settings regarding premium version
+* Fix Message Origin option from Cookie feature
+* Improve notice messages on admin

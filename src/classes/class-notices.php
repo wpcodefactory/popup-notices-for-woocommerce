@@ -30,7 +30,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 		public function get_feedback_notice_content() {
 			return "<h3 class='title'>" . __( "Pop-up Notices Feedback", 'popup-notices-for-woocommerce' ) . "</h3>"
 			       . "<p style='margin-bottom:15px;'>" .
-			       sprintf( __( "Enjoying <strong>Pop-up Notices</strong>? Please consider <a href='%s' target='_blank'>writing a review</a>. It's really important :)", 'popup-notices-for-woocommerce' ), 'https://wordpress.org/support/plugin/popup-notices-for-woocommerce/reviews/#new-post' ) . ""
+			       sprintf( __( "Please consider <a href='%s' target='_blank'>leaving a review</a> if you are enjoying the plugin/support. It would be much appreciated :)", 'popup-notices-for-woocommerce' ), 'https://wordpress.org/support/plugin/popup-notices-for-woocommerce/reviews/#new-post' ) . ""
 			       . "<br />" .
 			       sprintf( __( "Feel free to submit your <a href='%s' target='_blank'>ideas and suggestions</a> too", 'popup-notices-for-woocommerce' ), 'https://wordpress.org/support/plugin/popup-notices-for-woocommerce/' )
 			       . "</p>";
@@ -41,17 +41,18 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 			       . "<p>"
 			       . __( "Do you like the free version of this plugin?", 'popup-notices-for-woocommerce' )
 			       . "<br />"
-			       . sprintf( __( "Did you know We also have a <a href='%s' target='_blank'>Premium one</a>?", 'popup-notices-for-woocommerce' ), 'https://wpfactory.com/item/popup-notices-for-woocommerce/' )
+			       . sprintf( __( "Did you know we also have a <a href='%s' target='_blank'>Premium one</a>?", 'popup-notices-for-woocommerce' ), 'https://wpfactory.com/item/popup-notices-for-woocommerce/' )
 			       . "</br>"
 			       . "<h4>Check some of its features for now:</h4>"
 			       . "<ul style='list-style:disc inside;'>"
 			       . "<li>" . __( "Customize Pop-up style using the Customizer including Icons from FontAwesome", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Customize WooCommerce Messages", 'popup-notices-for-woocommerce' ) . "</li>"
+			       . "<li>" . __( "Hide default notices", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Ignore messages", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Avoid repeated messages", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Load the plugin at some specific pages, like cart or checkout for example.", 'popup-notices-for-woocommerce' ) . "</li>"
+			       . "<li>" . __( "Auto-close the popup after x seconds", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Play sounds when popup opens or closes", 'popup-notices-for-woocommerce' ) . "</li>"
-			       . "<li>" . __( "Hide default notices", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Support", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<p style='margin-top:15px'>"
 			       . __( "Buying it will allow you managing and customizing the popup entirely, helping maintaining the development of this plugin.", 'popup-notices-for-woocommerce' )

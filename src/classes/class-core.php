@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Core Class
  *
- * @version 1.1.2
+ * @version 1.2.0
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -119,8 +119,8 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
             <style>
                 .ttt-wpan-premium {
                     background: #e8e8e8;
-                    padding: 4px 9px 6px;
-                    color: #999;
+                    padding: 5px 10px 7px 8px;
+                    color: #888;
                     font-size: 13px;
                     vertical-align: middle;
                     /*margin: 0 0 0 10px;*/
@@ -303,8 +303,8 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 		/**
 		 * Passes admin settings to JS
 		 *
-		 * @version 1.1.2
-		 * @since 1.0.2
+		 * @version 1.2.0
+		 * @since   1.0.2
 		 *
 		 * @param $data
 		 *
@@ -329,6 +329,9 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 			$data['cookie_opt']['enabled']        = 'no';
 			$data['cookie_opt']['time']           = 0.5;
 			$data['cookie_opt']['message_origin'] = 'static';
+
+			// Auto-close
+			$data['auto_close_time'] = 0;
 
 			// Ignored Messages
 			$ignored_messages_field             = html_entity_decode( get_option( 'ttt_pnwc_opt_ignore_msg_field', '<p></p>' ) );

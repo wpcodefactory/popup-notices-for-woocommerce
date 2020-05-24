@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Admin Settings
  *
- * @version 1.1.7
+ * @version 1.2.0
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -104,8 +104,8 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 		/**
 		 * Handles admin settings regarding free plugin
 		 *
-		 * @version 1.1.4
-		 * @since 1.0.2
+		 * @version 1.2.0
+		 * @since   1.0.2
 		 *
 		 * @param $settings
 		 *
@@ -120,7 +120,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 			$premium_sections = wp_list_filter( $settings, array( 'premium_section' => true ) );
 			foreach ( $premium_sections as $key => $section ) {
 				$premium_info             = apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
-				$settings[ $key ]['desc'] = empty( $settings[ $key ]['desc'] ) ? $premium_info : $settings[ $key ]['desc'] . '  ' . $premium_info;
+				//$settings[ $key ]['desc'] = empty( $settings[ $key ]['desc'] ) ? $premium_info : $settings[ $key ]['desc'] . '  ' . $premium_info;
 			}
 
 			// Disable premium fields
@@ -141,16 +141,21 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 			// Prevent Scrolling
 			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_prevent_scroll' ) ) );
 			$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
-			$settings[ $index ]['desc']                          .= "  ".apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+			//$settings[ $index ]['desc']                          .= "  ".apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+
+			// Prevent Scrolling
+			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_auto_close_time' ) ) );
+			$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
+			//$settings[ $index ]['desc']                          .= "  ".apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
 
 			// Ignored Messages
 			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_ignore_msg_field' ) ) );
 			//$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
-			$settings[ $index ]['desc']                          .= apply_filters( 'ttt_pnwc_license_data', '', 'multiline_info' );
+			//$settings[ $index ]['desc']                          .= apply_filters( 'ttt_pnwc_license_data', '', 'multiline_info' );
 
 			// Ignored Messages regex
 			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_ignore_msg_regex' ) ) );
-			$settings[ $index ]['desc']                          .= "  ".apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+			//$settings[ $index ]['desc']                          .= "  ".apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
 
 			// Restrictive Loading
 			//$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_restrictive_loading_pages' ) ) );
@@ -181,7 +186,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 		/**
 		 * Get settings array
 		 *
-		 * @since 1.1.7
+		 * @since 1.2.0
 		 *
 		 * @param string $current_section Optional. Defaults to empty string.
 		 *
@@ -265,6 +270,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'name' => __( 'Pop-up Notices General Options', 'popup-notices-for-woocommerce' ),
 						'type' => 'title',
 						//'desc' => __( 'General Options', 'popup-notices-for-woocommerce' ),
+						'desc'=>'<span class="ttt-wpan-premium pnwc-inline-message" style="margin-top:3px;"><i style="margin-right:2px" class="pnwc-icon dashicons-before dashicons-awards"></i>' . sprintf( __( 'Disabled options can be unlocked using the <a href="%s" target="_blank">Pro version</a>', 'popup-notices-for-woocommerce' ), 'https://wpfactory.com/item/popup-notices-for-woocommerce/' ) . '</span>',
 						'id'   => 'ttt_pnwc_opt_general',
 					),
 					array(
@@ -297,8 +303,17 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'id'       => 'ttt_pnwc_opt_ajax',
 						'name'     => __( 'AJAX pop-up', 'popup-notices-for-woocommerce' ),
 						'desc'     => __( 'Display Pop-up notices from AJAX requests', 'popup-notices-for-woocommerce' ),
-						'desc_tip' => __( 'Notices displayed without reloading the page.', 'popup-notices-for-woocommerce' ) . '<br />' . __( 'e.g Error notices displayed on cart update or if something goes wrong in checkout', 'popup-notices-for-woocommerce' ),
+						'desc_tip' => __( 'Notices displayed without reloading the page.', 'popup-notices-for-woocommerce' ) . '<br />' . __( 'e.g Error notices displayed on cart update or if something goes wrong in checkout.', 'popup-notices-for-woocommerce' ),
 						'default'  => 'yes',
+					),
+					array(
+						'type'          => 'number',
+						'id'            => 'ttt_pnwc_opt_auto_close_time',
+						'name'          => __( 'Auto-Close Time', 'popup-notices-for-woocommerce' ),
+						'desc'          => __( 'Auto-closes the popup after x seconds.', 'popup-notices-for-woocommerce' ),
+						'desc_tip'      => __( 'Leave it empty to disable auto-close.', 'popup-notices-for-woocommerce' ),
+						'premium_field' => true,
+						'default'       => 'yes',
 					),
 					array(
 						'type' => 'sectionend',

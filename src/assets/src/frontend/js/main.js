@@ -201,8 +201,11 @@ var ttt_pnwc = {
 		// Cookie Opt
 		if (
 			ttt_pnwc_info.cookie_opt.enabled === 'yes' &&
-			((ttt_pnwc_info.cookie_opt.message_origin.search('dynamic') != -1 && dynamic) ||
-			(ttt_pnwc_info.cookie_opt.message_origin.search('static') != -1 && !dynamic))
+			(
+				(ttt_pnwc_info.cookie_opt.message_origin.search('dynamic') != -1 && dynamic) ||
+				(ttt_pnwc_info.cookie_opt.message_origin.search('static') != -1 && !dynamic) ||
+				ttt_pnwc_info.cookie_opt.message_origin.search('all') != -1
+			)
 		) {
 			if (ttt_pnwc.getCookie(ttt_pnwc.hashMessage(message))) {
 				return false;
@@ -280,6 +283,13 @@ var ttt_pnwc = {
 
 			MicroModal.show('ttt-pnwc-notice', {
 				awaitCloseAnimation: true,
+				onShow: function(modal){
+					if (ttt_pnwc_info.auto_close_time > 0) {
+						setTimeout(function () {
+							MicroModal.close(modal.id);
+						}, ttt_pnwc_info.auto_close_time * 1000);
+					}
+				},
 				onClose: function (modal) {
 					ttt_pnwc.open = false;
 					ttt_pnwc.clearMessages();
