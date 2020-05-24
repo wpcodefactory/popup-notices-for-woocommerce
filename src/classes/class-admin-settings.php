@@ -269,6 +269,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 					array(
 						'name' => __( 'Pop-up Notices General Options', 'popup-notices-for-woocommerce' ),
 						'type' => 'title',
+						'premium_info'=>true,
 						//'desc' => __( 'General Options', 'popup-notices-for-woocommerce' ),
 						'desc'=>'<span class="ttt-wpan-premium pnwc-inline-message" style="margin-top:3px;"><i style="margin-right:2px" class="pnwc-icon dashicons-before dashicons-awards"></i>' . sprintf( __( 'Disabled options can be unlocked using the <a href="%s" target="_blank">Pro version</a>', 'popup-notices-for-woocommerce' ), 'https://wpfactory.com/item/popup-notices-for-woocommerce/' ) . '</span>',
 						'id'   => 'ttt_pnwc_opt_general',

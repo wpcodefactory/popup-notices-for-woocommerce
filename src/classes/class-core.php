@@ -145,7 +145,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 					//$value = array( 'disabled' => 'disabled' );
 				break;
 				case 'premium_info':
-					$value = '<span class="ttt-wpan-premium">'.sprintf( __( "Unlock it using the <a target='_blank' href='%s'>Premium</a> version", 'popup-notices-for-woocommerce' ), 'https://wpfactory.com/item/popup-notices-for-woocommerce/' ).'</span>';
+					$value = '<span class="ttt-wpan-premium pnwc-inline-message" style="margin-top:3px;"><i style="margin-right:2px" class="pnwc-icon dashicons-before dashicons-awards"></i>' . sprintf( __( 'Disabled options can be unlocked using the <a href="%s" target="_blank">Pro version</a>', 'popup-notices-for-woocommerce' ), 'https://wpfactory.com/item/popup-notices-for-woocommerce/' ) . '</span>';
 				break;
 				/*case 'customizer_popup_panel_url':
 					$query['autofocus[panel]'] = 'ttt_pnwc';
