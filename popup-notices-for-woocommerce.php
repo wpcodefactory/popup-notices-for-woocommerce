@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Pop-up Notices for WooCommerce
+ * Plugin Name: Popup Notices for WooCommerce
  * Plugin URI: https://wordpress.org/plugins/popup-notices-for-woocommerce
  * Description: Turn your WooCommerce Notices into Popups
  * Version: 1.2.0
