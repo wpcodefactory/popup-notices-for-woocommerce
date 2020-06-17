@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Admin Settings
  *
- * @version 1.2.0
+ * @version 1.2.1
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -192,7 +192,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 		/**
 		 * Get settings array
 		 *
-		 * @since 1.2.0
+		 * @since 1.2.1
 		 *
 		 * @param string $current_section Optional. Defaults to empty string.
 		 *
@@ -297,6 +297,22 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'default'       => 'no',
 					),*/
 					array(
+						'type'     => 'checkbox',
+						'id'       => 'ttt_pnwc_opt_ajax',
+						'name'     => __( 'AJAX pop-up', 'popup-notices-for-woocommerce' ),
+						'desc'     => __( 'Display Pop-up notices from AJAX requests', 'popup-notices-for-woocommerce' ),
+						'desc_tip' => __( 'Notices displayed without reloading the page.', 'popup-notices-for-woocommerce' ) . '<br />' . __( 'e.g Error notices displayed on cart update or if something goes wrong in checkout.', 'popup-notices-for-woocommerce' ),
+						'default'  => 'yes',
+					),
+					array(
+						'type'     => 'checkbox',
+						'id'       => 'ttt_pnwc_opt_click_inside_close',
+						'name'     => __( 'Close on Click Inside', 'popup-notices-for-woocommerce' ),
+						'desc'     => __( 'Enable', 'popup-notices-for-woocommerce' ),
+						'desc_tip' => __( 'Closes the popup if a button or a link is clicked inside the popup.', 'popup-notices-for-woocommerce' ),
+						'default'  => 'no',
+					),
+					array(
 						'type'          => 'checkbox',
 						'premium_field' => true,
 						'id'            => 'ttt_pnwc_opt_prevent_scroll',
@@ -304,14 +320,6 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'desc'          => __( 'Prevent scrolling when WooCommerce displays notices', 'popup-notices-for-woocommerce' ),
 						'desc_tip'      => __( 'Only works for AJAX notices.', 'popup-notices-for-woocommerce' ),
 						'default'       => 'no',
-					),
-					array(
-						'type'     => 'checkbox',
-						'id'       => 'ttt_pnwc_opt_ajax',
-						'name'     => __( 'AJAX pop-up', 'popup-notices-for-woocommerce' ),
-						'desc'     => __( 'Display Pop-up notices from AJAX requests', 'popup-notices-for-woocommerce' ),
-						'desc_tip' => __( 'Notices displayed without reloading the page.', 'popup-notices-for-woocommerce' ) . '<br />' . __( 'e.g Error notices displayed on cart update or if something goes wrong in checkout.', 'popup-notices-for-woocommerce' ),
-						'default'  => 'yes',
 					),
 					array(
 						'type'          => 'number',

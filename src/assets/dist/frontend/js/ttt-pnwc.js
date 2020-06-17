@@ -70,6 +70,20 @@ var ttt_pnwc = {
 				ttt_pnwc.enable_terms_checkbox();
 			}
 		}, false);
+
+		document.addEventListener('click', this.handle_click_inside_close);
+
+	},
+	handle_click_inside_close: function (e) {
+		if (
+			ttt_pnwc_info.click_inside_close=='yes' &&
+			event.target.matches('a,button')
+		) {
+			var modal = e.target.closest(".ttt-pnwc-modal");
+			if(modal){
+				MicroModal.close('ttt-pnwc-notice');
+			}
+		}
 	},
 	enable_terms_checkbox: function () {
 		document.getElementById("terms").checked = 'checked';

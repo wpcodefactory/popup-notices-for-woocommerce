@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Notices
  *
- * @version 1.0.4
+ * @version 1.2.1
  * @since   1.0.2
  * @author  Thanks to IT
  */
@@ -48,6 +48,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 			       . "<li>" . __( "Customize Pop-up style using the Customizer including Icons from FontAwesome", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Customize WooCommerce Messages", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Hide default notices", 'popup-notices-for-woocommerce' ) . "</li>"
+			       . "<li>" . __( "Prevent page scrolling on AJAX notices", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Ignore messages", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Avoid repeated messages", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Load the plugin at some specific pages, like cart or checkout for example.", 'popup-notices-for-woocommerce' ) . "</li>"

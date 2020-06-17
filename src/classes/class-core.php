@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Core Class
  *
- * @version 1.2.0
+ * @version 1.2.1
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -243,7 +243,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 
 		/**
 		 * Adds scripts
-		 * @version 1.1.5
+		 * @version 1.2.1
 		 * @since   1.0.0
 		 */
 		public function add_scripts() {
@@ -279,6 +279,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 				'error_icon_class'   => '',
 				'info_icon_class'    => '',
 				'success_icon_class' => '',
+				'click_inside_close' => get_option( 'ttt_pnwc_opt_click_inside_close', 'no' ),
 			);
 			wp_localize_script( 'ttt-pnwc', 'ttt_pnwc_info', apply_filters( 'ttt_pnwc_localize_script', $localize_script ) );
 

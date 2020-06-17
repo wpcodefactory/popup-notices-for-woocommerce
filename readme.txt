@@ -3,7 +3,7 @@ Contributors: karzin
 Tags: popup,notices,woocommerce,notice,modal
 Requires at least: 4.4
 Tested up to: 5.4
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -39,6 +39,10 @@ Customize WooCommerce messages modifying or adding more content after or before 
 
 * **Hide default WooCommerce notices**
 As you can display all your notices as Pop-ups, you can choose to simply hide the native WooCommerce notices if you want
+
+
+* **Prevent page scrolling**
+Disable page scrolling on AJAX notices
 
 
 * **Ignore messages**
@@ -103,14 +107,18 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
-= 1.2.0 - 23/05/2019 =
+= 1.2.1 - 17/06/2020 =
+* Add 'Close on Click Inside' option
+* WC tested up to: 4.2
+
+= 1.2.0 - 23/05/2020 =
 * WC tested up to: 4.1
 * Add premium option to auto-close popup
 * Improve interface on admin settings regarding premium version
 * Fix Message Origin option from Cookie feature
 * Improve notice messages on admin
 
-= 1.1.9 - 17/04/2019 =
+= 1.1.9 - 17/04/2020 =
 * Tested up to WP 5.4
 * WC tested up to: 4.0
 
@@ -206,9 +214,6 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Upgrade Notice ==
 
-= 1.2.0 =
-* WC tested up to: 4.1
-* Add premium option to auto-close popup
-* Improve interface on admin settings regarding premium version
-* Fix Message Origin option from Cookie feature
-* Improve notice messages on admin
+= 1.2.1 =
+* Add 'Close on Click Inside' option
+* WC tested up to: 4.2
