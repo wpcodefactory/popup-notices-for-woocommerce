@@ -71,7 +71,7 @@ var ttt_pnwc = {
 			}
 		}, false);
 
-		document.addEventListener('click', this.handle_click_inside_close);
+		document.addEventListener('click', this.handle_click_inside_close,true);
 
 	},
 	handle_click_inside_close: function (e) {
