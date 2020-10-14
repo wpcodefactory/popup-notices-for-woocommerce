@@ -2,8 +2,8 @@
 Contributors: karzin
 Tags: popup,notices,woocommerce,notice,modal
 Requires at least: 4.4
-Tested up to: 5.4
-Stable tag: 1.2.2
+Tested up to: 5.5
+Stable tag: 1.2.3
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -21,7 +21,7 @@ Notices are important messages WooCommerce displays on your store for customers,
 
 And sometimes, depending on the theme, they get so discreet customers don't see it or there are cases where they are just too ugly.
 
-**Popup Notices for WooCommercee** adds WooCommerce Notices into beautiful Popups that will be noticed and appreciated.
+**Pop-up Notices for WooCommercee** adds WooCommerce Notices into beautiful Popups that will be noticed and appreciated.
 
 == Premium Version ==
 Do you like the free version of this plugin?
@@ -67,10 +67,6 @@ Play any sound you want when the Pop-up opens or when it closes
 
 * **Support**
 
-
-Buy it to manage and customize the popup entirely and help maintaining the development of this plugin.
-And besides you aren't going to see any annoying messages anymore :)
-
 == Frequently Asked Questions ==
 
 = How can I contribute? Is there a github repository? =
@@ -106,6 +102,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 3. An example of a WooCommerce Notice info on the Popup
 
 == Changelog ==
+
+= 1.2.3 - 13/10/2020 =
+* Tested up to WP 5.5
+* WC tested up to: 4.5
+* Add Auto-close > Notice types option as pro feature.
 
 = 1.2.2 - 18/06/2020 =
 * Fix 'Close on Click Inside' option on links like 'showcoupon' or 'showlogin'
@@ -217,5 +218,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Upgrade Notice ==
 
-= 1.2.1 =
-* Fix 'Close on Click Inside' option on links like 'showcoupon' or 'showlogin'
+= 1.2.3 =
+* Tested up to WP 5.5
+* WC tested up to: 4.5
+* Add Auto-close > Notice types option as pro feature.

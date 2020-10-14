@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Notices
  *
- * @version 1.2.1
+ * @version 1.2.3
  * @since   1.0.2
  * @author  Thanks to IT
  */
@@ -55,11 +55,6 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 			       . "<li>" . __( "Auto-close the popup after x seconds", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Play sounds when popup opens or closes", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Support", 'popup-notices-for-woocommerce' ) . "</li>"
-			       . "<p style='margin-top:15px'>"
-			       . __( "Buying it will allow you managing and customizing the popup entirely, helping maintaining the development of this plugin.", 'popup-notices-for-woocommerce' )
-			       . "</br>"
-			       . __( "And besides you aren't going to see these annoying messages anymore :)", 'popup-notices-for-woocommerce' )
-			       . "</p>"
 			       . sprintf( "<a style='display:inline-block;margin:15px 0 8px 0' target='_blank' class='button-primary' href='%s'>", 'https://wpfactory.com/item/popup-notices-for-woocommerce/' ) . __( "Upgrade to Premium version", 'popup-notices-for-woocommerce' ) . "</a>"
 			       . "</ul>";
 		}

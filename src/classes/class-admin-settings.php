@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Admin Settings
  *
- * @version 1.2.1
+ * @version 1.2.3
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -150,8 +150,8 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 			//$settings[ $index ]['desc']                          .= "  ".apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
 
 			// Prevent Scrolling
-			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_auto_close_time' ) ) );
-			$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
+			//$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_auto_close_time' ) ) );
+			//$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
 			//$settings[ $index ]['desc']                          .= "  ".apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
 
 			// Ignored Messages
@@ -192,7 +192,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 		/**
 		 * Get settings array
 		 *
-		 * @since 1.2.1
+		 * @since 1.2.3
 		 *
 		 * @param string $current_section Optional. Defaults to empty string.
 		 *
@@ -307,7 +307,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 					array(
 						'type'     => 'checkbox',
 						'id'       => 'ttt_pnwc_opt_click_inside_close',
-						'name'     => __( 'Close on Click Inside', 'popup-notices-for-woocommerce' ),
+						'name'     => __( 'Close on click inside', 'popup-notices-for-woocommerce' ),
 						'desc'     => __( 'Enable', 'popup-notices-for-woocommerce' ),
 						'desc_tip' => __( 'Closes the popup if a button or a link is clicked inside the popup.', 'popup-notices-for-woocommerce' ),
 						'default'  => 'no',
@@ -316,23 +316,49 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'type'          => 'checkbox',
 						'premium_field' => true,
 						'id'            => 'ttt_pnwc_opt_prevent_scroll',
-						'name'          => __( 'Prevent Scrolling', 'popup-notices-for-woocommerce' ),
+						'name'          => __( 'Prevent scrolling', 'popup-notices-for-woocommerce' ),
 						'desc'          => __( 'Prevent scrolling when WooCommerce displays notices', 'popup-notices-for-woocommerce' ),
 						'desc_tip'      => __( 'Only works for AJAX notices.', 'popup-notices-for-woocommerce' ),
 						'default'       => 'no',
 					),
 					array(
+						'type' => 'sectionend',
+						'id'   => 'ttt_pnwc_opt_general'
+					),
+
+					// Auto close
+					array(
+						'name' => __( 'Auto-close', 'popup-notices-for-woocommerce' ),
+						'type' => 'title',
+						'premium_info'=>true,
+						'desc' => __( 'Auto-closes the popup after x seconds.', 'popup-notices-for-woocommerce' ),
+						'id'   => 'ttt_pnwc_opt_general',
+					),
+					array(
 						'type'          => 'number',
 						'id'            => 'ttt_pnwc_opt_auto_close_time',
-						'name'          => __( 'Auto-Close Time', 'popup-notices-for-woocommerce' ),
+						'name'          => __( 'Auto-close time', 'popup-notices-for-woocommerce' ),
 						'desc'          => __( 'Auto-closes the popup after x seconds.', 'popup-notices-for-woocommerce' ),
 						'desc_tip'      => __( 'Leave it empty to disable auto-close.', 'popup-notices-for-woocommerce' ),
 						'premium_field' => true,
 						'default'       => 'yes',
 					),
 					array(
+						'name'          => __( 'Notice types', 'popup-notices-for-woocommerce' ),
+						'desc_tip'      => __( 'Only pop-ups containing at least one of the selected notice types will auto-close.', 'popup-notices-for-woocommerce' ).'<br />'.__( 'If empty, the auto-close will work regardless of the notice type.', 'popup-notices-for-woocommerce' ),
+						'premium_field' => true,
+						'type'          => 'multiselect',
+						'class'         => 'chosen_select',
+						'options'       => array(
+							'error'   => __( 'Error', 'popup-notices-for-woocommerce' ),
+							'success' => __( 'Success', 'popup-notices-for-woocommerce' ),
+							'info'    => __( 'Info', 'popup-notices-for-woocommerce' ),
+						),
+						'id'            => 'ttt_pnwc_opt_auto_close_types',
+					),
+					array(
 						'type' => 'sectionend',
-						'id'   => 'ttt_pnwc_opt_general'
+						'id'   => 'ttt_pnwc_opt_autoclose'
 					),
 
 					// Notice Types
@@ -370,7 +396,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 
 					// Notice Types
 					array(
-						'name' => __( 'Notice Types', 'popup-notices-for-woocommerce' ),
+						'name' => __( 'Notice types', 'popup-notices-for-woocommerce' ),
 						'type' => 'title',
 						'desc' => __( 'Notice types that can be displayed on Pop-ups', 'popup-notices-for-woocommerce' ),
 						'id'   => 'ttt_pnwc_opt_types',
@@ -403,7 +429,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 
 					// Notice Hiding
 					array(
-						'name' => __( 'Notice Hiding', 'popup-notices-for-woocommerce' ),
+						'name' => __( 'Notice hiding', 'popup-notices-for-woocommerce' ),
 						'type' => 'title',
 						'premium_section' => true,
 						'desc' => __( 'Hide default WooCommerce Notices', 'popup-notices-for-woocommerce' ),
@@ -413,7 +439,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'type'          => 'checkbox',
 						'premium_field' => true,
 						'id'            => 'ttt_pnwc_opt_hide_error_enable',
-						'name'          => __( 'Hide Error notices', 'popup-notices-for-woocommerce' ),
+						'name'          => __( 'Hide error notices', 'popup-notices-for-woocommerce' ),
 						'desc'          => __( 'Hide error notices', 'popup-notices-for-woocommerce' ),
 						'default'       => 'no',
 					),
@@ -421,7 +447,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'type'          => 'checkbox',
 						'premium_field' => true,
 						'id'            => 'ttt_pnwc_opt_hide_success_enable',
-						'name'          => __( 'Hide Success notices', 'popup-notices-for-woocommerce' ),
+						'name'          => __( 'Hide success notices', 'popup-notices-for-woocommerce' ),
 						'desc'          => __( 'Hide success notices', 'popup-notices-for-woocommerce' ),
 						'default'       => 'no',
 					),
@@ -440,7 +466,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 
 					// Ignore Messages
 					array(
-						'name'            => __( 'Ignore Messages', 'popup-notices-for-woocommerce' ),
+						'name'            => __( 'Ignore messages', 'popup-notices-for-woocommerce' ),
 						'type'            => 'title',
 						'desc'            => __( "Messages or notices that will be ignored and will not be displayed inside the Pop-up", 'popup-notices-for-woocommerce' ),
 						'id'              => 'ttt_pnwc_opt_ignore_msg',
@@ -450,7 +476,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'allow_raw_values'        => true,
 						'premium_multiline_field' => true,
 						'id'                      => 'ttt_pnwc_opt_ignore_msg_field',
-						'name'                    => __( 'Ignored Messages', 'popup-notices-for-woocommerce' ),
+						'name'                    => __( 'Ignored messages', 'popup-notices-for-woocommerce' ),
 						'desc'                    => '',
 						'default'                 => '<p></p>',
 						'css'                     => 'width:100%',
@@ -460,7 +486,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						//'default'  => $this->get_default_template(),
 					),
 					array(
-						'name'            => __( 'Regular Expression', 'popup-notices-for-woocommerce' ),
+						'name'            => __( 'Regular expression', 'popup-notices-for-woocommerce' ),
 						'premium_field'   => true,
 						'type'            => 'checkbox',
 						'desc'            => __( "Use Regular Expressions in your search", 'popup-notices-for-woocommerce' ),
@@ -468,7 +494,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'default'         => 'no'
 					),
 					array(
-						'name'            => __( 'Regular Expression Flags', 'popup-notices-for-woocommerce' ),
+						'name'            => __( 'Regular expression flags', 'popup-notices-for-woocommerce' ),
 						'type'            => 'text',
 						'desc'            => __( "Flags used on Regular Expression", 'popup-notices-for-woocommerce' ),
 						'desc_tip'        => __( "Requires Regular Expression to be enabled", 'popup-notices-for-woocommerce' ),
@@ -493,7 +519,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'type'          => 'checkbox',
 						'premium_field' => true,
 						'id'            => 'ttt_pnwc_opt_style_enabled',
-						'name'          => __( 'Enable Custom Style', 'popup-notices-for-woocommerce' ),
+						'name'          => __( 'Enable custom style', 'popup-notices-for-woocommerce' ),
 						'desc'          => sprintf( __( 'Enable pop-up custom style using the <a href="%s">Customizer</a>', 'popup-notices-for-woocommerce' ), add_query_arg( array( 'autofocus[panel]' => 'ttt_pnwc' ), admin_url( 'customize.php' ) ) ),
 						'default'       => 'yes'
 					),
@@ -517,7 +543,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'type'          => 'textarea',
 						'id'            => 'ttt_pnwc_opt_modal_template',
 						'premium_field' => true,
-						'name'          => __( 'Modal Template', 'popup-notices-for-woocommerce' ),
+						'name'          => __( 'Modal template', 'popup-notices-for-woocommerce' ),
 						'desc'          => __( 'HTML template reponsible for displaying the modal', 'popup-notices-for-woocommerce' ),
 						'css'           => 'min-height:223px;width:100%',
 						'default'       => $this->get_default_template(),
@@ -547,7 +573,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'type'              => 'number',
 						'premium_field'     => true,
 						'id'                => 'ttt_pnwc_opt_cookie_time',
-						'name'              => __( 'Expiration Time', 'popup-notices-for-woocommerce' ),
+						'name'              => __( 'Expiration time', 'popup-notices-for-woocommerce' ),
 						'desc'              => __( "Time in Hours messages will be kept in Cookies", 'popup-notices-for-woocommerce' ),
 						'default'           => 0.5,
 						'custom_attributes' => array(
@@ -558,7 +584,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'type'          => 'select',
 						'premium_field' => true,
 						'id'            => 'ttt_pnwc_opt_cookie_msg_origin',
-						'name'          => __( 'Message Origin', 'popup-notices-for-woocommerce' ),
+						'name'          => __( 'Message origin', 'popup-notices-for-woocommerce' ),
 						'desc'          => __( "Type of messages that will be kept on Cookies, static or dynamic, i.e created on ajax", 'popup-notices-for-woocommerce' ),
 						'options'       => array(
 							'static'  => __( 'Static', 'popup-notices-for-woocommerce' ),
@@ -577,14 +603,14 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'name'            => __( 'Audio', 'popup-notices-for-woocommerce' ),
 						'premium_section' => true,
 						'type'            => 'title',
-						'desc'            => __( "Play Sounds", 'popup-notices-for-woocommerce' ),
+						'desc'            => __( "Play sounds", 'popup-notices-for-woocommerce' ),
 						'id'              => 'ttt_pnwc_opt_audio',
 					),
 					array(
 						'name'            => __( 'Enable', 'popup-notices-for-woocommerce' ),
 						'premium_field' => true,
 						'type'            => 'checkbox',
-						'desc'            => __( "Enable Audio", 'popup-notices-for-woocommerce' ),
+						'desc'            => __( "Enable audio", 'popup-notices-for-woocommerce' ),
 						'id'              => 'ttt_pnwc_opt_audio_enable',
 						'default'         => 'no'
 					),

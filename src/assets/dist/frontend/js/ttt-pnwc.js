@@ -270,39 +270,37 @@ var ttt_pnwc = {
 			awaitCloseAnimation: true,
 		});
 	},
+	autoClose: function (modal) {
+		let currentTypes = ttt_pnwc.messages.map(function (item) {
+			return item.type;
+		});
+		currentTypes = currentTypes.filter(function (value, index, self) {
+			return self.indexOf(value) === index;
+		});
+		let intersection = currentTypes.filter(function (n) {
+			return ttt_pnwc_info.auto_close_types.indexOf(n) !== -1;
+		});
+		if (
+			ttt_pnwc_info.auto_close_types.length === 0 ||
+			intersection.length > 0
+		) {
+			console.log('asdsad');
+			if (ttt_pnwc_info.auto_close_time > 0) {
+				setTimeout(function () {
+					MicroModal.close(modal.id);
+				}, ttt_pnwc_info.auto_close_time * 1000);
+			}
+		}
+	},
 	openPopup: function () {
 		if (!ttt_pnwc.open && ttt_pnwc.messages.length > 0) {
-			//console.log('open')
-
-
-			/*var audio = document.createElement('audio');
-			audio.style.display = "none";
-			audio.src = 'http://freesound.org/data/previews/220/220170_4100837-lq.mp3';
-			audio.autoplay = true;
-			audio.onended = function(){
-				audio.remove() //Remove when played.
-			};
-			document.body.appendChild(audio);*/
-
 			if(ttt_pnwc_info.audio.enabled === 'yes' && ttt_pnwc.sounds.opening){
 				ttt_pnwc.sounds.opening.play();
 			}
-
-
-			//console.log(ttt_pnwc.sounds.opening);
-			//ttt_pnwc.sounds.opening.play();
-			/*ttt_pnwc.sounds.opening.once('load', function(){
-				ttt_pnwc.sounds.opening.play();
-			});*/
-
 			MicroModal.show('ttt-pnwc-notice', {
 				awaitCloseAnimation: true,
 				onShow: function(modal){
-					if (ttt_pnwc_info.auto_close_time > 0) {
-						setTimeout(function () {
-							MicroModal.close(modal.id);
-						}, ttt_pnwc_info.auto_close_time * 1000);
-					}
+					ttt_pnwc.autoClose(modal);
 				},
 				onClose: function (modal) {
 					ttt_pnwc.open = false;

@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Core Class
  *
- * @version 1.2.1
+ * @version 1.2.3
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -304,7 +304,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 		/**
 		 * Passes admin settings to JS
 		 *
-		 * @version 1.2.0
+		 * @version 1.2.3
 		 * @since   1.0.2
 		 *
 		 * @param $data
@@ -333,6 +333,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 
 			// Auto-close
 			$data['auto_close_time'] = 0;
+			$data['auto_close_types'] = array();
 
 			// Ignored Messages
 			$ignored_messages_field             = html_entity_decode( get_option( 'ttt_pnwc_opt_ignore_msg_field', '<p></p>' ) );
