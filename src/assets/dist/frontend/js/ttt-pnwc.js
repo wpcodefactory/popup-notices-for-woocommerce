@@ -283,8 +283,7 @@ var ttt_pnwc = {
 		if (
 			ttt_pnwc_info.auto_close_types.length === 0 ||
 			intersection.length > 0
-		) {
-			console.log('asdsad');
+		) {			
 			if (ttt_pnwc_info.auto_close_time > 0) {
 				setTimeout(function () {
 					MicroModal.close(modal.id);
