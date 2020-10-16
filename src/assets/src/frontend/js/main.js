@@ -271,13 +271,13 @@ var ttt_pnwc = {
 		});
 	},
 	autoClose: function (modal) {
-		let currentTypes = ttt_pnwc.messages.map(function (item) {
+		var currentTypes = ttt_pnwc.messages.map(function (item) {
 			return item.type;
 		});
 		currentTypes = currentTypes.filter(function (value, index, self) {
 			return self.indexOf(value) === index;
 		});
-		let intersection = currentTypes.filter(function (n) {
+		var intersection = currentTypes.filter(function (n) {
 			return ttt_pnwc_info.auto_close_types.indexOf(n) !== -1;
 		});
 		if (
