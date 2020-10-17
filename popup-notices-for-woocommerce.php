@@ -18,7 +18,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-require_once "vendor/autoload.php";
+require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 
 // Check if WooCommerce is active
 $plugin = 'woocommerce/woocommerce.php';
