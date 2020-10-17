@@ -29,7 +29,7 @@ if (
 	return;
 }
 
-$plugin = \ThanksToIT\PNWC\Core::instance();
+$plugin = ThanksToIT\PNWC\Core::instance();
 $plugin->setup( array(
 	'path' => __FILE__
 ) );
