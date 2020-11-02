@@ -103,9 +103,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
-= 1.2.4 - 17/10/2020 =
+= 1.2.4 - 02/11/2020 =
 * Improve composer autoload call.
 * Fix minified js.
+* Fix empty customized message.
 
 = 1.2.3 - 13/10/2020 =
 * Tested up to WP 5.5
@@ -222,6 +223,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Upgrade Notice ==
 
-= 1.2.4 - 16/10/2020 =
+= 1.2.4 =
 * Improve composer autoload call.
 * Fix minified js.
+* Fix empty customized message.

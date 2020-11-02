@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Admin Settings
  *
- * @version 1.2.3
+ * @version 1.2.4
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -20,7 +20,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 		/**
 		 * Setup settings class
 		 *
-		 * @version 1.0.0
+		 * @version 1.2.4
 		 * @since   1.0.0
 		 */
 		public function __construct() {
@@ -35,7 +35,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 
 			// Allow regex values using allow_raw_values
 			add_filter( 'woocommerce_admin_settings_sanitize_option', array( $this, 'sanitize_raw_values' ), 10, 3 );
-			add_action( 'woocommerce_settings_' . $this->id, array( $this, 'output_raw_values' ), 1 );
+			//add_action( 'woocommerce_settings_' . $this->id, array( $this, 'output_raw_values' ), 1 );
 
 		}
 
@@ -45,7 +45,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 		 * @version 1.1.7
 		 * @since 1.1.2
 		 */
-		public function output_raw_values() {
+		/*public function output_raw_values() {
 			global $current_section;
 			$settings   = $this->get_settings( $current_section );
 			$raw_values = wp_list_filter( $settings, array( 'allow_raw_values' => true ) );
@@ -79,7 +79,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 				});
 			</script>
 			<?php
-		}
+		}*/
 
 		/**
 		 * Sanitizes raw values on 'allow_raw_values' fields with htmlentities()
