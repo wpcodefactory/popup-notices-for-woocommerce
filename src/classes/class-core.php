@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Core Class
  *
- * @version 1.2.3
+ * @version 1.2.5
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -243,7 +243,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 
 		/**
 		 * Adds scripts
-		 * @version 1.2.1
+		 * @version 1.2.5
 		 * @since   1.0.0
 		 */
 		public function add_scripts() {
@@ -264,7 +264,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 			// Main js file
 			$js_file = 'src/assets/dist/frontend/js/ttt-pnwc' . $suffix . '.js';
 			$js_ver  = date( "ymd-Gis", filemtime( $plugin_dir . $js_file ) );
-			wp_register_script( 'ttt-pnwc', $plugin_url . $js_file, array( 'jquery' ), $js_ver, true );
+			wp_register_script( 'ttt-pnwc', $plugin_url . $js_file, array( 'jquery','ttt_pnwc_micromodal' ), $js_ver, true );
 			wp_enqueue_script( 'ttt-pnwc' );
 
 

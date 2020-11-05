@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Admin Settings
  *
- * @version 1.2.4
+ * @version 1.2.5
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -192,7 +192,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 		/**
 		 * Get settings array
 		 *
-		 * @since 1.2.3
+		 * @since 1.2.5
 		 *
 		 * @param string $current_section Optional. Defaults to empty string.
 		 *
@@ -320,6 +320,18 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'desc'          => __( 'Prevent scrolling when WooCommerce displays notices', 'popup-notices-for-woocommerce' ),
 						'desc_tip'      => __( 'Only works for AJAX notices.', 'popup-notices-for-woocommerce' ),
 						'default'       => 'no',
+					),
+					array(
+						'type'          => 'select',
+						'id'            => 'ttt_pnwc_opt_micromodal_load_method',
+						'name'          => __( 'Micromodal loading method', 'popup-notices-for-woocommerce' ),
+						'desc'          => __( 'How the micromodal library is going to be loaded.', 'popup-notices-for-woocommerce' ),
+						'desc_tip'      => __( 'Micromodal is the library responsible for the popups.', 'popup-notices-for-woocommerce' ),
+						'default'       => 'externally',
+						'options'       => array(
+							'externally' => __( 'Externally from unpkg.com', 'popup-notices-for-woocommerce' ),
+							'locally'    => __( 'Locally', 'popup-notices-for-woocommerce' ),
+						),
 					),
 					array(
 						'type' => 'sectionend',

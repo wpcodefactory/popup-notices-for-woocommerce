@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Modal
  *
- * @version 1.1.6
+ * @version 1.2.5
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -46,16 +46,29 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Modal' ) ) {
 		/**
 		 * Adds modal scripts
 		 *
-		 * @version 1.1.6
+		 * @version 1.2.5
 		 * @since   1.0.0
 		 */
 		public function add_modal_scripts() {
 			if ( ! Restrictive_Loading::is_allowed_to_load() ) {
 				return;
 			}
-			$plugin = \ThanksToIT\PNWC\Core::instance();
-			$path   = $plugin->plugin_info['path'];
-			wp_enqueue_script( 'ttt_pnwc_micromodal', 'https://unpkg.com/micromodal/dist/micromodal.min.js' );
+			$plugin                    = \ThanksToIT\PNWC\Core::instance();
+			$micromodal_loading_method = get_option( 'ttt_pnwc_opt_micromodal_load_method', 'externally' );
+
+			if ( 'externally' == $micromodal_loading_method ) {
+				$path = $plugin->plugin_info['path'];
+				wp_register_script( 'ttt_pnwc_micromodal', 'https://unpkg.com/micromodal/dist/micromodal.min.js', array( 'jquery' ), false, true );
+				wp_enqueue_script( 'ttt_pnwc_micromodal' );
+			} elseif ( 'locally' == $micromodal_loading_method ) {
+				$suffix     = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+				$plugin_url = $plugin->get_plugin_url();
+				$plugin_dir = $plugin->get_plugin_dir();
+				$js_file = 'src/assets/dist/frontend/js/vendor/micromodal' . $suffix . '.js';
+				$js_ver  = date( "ymd-Gis", filemtime( $plugin_dir . $js_file ) );
+				wp_register_script( 'ttt_pnwc_micromodal', $plugin_url . $js_file, array( 'jquery' ), $js_ver, true );
+				wp_enqueue_script( 'ttt_pnwc_micromodal' );
+			}
 		}
 
 		/**

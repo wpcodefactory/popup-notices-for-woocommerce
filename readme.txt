@@ -103,6 +103,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
+= 1.2.5 - 05/11/2020 =
+* Create an option to choose how to load the micromodal js.
+
 = 1.2.4 - 04/11/2020 =
 * Improve composer autoload call.
 * Fix minified js.
