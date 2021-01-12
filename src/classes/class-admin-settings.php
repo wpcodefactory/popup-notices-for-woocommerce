@@ -378,7 +378,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'name' => __( 'Restrictive Loading', 'popup-notices-for-woocommerce' ),
 						'type' => 'title',
 						'premium_section' => true,
-						'desc' => __( 'Load the plugin at some specific moment or place', 'popup-notices-for-woocommerce' ),
+						'desc' => __( 'Load the plugin at some specific moment or place.', 'popup-notices-for-woocommerce' ),
 						'id'   => 'ttt_pnwc_opt_restrictive_loading',
 					),
 					array(
@@ -444,7 +444,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'name' => __( 'Notice hiding', 'popup-notices-for-woocommerce' ),
 						'type' => 'title',
 						'premium_section' => true,
-						'desc' => __( 'Hide default WooCommerce Notices', 'popup-notices-for-woocommerce' ),
+						'desc' => __( 'Hide default WooCommerce Notices.', 'popup-notices-for-woocommerce' ),
 						'id'   => 'ttt_pnwc_opt_notice_hiding',
 					),
 					array(
@@ -480,7 +480,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 					array(
 						'name'            => __( 'Ignore messages', 'popup-notices-for-woocommerce' ),
 						'type'            => 'title',
-						'desc'            => __( "Messages or notices that will be ignored and will not be displayed inside the Pop-up", 'popup-notices-for-woocommerce' ),
+						'desc'            => __( "Messages or notices that will be ignored and will not be displayed inside the Pop-up.", 'popup-notices-for-woocommerce' ),
 						'id'              => 'ttt_pnwc_opt_ignore_msg',
 					),
 					array(
@@ -489,21 +489,19 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'premium_multiline_field' => true,
 						'id'                      => 'ttt_pnwc_opt_ignore_msg_field',
 						'name'                    => __( 'Ignored messages', 'popup-notices-for-woocommerce' ),
-						'desc'                    => '',
+						'desc'                    => __( 'Add messages exactly as they are originally, including the HTML tags if they are present.', 'popup-notices-for-woocommerce' ),
+						'desc_tip'                => __( 'Add multiple messages on the pro version.', 'popup-notices-for-woocommerce' ),
 						'default'                 => '<p></p>',
 						'css'                     => 'width:100%',
-
-						//'desc' => __( 'HTML template reponsible for displaying the modal', 'popup-notices-for-woocommerce' ),
-						//'css'      => 'min-height:223px;width:100%',
-						//'default'  => $this->get_default_template(),
 					),
 					array(
-						'name'            => __( 'Regular expression', 'popup-notices-for-woocommerce' ),
-						'premium_field'   => true,
-						'type'            => 'checkbox',
-						'desc'            => __( "Use Regular Expressions in your search", 'popup-notices-for-woocommerce' ),
-						'id'              => 'ttt_pnwc_opt_ignore_msg_regex',
-						'default'         => 'no'
+						'name'          => __( 'Regular expression', 'popup-notices-for-woocommerce' ),
+						'premium_field' => true,
+						'type'          => 'checkbox',
+						'desc'          => __( "Use Regular Expressions in your search", 'popup-notices-for-woocommerce' ),
+						'desc_tip'      => sprintf( __( "If enabled, you don't need to add messages on the %s option exactly as they are originally. Only part of them is enough.", 'popup-notices-for-woocommerce' ), '<strong>Ignored messages</strong>' ),
+						'id'            => 'ttt_pnwc_opt_ignore_msg_regex',
+						'default'       => 'no'
 					),
 					array(
 						'name'            => __( 'Regular expression flags', 'popup-notices-for-woocommerce' ),
@@ -523,7 +521,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'name'            => __( 'Custom style', 'popup-notices-for-woocommerce' ),
 						'premium_section' => true,
 						'type'            => 'title',
-						'desc'            => __( 'Style the pop-up using the Customizer</a>', 'popup-notices-for-woocommerce' ),
+						'desc'            => __( 'Style the pop-up using the Customizer.', 'popup-notices-for-woocommerce' ),
 						//'desc' => sprintf( __( 'Style the pop-up using the <a href="%s">Customizer</a>', 'popup-notices-for-woocommerce' ), add_query_arg( array( 'autofocus[panel]' => 'ttt_pnwc' ), admin_url( 'customize.php' ) ) ),
 						'id'              => 'ttt_pnwc_opt_style',
 					),
@@ -570,7 +568,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'name'            => __( 'Cookies', 'popup-notices-for-woocommerce' ),
 						'premium_section' => true,
 						'type'            => 'title',
-						'desc'            => __( "Notices will be kept in Browser's cookies trying to prevent duplicated messages from being displayed repeatedly inside popups", 'popup-notices-for-woocommerce' ),
+						'desc'            => __( "Notices will be kept in Browser's cookies trying to prevent duplicated messages from being displayed repeatedly inside popups.", 'popup-notices-for-woocommerce' ),
 						'id'              => 'ttt_pnwc_opt_cookie',
 					),
 					array(
@@ -615,7 +613,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'name'            => __( 'Audio', 'popup-notices-for-woocommerce' ),
 						'premium_section' => true,
 						'type'            => 'title',
-						'desc'            => __( "Play sounds", 'popup-notices-for-woocommerce' ),
+						'desc'            => __( "Play sounds.", 'popup-notices-for-woocommerce' ),
 						'id'              => 'ttt_pnwc_opt_audio',
 					),
 					array(
