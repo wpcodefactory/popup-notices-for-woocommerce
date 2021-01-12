@@ -2,7 +2,7 @@
 Contributors: karzin
 Tags: popup,notices,woocommerce,notice,modal
 Requires at least: 4.4
-Tested up to: 5.5
+Tested up to: 5.6
 Stable tag: 1.2.4
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
@@ -103,8 +103,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
-= 1.2.5 - 05/11/2020 =
+= 1.2.5 - 12/01/2021 =
+* Fix raw_values options.
 * Create an option to choose how to load the micromodal js.
+* WC tested up to: 4.9
+* Tested up to: 5.6
 
 = 1.2.4 - 04/11/2020 =
 * Improve composer autoload call.
@@ -227,8 +230,5 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Upgrade Notice ==
 
-= 1.2.4 =
-* Improve composer autoload call.
-* Fix minified js.
-* Fix empty customized message.
-* WC tested up to: 4.6
+= 1.0.0 =
+* Initial Release.

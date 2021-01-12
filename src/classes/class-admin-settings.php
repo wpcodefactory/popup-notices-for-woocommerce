@@ -84,7 +84,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 		/**
 		 * Sanitizes raw values on 'allow_raw_values' fields with htmlentities()
 		 *
-		 * @version 1.1.2
+		 * @version 1.2.5
 		 * @since 1.1.2
 		 *
 		 * @param $value
@@ -97,7 +97,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 			if ( ! isset( $option['allow_raw_values'] ) ) {
 				return $value;
 			}
-			$value = htmlentities( $raw_value );
+			$value = wp_kses_post( trim( $raw_value ) );
 			return $value;
 		}
 
