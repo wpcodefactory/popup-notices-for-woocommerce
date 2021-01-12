@@ -304,7 +304,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 		/**
 		 * Passes admin settings to JS
 		 *
-		 * @version 1.2.3
+		 * @version 1.2.5
 		 * @since   1.0.2
 		 *
 		 * @param $data
@@ -336,10 +336,10 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 			$data['auto_close_types'] = array();
 
 			// Ignored Messages
-			$ignored_messages_field             = html_entity_decode( get_option( 'ttt_pnwc_opt_ignore_msg_field', '<p></p>' ) );
-			$data['ignored_msg']['field']       = ! empty( $ignored_messages_field ) ? explode( "\n", str_replace( "\r", "", $ignored_messages_field ) ) : '';
-			$data['ignored_msg']['regex']       = 'no';
-			$data['ignored_msg']['regex_flags'] = 'i';
+			$ignored_messages_field               = html_entity_decode( get_option( 'ttt_pnwc_opt_ignore_msg_field', '<p></p>' ) );
+			$data['ignored_msg']['field']         = ! empty( $ignored_messages_field ) ? explode( "\n", str_replace( "\r", "", $ignored_messages_field ) ) : '';
+			$data['ignored_msg']['search_method'] = get_option( 'ttt_pnwc_opt_ignore_search_method', 'full_comparison' );
+			$data['ignored_msg']['regex_flags']   = get_option( 'ttt_pnwc_opt_ignore_msg_regex_f', 'i' );
 
 			// Audio
 			$data['audio']['enabled'] = 'no';

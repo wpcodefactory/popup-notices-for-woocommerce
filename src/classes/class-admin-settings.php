@@ -484,17 +484,31 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'id'              => 'ttt_pnwc_opt_ignore_msg',
 					),
 					array(
+						'name'     => __( 'Search method', 'popup-notices-for-woocommerce' ),
+						'type'     => 'select',
+						'desc'     => __( "The method used to check the message", 'popup-notices-for-woocommerce' ),
+						'desc_tip' => __( "If you only need to check part of the message use \"Partial comparison\". Use \"Full comparison\" to check the whole message.", 'popup-notices-for-woocommerce' ),
+						'id'       => 'ttt_pnwc_opt_ignore_search_method',
+						'options'  => array(
+							'partial_comparison' => __( 'Partial comparison', 'popup-notices-for-woocommerce' ),
+							'full_comparison'    => __( 'Full comparison', 'popup-notices-for-woocommerce' ),
+							'regex'              => __( 'Regular expression', 'popup-notices-for-woocommerce' ),
+						),
+						'default'  => 'partial_comparison',
+						'class'    => 'wc-enhanced-select',
+					),
+					array(
 						'type'                    => 'text',
 						'allow_raw_values'        => true,
 						'premium_multiline_field' => true,
 						'id'                      => 'ttt_pnwc_opt_ignore_msg_field',
 						'name'                    => __( 'Ignored messages', 'popup-notices-for-woocommerce' ),
-						'desc'                    => __( 'Add messages exactly as they are originally, including HTML tags if they are present', 'popup-notices-for-woocommerce' ),
+						'desc'                    => __( '"Full comparison" search method requires to add the message here exactly as it is originally, including the HTML', 'popup-notices-for-woocommerce' ),
 						'desc_tip'                => __( 'Add multiple messages on the pro version.', 'popup-notices-for-woocommerce' ),
 						'default'                 => '<p></p>',
 						'css'                     => 'width:100%',
 					),
-					array(
+					/*array(
 						'name'          => __( 'Regular expression', 'popup-notices-for-woocommerce' ),
 						'premium_field' => true,
 						'type'          => 'checkbox',
@@ -502,7 +516,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'desc_tip'      => sprintf( __( "If enabled, you don't need to add messages on the %s option exactly as they are originally. Only part of them is enough.", 'popup-notices-for-woocommerce' ), '<strong>Ignored messages</strong>' ),
 						'id'            => 'ttt_pnwc_opt_ignore_msg_regex',
 						'default'       => 'no'
-					),
+					),*/
 					array(
 						'name'            => __( 'Regular expression flags', 'popup-notices-for-woocommerce' ),
 						'type'            => 'text',

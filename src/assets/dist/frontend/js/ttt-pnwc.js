@@ -195,16 +195,23 @@ var ttt_pnwc = {
 		}
 		// Ignored Messages
 		if (ttt_pnwc_info.ignored_msg.field && ttt_pnwc_info.ignored_msg.field !== "") {
-			if (ttt_pnwc_info.ignored_msg.regex === "yes") {
+			if (ttt_pnwc_info.ignored_msg.search_method === "regex") {
 				var matches = ttt_pnwc_info.ignored_msg.field.filter(function (pattern) {
 					return new RegExp(pattern, ttt_pnwc_info.ignored_msg.regex_flags).test(message);
 				});
 				if (matches.length > 0) {
 					return false;
 				}
-			} else {
+			} else if (ttt_pnwc_info.ignored_msg.search_method === "partial_comparison") {
 				var matches = ttt_pnwc_info.ignored_msg.field.filter(function (string_check) {
 					return message.indexOf(string_check) !== -1;
+				});
+				if (matches.length > 0) {
+					return false;
+				}
+			} else if (ttt_pnwc_info.ignored_msg.search_method === "full_comparison") {
+				var matches = ttt_pnwc_info.ignored_msg.field.filter(function (string_check) {
+					return string_check.trim() === message.trim();
 				});
 				if (matches.length > 0) {
 					return false;
