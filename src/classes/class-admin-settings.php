@@ -521,7 +521,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'name'            => __( 'Regular expression flags', 'popup-notices-for-woocommerce' ),
 						'type'            => 'text',
 						'desc'            => __( "Flags used on Regular Expression", 'popup-notices-for-woocommerce' ),
-						'desc_tip'        => __( "Requires Regular Expression to be enabled", 'popup-notices-for-woocommerce' ),
+						'desc_tip'        => __( "Requires Regular expression search method", 'popup-notices-for-woocommerce' ),
 						'id'              => 'ttt_pnwc_opt_ignore_msg_regex_f',
 						'default'         => 'i'
 					),
