@@ -49,7 +49,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 			       . "<li>" . __( "Customize WooCommerce Messages", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Hide default notices", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Prevent page scrolling on AJAX notices", 'popup-notices-for-woocommerce' ) . "</li>"
-			       . "<li>" . __( "Ignore messages", 'popup-notices-for-woocommerce' ) . "</li>"
+			       . "<li>" . __( "Ignore multiple messages", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Avoid repeated messages", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Load the plugin at some specific pages, like cart or checkout for example.", 'popup-notices-for-woocommerce' ) . "</li>"
 			       . "<li>" . __( "Auto-close the popup after x seconds", 'popup-notices-for-woocommerce' ) . "</li>"

@@ -45,7 +45,7 @@ As you can display all your notices as Pop-ups, you can choose to simply hide th
 Disable page scrolling on AJAX notices
 
 
-* **Ignore messages**
+* **Ignore multiple messages**
 Ignore particular notices you don't want to display inside the Pop-up
 
 
