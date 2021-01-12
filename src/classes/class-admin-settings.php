@@ -504,7 +504,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'id'                      => 'ttt_pnwc_opt_ignore_msg_field',
 						'name'                    => __( 'Ignored messages', 'popup-notices-for-woocommerce' ),
 						'desc'                    => __( '"Full comparison" search method requires to add the message here exactly as it is originally, including the HTML', 'popup-notices-for-woocommerce' ),
-						'desc_tip'                => __( 'Add multiple messages on the pro version.', 'popup-notices-for-woocommerce' ),
+						'desc_tip'                => __( 'Add multiple messages on pro version. Leave it empty to disable.', 'popup-notices-for-woocommerce' ),
 						'default'                 => '<p></p>',
 						'css'                     => 'width:100%',
 					),
