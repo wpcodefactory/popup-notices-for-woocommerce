@@ -103,6 +103,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
+= 1.2.6 - 15/01/2021 =
+* Update POT file
+
 = 1.2.5 - 12/01/2021 =
 * Create Search method option for Ignore messages section.
 * Fix raw_values options.
