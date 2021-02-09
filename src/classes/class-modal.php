@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Modal
  *
- * @version 1.2.5
+ * @version 1.2.7
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -26,7 +26,28 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Modal' ) ) {
 			add_action( 'wp_footer', array( $this, 'add_modal_html' ) );
 			add_action( 'wp_footer', array( $this, 'add_audio_html' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'add_modal_scripts' ) );
+			add_filter( 'ttt_pnwc_modal_template', array( $this, 'handle_outside_click' ), 20 );
 			//add_filter( 'ttt_pnwc_modal_template', array( $this, 'replace_template_variables' ) );
+		}
+
+		/**
+		 * handle_outside_click.
+		 *
+		 * @version 1.2.7
+		 * @since   1.2.7
+		 *
+		 * @param $template
+		 *
+		 * @return null|string|string[]
+		 */
+		function handle_outside_click( $template ) {
+			if (
+				'no' === get_option( 'ttt_pnwc_opt_prevent_closing_if_clicking_out', 'yes' )
+				&& preg_match( '/\<div.+class\=\"ttt-pnwc-overlay\".+\>/', $template, $output_array )
+			) {
+				$template = preg_replace('/(\<div.+class\=\"ttt-pnwc-overlay\")(.+)?(\sdata-micromodal-close)/', '$1$2', $template);
+			}
+			return $template;
 		}
 
 		public function add_audio_html() {

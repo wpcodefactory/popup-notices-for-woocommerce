@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Admin Settings
  *
- * @version 1.2.5
+ * @version 1.2.7
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -192,7 +192,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 		/**
 		 * Get settings array
 		 *
-		 * @since 1.2.5
+		 * @since 1.2.7
 		 *
 		 * @param string $current_section Optional. Defaults to empty string.
 		 *
@@ -308,8 +308,15 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'type'     => 'checkbox',
 						'id'       => 'ttt_pnwc_opt_click_inside_close',
 						'name'     => __( 'Close on click inside', 'popup-notices-for-woocommerce' ),
-						'desc'     => __( 'Enable', 'popup-notices-for-woocommerce' ),
-						'desc_tip' => __( 'Closes the popup if a button or a link is clicked inside the popup.', 'popup-notices-for-woocommerce' ),
+						'desc'     => __( 'Close popup if a button or a link is clicked inside the popup', 'popup-notices-for-woocommerce' ),
+						'default'  => 'no',
+					),
+					array(
+						'type'     => 'checkbox',
+						'id'       => 'ttt_pnwc_opt_prevent_closing_if_clicking_out',
+						'name'     => __( 'Prevent closing if clicking outside', 'popup-notices-for-woocommerce' ),
+						'desc'     => __( 'Prevent closing the popup when clicking on the overlay outside the popup', 'popup-notices-for-woocommerce' ),
+						'desc_tip' => sprintf( __( 'If it doesn\'t work, try to remove the %s attribute from the %s div from the %s option.', 'popup-notices-for-woocommerce' ), '<code>data-micromodal-close</code>', '<code>ttt-pnwc-overlay</code>', '"' . __( 'Modal template', 'popup-notices-for-woocommerce' ) . '"' ),
 						'default'  => 'no',
 					),
 					array(
