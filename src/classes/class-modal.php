@@ -42,7 +42,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Modal' ) ) {
 		 */
 		function handle_outside_click( $template ) {
 			if (
-				'no' === get_option( 'ttt_pnwc_opt_prevent_closing_if_clicking_out', 'yes' )
+				'yes' === get_option( 'ttt_pnwc_opt_prevent_closing_if_clicking_out', 'no' )
 				&& preg_match( '/\<div.+class\=\"ttt-pnwc-overlay\".+\>/', $template, $output_array )
 			) {
 				$template = preg_replace('/(\<div.+class\=\"ttt-pnwc-overlay\")(.+)?(\sdata-micromodal-close)/', '$1$2', $template);
