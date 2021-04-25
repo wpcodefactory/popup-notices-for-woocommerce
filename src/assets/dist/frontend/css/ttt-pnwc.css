@@ -404,4 +404,8 @@ button.ttt-pnwc-close:hover {
   will-change: transform;
 }
 
+.ttt-pnwc-wrapper {
+  overflow-y: auto;
+}
+
 /*# sourceMappingURL=../maps/ttt-pnwc.css.map */

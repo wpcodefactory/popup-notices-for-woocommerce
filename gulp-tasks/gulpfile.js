@@ -71,16 +71,12 @@ gulp.task('sass-frontend', function () {
         .pipe(gulp.dest(dirs.frontend.dist.css));
 });
 
-gulp.task('watch', ['sass-frontend', 'js-frontend-custom'], function () {
+gulp.task('watch', gulp.series('sass-frontend', 'js-frontend-custom', function () {
     livereload.listen();
-    watch(dirs.frontend.src.js + '/*.js', function () {
-        gulp.start('js-frontend-custom');
-    });
-    watch(dirs.frontend.src.sass + '/**/*.scss', function () {
-        gulp.start('sass-frontend');
-    });
-});
+    watch(dirs.frontend.src.js + '/*.js', gulp.series('js-frontend-custom'));
+    watch(dirs.frontend.src.sass + '/**/*.scss', gulp.series('sass-frontend'));
+}));
 
 gulp.task('default', function () {
-    gulp.start(['sass-frontend', 'js-frontend-custom']);
+    gulp.series('sass-frontend', 'js-frontend-custom');
 });

@@ -103,6 +103,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
+= 1.2.8 - 25/04/2021 =
+* Update package.json and gulpfile.js setup.
+* Add `overflow-y:auto` to `.ttt-pnwc-wrapper`.
+
 = 1.2.7 - 09/02/2021 =
 * Create option to prevent closing if clicking outside the popup.
 

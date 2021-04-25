@@ -6,6 +6,7 @@
 gulp-tasks/node_modules
 gulp-tasks/node_modules/*
 gulp-tasks/package-lock.json
+gulp-tasks/npm-shrinkwrap.json
 
 vendor/tareq1988/wordpress-settings-api-class/example
 vendor/tareq1988/wordpress-settings-api-class/example/*
