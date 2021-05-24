@@ -2,8 +2,8 @@
 Contributors: karzin
 Tags: popup,notices,woocommerce,notice,modal
 Requires at least: 4.4
-Tested up to: 5.6
-Stable tag: 1.2.7
+Tested up to: 5.7
+Stable tag: 1.2.8
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -103,9 +103,13 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
-= 1.2.8 - 25/04/2021 =
+= 1.2.8 - 24/05/2021 =
 * Update package.json and gulpfile.js setup.
 * Add `overflow-y:auto` to `.ttt-pnwc-wrapper`.
+* WC tested up to: 5.3.
+* Tested up to: 5.7.
+* Change admin notices.
+* Update deploy script.
 
 = 1.2.7 - 09/02/2021 =
 * Create option to prevent closing if clicking outside the popup.

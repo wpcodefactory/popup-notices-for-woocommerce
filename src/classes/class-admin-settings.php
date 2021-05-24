@@ -137,7 +137,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 
 			// General
 			$index                      = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_general' ) ) );
-			$settings[ $index ]['desc'] .= "  ".apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
+			//$settings[ $index ]['desc'] .= "  ".apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
 
 			// Hide default notices
 			/*$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_hide_default_notices' ) ) );
