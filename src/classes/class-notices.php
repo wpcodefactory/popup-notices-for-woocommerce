@@ -32,7 +32,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 		function handle_notices() {
 			$promoting_notice = wpf_promoting_notice();
 			$promoting_notice->set_args( array(
-				'enable'                 => apply_filters( 'ttt_pnwc_license_data', true, 'test' ),
+				'enable'                 => apply_filters( 'ttt_pnwc_license_data', true ),
 				'template_variables'     => array(
 					'%pro_version_url%'   => 'https://wpfactory.com/item/popup-notices-for-woocommerce/',
 					'%plugin_icon_url%'   => 'https://ps.w.org/popup-notices-for-woocommerce/assets/icon-128x128.png?rev=1884298',
