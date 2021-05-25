@@ -7,4 +7,5 @@ $baseDir = dirname($vendorDir);
 
 return array(
     '1609d6f3e293af2b810977796160a51d' => $vendorDir . '/thanks-to-it/wp-admin-notices/src/functions/functions.php',
+    '78b4b4ef123a8e57b73e04599b17bb38' => $vendorDir . '/wpfactory/wpf-promoting-notice/src/php/functions.php',
 );

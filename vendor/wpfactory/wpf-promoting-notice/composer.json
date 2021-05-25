@@ -1,0 +1,16 @@
+{
+  "name": "wpfactory/wpf-promoting-notice",
+  "config": {
+    "preferred-install": "dist"
+  },
+  "type": "wordpress-plugin",
+  "require": {
+    "php": ">=7.0.0"
+  },
+  "autoload": {
+    "classmap": [
+      "src/php/"
+    ],
+    "files": ["src/php/functions.php"]
+  }
+}

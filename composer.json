@@ -10,6 +10,12 @@
     "modal",
     "popup"
   ],
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/wpcodefactory/wpf-promoting-notice"
+    }
+  ],
   "license": "MIT",
   "authors": [
     {
@@ -24,7 +30,8 @@
   "require": {
     "php": ">=5.3.2",
     "composer/installers": ">=v1.2.0",
-    "thanks-to-it/wp-admin-notices": "dev-master"
+    "thanks-to-it/wp-admin-notices": "dev-master",
+    "wpfactory/wpf-promoting-notice":"dev-master"
   },
   "extra": {
     "installer-paths": {
