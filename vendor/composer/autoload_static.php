@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit210d901cccf43797b74af46a30a265a1
+class ComposerStaticInitbd0667dbe5bd21678f3d9c5e16e91ee2
 {
     public static $files = array (
         '78b4b4ef123a8e57b73e04599b17bb38' => __DIR__ . '/..' . '/wpfactory/wpf-promoting-notice/src/php/functions.php',
@@ -24,7 +24,7 @@ class ComposerStaticInit210d901cccf43797b74af46a30a265a1
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInit210d901cccf43797b74af46a30a265a1::$classMap;
+            $loader->classMap = ComposerStaticInitbd0667dbe5bd21678f3d9c5e16e91ee2::$classMap;
 
         }, null, ClassLoader::class);
     }

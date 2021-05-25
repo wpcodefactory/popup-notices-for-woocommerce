@@ -30,7 +30,7 @@ private static $installed = array (
     'aliases' => 
     array (
     ),
-    'reference' => '998059ea047df67055b6243c5c537e1cf710adbe',
+    'reference' => '0aa3832ea9852147c97059bf24861c86035f1f04',
     'name' => 'thanks-to-it/popup-notices-for-woocommerce',
   ),
   'versions' => 
@@ -42,7 +42,7 @@ private static $installed = array (
       'aliases' => 
       array (
       ),
-      'reference' => '998059ea047df67055b6243c5c537e1cf710adbe',
+      'reference' => '0aa3832ea9852147c97059bf24861c86035f1f04',
     ),
     'wpfactory/wpf-promoting-notice' => 
     array (
@@ -52,7 +52,7 @@ private static $installed = array (
       array (
         0 => '9999999-dev',
       ),
-      'reference' => '90fed8e1187e56ae4d6a8c46c05d6408b22f7e49',
+      'reference' => '71e6b9b67b83842f3eb453a4f9e464f64cc73ac4',
     ),
   ),
 );

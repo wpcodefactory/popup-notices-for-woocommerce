@@ -12,19 +12,19 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wpcodefactory/wpf-promoting-notice.git",
-                "reference": "90fed8e1187e56ae4d6a8c46c05d6408b22f7e49"
+                "reference": "71e6b9b67b83842f3eb453a4f9e464f64cc73ac4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wpcodefactory/wpf-promoting-notice/zipball/90fed8e1187e56ae4d6a8c46c05d6408b22f7e49",
-                "reference": "90fed8e1187e56ae4d6a8c46c05d6408b22f7e49",
+                "url": "https://api.github.com/repos/wpcodefactory/wpf-promoting-notice/zipball/71e6b9b67b83842f3eb453a4f9e464f64cc73ac4",
+                "reference": "71e6b9b67b83842f3eb453a4f9e464f64cc73ac4",
                 "shasum": ""
             },
             "require": {
                 "php": ">=7.0.0"
             },
             "default-branch": true,
-            "type": "wordpress-plugin",
+            "type": "library",
             "autoload": {
                 "classmap": [
                     "src/php/"
@@ -37,7 +37,7 @@
                 "source": "https://github.com/wpcodefactory/wpf-promoting-notice/tree/master",
                 "issues": "https://github.com/wpcodefactory/wpf-promoting-notice/issues"
             },
-            "time": "2021-05-25T01:08:14+00:00"
+            "time": "2021-05-25T15:07:58+00:00"
         }
     ],
     "packages-dev": [],
