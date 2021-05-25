@@ -1,6 +1,5 @@
 {
   "name": "thanks-to-it/popup-notices-for-woocommerce",
-  "type": "wordpress-plugin",
   "description": "Turn your WooCommerce notices into popups",
   "keywords": [
     "wordpress",
@@ -29,17 +28,7 @@
   },
   "require": {
     "php": ">=5.3.2",
-    "composer/installers": ">=v1.2.0",
-    "thanks-to-it/wp-admin-notices": "dev-master",
     "wpfactory/wpf-promoting-notice":"dev-master"
-  },
-  "extra": {
-    "installer-paths": {
-      "vendor/{$vendor}/{$name}": [
-        "type:wordpress-plugin",
-        "type:wordpress-muplugin"
-      ]
-    }
   },
   "autoload": {
     "classmap": [
