@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Notices
  *
- * @version 1.2.3
+ * @version 1.2.8
  * @since   1.0.2
  * @author  Thanks to IT
  */
@@ -16,11 +16,24 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 
 	class Notices {
+
+		/**
+		 * @version 1.2.8
+		 * @since   1.0.2
+		 */
 		public function init() {
+			add_action( 'admin_init', array( $this, 'handle_notices' ) );
+		}
+
+		/**
+		 * @version 1.2.8
+		 * @since   1.2.8
+		 */
+		function handle_notices() {
 			require_once( WP_PLUGIN_DIR . '/wpf-promoting-notice/vendor/autoload.php' );
 			$promoting_notice = new \WPFactory\Promoting_Notice\Core();
 			$promoting_notice->set_args( array(
-				'enable'                 => apply_filters( 'ttt_pnwc_license_data', true ),
+				'enable'                 => apply_filters( 'ttt_pnwc_license_data', true, 'test' ),
 				'template_variables'     => array(
 					'%pro_version_url%'   => 'https://wpfactory.com/item/popup-notices-for-woocommerce/',
 					'%plugin_icon_url%'   => 'https://ps.w.org/popup-notices-for-woocommerce/assets/icon-128x128.png?rev=1884298',
