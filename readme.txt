@@ -3,7 +3,7 @@ Contributors: karzin
 Tags: popup,notices,woocommerce,notice,modal
 Requires at least: 4.4
 Tested up to: 5.7
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -102,6 +102,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 3. An example of a WooCommerce Notice info on the Popup
 
 == Changelog ==
+
+= 1.3.1 - 26/05/2021 =
+* Fix free version notice promoting Pro version.
 
 = 1.3.0 - 25/05/2021 =
 * Fix Error: Class "ThanksToIT\PNWC\Core" not found.

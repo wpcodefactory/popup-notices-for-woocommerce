@@ -7,18 +7,15 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/wpcodefactory/wpf-promoting-notice.git",
-                "reference": "71e6b9b67b83842f3eb453a4f9e464f64cc73ac4"
+                "reference": "0f02e350cc96bbb50085998ebdaaaea87cdf5ea5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wpcodefactory/wpf-promoting-notice/zipball/71e6b9b67b83842f3eb453a4f9e464f64cc73ac4",
-                "reference": "71e6b9b67b83842f3eb453a4f9e464f64cc73ac4",
+                "url": "https://api.github.com/repos/wpcodefactory/wpf-promoting-notice/zipball/0f02e350cc96bbb50085998ebdaaaea87cdf5ea5",
+                "reference": "0f02e350cc96bbb50085998ebdaaaea87cdf5ea5",
                 "shasum": ""
             },
-            "require": {
-                "php": ">=7.0.0"
-            },
-            "time": "2021-05-25T15:07:58+00:00",
+            "time": "2021-05-26T18:43:46+00:00",
             "default-branch": true,
             "type": "library",
             "installation-source": "dist",

@@ -1,1 +1,4 @@
 .gitignore export-ignore
+composer.json export-ignore
+composer.lock export-ignore
+README.md export-ignore

@@ -101,14 +101,12 @@ if ( ! class_exists( 'WPFactory\Promoting_Notice' ) ) {
 		 * @version 1.0.0
 		 * @since   1.0.0
 		 */
-		function create_notice() {
-			if ( true === apply_filters( 'alg_wc_ev_settings', true ) ) {
-				$args               = $this->get_args();
-				$notice             = $args['notice_template'];
-				$template_variables = $this->decode_template_variables( $args['template_variables'] );
-				$notice             = str_replace( array_keys( $template_variables ), $template_variables, $notice );
-				echo $notice;
-			}
+		function create_notice() {			
+			$args               = $this->get_args();
+			$notice             = $args['notice_template'];
+			$template_variables = $this->decode_template_variables( $args['template_variables'] );
+			$notice             = str_replace( array_keys( $template_variables ), $template_variables, $notice );
+			echo $notice;			
 		}
 
 		/**
