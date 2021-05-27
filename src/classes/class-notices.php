@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Notices
  *
- * @version 1.2.8
+ * @version 1.3.1
  * @since   1.0.2
  * @author  Thanks to IT
  */
@@ -26,19 +26,21 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 		}
 
 		/**
-		 * @version 1.2.8
+		 * @version 1.3.1
 		 * @since   1.2.8
 		 */
 		function handle_notices() {
 			$promoting_notice = wpf_promoting_notice();
 			$promoting_notice->set_args( array(
-				'enable'                 => apply_filters( 'ttt_pnwc_license_data', true ),
-				'template_variables'     => array(
+				'enable'                        => apply_filters( 'ttt_pnwc_license_data', true ),
+				'template_variables'            => array(
 					'%pro_version_url%'   => 'https://wpfactory.com/item/popup-notices-for-woocommerce/',
 					'%plugin_icon_url%'   => 'https://ps.w.org/popup-notices-for-woocommerce/assets/icon-128x128.png?rev=1884298',
 					'%pro_version_title%' => __( 'Pop-up Notices for WooCommerce Pro', 'popup-notices-for-woocommerce' ),
+					'%plugin_icon_style%' => 'width:35px;margin-right:10px;vertical-align:middle',
 				),
-				'woocommerce_section_id' => 'ttt-pnwc',
+				'woocommerce_section_id'        => 'ttt-pnwc',
+				'optimize_plugin_icon_contrast' => true
 			) );
 			$promoting_notice->init();
 		}

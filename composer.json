@@ -27,7 +27,6 @@
     "optimize-autoloader": true
   },
   "require": {
-    "php": ">=5.3.2",
     "wpfactory/wpf-promoting-notice":"dev-master"
   },
   "extra": {
