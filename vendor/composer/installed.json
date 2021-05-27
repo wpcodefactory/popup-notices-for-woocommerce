@@ -1,0 +1,39 @@
+{
+    "packages": [
+        {
+            "name": "wpfactory/wpf-promoting-notice",
+            "version": "dev-master",
+            "version_normalized": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wpcodefactory/wpf-promoting-notice.git",
+                "reference": "a16fb19074dea1a651f41874021116a264d89c81"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wpcodefactory/wpf-promoting-notice/zipball/a16fb19074dea1a651f41874021116a264d89c81",
+                "reference": "a16fb19074dea1a651f41874021116a264d89c81",
+                "shasum": ""
+            },
+            "time": "2021-05-27T02:06:30+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "classmap": [
+                    "src/php/"
+                ],
+                "files": [
+                    "src/php/functions.php"
+                ]
+            },
+            "support": {
+                "source": "https://github.com/wpcodefactory/wpf-promoting-notice/tree/master",
+                "issues": "https://github.com/wpcodefactory/wpf-promoting-notice/issues"
+            },
+            "install-path": "../wpfactory/wpf-promoting-notice"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}

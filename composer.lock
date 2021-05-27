@@ -1,0 +1,51 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "284caa338db3e592a4e91383c4d8b123",
+    "packages": [
+        {
+            "name": "wpfactory/wpf-promoting-notice",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wpcodefactory/wpf-promoting-notice.git",
+                "reference": "a16fb19074dea1a651f41874021116a264d89c81"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wpcodefactory/wpf-promoting-notice/zipball/a16fb19074dea1a651f41874021116a264d89c81",
+                "reference": "a16fb19074dea1a651f41874021116a264d89c81",
+                "shasum": ""
+            },
+            "default-branch": true,
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/php/"
+                ],
+                "files": [
+                    "src/php/functions.php"
+                ]
+            },
+            "support": {
+                "source": "https://github.com/wpcodefactory/wpf-promoting-notice/tree/master",
+                "issues": "https://github.com/wpcodefactory/wpf-promoting-notice/issues"
+            },
+            "time": "2021-05-27T02:06:30+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "wpfactory/wpf-promoting-notice": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
+}
