@@ -6,7 +6,7 @@
     'aliases' => 
     array (
     ),
-    'reference' => 'f8bd86c37cf8ee4c920eb12a9fcf0c1b86b80a17',
+    'reference' => '09780a85a1720962ecfc2e8c8e60670d81e201e4',
     'name' => 'thanks-to-it/popup-notices-for-woocommerce',
   ),
   'versions' => 
@@ -18,17 +18,16 @@
       'aliases' => 
       array (
       ),
-      'reference' => 'f8bd86c37cf8ee4c920eb12a9fcf0c1b86b80a17',
+      'reference' => '09780a85a1720962ecfc2e8c8e60670d81e201e4',
     ),
-    'wpfactory/wpf-promoting-notice' => 
+    'wpfactory/wpfactory-promoting-notice' => 
     array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
+      'pretty_version' => 'v1.0.2',
+      'version' => '1.0.2.0',
       'aliases' => 
       array (
-        0 => '9999999-dev',
       ),
-      'reference' => 'a16fb19074dea1a651f41874021116a264d89c81',
+      'reference' => '7d2687bc89b7a39b9735e8c5c4ce179f2c0cd9e7',
     ),
   ),
 );

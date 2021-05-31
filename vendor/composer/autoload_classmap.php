@@ -13,5 +13,5 @@ return array(
     'ThanksToIT\\PNWC\\Notices' => $baseDir . '/src/classes/class-notices.php',
     'ThanksToIT\\PNWC\\Restrictive_Loading' => $baseDir . '/src/classes/class-restrictive-loading.php',
     'ThanksToIT\\PNWC\\Template' => $baseDir . '/src/classes/class-template.php',
-    'WPFactory\\Promoting_Notice\\Core' => $vendorDir . '/wpfactory/wpf-promoting-notice/src/php/class-core.php',
+    'WPFactory\\Promoting_Notice\\Core' => $vendorDir . '/wpfactory/wpfactory-promoting-notice/src/php/class-core.php',
 );

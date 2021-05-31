@@ -1,22 +1,21 @@
 {
     "packages": [
         {
-            "name": "wpfactory/wpf-promoting-notice",
-            "version": "dev-master",
-            "version_normalized": "dev-master",
+            "name": "wpfactory/wpfactory-promoting-notice",
+            "version": "v1.0.2",
+            "version_normalized": "1.0.2.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/wpcodefactory/wpf-promoting-notice.git",
-                "reference": "a16fb19074dea1a651f41874021116a264d89c81"
+                "url": "https://github.com/wpcodefactory/wpfactory-promoting-notice.git",
+                "reference": "7d2687bc89b7a39b9735e8c5c4ce179f2c0cd9e7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wpcodefactory/wpf-promoting-notice/zipball/a16fb19074dea1a651f41874021116a264d89c81",
-                "reference": "a16fb19074dea1a651f41874021116a264d89c81",
+                "url": "https://api.github.com/repos/wpcodefactory/wpfactory-promoting-notice/zipball/7d2687bc89b7a39b9735e8c5c4ce179f2c0cd9e7",
+                "reference": "7d2687bc89b7a39b9735e8c5c4ce179f2c0cd9e7",
                 "shasum": ""
             },
-            "time": "2021-05-27T02:06:30+00:00",
-            "default-branch": true,
+            "time": "2021-05-31T23:22:14+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -28,10 +27,10 @@
                 ]
             },
             "support": {
-                "source": "https://github.com/wpcodefactory/wpf-promoting-notice/tree/master",
-                "issues": "https://github.com/wpcodefactory/wpf-promoting-notice/issues"
+                "source": "https://github.com/wpcodefactory/wpfactory-promoting-notice/tree/v1.0.2",
+                "issues": "https://github.com/wpcodefactory/wpfactory-promoting-notice/issues"
             },
-            "install-path": "../wpfactory/wpf-promoting-notice"
+            "install-path": "../wpfactory/wpfactory-promoting-notice"
         }
     ],
     "dev": true,

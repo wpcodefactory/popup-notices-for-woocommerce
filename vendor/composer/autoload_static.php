@@ -7,7 +7,7 @@ namespace Composer\Autoload;
 class ComposerStaticInit3e8315bb2928271508944e96daa516f8
 {
     public static $files = array (
-        '78b4b4ef123a8e57b73e04599b17bb38' => __DIR__ . '/..' . '/wpfactory/wpf-promoting-notice/src/php/functions.php',
+        '20872bbaff0e3115cc7db5ab4a7d607e' => __DIR__ . '/..' . '/wpfactory/wpfactory-promoting-notice/src/php/functions.php',
     );
 
     public static $classMap = array (
@@ -18,7 +18,7 @@ class ComposerStaticInit3e8315bb2928271508944e96daa516f8
         'ThanksToIT\\PNWC\\Notices' => __DIR__ . '/../..' . '/src/classes/class-notices.php',
         'ThanksToIT\\PNWC\\Restrictive_Loading' => __DIR__ . '/../..' . '/src/classes/class-restrictive-loading.php',
         'ThanksToIT\\PNWC\\Template' => __DIR__ . '/../..' . '/src/classes/class-template.php',
-        'WPFactory\\Promoting_Notice\\Core' => __DIR__ . '/..' . '/wpfactory/wpf-promoting-notice/src/php/class-core.php',
+        'WPFactory\\Promoting_Notice\\Core' => __DIR__ . '/..' . '/wpfactory/wpfactory-promoting-notice/src/php/class-core.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

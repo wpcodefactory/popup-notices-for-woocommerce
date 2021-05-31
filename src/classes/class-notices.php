@@ -30,7 +30,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 		 * @since   1.2.8
 		 */
 		function handle_notices() {
-			$promoting_notice = wpf_promoting_notice();
+			$promoting_notice = wpfactory_promoting_notice();
 			$promoting_notice->set_args( array(
 				'enable'                        => apply_filters( 'ttt_pnwc_license_data', true ),
 				'template_variables'            => array(

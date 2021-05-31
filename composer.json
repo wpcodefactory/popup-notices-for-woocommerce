@@ -12,7 +12,7 @@
   "repositories": [
     {
       "type": "vcs",
-      "url": "https://github.com/wpcodefactory/wpf-promoting-notice"
+      "url": "https://github.com/wpcodefactory/wpfactory-promoting-notice"
     }
   ],
   "license": "MIT",
@@ -27,7 +27,7 @@
     "optimize-autoloader": true
   },
   "require": {
-    "wpfactory/wpf-promoting-notice":"dev-master"
+    "wpfactory/wpfactory-promoting-notice": "*"
   },
   "extra": {
     "installer-paths": {
