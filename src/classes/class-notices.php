@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Notices
  *
- * @version 1.3.1
+ * @version 1.3.2
  * @since   1.0.2
  * @author  Thanks to IT
  */
@@ -26,7 +26,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
 		}
 
 		/**
-		 * @version 1.3.1
+		 * @version 1.3.2
 		 * @since   1.2.8
 		 */
 		function handle_notices() {
