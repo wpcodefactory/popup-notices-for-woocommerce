@@ -366,7 +366,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'id'            => 'ttt_pnwc_opt_ajax_add_to_cart_notice_wrapper_smart',
 						'name'          => __( 'Notices wrapper - Smart find', 'popup-notices-for-woocommerce' ),
 						'desc'          => __( 'Try to find the notices wrapper automatically', 'popup-notices-for-woocommerce' ),
-						'desc_tip'      => __( 'If it doesn\'t work, please use one of the options below.', 'popup-notices-for-woocommerce' ),
+						'desc_tip'      => __( 'If it doesn\'t work, please disable it and use one of the options below.', 'popup-notices-for-woocommerce' ),
 						'default'       => 'yes',
 					),
 					array(
