@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Admin Settings
  *
- * @version 1.2.7
+ * @version 1.3.2
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -35,51 +35,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 
 			// Allow regex values using allow_raw_values
 			add_filter( 'woocommerce_admin_settings_sanitize_option', array( $this, 'sanitize_raw_values' ), 10, 3 );
-			//add_action( 'woocommerce_settings_' . $this->id, array( $this, 'output_raw_values' ), 1 );
-
 		}
-
-		/**
-		 * Outputs raw values on 'allow_raw_values' fields
-		 *
-		 * @version 1.1.7
-		 * @since 1.1.2
-		 */
-		/*public function output_raw_values() {
-			global $current_section;
-			$settings   = $this->get_settings( $current_section );
-			$raw_values = wp_list_filter( $settings, array( 'allow_raw_values' => true ) );
-			$new_values = array();
-			foreach ( $raw_values as $key => $field ) {
-				if ( preg_match( '/^.*\[\d{0,3}\]$/', $field['id'] ) ) {
-					$arr                        = explode( "[", $field['id'] );
-					$new_option_id              = $arr[0];
-					$new_option                 = get_option( $new_option_id );
-					$option_index_matches       = preg_match( '/\[(.*?)\]/', $field['id'], $match );
-					$new_option_value           = isset( $match[1] ) ? $new_option[ $match[1] ] : $field['default'];
-					$new_values[ $field['id'] ] = html_entity_decode( $new_option_value );
-				} else {
-					$new_values[ $field['id'] ] = html_entity_decode( get_option( $field['id'], isset( $field['default'] ) ? $field['default'] : '' ) );
-				}
-			}
-			?>
-			<script>
-				let lrv = {
-					newValues:<?php echo wp_json_encode( $new_values )?>,
-					init: function () {
-						var newValues = this.newValues;
-						Object.keys(newValues).map(function (objectKey, index) {
-							var value = newValues[objectKey];
-							document.getElementById(objectKey).value = value;
-						});
-					}
-				};
-				document.addEventListener('DOMContentLoaded', function () {
-					lrv.init();
-				});
-			</script>
-			<?php
-		}*/
 
 		/**
 		 * Sanitizes raw values on 'allow_raw_values' fields with htmlentities()
@@ -104,7 +60,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 		/**
 		 * Handles admin settings regarding free plugin
 		 *
-		 * @version 1.2.0
+		 * @version 1.3.2
 		 * @since   1.0.2
 		 *
 		 * @param $settings
@@ -115,9 +71,6 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 			if ( true !== apply_filters( 'ttt_pnwc_license_data', '', 'is_free' ) ) {
 				return $settings;
 			}
-
-			// Premium Info
-			$premium_info             = apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
 
 			// Add info on premium sections
 			$premium_sections = wp_list_filter( $settings, array( 'premium_section' => true ) );
@@ -135,41 +88,9 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 				}
 			}
 
-			// General
-			$index                      = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_general' ) ) );
-			//$settings[ $index ]['desc'] .= "  ".apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
-
-			// Hide default notices
-			/*$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_hide_default_notices' ) ) );
-			$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
-			$settings[ $index ]['desc']                          .= "  ".apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );*/
-
 			// Prevent Scrolling
 			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_prevent_scroll' ) ) );
 			$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
-			//$settings[ $index ]['desc']                          .= "  ".apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
-
-			// Prevent Scrolling
-			//$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_auto_close_time' ) ) );
-			//$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
-			//$settings[ $index ]['desc']                          .= "  ".apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
-
-			// Ignored Messages
-			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_ignore_msg_field' ) ) );
-			//$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
-			//$settings[ $index ]['desc']                          .= apply_filters( 'ttt_pnwc_license_data', '', 'multiline_info' );
-
-			// Ignored Messages regex
-			$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_ignore_msg_regex' ) ) );
-			//$settings[ $index ]['desc']                          .= "  ".apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
-
-			// Restrictive Loading
-			//$index                                               = key( wp_list_filter( $settings, array( 'id' => 'ttt_pnwc_opt_restrictive_loading_pages' ) ) );
-			//$settings[ $index ]['custom_attributes']['disabled'] = apply_filters( 'ttt_pnwc_license_data', '', 'disabled_attribute' );
-			//$settings[ $index ]['desc']                          .= "  ".apply_filters( 'ttt_pnwc_license_data', '', 'premium_info' );
-
-
-
 
 			return $settings;
 		}
@@ -192,74 +113,14 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 		/**
 		 * Get settings array
 		 *
-		 * @since 1.2.7
+		 * @since 1.3.2
 		 *
 		 * @param string $current_section Optional. Defaults to empty string.
 		 *
 		 * @return array Array of settings
 		 */
 		public function get_settings( $current_section = '' ) {
-
-
-
 			//if ( 'messages' == $current_section ) {
-
-				/**
-				 * Filter Plugin Section 2 Settings
-				 *
-				 * @since 1.0.0
-				 *
-				 * @param array $settings Array of the plugin settings
-				 */
-				/*$settings = apply_filters( 'ttt_pnwc_settings_messages', array(
-
-					array(
-						'name' => __( 'Message Customization', 'popup-notices-for-woocommerce' ),
-						'type' => 'title',
-						'desc' => '',
-						'id'   => 'ttt_pnwc_opt_message_customization',
-					),
-
-					array(
-						'type'    => 'checkbox',
-						'id'      => 'ttt_pnwc_opt_message_customization_enable',
-						'name'    => __( 'Customize Messages', 'popup-notices-for-woocommerce' ),
-						'desc'    => __( 'Customize Notice messages', 'popup-notices-for-woocommerce' ),
-						'default' => 'no',
-					),
-
-					array(
-						'type'              => 'number',
-						'id'                => 'ttt_pnwc_opt_message_customization_amount',
-						'name'              => __( 'Amount', 'popup-notices-for-woocommerce' ),
-						'desc'              => __( 'Number of messages you want to customize', 'popup-notices-for-woocommerce' ),
-						'custom_attributes' => array( 'min' => 1 ),
-						'default'           => 1,
-					),
-
-					array(
-						'type' => 'sectionend',
-						'id'   => 'ttt_pnwc_opt_message_customization'
-					),
-
-					array(
-						'name' => __( 'Messages', 'popup-notices-for-woocommerce' ),
-						'type' => 'title',
-						'desc' => '',
-						'id'   => 'ttt_pnwc_opt_custom_messages',
-					),
-
-					apply_filters( 'ttt_pnwc_custom_messages', array() ),
-
-					// Dynamic messages
-
-					array(
-						'type' => 'sectionend',
-						'id'   => 'ttt_pnwc_opt_custom_messages'
-					),
-
-				) );*/
-
 			//} else {
 			if ( $current_section == '' ) {
 
@@ -481,6 +342,50 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 					array(
 						'type' => 'sectionend',
 						'id'   => 'ttt_pnwc_opt_notice_hiding'
+					),
+
+					// AJAX Add to cart notice
+					array(
+						'name'            => __( 'AJAX add to cart notice', 'popup-notices-for-woocommerce' ),
+						'type'            => 'title',
+						'premium_section' => true,
+						'desc'            => sprintf( __( 'By default, WooCommerce doesn\'t display the notice when a product has been <a href="%s">added to cart via AJAX on archive pages</a>.', 'popup-notices-for-woocommerce' ), admin_url( 'admin.php?page=wc-settings&tab=products' ) ) . '<br />' .
+						                     __( 'Below are the options of how you can enable and setup it.', 'popup-notices-for-woocommerce' ),
+						'id'              => 'ttt_pnwc_opt_ajax_add_to_cart_notice',
+					),
+					array(
+						'type'          => 'checkbox',
+						'premium_field' => true,
+						'id'            => 'ttt_pnwc_opt_ajax_add_to_cart_notice_enable',
+						'name'          => __( 'AJAX add to cart notice', 'popup-notices-for-woocommerce' ),
+						'desc'          => __( 'Display AJAX add to cart notice', 'popup-notices-for-woocommerce' ),
+						'default'       => 'no',
+					),
+					array(
+						'type'          => 'checkbox',
+						'id'            => 'ttt_pnwc_opt_ajax_add_to_cart_notice_wrapper_smart',
+						'name'          => __( 'Notices wrapper - Smart find', 'popup-notices-for-woocommerce' ),
+						'desc'          => __( 'Try to find the notices wrapper automatically', 'popup-notices-for-woocommerce' ),
+						'desc_tip'      => __( 'If it doesn\'t work, please use one of the options below.', 'popup-notices-for-woocommerce' ),
+						'default'       => 'no',
+					),
+					array(
+						'type'          => 'text',
+						'id'            => 'ttt_pnwc_opt_ajax_add_to_cart_notice_wrapper_hook',
+						'name'          => __( 'Notices wrapper - Action hook', 'popup-notices-for-woocommerce' ),
+						'desc'          => __( 'Add the notice wrapper manually using a action hook.', 'popup-notices-for-woocommerce' ),
+						'default'       => '',
+					),
+					array(
+						'type'          => 'text',
+						'id'            => 'ttt_pnwc_opt_ajax_add_to_cart_notice_wrapper_selector',
+						'name'          => __( 'Notices wrapper - Selector', 'popup-notices-for-woocommerce' ),
+						'desc'          => __( 'Add the notice wrapper manually by specifying a DOM selector.', 'popup-notices-for-woocommerce' ),
+						'default'       => '',
+					),
+					array(
+						'type' => 'sectionend',
+						'id'   => 'ttt_pnwc_opt_ajax_add_to_cart_notice'
 					),
 
 					// Ignore Messages

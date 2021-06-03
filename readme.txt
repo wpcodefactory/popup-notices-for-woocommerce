@@ -103,8 +103,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
-= 1.3.2 - 31/05/2021 =
+= 1.3.2 - 02/06/2021 =
 * Update promoting notice.
+* Add "AJAX add to cart notice" options.
 
 = 1.3.1 - 26/05/2021 =
 * Fix free version notice promoting Pro version.
