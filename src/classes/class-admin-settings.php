@@ -367,7 +367,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'name'          => __( 'Notices wrapper - Smart find', 'popup-notices-for-woocommerce' ),
 						'desc'          => __( 'Try to find the notices wrapper automatically', 'popup-notices-for-woocommerce' ),
 						'desc_tip'      => __( 'If it doesn\'t work, please use one of the options below.', 'popup-notices-for-woocommerce' ),
-						'default'       => 'no',
+						'default'       => 'yes',
 					),
 					array(
 						'type'          => 'text',
