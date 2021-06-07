@@ -2,7 +2,7 @@
 /**
  * WPFactory Promoting Notice - Functions.
  *
- * @version 1.0.1
+ * @version 1.0.5
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -21,7 +21,7 @@ if ( ! class_exists( 'WPFactory\Promoting_Notice' ) ) {
 		/**
 		 * set_args.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.5
 		 * @since   1.0.0
 		 *
 		 * @param array $args
@@ -30,38 +30,66 @@ if ( ! class_exists( 'WPFactory\Promoting_Notice' ) ) {
 			// General args
 			$args = wp_parse_args( $args, array(
 				'enable'                                 => true,
-				'woocommerce_section_id'                 => '',
-				'notice_template'                        => '<div id="message" class="%dynamic_notice_class% wpf-promoting-notice notice notice-info inline"><p class="wpf-pan-p">%content_template%</p></div>',
+				'notice_template'                        => '<div id="message" class="%notice_class%"><p class="wpfactory-pan-p">%content_template%</p></div>',
 				'lib_dirname'                            => dirname( __FILE__, 2 ),
 				'highlight_notice_on_disabled_opt_click' => true,
 				'template_variables'                     => array(),
+				'url_requirements'                       => array(
+					'page_filename' => 'admin.php',
+					'params'        => array(),
+				),
+				'display_action'                         => $this->get_default_display_action( $args ),
 				'optimize_plugin_icon_contrast'          => false
 			) );
 			// Template variables
 			$args['template_variables'] = wp_parse_args( $args['template_variables'], array(
-				'%dynamic_notice_class%' => isset( $args['woocommerce_section_id'] ) ? $args['woocommerce_section_id'] . '-notice' : '',
-				'%pro_version_title%'    => __( 'Awesome plugin Pro', 'wpf-promoting-notice' ),
+				'%notice_class%'         => 'wpfactory-promoting-notice notice notice-info inline',
+				'%pro_version_title%'    => __( 'Awesome plugin Pro', 'wpfactory-promoting-notice' ),
 				'%pro_version_url%'      => 'https://wpfactory.com/item/awesome-plugin/',
 				'%plugin_icon_url%'      => 'https://pluginfactory-tastystakes.netdna-ssl.com/img/site/plugin_icon.png',
 				'%plugin_icon_style%'    => 'width:39px;margin-right:10px;vertical-align:middle',
-				'%btn_icon_class%'       => 'wpf-pan-btn-icon dashicons-before dashicons-unlock',
+				'%btn_icon_class%'       => 'wpfactory-pan-btn-icon dashicons-before dashicons-unlock',
 				'%btn_icon_style%'       => 'position:relative;top:3px;margin:0 2px 0 -2px;',
 				'%btn_style%'            => 'vertical-align:middle;display:inline-block;margin:0',
-				'%btn_call_to_action%'   => __( 'Upgrade to Pro version', 'wpf-promoting-notice' ),
-				'%main_text%'            => __( 'Disabled options can be unlocked using <a href="%pro_version_url%" target="_blank"><strong>%pro_version_title%</strong></a>', 'wpf-promoting-notice' ),
+				'%btn_call_to_action%'   => __( 'Upgrade to Pro version', 'wpfactory-promoting-notice' ),
+				'%main_text%'            => __( 'Disabled options can be unlocked using <a href="%pro_version_url%" target="_blank"><strong>%pro_version_title%</strong></a>', 'wpfactory-promoting-notice' ),
 				'%main_text_style%'      => 'vertical-align: middle;margin:0 14px 0 0;',
-				'%content_template%'     => '<img class="wpf-pan-plugin-icon" src="%plugin_icon_url%"/>' .
-				                            '<span class="wpf-pan-main-text">%main_text%</span>' .
-				                            '<a target="_blank" class="wpf-pan-button button-primary" href="%pro_version_url%"><i class="%btn_icon_class%"></i>%btn_call_to_action%</a>',
+				'%content_template%'     => '<img class="wpfactory-pan-plugin-icon" src="%plugin_icon_url%"/>' .
+				                            '<span class="wpfactory-pan-main-text">%main_text%</span>' .
+				                            '<a target="_blank" class="wpfactory-pan-button button-primary" href="%pro_version_url%"><i class="%btn_icon_class%"></i>%btn_call_to_action%</a>',
 			) );
 			// Set args
 			$this->args = $args;
 		}
 
 		/**
+		 * get_default_display_action.
+		 *
+		 * @version 1.0.3
+		 * @since   1.0.3
+		 *
+		 * @param $args
+		 *
+		 * @return string
+		 */
+		function get_default_display_action( $args ) {
+			$action_hook = 'admin_notices';
+			if (
+				isset( $args['url_requirements']['params']['page'] )
+				&& ! empty( $page = $args['url_requirements']['params']['page'] )
+				&& isset( $args['url_requirements']['params']['tab'] )
+				&& ! empty( $tab = $args['url_requirements']['params']['tab'] )
+				&& 'wc-settings' === $page
+			) {
+				$action_hook = 'woocommerce_sections_' . $tab;
+			}
+			return $action_hook;
+		}
+
+		/**
 		 * init.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.4
 		 * @since   1.0.0
 		 */
 		function init() {
@@ -69,10 +97,18 @@ if ( ! class_exists( 'WPFactory\Promoting_Notice' ) ) {
 			if ( empty( $args['enable'] ) ) {
 				return;
 			}
-			if ( ! empty( $args['woocommerce_section_id'] ) ) {
-				add_action( 'woocommerce_sections_' . $args['woocommerce_section_id'], array( $this, 'create_style' ) );
-				add_action( 'woocommerce_sections_' . $args['woocommerce_section_id'], array( $this, 'create_notice' ) );
-				add_action( 'woocommerce_sections_' . $args['woocommerce_section_id'], array( $this, 'highlight_notice_on_disabled_setting_click' ) );
+			global $pagenow;
+			if (
+				! empty( $args['url_requirements'] )
+				&& ! empty( $page_filename = $args['url_requirements']['page_filename'] )
+				&& ! empty( $url_params = $args['url_requirements']['params'] )
+				&& ! empty( $pagenow )
+				&& $pagenow == $page_filename
+				&& array_intersect_assoc( $url_params, $_GET ) === $url_params
+			) {
+				add_action( 'admin_head', array( $this, 'create_style' ) );
+				add_action( 'admin_head', array( $this, 'highlight_notice_on_disabled_setting_click' ) );
+				add_action( $args['display_action'], array( $this, 'create_notice' ) );
 			}
 		}
 
@@ -102,12 +138,12 @@ if ( ! class_exists( 'WPFactory\Promoting_Notice' ) ) {
 		 * @version 1.0.0
 		 * @since   1.0.0
 		 */
-		function create_notice() {			
+		function create_notice() {
 			$args               = $this->get_args();
 			$notice             = $args['notice_template'];
 			$template_variables = $this->decode_template_variables( $args['template_variables'] );
 			$notice             = str_replace( array_keys( $template_variables ), $template_variables, $notice );
-			echo $notice;			
+			echo $notice;
 		}
 
 		/**
@@ -126,17 +162,17 @@ if ( ! class_exists( 'WPFactory\Promoting_Notice' ) ) {
 				jQuery(document).ready(function ($) {
 					jQuery(document).ready(function ($) {
 						let highlighter = {
-							targetClass: '.wpf-promoting-notice',
+							targetClass: '.wpfactory-promoting-notice',
 							highlight: function () {
 								window.scrollTo({
 									top: 0,
 									behavior: 'smooth'
 								});
 								setTimeout(function () {
-									$(highlighter.targetClass).addClass('wpf-pan-blink');
+									$(highlighter.targetClass).addClass('wpfactory-pan-blink');
 								}, 300);
 								setTimeout(function () {
-									$(highlighter.targetClass).removeClass('wpf-pan-blink');
+									$(highlighter.targetClass).removeClass('wpfactory-pan-blink');
 								}, 3000);
 							}
 						};
@@ -148,7 +184,7 @@ if ( ! class_exists( 'WPFactory\Promoting_Notice' ) ) {
 								});
 								let position = $(this).position();
 								position.top = $(this)[0].offsetTop;
-								let disabledDiv = $("<div class='wpf-pan-disabled wpf-pan-highlight-premium-notice'></div>").insertAfter($(this));
+								let disabledDiv = $("<div class='wpfactory-pan-disabled wpfactory-pan-highlight-premium-notice'></div>").insertAfter($(this));
 								disabledDiv.css({
 									"position": "absolute",
 									"left": position.left,
@@ -161,8 +197,8 @@ if ( ! class_exists( 'WPFactory\Promoting_Notice' ) ) {
 						}
 
 						createDisabledElem();
-						$("label:has(input:disabled),label:has(input[readonly])").addClass('wpf-pan-highlight-premium-notice');
-						$(".wpf-pan-highlight-premium-notice, .select2-container--disabled").on('click', highlighter.highlight);
+						$("label:has(input:disabled),label:has(input[readonly])").addClass('wpfactory-pan-highlight-premium-notice');
+						$(".wpfactory-pan-highlight-premium-notice, .select2-container--disabled").on('click', highlighter.highlight);
 					});
 				});
 			</script>
@@ -187,7 +223,7 @@ if ( ! class_exists( 'WPFactory\Promoting_Notice' ) ) {
 			$image_rendering_style = $args['optimize_plugin_icon_contrast'] ? $image_rendering_style : '';
 			?>
 			<style>
-				.wpf-pan-blink {
+				.wpfactory-pan-blink {
 					animation: alg-dtwp-blink 1s;
 					animation-iteration-count: 3;
 				}
@@ -199,28 +235,28 @@ if ( ! class_exists( 'WPFactory\Promoting_Notice' ) ) {
 				}
 
 				<?php echo esc_attr($notice_selector); ?>
-				.wpf-pan-plugin-icon {
-					<?php echo $image_rendering_style; ?>
+				.wpfactory-pan-plugin-icon {
+				<?php echo $image_rendering_style; ?>
 				<?php echo esc_attr($args['template_variables']['%plugin_icon_style%']); ?>
 				}
 
 				<?php echo esc_attr($notice_selector); ?>
-				.wpf-pan-main-text {
+				.wpfactory-pan-main-text {
 				<?php echo esc_attr($args['template_variables']['%main_text_style%']); ?>
 				}
 
 				<?php echo esc_attr($notice_selector); ?>
-				.wpf-pan-button {
+				.wpfactory-pan-button {
 				<?php echo esc_attr($args['template_variables']['%btn_style%']); ?>
 				}
 
 				<?php echo esc_attr($notice_selector); ?>
-				.wpf-pan-btn-icon {
+				.wpfactory-pan-btn-icon {
 				<?php echo esc_attr($args['template_variables']['%btn_icon_style%']); ?>
 				}
 
 				<?php echo esc_attr($notice_selector); ?>
-				.wpf-pan-p {
+				.wpfactory-pan-p {
 					margin: 5px 0
 				}
 			</style>
@@ -265,15 +301,14 @@ if ( ! class_exists( 'WPFactory\Promoting_Notice' ) ) {
 		/**
 		 * get_notice_selector.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.3
 		 * @since   1.0.0
 		 *
 		 * @return string
 		 */
 		function get_notice_selector() {
 			$args     = $this->get_args();
-			$selector = '.wpf-promoting-notice';
-			$selector .= ! empty( $args['%dynamic_notice_class%'] ) ? '.' . $args['%dynamic_notice_class%'] : '';
+			$selector = '.wpfactory-promoting-notice';
 			return $selector;
 		}
 
