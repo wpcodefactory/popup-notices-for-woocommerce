@@ -381,6 +381,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'id'            => 'ttt_pnwc_opt_ajax_add_to_cart_notice_wrapper_selector',
 						'name'          => __( 'Notices wrapper - Selector', 'popup-notices-for-woocommerce' ),
 						'desc'          => __( 'Add the notice wrapper manually by specifying a DOM selector.', 'popup-notices-for-woocommerce' ),
+						'desc_tip'      => sprintf( __( 'Probably %s would be a good guess.', 'popup-notices-for-woocommerce' ), '<code>' . '.woocommerce-notices-wrapper' . '</code>' ),
 						'default'       => '',
 					),
 					array(
