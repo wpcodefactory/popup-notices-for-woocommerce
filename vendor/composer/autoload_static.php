@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit3e8315bb2928271508944e96daa516f8
+class ComposerStaticInit7bde6f2ca8d7ce42932ddbb50cedb241
 {
     public static $files = array (
         '20872bbaff0e3115cc7db5ab4a7d607e' => __DIR__ . '/..' . '/wpfactory/wpfactory-promoting-notice/src/php/functions.php',
@@ -12,19 +12,14 @@ class ComposerStaticInit3e8315bb2928271508944e96daa516f8
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'ThanksToIT\\PNWC\\Admin_Settings' => __DIR__ . '/../..' . '/src/classes/class-admin-settings.php',
-        'ThanksToIT\\PNWC\\Core' => __DIR__ . '/../..' . '/src/classes/class-core.php',
-        'ThanksToIT\\PNWC\\Modal' => __DIR__ . '/../..' . '/src/classes/class-modal.php',
-        'ThanksToIT\\PNWC\\Notices' => __DIR__ . '/../..' . '/src/classes/class-notices.php',
-        'ThanksToIT\\PNWC\\Restrictive_Loading' => __DIR__ . '/../..' . '/src/classes/class-restrictive-loading.php',
-        'ThanksToIT\\PNWC\\Template' => __DIR__ . '/../..' . '/src/classes/class-template.php',
         'WPFactory\\Promoting_Notice\\Core' => __DIR__ . '/..' . '/wpfactory/wpfactory-promoting-notice/src/php/class-core.php',
+        'WPFactory\\WPFactory_Autoloader\\WPFactory_Autoloader' => __DIR__ . '/..' . '/wpfactory/wpfactory-autoloader/src/php/class-wpfactory-autoloader.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->classMap = ComposerStaticInit3e8315bb2928271508944e96daa516f8::$classMap;
+            $loader->classMap = ComposerStaticInit7bde6f2ca8d7ce42932ddbb50cedb241::$classMap;
 
         }, null, ClassLoader::class);
     }

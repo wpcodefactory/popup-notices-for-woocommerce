@@ -1,0 +1,8 @@
+{
+  "name": "wpfactory/wpfactory-autoloader",
+  "autoload": {
+    "classmap": [
+      "src/php/"
+    ]
+  }
+}

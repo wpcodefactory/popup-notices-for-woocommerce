@@ -11,7 +11,7 @@
  * Text Domain: popup-notices-for-woocommerce
  * Domain Path: /src/languages
  * WC requires at least: 3.0.0
- * WC tested up to: 5.3
+ * WC tested up to: 5.5
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -19,6 +19,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 } // Exit if accessed directly
 
 require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
+
+// Autoloader
+$autoloader = new WPFactory\WPFactory_Autoloader\WPFactory_Autoloader();
+$autoloader->add_namespace( 'ThanksToIT\PNWC', plugin_dir_path( __FILE__ ) . '/src/php' );
+$autoloader->init();
 
 // Check if WooCommerce is active
 $plugin = 'woocommerce/woocommerce.php';

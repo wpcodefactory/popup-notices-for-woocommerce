@@ -1,33 +1,41 @@
-<?php return array (
-  'root' => 
-  array (
-    'pretty_version' => 'dev-master',
-    'version' => 'dev-master',
-    'aliases' => 
-    array (
+<?php return array(
+    'root' => array(
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'type' => 'library',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'reference' => '03a672b86581674faea7943ffda22bf76063cd6f',
+        'name' => 'thanks-to-it/popup-notices-for-woocommerce',
+        'dev' => true,
     ),
-    'reference' => '1e558551a816332428e76abc1eb19b896947f834',
-    'name' => 'thanks-to-it/popup-notices-for-woocommerce',
-  ),
-  'versions' => 
-  array (
-    'thanks-to-it/popup-notices-for-woocommerce' => 
-    array (
-      'pretty_version' => 'dev-master',
-      'version' => 'dev-master',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '1e558551a816332428e76abc1eb19b896947f834',
+    'versions' => array(
+        'thanks-to-it/popup-notices-for-woocommerce' => array(
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'reference' => '03a672b86581674faea7943ffda22bf76063cd6f',
+            'dev_requirement' => false,
+        ),
+        'wpfactory/wpfactory-autoloader' => array(
+            'pretty_version' => 'v1.0.1',
+            'version' => '1.0.1.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../wpfactory/wpfactory-autoloader',
+            'aliases' => array(),
+            'reference' => '89a0f13705b6d6fede0da5982f123ef880d5cdaf',
+            'dev_requirement' => false,
+        ),
+        'wpfactory/wpfactory-promoting-notice' => array(
+            'pretty_version' => '1.0.5',
+            'version' => '1.0.5.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../wpfactory/wpfactory-promoting-notice',
+            'aliases' => array(),
+            'reference' => '4d248f9ec4755fe6a8fc5ac0e67a098ac6e01f37',
+            'dev_requirement' => false,
+        ),
     ),
-    'wpfactory/wpfactory-promoting-notice' => 
-    array (
-      'pretty_version' => '1.0.5',
-      'version' => '1.0.5.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '4d248f9ec4755fe6a8fc5ac0e67a098ac6e01f37',
-    ),
-  ),
 );

@@ -13,6 +13,10 @@
     {
       "type": "vcs",
       "url": "https://github.com/wpcodefactory/wpfactory-promoting-notice"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/wpcodefactory/wpfactory-autoloader"
     }
   ],
   "license": "MIT",
@@ -27,24 +31,7 @@
     "optimize-autoloader": true
   },
   "require": {
-    "wpfactory/wpfactory-promoting-notice": "*"
-  },
-  "extra": {
-    "installer-paths": {
-      "vendor/{$vendor}/{$name}": [
-        "type:wordpress-plugin",
-        "type:wordpress-muplugin"
-      ]
-    }
-  },
-  "autoload": {
-    "classmap": [
-      "src/classes/"
-    ],
-    "exclude-from-classmap": [
-      "/Tests/",
-      "/test/",
-      "/tests/"
-    ]
+    "wpfactory/wpfactory-promoting-notice": "*",
+    "wpfactory/wpfactory-autoloader": "*"
   }
 }
