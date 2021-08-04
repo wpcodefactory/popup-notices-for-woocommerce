@@ -18,22 +18,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
+// Handle is_plugin_active function.
+if ( ! function_exists( 'is_plugin_active' ) ) {
+	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+}
 
-// Autoloader
+// Check for active plugins.
+if (
+	! is_plugin_active( 'woocommerce/woocommerce.php' ) ||
+	( 'popup-notices-for-woocommerce.php' === basename( __FILE__ ) && is_plugin_active( 'popup-notices-for-woocommerce-pro/popup-notices-for-woocommerce-pro.php' ) )
+) {
+	return;
+}
+
+// Composer.
+if ( ! class_exists( '\ThanksToIT\PNWC\Core' ) ) :
+	require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
+endif;
+
+// Autoloader.
 $autoloader = new WPFactory\WPFactory_Autoloader\WPFactory_Autoloader();
 $autoloader->add_namespace( 'ThanksToIT\PNWC', plugin_dir_path( __FILE__ ) . '/src/php' );
 do_action( 'pnwc_autoloader', $autoloader );
 $autoloader->init();
-
-// Check if WooCommerce is active
-$plugin = 'woocommerce/woocommerce.php';
-if (
-	! in_array( $plugin, apply_filters( 'active_plugins', get_option( 'active_plugins', array() ) ) ) &&
-	! ( is_multisite() && array_key_exists( $plugin, get_site_option( 'active_sitewide_plugins', array() ) ) )
-) {
-	return;
-}
 
 $plugin = \ThanksToIT\PNWC\Core::instance();
 $plugin->setup( array(
