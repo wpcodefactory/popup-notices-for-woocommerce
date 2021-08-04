@@ -23,6 +23,7 @@ require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 // Autoloader
 $autoloader = new WPFactory\WPFactory_Autoloader\WPFactory_Autoloader();
 $autoloader->add_namespace( 'ThanksToIT\PNWC', plugin_dir_path( __FILE__ ) . '/src/php' );
+do_action( 'pnwc_autoloader', $autoloader );
 $autoloader->init();
 
 // Check if WooCommerce is active
