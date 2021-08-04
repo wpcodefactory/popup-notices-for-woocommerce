@@ -19,9 +19,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 } // Exit if accessed directly
 
 // Composer.
-if ( ! class_exists( '\ThanksToIT\PNWC\Core' ) ) :
+if ( ! class_exists( '\ThanksToIT\PNWC\Core' ) ) {
     require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
-endif;
+} else {
+    return;
+}
 
 // Autoloader.
 $autoloader = new WPFactory\WPFactory_Autoloader\WPFactory_Autoloader();
