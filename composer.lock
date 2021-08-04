@@ -4,8 +4,34 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4f83d78b7090b048174784caf39e3a15",
+    "content-hash": "c217c2ebee811938bc21eb3a914a1573",
     "packages": [
+        {
+            "name": "wpfactory/wpfactory-autoloader",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wpcodefactory/wpfactory-autoloader.git",
+                "reference": "89a0f13705b6d6fede0da5982f123ef880d5cdaf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wpcodefactory/wpfactory-autoloader/zipball/89a0f13705b6d6fede0da5982f123ef880d5cdaf",
+                "reference": "89a0f13705b6d6fede0da5982f123ef880d5cdaf",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/php/"
+                ]
+            },
+            "support": {
+                "source": "https://github.com/wpcodefactory/wpfactory-autoloader/tree/v1.0.1",
+                "issues": "https://github.com/wpcodefactory/wpfactory-autoloader/issues"
+            },
+            "time": "2021-07-21T13:50:28+00:00"
+        },
         {
             "name": "wpfactory/wpfactory-promoting-notice",
             "version": "1.0.5",
@@ -44,5 +70,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }

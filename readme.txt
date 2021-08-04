@@ -2,7 +2,7 @@
 Contributors: karzin
 Tags: popup,notices,woocommerce,notice,modal
 Requires at least: 4.4
-Tested up to: 5.7
+Tested up to: 5.8
 Stable tag: 1.3.1
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
@@ -106,6 +106,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 = 1.3.2 - 08/06/2021 =
 * Update promoting notice.
 * Add "AJAX add to cart notice" options.
+* Add autoloader.
+* WC tested up to: 5.5.
+* Tested up to: 5.8.
 
 = 1.3.1 - 26/05/2021 =
 * Fix free version notice promoting Pro version.
