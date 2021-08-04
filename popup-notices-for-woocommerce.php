@@ -3,7 +3,7 @@
  * Plugin Name: Pop-up Notices for WooCommerce
  * Plugin URI: https://wordpress.org/plugins/popup-notices-for-woocommerce
  * Description: Turn your WooCommerce Notices into Popups
- * Version: 1.3.2
+ * Version: 1.3.3-dev
  * Author: Thanks to IT
  * Author URI: https://github.com/thanks-to-it
  * License: GNU General Public License v3.0
@@ -24,15 +24,22 @@ if ( ! function_exists( 'is_plugin_active' ) ) {
 }
 
 // Check for active plugins.
-if ( ! is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+if (
+    ! is_plugin_active( 'woocommerce/woocommerce.php' )
+    || (
+        'popup-notices-for-woocommerce.php' === basename( __FILE__ ) &&
+        is_plugin_active( 'popup-notices-for-woocommerce-pro/popup-notices-for-woocommerce-pro.php' ) &&
+        ! empty( $wp_plugin_dir = str_replace( array( '/', '\\' ), DIRECTORY_SEPARATOR, trailingslashit( WP_PLUGIN_DIR ) ) ) &&
+        ! empty( $plugin_parent_dir = str_replace( array( '/', '\\' ), DIRECTORY_SEPARATOR, trailingslashit( dirname( __FILE__, 2 ) ) ) ) &&
+        $plugin_parent_dir === $wp_plugin_dir
+    )
+) {
     return;
 }
 
 // Composer.
 if ( ! class_exists( '\ThanksToIT\PNWC\Core' ) ) {
     require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
-} else {
-    return;
 }
 
 // Autoloader.

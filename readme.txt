@@ -103,6 +103,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
+= 1.3.3 - 04/08/2021 =
+* Fix - Free and pro version can't be active at the same time.
+
 = 1.3.2 - 04/08/2021 =
 * Update promoting notice.
 * Add "AJAX add to cart notice" options.
