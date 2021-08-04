@@ -15,25 +15,12 @@
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
-	exit;
+    exit;
 } // Exit if accessed directly
-
-// Handle is_plugin_active function.
-if ( ! function_exists( 'is_plugin_active' ) ) {
-	include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-}
-
-// Check for active plugins.
-if (
-	! is_plugin_active( 'woocommerce/woocommerce.php' ) ||
-	( 'popup-notices-for-woocommerce.php' === basename( __FILE__ ) && is_plugin_active( 'popup-notices-for-woocommerce-pro/popup-notices-for-woocommerce-pro.php' ) )
-) {
-	return;
-}
 
 // Composer.
 if ( ! class_exists( '\ThanksToIT\PNWC\Core' ) ) :
-	require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
+    require_once plugin_dir_path( __FILE__ ) . 'vendor/autoload.php';
 endif;
 
 // Autoloader.
@@ -42,10 +29,23 @@ $autoloader->add_namespace( 'ThanksToIT\PNWC', plugin_dir_path( __FILE__ ) . '/s
 do_action( 'pnwc_autoloader', $autoloader );
 $autoloader->init();
 
+// Handle is_plugin_active function.
+if ( ! function_exists( 'is_plugin_active' ) ) {
+    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+}
+
+// Check for active plugins.
+if (
+    ! is_plugin_active( 'woocommerce/woocommerce.php' ) ||
+    ( 'popup-notices-for-woocommerce.php' === basename( __FILE__ ) && is_plugin_active( 'popup-notices-for-woocommerce-pro/popup-notices-for-woocommerce-pro.php' ) )
+) {
+    return;
+}
+
 $plugin = \ThanksToIT\PNWC\Core::instance();
 $plugin->setup( array(
-	'path' => __FILE__
+    'path' => __FILE__
 ) );
 if ( true === apply_filters( 'ttt_pnwc_init', true ) ) {
-	$plugin->init();
+    $plugin->init();
 }
