@@ -25,8 +25,8 @@ if ( ! function_exists( 'is_plugin_active' ) ) {
 
 // Check for active plugins.
 if (
-    ! is_plugin_active( 'woocommerce/woocommerce.php' )
-    || (
+    ! is_plugin_active( 'woocommerce/woocommerce.php' ) ||
+    (
         'popup-notices-for-woocommerce.php' === basename( __FILE__ ) &&
         is_plugin_active( 'popup-notices-for-woocommerce-pro/popup-notices-for-woocommerce-pro.php' ) &&
         ! empty( $wp_plugin_dir = str_replace( array( '/', '\\' ), DIRECTORY_SEPARATOR, trailingslashit( WP_PLUGIN_DIR ) ) ) &&
