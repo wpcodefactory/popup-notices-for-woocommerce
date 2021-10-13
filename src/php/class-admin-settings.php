@@ -373,7 +373,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'type'          => 'text',
 						'id'            => 'ttt_pnwc_opt_ajax_add_to_cart_notice_wrapper_hook',
 						'name'          => __( 'Notices wrapper - Action hook', 'popup-notices-for-woocommerce' ),
-						'desc'          => __( 'Add the notice wrapper manually using a action hook.', 'popup-notices-for-woocommerce' ),
+						'desc'          => __( 'Add the notice wrapper manually using an action hook.', 'popup-notices-for-woocommerce' ),
 						'default'       => '',
 					),
 					array(
