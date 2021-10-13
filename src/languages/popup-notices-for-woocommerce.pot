@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pop-up Notices for WooCommerce\n"
-"POT-Creation-Date: 2021-08-04 16:14-0300\n"
+"POT-Creation-Date: 2021-10-13 14:42-0300\n"
 "PO-Revision-Date: 2017-01-17 13:05-0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -251,7 +251,7 @@ msgid "Notices wrapper - Action hook"
 msgstr ""
 
 #: php/class-admin-settings.php:376
-msgid "Add the notice wrapper manually using a action hook."
+msgid "Add the notice wrapper manually using an action hook."
 msgstr ""
 
 #: php/class-admin-settings.php:382

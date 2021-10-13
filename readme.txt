@@ -23,7 +23,7 @@ And sometimes, depending on the theme, they get so discreet customers don't see 
 
 **Pop-up Notices for WooCommercee** adds WooCommerce Notices into beautiful Popups that will be noticed and appreciated.
 
-== Premium Version ==
+### &#127942; Premium Version ###
 Do you like the free version of this plugin?
 Did you know We also have a [Premium Version](https://wpfactory.com/item/popup-notices-for-woocommerce/)?
 
