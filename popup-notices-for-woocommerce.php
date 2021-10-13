@@ -3,7 +3,7 @@
  * Plugin Name: Pop-up Notices for WooCommerce
  * Plugin URI: https://wordpress.org/plugins/popup-notices-for-woocommerce
  * Description: Turn your WooCommerce Notices into Popups
- * Version: 1.3.4
+ * Version: 1.3.5
  * Author: Thanks to IT
  * Author URI: https://github.com/thanks-to-it
  * License: GNU General Public License v3.0
@@ -19,16 +19,29 @@ if ( ! defined( 'ABSPATH' ) ) {
 } // Exit if accessed directly
 
 // Handle is_plugin_active function.
-if ( ! function_exists( 'is_plugin_active' ) ) {
-    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+if ( ! function_exists( 'ttt_pnwc_is_plugin_active' ) ) {
+	/**
+	 * ttt_pnwc_is_plugin_active.
+	 *
+	 * @version 1.3.5
+	 * @since   1.3.5
+	 */
+	function ttt_pnwc_is_plugin_active( $plugin ) {
+		return ( function_exists( 'is_plugin_active' ) ? is_plugin_active( $plugin ) :
+			(
+				in_array( $plugin, apply_filters( 'active_plugins', ( array ) get_option( 'active_plugins', array() ) ) ) ||
+				( is_multisite() && array_key_exists( $plugin, ( array ) get_site_option( 'active_sitewide_plugins', array() ) ) )
+			)
+		);
+	}
 }
 
 // Check for active plugins.
 if (
-    ! is_plugin_active( 'woocommerce/woocommerce.php' ) ||
+    ! ttt_pnwc_is_plugin_active( 'woocommerce/woocommerce.php' ) ||
     (
         'popup-notices-for-woocommerce.php' === basename( __FILE__ ) &&
-        is_plugin_active( 'popup-notices-for-woocommerce-pro/popup-notices-for-woocommerce-pro.php' ) &&
+        ttt_pnwc_is_plugin_active( 'popup-notices-for-woocommerce-pro/popup-notices-for-woocommerce-pro.php' ) &&
         ! empty( $wp_plugin_dir = str_replace( array( '/', '\\' ), DIRECTORY_SEPARATOR, trailingslashit( WP_PLUGIN_DIR ) ) ) &&
         ! empty( $plugin_parent_dir = str_replace( array( '/', '\\' ), DIRECTORY_SEPARATOR, trailingslashit( dirname( __FILE__, 2 ) ) ) ) &&
         $plugin_parent_dir === $wp_plugin_dir
