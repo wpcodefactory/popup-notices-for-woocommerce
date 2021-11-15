@@ -104,6 +104,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 == Changelog ==
 
 = 1.3.6 - 15/11/2021 =
+* Add compatibility section.
 * WC tested up to: 5.9.
 
 = 1.3.5 - 13/10/2021 =
