@@ -252,7 +252,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'name'            => __( 'Restrictive Loading', 'popup-notices-for-woocommerce' ),
 						'type'            => 'title',
 						'premium_section' => true,
-						'desc'            => __( 'Load the plugin at some specific moment, place or by device type.', 'popup-notices-for-woocommerce' ),
+						'desc'            => __( 'Load the plugin at some specific moment or place.', 'popup-notices-for-woocommerce' ),
 						'id'              => 'ttt_pnwc_opt_restrictive_loading',
 					),
 					array(

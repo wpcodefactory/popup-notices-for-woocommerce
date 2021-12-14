@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pop-up Notices for WooCommerce\n"
-"POT-Creation-Date: 2021-12-14 10:44-0300\n"
+"POT-Creation-Date: 2021-12-14 10:46-0300\n"
 "PO-Revision-Date: 2017-01-17 13:05-0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -186,7 +186,7 @@ msgid "Restrictive Loading"
 msgstr ""
 
 #: php/class-admin-settings.php:255
-msgid "Load the plugin at some specific moment, place or by device type."
+msgid "Load the plugin at some specific moment or place."
 msgstr ""
 
 #: php/class-admin-settings.php:259
