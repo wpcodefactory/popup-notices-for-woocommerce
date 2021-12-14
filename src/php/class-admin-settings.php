@@ -150,14 +150,19 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						//'class'    => 'wc-enhanced-select',
 						'default' => 'yes',
 					),
-					/*array(
-						'type'          => 'checkbox',
-						'id'            => 'ttt_pnwc_opt_hide_default_notices',
-						'premium_field' => true,
-						'name'          => __( 'Hide default notices', 'popup-notices-for-woocommerce' ),
-						'desc'          => __( 'Hide default WooCommerce notices', 'popup-notices-for-woocommerce' ),
-						'default'       => 'no',
-					),*/
+					array(
+						'name'     => __( 'Device types', 'popup-notices-for-woocommerce' ),
+						'desc'     => __( 'Enable the plugin by device type.', 'popup-notices-for-woocommerce' ),
+						'desc_tip' => __( 'Leave it empty to load the plugin in all device types.', 'popup-notices-for-woocommerce' ),
+						'type'     => 'multiselect',
+						'class'    => 'chosen_select',
+						'default'  => array(),
+						'options'  => array(
+							'mobile'  => __( 'Mobile', 'popup-notices-for-woocommerce' ),
+							'desktop' => __( 'Desktop', 'popup-notices-for-woocommerce' ),
+						),
+						'id'       => 'ttt_pnwc_opt_allowed_device_types',
+					),
 					array(
 						'type'     => 'checkbox',
 						'id'       => 'ttt_pnwc_opt_ajax',
@@ -242,12 +247,12 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'id'   => 'ttt_pnwc_opt_autoclose'
 					),
 
-					// Notice Types
+					// Restrictive Loading
 					array(
 						'name'            => __( 'Restrictive Loading', 'popup-notices-for-woocommerce' ),
 						'type'            => 'title',
 						'premium_section' => true,
-						'desc'            => __( 'Load the plugin at some specific moment or place.', 'popup-notices-for-woocommerce' ),
+						'desc'            => __( 'Load the plugin at some specific moment, place or by device type.', 'popup-notices-for-woocommerce' ),
 						'id'              => 'ttt_pnwc_opt_restrictive_loading',
 					),
 					array(

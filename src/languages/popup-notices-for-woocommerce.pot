@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Pop-up Notices for WooCommerce\n"
-"POT-Creation-Date: 2021-10-13 14:42-0300\n"
+"POT-Creation-Date: 2021-12-14 10:44-0300\n"
 "PO-Revision-Date: 2017-01-17 13:05-0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -23,426 +23,483 @@ msgstr ""
 msgid "Pop-up Notices"
 msgstr ""
 
-#: php/class-admin-settings.php:106
+#: php/class-admin-settings.php:109
 msgid "General"
 msgstr ""
 
-#: php/class-admin-settings.php:137
+#: php/class-admin-settings.php:110
+msgid "Compatibility"
+msgstr ""
+
+#: php/class-admin-settings.php:138
 msgid "Pop-up Notices General Options"
 msgstr ""
 
-#: php/class-admin-settings.php:147
+#: php/class-admin-settings.php:148
 msgid "Enable Plugin"
 msgstr ""
 
-#: php/class-admin-settings.php:148
+#: php/class-admin-settings.php:149
 #, php-format
 msgid "Enable %s plugin"
 msgstr ""
 
-#: php/class-admin-settings.php:148
+#: php/class-admin-settings.php:149
 msgid "Pop-up Notices for WooCommerce"
 msgstr ""
 
-#: php/class-admin-settings.php:163
+#: php/class-admin-settings.php:154
+msgid "Device types"
+msgstr ""
+
+#: php/class-admin-settings.php:155
+msgid "Enable the plugin by device type."
+msgstr ""
+
+#: php/class-admin-settings.php:156
+msgid "Leave it empty to load the plugin in all device types."
+msgstr ""
+
+#: php/class-admin-settings.php:161
+msgid "Mobile"
+msgstr ""
+
+#: php/class-admin-settings.php:162
+msgid "Desktop"
+msgstr ""
+
+#: php/class-admin-settings.php:169
 msgid "AJAX pop-up"
 msgstr ""
 
-#: php/class-admin-settings.php:164
+#: php/class-admin-settings.php:170
 msgid "Display Pop-up notices from AJAX requests"
 msgstr ""
 
-#: php/class-admin-settings.php:165
+#: php/class-admin-settings.php:171
 msgid "Notices displayed without reloading the page."
 msgstr ""
 
-#: php/class-admin-settings.php:165
+#: php/class-admin-settings.php:171
 msgid "e.g Error notices displayed on cart update or if something goes wrong in checkout."
 msgstr ""
 
-#: php/class-admin-settings.php:171
+#: php/class-admin-settings.php:177
 msgid "Close on click inside"
 msgstr ""
 
-#: php/class-admin-settings.php:172
+#: php/class-admin-settings.php:178
 msgid "Close popup if a button or a link is clicked inside the popup"
 msgstr ""
 
-#: php/class-admin-settings.php:178
+#: php/class-admin-settings.php:184
 msgid "Prevent closing if clicking outside"
 msgstr ""
 
-#: php/class-admin-settings.php:179
+#: php/class-admin-settings.php:185
 msgid "Prevent closing the popup when clicking on the overlay outside the popup"
 msgstr ""
 
-#: php/class-admin-settings.php:180
+#: php/class-admin-settings.php:186
 #, php-format
 msgid "If it doesn't work, try to remove the %s attribute from the %s div from the %s option."
 msgstr ""
 
-#: php/class-admin-settings.php:180 php/class-admin-settings.php:483
+#: php/class-admin-settings.php:186 php/class-admin-settings.php:489
 msgid "Modal template"
 msgstr ""
 
-#: php/class-admin-settings.php:187
+#: php/class-admin-settings.php:193
 msgid "Prevent scrolling"
 msgstr ""
 
-#: php/class-admin-settings.php:188
+#: php/class-admin-settings.php:194
 msgid "Prevent scrolling when WooCommerce displays notices"
 msgstr ""
 
-#: php/class-admin-settings.php:189
+#: php/class-admin-settings.php:195
 msgid "Only works for AJAX notices."
 msgstr ""
 
-#: php/class-admin-settings.php:195
+#: php/class-admin-settings.php:201
 msgid "Micromodal loading method"
 msgstr ""
 
-#: php/class-admin-settings.php:196
+#: php/class-admin-settings.php:202
 msgid "How the micromodal library is going to be loaded."
 msgstr ""
 
-#: php/class-admin-settings.php:197
+#: php/class-admin-settings.php:203
 msgid "Micromodal is the library responsible for the popups."
 msgstr ""
 
-#: php/class-admin-settings.php:200
+#: php/class-admin-settings.php:206
 msgid "Externally from unpkg.com"
 msgstr ""
 
-#: php/class-admin-settings.php:201
+#: php/class-admin-settings.php:207
 msgid "Locally"
 msgstr ""
 
-#: php/class-admin-settings.php:211
+#: php/class-admin-settings.php:217
 msgid "Auto-close"
 msgstr ""
 
-#: php/class-admin-settings.php:214 php/class-admin-settings.php:221
+#: php/class-admin-settings.php:220 php/class-admin-settings.php:227
 msgid "Auto-closes the popup after x seconds."
 msgstr ""
 
-#: php/class-admin-settings.php:220
+#: php/class-admin-settings.php:226
 msgid "Auto-close time"
 msgstr ""
 
-#: php/class-admin-settings.php:222
+#: php/class-admin-settings.php:228
 msgid "Leave it empty to disable auto-close."
 msgstr ""
 
-#: php/class-admin-settings.php:227 php/class-admin-settings.php:279
+#: php/class-admin-settings.php:233 php/class-admin-settings.php:285
 msgid "Notice types"
 msgstr ""
 
-#: php/class-admin-settings.php:228
+#: php/class-admin-settings.php:234
 msgid "Only pop-ups containing at least one of the selected notice types will auto-close."
 msgstr ""
 
-#: php/class-admin-settings.php:228
+#: php/class-admin-settings.php:234
 msgid "If empty, the auto-close will work regardless of the notice type."
 msgstr ""
 
-#: php/class-admin-settings.php:233
+#: php/class-admin-settings.php:239
 msgid "Error"
 msgstr ""
 
-#: php/class-admin-settings.php:234
+#: php/class-admin-settings.php:240
 msgid "Success"
 msgstr ""
 
-#: php/class-admin-settings.php:235
+#: php/class-admin-settings.php:241
 msgid "Info"
 msgstr ""
 
-#: php/class-admin-settings.php:246
+#: php/class-admin-settings.php:252
 msgid "Restrictive Loading"
 msgstr ""
 
-#: php/class-admin-settings.php:249
-msgid "Load the plugin at some specific moment or place."
+#: php/class-admin-settings.php:255
+msgid "Load the plugin at some specific moment, place or by device type."
 msgstr ""
 
-#: php/class-admin-settings.php:253
+#: php/class-admin-settings.php:259
 msgid "Page(s)"
 msgstr ""
 
-#: php/class-admin-settings.php:254
+#: php/class-admin-settings.php:260
 msgid "Leave it empty to load the plugin in all pages"
 msgstr ""
 
-#: php/class-admin-settings.php:264
+#: php/class-admin-settings.php:270
 msgid "Conditional(s)"
 msgstr ""
 
-#: php/class-admin-settings.php:265
+#: php/class-admin-settings.php:271
 msgid "Load the plugin if some specific condition is true, including WooCommerce conditions, like if current page is product page and so on"
 msgstr ""
 
-#: php/class-admin-settings.php:281
+#: php/class-admin-settings.php:287
 msgid "Notice types that can be displayed on Pop-ups"
 msgstr ""
 
-#: php/class-admin-settings.php:287 php/class-admin-settings.php:288
+#: php/class-admin-settings.php:293 php/class-admin-settings.php:294
 msgid "Enable error notices"
 msgstr ""
 
-#: php/class-admin-settings.php:294 php/class-admin-settings.php:295
+#: php/class-admin-settings.php:300 php/class-admin-settings.php:301
 msgid "Enable success notices"
 msgstr ""
 
-#: php/class-admin-settings.php:301 php/class-admin-settings.php:302
+#: php/class-admin-settings.php:307 php/class-admin-settings.php:308
 msgid "Enable info notices"
 msgstr ""
 
-#: php/class-admin-settings.php:312
+#: php/class-admin-settings.php:318
 msgid "Notice hiding"
 msgstr ""
 
-#: php/class-admin-settings.php:315
+#: php/class-admin-settings.php:321
 msgid "Hide default WooCommerce Notices."
 msgstr ""
 
-#: php/class-admin-settings.php:322 php/class-admin-settings.php:323
+#: php/class-admin-settings.php:328 php/class-admin-settings.php:329
 msgid "Hide error notices"
 msgstr ""
 
-#: php/class-admin-settings.php:330 php/class-admin-settings.php:331
+#: php/class-admin-settings.php:336 php/class-admin-settings.php:337
 msgid "Hide success notices"
 msgstr ""
 
-#: php/class-admin-settings.php:338 php/class-admin-settings.php:339
+#: php/class-admin-settings.php:344 php/class-admin-settings.php:345
 msgid "Hide info notices"
 msgstr ""
 
-#: php/class-admin-settings.php:349 php/class-admin-settings.php:360
+#: php/class-admin-settings.php:355 php/class-admin-settings.php:366
 msgid "AJAX add to cart notice"
 msgstr ""
 
-#: php/class-admin-settings.php:352
+#: php/class-admin-settings.php:358
 #, php-format
 msgid "By default, WooCommerce doesn't display the notice when a product has been <a href=\"%s\">added to cart via AJAX on archive pages</a>."
 msgstr ""
 
-#: php/class-admin-settings.php:353
+#: php/class-admin-settings.php:359
 msgid "Below are the options of how you can enable and setup it."
 msgstr ""
 
-#: php/class-admin-settings.php:361
+#: php/class-admin-settings.php:367
 msgid "Display AJAX add to cart notice"
 msgstr ""
 
-#: php/class-admin-settings.php:367
+#: php/class-admin-settings.php:373
 msgid "Notices wrapper - Smart find"
 msgstr ""
 
-#: php/class-admin-settings.php:368
+#: php/class-admin-settings.php:374
 msgid "Try to find the notices wrapper automatically"
 msgstr ""
 
-#: php/class-admin-settings.php:369
+#: php/class-admin-settings.php:375
 msgid "If it doesn't work, please disable it and use one of the options below."
 msgstr ""
 
-#: php/class-admin-settings.php:375
+#: php/class-admin-settings.php:381
 msgid "Notices wrapper - Action hook"
 msgstr ""
 
-#: php/class-admin-settings.php:376
+#: php/class-admin-settings.php:382
 msgid "Add the notice wrapper manually using an action hook."
 msgstr ""
 
-#: php/class-admin-settings.php:382
+#: php/class-admin-settings.php:388
 msgid "Notices wrapper - Selector"
 msgstr ""
 
-#: php/class-admin-settings.php:383
+#: php/class-admin-settings.php:389
 msgid "Add the notice wrapper manually by specifying a DOM selector."
 msgstr ""
 
-#: php/class-admin-settings.php:384
+#: php/class-admin-settings.php:390
 #, php-format
 msgid "Probably %s would be a good guess."
 msgstr ""
 
-#: php/class-admin-settings.php:394
+#: php/class-admin-settings.php:400
 msgid "Ignore messages"
 msgstr ""
 
-#: php/class-admin-settings.php:396
+#: php/class-admin-settings.php:402
 msgid "Messages or notices that will be ignored and will not be displayed inside the Pop-up."
 msgstr ""
 
-#: php/class-admin-settings.php:400
+#: php/class-admin-settings.php:406
 msgid "Search method"
 msgstr ""
 
-#: php/class-admin-settings.php:402
+#: php/class-admin-settings.php:408
 msgid "The method used to check the message"
 msgstr ""
 
-#: php/class-admin-settings.php:403
+#: php/class-admin-settings.php:409
 msgid "If you only need to check part of the message use \"Partial comparison\". Use \"Full comparison\" to check the whole message."
 msgstr ""
 
-#: php/class-admin-settings.php:406
+#: php/class-admin-settings.php:412
 msgid "Partial comparison"
 msgstr ""
 
-#: php/class-admin-settings.php:407
+#: php/class-admin-settings.php:413
 msgid "Full comparison"
 msgstr ""
 
-#: php/class-admin-settings.php:408
+#: php/class-admin-settings.php:414
 msgid "Regular expression"
 msgstr ""
 
-#: php/class-admin-settings.php:418
+#: php/class-admin-settings.php:424
 msgid "Ignored messages"
 msgstr ""
 
-#: php/class-admin-settings.php:419
+#: php/class-admin-settings.php:425
 msgid "\"Full comparison\" search method requires to add the message here exactly as it is originally, including the HTML"
 msgstr ""
 
-#: php/class-admin-settings.php:420
+#: php/class-admin-settings.php:426
 msgid "Add multiple messages on pro version. Leave it empty to disable."
 msgstr ""
 
-#: php/class-admin-settings.php:434
+#: php/class-admin-settings.php:440
 msgid "Regular expression flags"
 msgstr ""
 
-#: php/class-admin-settings.php:436
+#: php/class-admin-settings.php:442
 msgid "Flags used on Regular Expression"
 msgstr ""
 
-#: php/class-admin-settings.php:437
+#: php/class-admin-settings.php:443
 msgid "Requires Regular expression search method"
 msgstr ""
 
-#: php/class-admin-settings.php:448
+#: php/class-admin-settings.php:454
 msgid "Custom style"
 msgstr ""
 
-#: php/class-admin-settings.php:451
+#: php/class-admin-settings.php:457
 msgid "Style the pop-up using the Customizer."
 msgstr ""
 
-#: php/class-admin-settings.php:459
+#: php/class-admin-settings.php:465
 msgid "Enable custom style"
 msgstr ""
 
-#: php/class-admin-settings.php:460
+#: php/class-admin-settings.php:466
 #, php-format
 msgid "Enable pop-up custom style using the <a href=\"%s\">Customizer</a>"
 msgstr ""
 
-#: php/class-admin-settings.php:467
+#: php/class-admin-settings.php:473
 msgid "Use Font Awesome"
 msgstr ""
 
-#: php/class-admin-settings.php:468
+#: php/class-admin-settings.php:474
 msgid "Check if you want to choose icons from FontAwesome"
 msgstr ""
 
-#: php/class-admin-settings.php:475
+#: php/class-admin-settings.php:481
 msgid "Font Awesome URL"
 msgstr ""
 
-#: php/class-admin-settings.php:476
+#: php/class-admin-settings.php:482
 msgid "Leave it empty if you are already using Font Awesome from somewhere else and do not want to load it twice"
 msgstr ""
 
-#: php/class-admin-settings.php:484
+#: php/class-admin-settings.php:490
 msgid "HTML template reponsible for displaying the modal"
 msgstr ""
 
-#: php/class-admin-settings.php:495
+#: php/class-admin-settings.php:501
 msgid "Cookies"
 msgstr ""
 
-#: php/class-admin-settings.php:498
+#: php/class-admin-settings.php:504
 msgid "Notices will be kept in Browser's cookies trying to prevent duplicated messages from being displayed repeatedly inside popups."
 msgstr ""
 
-#: php/class-admin-settings.php:505 php/class-admin-settings.php:547
+#: php/class-admin-settings.php:511 php/class-admin-settings.php:553
 msgid "Enable"
 msgstr ""
 
-#: php/class-admin-settings.php:506
+#: php/class-admin-settings.php:512
 msgid "Save messages in Browser's Cookies"
 msgstr ""
 
-#: php/class-admin-settings.php:513
+#: php/class-admin-settings.php:519
 msgid "Expiration time"
 msgstr ""
 
-#: php/class-admin-settings.php:514
+#: php/class-admin-settings.php:520
 msgid "Time in Hours messages will be kept in Cookies"
 msgstr ""
 
-#: php/class-admin-settings.php:524
+#: php/class-admin-settings.php:530
 msgid "Message origin"
 msgstr ""
 
-#: php/class-admin-settings.php:525
+#: php/class-admin-settings.php:531
 msgid "Type of messages that will be kept on Cookies, static or dynamic, i.e created on ajax"
 msgstr ""
 
-#: php/class-admin-settings.php:527
+#: php/class-admin-settings.php:533
 msgid "Static"
 msgstr ""
 
-#: php/class-admin-settings.php:528
+#: php/class-admin-settings.php:534
 msgid "Dynamic"
 msgstr ""
 
-#: php/class-admin-settings.php:529
+#: php/class-admin-settings.php:535
 msgid "All"
 msgstr ""
 
-#: php/class-admin-settings.php:540
+#: php/class-admin-settings.php:546
 msgid "Audio"
 msgstr ""
 
-#: php/class-admin-settings.php:543
+#: php/class-admin-settings.php:549
 msgid "Play sounds."
 msgstr ""
 
-#: php/class-admin-settings.php:550
+#: php/class-admin-settings.php:556
 msgid "Enable audio"
 msgstr ""
 
-#: php/class-admin-settings.php:558
+#: php/class-admin-settings.php:564
 msgid "Opening"
 msgstr ""
 
-#: php/class-admin-settings.php:559
+#: php/class-admin-settings.php:565
 msgid "Sound URL when Pop-up opens"
 msgstr ""
 
-#: php/class-admin-settings.php:566
+#: php/class-admin-settings.php:572
 msgid "Closing"
 msgstr ""
 
-#: php/class-admin-settings.php:567
+#: php/class-admin-settings.php:573
 msgid "Sound URL when Pop-up closes"
 msgstr ""
 
-#: php/class-core.php:143
+#: php/class-admin-settings.php:586
+msgid "Compatibility options"
+msgstr ""
+
+#: php/class-admin-settings.php:593
+msgid "Compatibility section"
+msgstr ""
+
+#: php/class-admin-settings.php:596
+msgid "Enable compatibility section"
+msgstr ""
+
+#: php/class-admin-settings.php:604 php/class-admin-settings.php:605
+msgid "JetWooBuilder For Elementor"
+msgstr ""
+
+#: php/class-admin-settings.php:605
+#, php-format
+msgid "Compatibility with %s plugin."
+msgstr ""
+
+#: php/class-admin-settings.php:610
+msgid "AJAX add to cart"
+msgstr ""
+
+#: php/class-admin-settings.php:612
+msgid "Detect AJAX add to cart"
+msgstr ""
+
+#: php/class-admin-settings.php:613
+msgid "Useful for the \"AJAX add to cart notice\" option."
+msgstr ""
+
+#: php/class-core.php:211
 #, php-format
 msgid "The <a target='_blank' href='%s'>Premium</a> version will unlock a textarea field adding possibility for multiple values"
 msgstr ""
 
-#: php/class-core.php:148
+#: php/class-core.php:216
 #, php-format
 msgid "Disabled options can be unlocked using the <a href=\"%s\" target=\"_blank\">Pro version</a>"
 msgstr ""
 
-#: php/class-core.php:237
+#: php/class-core.php:308
 msgid "Unlock All"
 msgstr ""
 
