@@ -212,6 +212,72 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'id'   => 'ttt_pnwc_opt_general'
 					),
 
+					// Notice Types
+					array(
+						'name' => __( 'Notice types', 'popup-notices-for-woocommerce' ),
+						'type' => 'title',
+						'desc' => __( 'Notice types that can be displayed on Pop-ups', 'popup-notices-for-woocommerce' ),
+						'id'   => 'ttt_pnwc_opt_types',
+					),
+					array(
+						'type'    => 'checkbox',
+						'id'      => 'ttt_pnwc_opt_type_error_enable',
+						'name'    => __( 'Enable error notices', 'popup-notices-for-woocommerce' ),
+						'desc'    => __( 'Enable error notices', 'popup-notices-for-woocommerce' ),
+						'default' => 'yes',
+					),
+					array(
+						'type'    => 'checkbox',
+						'id'      => 'ttt_pnwc_opt_type_success_enable',
+						'name'    => __( 'Enable success notices', 'popup-notices-for-woocommerce' ),
+						'desc'    => __( 'Enable success notices', 'popup-notices-for-woocommerce' ),
+						'default' => 'yes',
+					),
+					array(
+						'type'    => 'checkbox',
+						'id'      => 'ttt_pnwc_opt_type_info_enable',
+						'name'    => __( 'Enable info notices', 'popup-notices-for-woocommerce' ),
+						'desc'    => __( 'Enable info notices', 'popup-notices-for-woocommerce' ),
+						'default' => 'yes',
+					),
+					array(
+						'type' => 'sectionend',
+						'id'   => 'ttt_pnwc_opt_types'
+					),
+
+					// Notice Hiding
+					array(
+						'name'            => __( 'Notice hiding', 'popup-notices-for-woocommerce' ),
+						'type'            => 'title',
+						'desc'            => __( 'Hide default WooCommerce Notices.', 'popup-notices-for-woocommerce' ),
+						'id'              => 'ttt_pnwc_opt_notice_hiding',
+					),
+					array(
+						'type'          => 'checkbox',
+						'id'            => 'ttt_pnwc_opt_hide_error_enable',
+						'name'          => __( 'Hide error notices', 'popup-notices-for-woocommerce' ),
+						'desc'          => __( 'Hide error notices', 'popup-notices-for-woocommerce' ),
+						'default'       => 'no',
+					),
+					array(
+						'type'          => 'checkbox',
+						'id'            => 'ttt_pnwc_opt_hide_success_enable',
+						'name'          => __( 'Hide success notices', 'popup-notices-for-woocommerce' ),
+						'desc'          => __( 'Hide success notices', 'popup-notices-for-woocommerce' ),
+						'default'       => 'no',
+					),
+					array(
+						'type'          => 'checkbox',
+						'id'            => 'ttt_pnwc_opt_hide_info_enable',
+						'name'          => __( 'Hide info notices', 'popup-notices-for-woocommerce' ),
+						'desc'          => __( 'Hide info notices', 'popup-notices-for-woocommerce' ),
+						'default'       => 'no',
+					),
+					array(
+						'type' => 'sectionend',
+						'id'   => 'ttt_pnwc_opt_notice_hiding'
+					),
+
 					// Auto close
 					array(
 						'name'         => __( 'Auto-close', 'popup-notices-for-woocommerce' ),
@@ -278,76 +344,6 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 					array(
 						'type' => 'sectionend',
 						'id'   => 'ttt_pnwc_opt_restrictive_loading'
-					),
-
-					// Notice Types
-					array(
-						'name' => __( 'Notice types', 'popup-notices-for-woocommerce' ),
-						'type' => 'title',
-						'desc' => __( 'Notice types that can be displayed on Pop-ups', 'popup-notices-for-woocommerce' ),
-						'id'   => 'ttt_pnwc_opt_types',
-					),
-					array(
-						'type'    => 'checkbox',
-						'id'      => 'ttt_pnwc_opt_type_error_enable',
-						'name'    => __( 'Enable error notices', 'popup-notices-for-woocommerce' ),
-						'desc'    => __( 'Enable error notices', 'popup-notices-for-woocommerce' ),
-						'default' => 'yes',
-					),
-					array(
-						'type'    => 'checkbox',
-						'id'      => 'ttt_pnwc_opt_type_success_enable',
-						'name'    => __( 'Enable success notices', 'popup-notices-for-woocommerce' ),
-						'desc'    => __( 'Enable success notices', 'popup-notices-for-woocommerce' ),
-						'default' => 'yes',
-					),
-					array(
-						'type'    => 'checkbox',
-						'id'      => 'ttt_pnwc_opt_type_info_enable',
-						'name'    => __( 'Enable info notices', 'popup-notices-for-woocommerce' ),
-						'desc'    => __( 'Enable info notices', 'popup-notices-for-woocommerce' ),
-						'default' => 'yes',
-					),
-					array(
-						'type' => 'sectionend',
-						'id'   => 'ttt_pnwc_opt_types'
-					),
-
-					// Notice Hiding
-					array(
-						'name'            => __( 'Notice hiding', 'popup-notices-for-woocommerce' ),
-						'type'            => 'title',
-						'premium_section' => true,
-						'desc'            => __( 'Hide default WooCommerce Notices.', 'popup-notices-for-woocommerce' ),
-						'id'              => 'ttt_pnwc_opt_notice_hiding',
-					),
-					array(
-						'type'          => 'checkbox',
-						'premium_field' => true,
-						'id'            => 'ttt_pnwc_opt_hide_error_enable',
-						'name'          => __( 'Hide error notices', 'popup-notices-for-woocommerce' ),
-						'desc'          => __( 'Hide error notices', 'popup-notices-for-woocommerce' ),
-						'default'       => 'no',
-					),
-					array(
-						'type'          => 'checkbox',
-						'premium_field' => true,
-						'id'            => 'ttt_pnwc_opt_hide_success_enable',
-						'name'          => __( 'Hide success notices', 'popup-notices-for-woocommerce' ),
-						'desc'          => __( 'Hide success notices', 'popup-notices-for-woocommerce' ),
-						'default'       => 'no',
-					),
-					array(
-						'type'          => 'checkbox',
-						'premium_field' => true,
-						'id'            => 'ttt_pnwc_opt_hide_info_enable',
-						'name'          => __( 'Hide info notices', 'popup-notices-for-woocommerce' ),
-						'desc'          => __( 'Hide info notices', 'popup-notices-for-woocommerce' ),
-						'default'       => 'no',
-					),
-					array(
-						'type' => 'sectionend',
-						'id'   => 'ttt_pnwc_opt_notice_hiding'
 					),
 
 					// AJAX Add to cart notice

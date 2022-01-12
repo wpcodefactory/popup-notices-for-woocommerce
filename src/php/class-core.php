@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Core Class
  *
- * @version 1.3.6
+ * @version 1.3.7
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -79,8 +79,8 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 		/**
 		 * Initializes.
 		 *
-		 * @version 1.0.2
-		 * @since 1.0.0
+		 * @version 1.3.7
+		 * @since   1.0.0
 		 *
 		 * @return Core
 		 */
@@ -105,6 +105,50 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 
 				// Loads plugin by device type.
 				add_filter( 'ttt_pnwc_is_allowed_to_load', array( $this, 'load_plugin_by_device_type' ) );
+
+				// Hide WooCommerce Notices
+				add_action( 'wp_enqueue_scripts', array( $this, 'hide_woocommerce_notices' ) );
+			}
+		}
+
+		/**
+		 * get_hidden_notices_selector.
+		 *
+		 * @version 1.3.7
+		 * @since   1.3.7
+		 */
+		function get_hidden_notices_selector() {
+			$error_notice_selector   = apply_filters( 'ttt_pnwc_notice_selector', '.woocommerce-error', 'error_wrapper' );
+			$success_notice_selector = apply_filters( 'ttt_pnwc_notice_selector', '.woocommerce-message', 'success' );
+			$info_notice_selector    = apply_filters( 'ttt_pnwc_notice_selector', '.woocommerce-info', 'info' );
+			$notices_style_arr       = array();
+			if ( 'yes' === get_option( 'ttt_pnwc_opt_hide_error_enable', 'no' ) ) {
+				$notices_style_arr[] = $error_notice_selector;
+			}
+			if ( 'yes' === get_option( 'ttt_pnwc_opt_hide_success_enable', 'no' ) ) {
+				$notices_style_arr[] = $success_notice_selector;
+			}
+			if ( 'yes' === get_option( 'ttt_pnwc_opt_hide_info_enable', 'no' ) ) {
+				$notices_style_arr[] = $info_notice_selector;
+			}
+			if ( count( $notices_style_arr ) > 0 ) {
+				$style = implode( ", ", $notices_style_arr );
+				return $style;
+			}
+			return '';
+		}
+
+		/**
+		 * Hides default WooCommerce Notices
+		 *
+		 * @version 1.3.7
+		 * @since   1.0.0
+		 */
+		public function hide_woocommerce_notices() {
+			$notices_selector = $this->get_hidden_notices_selector();
+			if ( ! empty( $notices_selector ) ) {
+				$style = $notices_selector . "{display:none !important}";
+				wp_add_inline_style( 'ttt-pnwc', $style );
 			}
 		}
 
