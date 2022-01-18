@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Admin Settings
  *
- * @version 1.3.6
+ * @version 1.3.8
  * @since   1.0.0
  * @author  Thanks to IT
  */
@@ -116,7 +116,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 		/**
 		 * Get settings array.
 		 *
-		 * @version 1.3.6
+		 * @version 1.3.8
 		 * @since   1.0.0
 		 *
 		 * @param string $current_section Optional. Defaults to empty string.
@@ -596,6 +596,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 						'type' => 'sectionend',
 						'id'   => 'ttt_pnwc_compatibility_opts',
 					),
+					// JetWooBuilder for Elementor.
 					array(
 						'name'            => __( 'JetWooBuilder For Elementor', 'popup-notices-for-woocommerce' ),
 						'desc'            => sprintf( __( 'Compatibility with %s plugin.', 'order-minimum-amount-for-woocommerce' ), sprintf( '<a href="%s" target="_blank">%s</a>', 'https://crocoblock.com/plugins/jetwoobuilder/', __( 'JetWooBuilder For Elementor', 'order-minimum-amount-for-woocommerce' ) ) ),
@@ -612,6 +613,23 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
 					array(
 						'type' => 'sectionend',
 						'id'   => 'ttt_pnwc_comp_jetwoobuilder_opts',
+					),
+					// YITH Points and Rewards.
+					array(
+						'name' => __( 'YITH WooCommerce Points and Rewards', 'popup-notices-for-woocommerce' ),
+						'desc' => sprintf( __( 'Compatibility with %s plugin.', 'order-minimum-amount-for-woocommerce' ), sprintf( '<a href="%s" target="_blank">%s</a>', 'https://yithemes.com/themes/plugins/yith-woocommerce-points-and-rewards/', __( 'YITH WooCommerce Points and Rewards', 'order-minimum-amount-for-woocommerce' ) ) ),
+						'type' => 'title',
+						'id'   => 'ttt_pnwc_comp_yithpar_opts',
+					),
+					array(
+						'name'     => __( 'Discount', 'popup-notices-for-woocommerce' ),
+						'type'     => 'checkbox',
+						'desc'     => __( 'Allow the discount to be applied inside the pop-up.', 'popup-notices-for-woocommerce' ),
+						'id'       => 'ttt_pnwc_comp_yithpar_enable_discount_in_popup',
+					),
+					array(
+						'type' => 'sectionend',
+						'id'   => 'ttt_pnwc_comp_yithpar_opts',
 					),
 				) );
 			} else {

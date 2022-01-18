@@ -99,6 +99,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
+= 1.3.8 - 17/01/2022 =
+* WC tested up to: 6.1.
+* Add Pro compatibility option with YITH points and rewards.
+
 = 1.3.7 - 12/01/2022 =
 * Move "Notice hiding" to free version.
 * WC tested up to: 6.0.
