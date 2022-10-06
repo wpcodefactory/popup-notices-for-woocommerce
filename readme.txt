@@ -2,8 +2,8 @@
 Contributors: karzin
 Tags: popup,notices,woocommerce,notice,modal
 Requires at least: 4.4
-Tested up to: 5.8
-Stable tag: 1.3.7
+Tested up to: 6.0
+Stable tag: 1.3.8
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -99,8 +99,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
-= 1.3.8 - 17/01/2022 =
-* WC tested up to: 6.1.
+= 1.3.8 - 05/10/2022 =
+* WC tested up to: 6.9.
+* Tested up to: 6.0.
 * Add Pro compatibility option with YITH points and rewards.
 
 = 1.3.7 - 12/01/2022 =
