@@ -5,7 +5,7 @@
  * Description: Turn your WooCommerce Notices into Popups
  * Version: 1.3.9
  * Author: WPFactory
- * Author URI: https://github.com/thanks-to-it
+ * Author URI: https://wpfactory.com
  * License: GNU General Public License v3.0
  * License URI: http://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain: popup-notices-for-woocommerce
