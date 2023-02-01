@@ -66,7 +66,7 @@ Play any sound you want when the Pop-up opens or when it closes
 == Frequently Asked Questions ==
 
 = How can I contribute? Is there a github repository? =
-If you are interested in contributing - head over to the [Popup Notices for WooCommerce plugin GitHub Repository](https://github.com/thanks-to-it/popup-notices-for-woocommerce) to find out how you can pitch in.
+If you are interested in contributing - head over to the [Popup Notices for WooCommerce plugin GitHub Repository](https://github.com/wpcodefactory/popup-notices-for-woocommerce) to find out how you can pitch in.
 
 = Micromodal Credits =
 
