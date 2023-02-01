@@ -4,16 +4,16 @@
  *
  * @version 1.3.2
  * @since   1.0.2
- * @author  Thanks to IT
+ * @author  WPFactory
  */
 
-namespace ThanksToIT\PNWC;
+namespace WPFactory\PNWC;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-if ( ! class_exists( 'ThanksToIT\PNWC\Notices' ) ) {
+if ( ! class_exists( 'WPFactory\PNWC\Notices' ) ) {
 
 	class Notices {
 

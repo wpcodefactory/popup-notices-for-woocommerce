@@ -4,16 +4,16 @@
  *
  * @version 1.3.7
  * @since   1.0.0
- * @author  Thanks to IT
+ * @author  WPFactory
  */
 
-namespace ThanksToIT\PNWC;
+namespace WPFactory\PNWC;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
+if ( ! class_exists( 'WPFactory\PNWC\Core' ) ) {
 
 	class Core {
 
@@ -365,7 +365,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Core' ) ) {
 			if ( ! Restrictive_Loading::is_allowed_to_load() ) {
 				return;
 			}
-			$plugin     = \ThanksToIT\PNWC\Core::instance();
+			$plugin     = \WPFactory\PNWC\Core::instance();
 			$suffix     = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 			$plugin_dir = $plugin->get_plugin_dir();
 			$plugin_url = $plugin->get_plugin_url();

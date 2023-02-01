@@ -4,16 +4,16 @@
  *
  * @version 1.2.7
  * @since   1.0.0
- * @author  Thanks to IT
+ * @author  WPFactory
  */
 
-namespace ThanksToIT\PNWC;
+namespace WPFactory\PNWC;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-if ( ! class_exists( 'ThanksToIT\PNWC\Modal' ) ) {
+if ( ! class_exists( 'WPFactory\PNWC\Modal' ) ) {
 
 	class Modal {
 
@@ -54,7 +54,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Modal' ) ) {
 			if ( 'yes' !== get_option( 'ttt_pnwc_opt_audio_enable','no' ) ) {
 				return;
 			}
-			$plugin = \ThanksToIT\PNWC\Core::instance();
+			$plugin = \WPFactory\PNWC\Core::instance();
 			echo '<iframe src="' . $plugin->get_plugin_url() . 'src/assets/dist/frontend/audio/silence.mp3' . '" allow="autoplay" id="ttt-pnwc-audio" style="display:none"></iframe>';
 		}
 
@@ -74,7 +74,7 @@ if ( ! class_exists( 'ThanksToIT\PNWC\Modal' ) ) {
 			if ( ! Restrictive_Loading::is_allowed_to_load() ) {
 				return;
 			}
-			$plugin                    = \ThanksToIT\PNWC\Core::instance();
+			$plugin                    = \WPFactory\PNWC\Core::instance();
 			$micromodal_loading_method = get_option( 'ttt_pnwc_opt_micromodal_load_method', 'externally' );
 
 			if ( 'externally' == $micromodal_loading_method ) {

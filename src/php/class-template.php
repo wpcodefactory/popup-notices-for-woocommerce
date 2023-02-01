@@ -4,16 +4,16 @@
  *
  * @version 1.1.0
  * @since   1.1.0
- * @author  Thanks to IT
+ * @author  WPFactory
  */
 
-namespace ThanksToIT\PNWC;
+namespace WPFactory\PNWC;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-if ( ! class_exists( 'ThanksToIT\PNWC\Template' ) ) {
+if ( ! class_exists( 'WPFactory\PNWC\Template' ) ) {
 
 	class Template {
 		public function get_default_template() {

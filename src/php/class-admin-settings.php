@@ -4,16 +4,16 @@
  *
  * @version 1.3.8
  * @since   1.0.0
- * @author  Thanks to IT
+ * @author  WPFactory
  */
 
-namespace ThanksToIT\PNWC;
+namespace WPFactory\PNWC;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 } // Exit if accessed directly
 
-if ( ! class_exists( 'ThanksToIT\PNWC\Admin_Settings' ) ) {
+if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 
 	class Admin_Settings extends \WC_Settings_Page {
 
