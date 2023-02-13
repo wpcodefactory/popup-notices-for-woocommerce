@@ -1,0 +1,605 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Pop-up Notices for WooCommerce\n"
+"POT-Creation-Date: 2022-10-05 21:48-0300\n"
+"PO-Revision-Date: 2023-02-07 21:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: Русский\n"
+"Language: ru_RU\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10 >= 2 && "
+"n%10<=4 &&(n%100<10||n%100 >= 20)? 1 : 2);\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
+"_n_noop:1,2;_c;_nc:4c,1,2;_x:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_ex:1,2c;"
+"esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;eschtml_e;esc_html_x:1,2c;"
+"esc_html_e\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: assets\n"
+"X-Poedit-SearchPathExcluded-1: tasks\n"
+"X-Poedit-SearchPathExcluded-2: vendor\n"
+"Report-Msgid-Bugs-To: \n"
+"X-Loco-Version: 2.6.3; wp-5.3.14"
+
+#: php/class-admin-settings.php:28
+msgid "Pop-up Notices"
+msgstr "Всплывающие уведомления"
+
+#: php/class-admin-settings.php:109
+msgid "General"
+msgstr "Общие настройки"
+
+#: php/class-admin-settings.php:110
+msgid "Compatibility"
+msgstr "Совместимость"
+
+#: php/class-admin-settings.php:138
+msgid "Pop-up Notices General Options"
+msgstr "Всплывающие уведомления Общие параметры"
+
+#: php/class-admin-settings.php:148
+msgid "Enable Plugin"
+msgstr "Включить плагин"
+
+#: php/class-admin-settings.php:149
+#, php-format
+msgid "Enable %s plugin"
+msgstr "Включить плагин %s"
+
+#: php/class-admin-settings.php:149
+msgid "Pop-up Notices for WooCommerce"
+msgstr "Всплывающие уведомления для WooCommerce"
+
+#: php/class-admin-settings.php:154
+msgid "Device types"
+msgstr "Типы устройств"
+
+#: php/class-admin-settings.php:155
+msgid "Enable the plugin by device type."
+msgstr "Включите плагин по типу устройства."
+
+#: php/class-admin-settings.php:156
+msgid "Leave it empty to load the plugin in all device types."
+msgstr "Оставьте его пустым, чтобы загрузить плагин на всех типах устройств."
+
+#: php/class-admin-settings.php:161
+msgid "Mobile"
+msgstr "Мобильный"
+
+#: php/class-admin-settings.php:162
+msgid "Desktop"
+msgstr "Рабочий стол"
+
+#: php/class-admin-settings.php:169
+msgid "AJAX pop-up"
+msgstr "Всплывающее окно AJAX"
+
+#: php/class-admin-settings.php:170
+msgid "Display Pop-up notices from AJAX requests"
+msgstr "Отображать всплывающие уведомления из AJAX-запросов"
+
+#: php/class-admin-settings.php:171
+msgid "Notices displayed without reloading the page."
+msgstr "Уведомления отображаются без перезагрузки страницы."
+
+#: php/class-admin-settings.php:171
+msgid ""
+"e.g Error notices displayed on cart update or if something goes wrong in "
+"checkout."
+msgstr ""
+"например, уведомления об ошибках отображаются при обновлении корзины или "
+"если что-то идет не так при оформлении заказа."
+
+#: php/class-admin-settings.php:177
+msgid "Close on click inside"
+msgstr "Закрыть по щелчку внутри"
+
+#: php/class-admin-settings.php:178
+msgid "Close popup if a button or a link is clicked inside the popup"
+msgstr ""
+"Закрыть всплывающее окно, если внутри всплывающего окна нажата кнопка или "
+"ссылка"
+
+#: php/class-admin-settings.php:184
+msgid "Prevent closing if clicking outside"
+msgstr "Предотвратить закрытие при нажатии снаружи"
+
+#: php/class-admin-settings.php:185
+msgid ""
+"Prevent closing the popup when clicking on the overlay outside the popup"
+msgstr ""
+"Предотвратить закрытие всплывающего окна при нажатии на наложение вне "
+"всплывающего окна"
+
+#: php/class-admin-settings.php:186
+#, php-format
+msgid ""
+"If it doesn't work, try to remove the %s attribute from the %s div from the "
+"%s option."
+msgstr ""
+"Если это не сработает, попробуйте удалить атрибут %s из %s div из опции %s."
+
+#: php/class-admin-settings.php:186 php/class-admin-settings.php:485
+msgid "Modal template"
+msgstr "Модальный шаблон"
+
+#: php/class-admin-settings.php:193
+msgid "Prevent scrolling"
+msgstr "Предотвратить прокрутку"
+
+#: php/class-admin-settings.php:194
+msgid "Prevent scrolling when WooCommerce displays notices"
+msgstr "Запретить прокрутку, когда WooCommerce отображает уведомления"
+
+#: php/class-admin-settings.php:195
+msgid "Only works for AJAX notices."
+msgstr "Работает только для уведомлений AJAX."
+
+#: php/class-admin-settings.php:201
+msgid "Micromodal loading method"
+msgstr "Способ микромодальной загрузки"
+
+#: php/class-admin-settings.php:202
+msgid "How the micromodal library is going to be loaded."
+msgstr "Как будет загружена микромодальная библиотека."
+
+#: php/class-admin-settings.php:203
+msgid "Micromodal is the library responsible for the popups."
+msgstr "Micromodal - это библиотека, ответственная за всплывающие окна."
+
+#: php/class-admin-settings.php:206
+msgid "Externally from unpkg.com"
+msgstr "Внешне от unpkg.com"
+
+#: php/class-admin-settings.php:207
+msgid "Locally"
+msgstr "Локально"
+
+#: php/class-admin-settings.php:217 php/class-admin-settings.php:299
+msgid "Notice types"
+msgstr "Типы уведомлений"
+
+#: php/class-admin-settings.php:219
+msgid "Notice types that can be displayed on Pop-ups"
+msgstr "Типы уведомлений, которые могут отображаться во всплывающих окнах"
+
+#: php/class-admin-settings.php:225 php/class-admin-settings.php:226
+msgid "Enable error notices"
+msgstr "Включить уведомления об ошибках"
+
+#: php/class-admin-settings.php:232 php/class-admin-settings.php:233
+msgid "Enable success notices"
+msgstr "Включить уведомления об успешном завершении"
+
+#: php/class-admin-settings.php:239 php/class-admin-settings.php:240
+msgid "Enable info notices"
+msgstr "Включить информационные уведомления"
+
+#: php/class-admin-settings.php:250
+msgid "Notice hiding"
+msgstr "Заметьте, что скрывается"
+
+#: php/class-admin-settings.php:252
+msgid "Hide default WooCommerce Notices."
+msgstr "Скрыть уведомления WooCommerce по умолчанию."
+
+#: php/class-admin-settings.php:258 php/class-admin-settings.php:259
+msgid "Hide error notices"
+msgstr "Скрыть уведомления об ошибках"
+
+#: php/class-admin-settings.php:265 php/class-admin-settings.php:266
+msgid "Hide success notices"
+msgstr "Скрыть уведомления об успехе"
+
+#: php/class-admin-settings.php:272 php/class-admin-settings.php:273
+msgid "Hide info notices"
+msgstr "Скрыть информационные уведомления"
+
+#: php/class-admin-settings.php:283
+msgid "Auto-close"
+msgstr "Автозакрытие"
+
+#: php/class-admin-settings.php:286 php/class-admin-settings.php:293
+msgid "Auto-closes the popup after x seconds."
+msgstr "Автоматически закрывает всплывающее окно через x секунд."
+
+#: php/class-admin-settings.php:292
+msgid "Auto-close time"
+msgstr "Время автоматического закрытия"
+
+#: php/class-admin-settings.php:294
+msgid "Leave it empty to disable auto-close."
+msgstr "Оставьте его пустым, чтобы отключить автоматическое закрытие."
+
+#: php/class-admin-settings.php:300
+msgid ""
+"Only pop-ups containing at least one of the selected notice types will auto-"
+"close."
+msgstr ""
+"Автоматически закроются только всплывающие окна, содержащие хотя бы один из "
+"выбранных типов уведомлений."
+
+#: php/class-admin-settings.php:300
+msgid "If empty, the auto-close will work regardless of the notice type."
+msgstr ""
+"Если пусто, автоматическое закрытие будет работать независимо от типа "
+"уведомления."
+
+#: php/class-admin-settings.php:305
+msgid "Error"
+msgstr "Ошибка"
+
+#: php/class-admin-settings.php:306
+msgid "Success"
+msgstr "Успех"
+
+#: php/class-admin-settings.php:307
+msgid "Info"
+msgstr "Информация"
+
+#: php/class-admin-settings.php:318
+msgid "Restrictive Loading"
+msgstr "Ограничительная нагрузка"
+
+#: php/class-admin-settings.php:321
+msgid "Load the plugin at some specific moment or place."
+msgstr ""
+"Загрузите плагин в какой-то определенный момент или в определенном месте."
+
+#: php/class-admin-settings.php:325
+msgid "Page(s)"
+msgstr "Страница(ы)"
+
+#: php/class-admin-settings.php:326
+msgid "Leave it empty to load the plugin in all pages"
+msgstr "Оставьте его пустым, чтобы загрузить плагин на всех страницах"
+
+#: php/class-admin-settings.php:336
+msgid "Conditional(s)"
+msgstr "Условный(ые)"
+
+#: php/class-admin-settings.php:337
+msgid ""
+"Load the plugin if some specific condition is true, including WooCommerce "
+"conditions, like if current page is product page and so on"
+msgstr ""
+"Загрузите плагин, если какое-то конкретное условие верно, включая условия "
+"WooCommerce, например, если текущая страница является страницей продукта и "
+"так далее"
+
+#: php/class-admin-settings.php:351 php/class-admin-settings.php:362
+msgid "AJAX add to cart notice"
+msgstr "Уведомление о добавлении AJAX в корзину"
+
+#: php/class-admin-settings.php:354
+#, php-format
+msgid ""
+"By default, WooCommerce doesn't display the notice when a product has been "
+"<a href=\"%s\">added to cart via AJAX on archive pages</a>."
+msgstr ""
+"По умолчанию WooCommerce не отображает уведомление, когда товар был <a "
+"href=\"%s\"> добавлен в корзину через AJAX на страницах архива</a>."
+
+#: php/class-admin-settings.php:355
+msgid "Below are the options of how you can enable and setup it."
+msgstr "Ниже приведены варианты того, как вы можете включить и настроить его."
+
+#: php/class-admin-settings.php:363
+msgid "Display AJAX add to cart notice"
+msgstr "Отобразить уведомление о добавлении в корзину AJAX"
+
+#: php/class-admin-settings.php:369
+msgid "Notices wrapper - Smart find"
+msgstr "Оболочка уведомлений - Умный поиск"
+
+#: php/class-admin-settings.php:370
+msgid "Try to find the notices wrapper automatically"
+msgstr "Попробуйте автоматически найти оболочку уведомлений"
+
+#: php/class-admin-settings.php:371
+msgid "If it doesn't work, please disable it and use one of the options below."
+msgstr ""
+"Если это не работает, пожалуйста, отключите его и используйте один из "
+"приведенных ниже вариантов."
+
+#: php/class-admin-settings.php:377
+msgid "Notices wrapper - Action hook"
+msgstr "Крюк действия с оберткой уведомлений"
+
+#: php/class-admin-settings.php:378
+msgid "Add the notice wrapper manually using an action hook."
+msgstr "Добавьте оболочку уведомления вручную, используя крючок действия."
+
+#: php/class-admin-settings.php:384
+msgid "Notices wrapper - Selector"
+msgstr "Селектор - оболочка уведомлений"
+
+#: php/class-admin-settings.php:385
+msgid "Add the notice wrapper manually by specifying a DOM selector."
+msgstr "Добавьте оболочку уведомления вручную, указав селектор DOM."
+
+#: php/class-admin-settings.php:386
+#, php-format
+msgid "Probably %s would be a good guess."
+msgstr "Вероятно, % s было бы хорошим предположением."
+
+#: php/class-admin-settings.php:396
+msgid "Ignore messages"
+msgstr "Игнорировать сообщения"
+
+#: php/class-admin-settings.php:398
+msgid ""
+"Messages or notices that will be ignored and will not be displayed inside "
+"the Pop-up."
+msgstr ""
+"Сообщения или уведомления, которые будут проигнорированы и не будут "
+"отображаться во всплывающем окне."
+
+#: php/class-admin-settings.php:402
+msgid "Search method"
+msgstr "Способ поиска"
+
+#: php/class-admin-settings.php:404
+msgid "The method used to check the message"
+msgstr "Метод, используемый для проверки сообщения"
+
+#: php/class-admin-settings.php:405
+msgid ""
+"If you only need to check part of the message use \"Partial comparison\". "
+"Use \"Full comparison\" to check the whole message."
+msgstr ""
+"Если вам нужно проверить только часть сообщения, используйте \"Частичное "
+"сравнение\". Используйте \"Полное сравнение\", чтобы проверить все сообщение "
+"целиком."
+
+#: php/class-admin-settings.php:408
+msgid "Partial comparison"
+msgstr "Частичное сравнение"
+
+#: php/class-admin-settings.php:409
+msgid "Full comparison"
+msgstr "Полное сравнение"
+
+#: php/class-admin-settings.php:410
+msgid "Regular expression"
+msgstr "Обычное выражение"
+
+#: php/class-admin-settings.php:420
+msgid "Ignored messages"
+msgstr "Проигнорированные сообщения"
+
+#: php/class-admin-settings.php:421
+msgid ""
+"\"Full comparison\" search method requires to add the message here exactly "
+"as it is originally, including the HTML"
+msgstr ""
+"Метод поиска \"Полное сравнение\" требует добавить сообщение здесь точно так,"
+" как оно есть изначально, включая HTML"
+
+#: php/class-admin-settings.php:422
+msgid "Add multiple messages on pro version. Leave it empty to disable."
+msgstr ""
+"Добавьте несколько сообщений в pro версии. Оставьте его пустым, чтобы "
+"отключить."
+
+#: php/class-admin-settings.php:436
+msgid "Regular expression flags"
+msgstr "Флаги регулярных выражений"
+
+#: php/class-admin-settings.php:438
+msgid "Flags used on Regular Expression"
+msgstr "Флаги, используемые в регулярном выражении"
+
+#: php/class-admin-settings.php:439
+msgid "Requires Regular expression search method"
+msgstr "Требуется метод поиска по регулярному выражению"
+
+#: php/class-admin-settings.php:450
+msgid "Custom style"
+msgstr "Пользовательский стиль"
+
+#: php/class-admin-settings.php:453
+msgid "Style the pop-up using the Customizer."
+msgstr "Оформите всплывающее окно с помощью настройщика."
+
+#: php/class-admin-settings.php:461
+msgid "Enable custom style"
+msgstr "Включить пользовательский стиль"
+
+#: php/class-admin-settings.php:462
+#, php-format
+msgid "Enable pop-up custom style using the <a href=\"%s\">Customizer</a>"
+msgstr ""
+"Включите пользовательский стиль всплывающих окон с помощью <a href=\"%s\">"
+"настройщика</a>"
+
+#: php/class-admin-settings.php:469
+msgid "Use Font Awesome"
+msgstr "Используйте шрифт Awesome"
+
+#: php/class-admin-settings.php:470
+msgid "Check if you want to choose icons from FontAwesome"
+msgstr "Проверьте, хотите ли вы выбирать иконки из FontAwesome"
+
+#: php/class-admin-settings.php:477
+msgid "Font Awesome URL"
+msgstr "Шрифт Awesome URL"
+
+#: php/class-admin-settings.php:478
+msgid ""
+"Leave it empty if you are already using Font Awesome from somewhere else and "
+"do not want to load it twice"
+msgstr ""
+"Оставьте его пустым, если вы уже используете Font Awesome откуда-то еще и не "
+"хотите загружать его дважды"
+
+#: php/class-admin-settings.php:486
+msgid "HTML template reponsible for displaying the modal"
+msgstr "HTML-шаблон, отвечающий за отображение модального"
+
+#: php/class-admin-settings.php:497
+msgid "Cookies"
+msgstr "Куки"
+
+#: php/class-admin-settings.php:500
+msgid ""
+"Notices will be kept in Browser's cookies trying to prevent duplicated "
+"messages from being displayed repeatedly inside popups."
+msgstr ""
+"Уведомления будут храниться в файлах cookie браузера, чтобы предотвратить "
+"повторное отображение дублированных сообщений во всплывающих окнах."
+
+#: php/class-admin-settings.php:507 php/class-admin-settings.php:549
+msgid "Enable"
+msgstr "Включить"
+
+#: php/class-admin-settings.php:508
+msgid "Save messages in Browser's Cookies"
+msgstr "Сохраняйте сообщения в файлах cookie браузера"
+
+#: php/class-admin-settings.php:515
+msgid "Expiration time"
+msgstr "Срок годности"
+
+#: php/class-admin-settings.php:516
+msgid "Time in Hours messages will be kept in Cookies"
+msgstr "Время в часах сообщения будут храниться в файлах cookie"
+
+#: php/class-admin-settings.php:526
+msgid "Message origin"
+msgstr "Источник сообщения"
+
+#: php/class-admin-settings.php:527
+msgid ""
+"Type of messages that will be kept on Cookies, static or dynamic, i.e "
+"created on ajax"
+msgstr ""
+"Тип сообщений, которые будут храниться в файлах cookie, статических или "
+"динамических, т.е. созданных с помощью ajax"
+
+#: php/class-admin-settings.php:529
+msgid "Static"
+msgstr "Статический"
+
+#: php/class-admin-settings.php:530
+msgid "Dynamic"
+msgstr "Динамический"
+
+#: php/class-admin-settings.php:531
+msgid "All"
+msgstr "Все"
+
+#: php/class-admin-settings.php:542
+msgid "Audio"
+msgstr "Звук"
+
+#: php/class-admin-settings.php:545
+msgid "Play sounds."
+msgstr "Воспроизводите звуки."
+
+#: php/class-admin-settings.php:552
+msgid "Enable audio"
+msgstr "Включить аудио"
+
+#: php/class-admin-settings.php:560
+msgid "Opening"
+msgstr "Открытие"
+
+#: php/class-admin-settings.php:561
+msgid "Sound URL when Pop-up opens"
+msgstr "Звуковой URL-адрес при открытии всплывающего окна"
+
+#: php/class-admin-settings.php:568
+msgid "Closing"
+msgstr "Закрытие"
+
+#: php/class-admin-settings.php:569
+msgid "Sound URL when Pop-up closes"
+msgstr "Звуковой URL-адрес при закрытии всплывающего окна"
+
+#: php/class-admin-settings.php:582
+msgid "Compatibility options"
+msgstr "Параметры совместимости"
+
+#: php/class-admin-settings.php:589
+msgid "Compatibility section"
+msgstr "Раздел совместимости"
+
+#: php/class-admin-settings.php:592
+msgid "Enable compatibility section"
+msgstr "Включить раздел совместимости"
+
+#: php/class-admin-settings.php:601 php/class-admin-settings.php:602
+msgid "JetWooBuilder For Elementor"
+msgstr "JetWooBuilder для Elementor"
+
+#: php/class-admin-settings.php:602 php/class-admin-settings.php:620
+#, php-format
+msgid "Compatibility with %s plugin."
+msgstr "Совместимость с плагином %s."
+
+#: php/class-admin-settings.php:607
+msgid "AJAX add to cart"
+msgstr "AJAX добавить в корзину"
+
+#: php/class-admin-settings.php:609
+msgid "Detect AJAX add to cart"
+msgstr "Обнаружение AJAX добавления в корзину"
+
+#: php/class-admin-settings.php:610
+msgid "Useful for the \"AJAX add to cart notice\" option."
+msgstr "Полезно для опции \"AJAX добавить в корзину уведомление\"."
+
+#: php/class-admin-settings.php:619 php/class-admin-settings.php:620
+msgid "YITH WooCommerce Points and Rewards"
+msgstr "С помощью баллов и вознаграждений WooCommerce"
+
+#: php/class-admin-settings.php:625
+msgid "Discount"
+msgstr "Скидка"
+
+#: php/class-admin-settings.php:627
+msgid "Allow the discount to be applied inside the pop-up."
+msgstr "Разрешите применить скидку во всплывающем окне."
+
+#: php/class-core.php:255
+#, php-format
+msgid ""
+"The <a target='_blank' href='%s'>Premium</a> version will unlock a textarea "
+"field adding possibility for multiple values"
+msgstr ""
+"<a target='_blank' href='%s'>Премиум-версия</a> откроет поле textarea, "
+"добавляя возможность для нескольких значений"
+
+#: php/class-core.php:260
+#, php-format
+msgid ""
+"Disabled options can be unlocked using the <a href=\"%s\" target=\"_blank\">"
+"Pro version</a>"
+msgstr ""
+"Отключенные опции могут быть разблокированы с помощью <a href=\"%s\" "
+"target=\"_blank\">Pro версии</a>"
+
+#: php/class-core.php:352
+msgid "Unlock All"
+msgstr "Разблокируйте все"
+
+#: php/class-notices.php:39
+msgid "Pop-up Notices for WooCommerce Pro"
+msgstr "Всплывающие уведомления для WooCommerce Pro"
+
+#: php/class-notices.php:41
+msgid ""
+"Disabled options can be unlocked using <a href=\"%pro_version_url%\" "
+"target=\"_blank\"><strong>%pro_version_title%</strong></a>"
+msgstr ""
+"Отключенные опции можно разблокировать с помощью <a "
+"href=\"%pro_version_url%\" target=\"_blank\"><strong>"
+"%pro_version_title%</strong></a>"
+
+#: php/class-notices.php:42
+msgid "Upgrade to Pro version"
+msgstr "Обновитесь до версии Pro"

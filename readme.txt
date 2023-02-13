@@ -3,7 +3,7 @@ Contributors: wpcodefactory,karzin
 Tags: popup,notices,woocommerce,notice,modal
 Requires at least: 4.4
 Tested up to: 6.1
-Stable tag: 1.3.9
+Stable tag: 1.4.0
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -98,6 +98,9 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 3. An example of a WooCommerce Notice info on the Popup
 
 == Changelog ==
+
+= 1.4.0 - 13/02/2023 =
+* Add Russian translation.
 
 = 1.3.9 - 01/02/2023 =
 * Tested up to: 6.1.
