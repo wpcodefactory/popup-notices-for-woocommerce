@@ -1,7 +1,7 @@
 /*!
- * Pop-up Notices for WooCommerce style
+ * Pop-up Notices for WooCommerce style.
  *
- * @version 1.1.3
+ * @version 1.4.1
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -236,6 +236,7 @@ button.ttt-pnwc-close {
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
   -webkit-font-smoothing: subpixel-antialiased;
+  text-align: center;
 }
 
 button.ttt-pnwc-close:hover {
@@ -246,6 +247,7 @@ button.ttt-pnwc-close:hover {
 }
 
 .ttt-pnwc-header .ttt-pnwc-close:before {
+  position: relative;
   content: "\2716";
   font-size: 20px;
 }

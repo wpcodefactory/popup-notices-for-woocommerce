@@ -184,6 +184,7 @@ button.ttt-pnwc-close {
   filter: blur(.0px);
   transform: translateZ(0);
   -webkit-font-smoothing: subpixel-antialiased;
+  text-align:center;
   &:hover {
     background-color: #eee;
     color: #333;
@@ -192,6 +193,7 @@ button.ttt-pnwc-close {
 }
 
 .ttt-pnwc-header .ttt-pnwc-close:before {
+  position:relative;
   content: "\2716";
   font-size:20px;
 }
