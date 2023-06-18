@@ -1,9 +1,9 @@
 === Pop-up Notices for WooCommerce ===
-Contributors: wpcodefactory,karzin
+Contributors: wpcodefactory,karzin, omardabbas, kousikmukherjeeli
 Tags: popup,notices,woocommerce,notice,modal
 Requires at least: 4.4
-Tested up to: 6.1
-Stable tag: 1.4.1
+Tested up to: 6.2
+Stable tag: 1.4.2
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -98,6 +98,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 3. An example of a WooCommerce Notice info on the Popup
 
 == Changelog ==
+
+= 1.4.2 - 18/06/2023 =
+* WC tested up to: 7.8.
+* Tested up to: 6.2.
 
 = 1.4.1 - 17/03/2023 =
 * Fix - Close button is not always horizontally centered.
