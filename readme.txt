@@ -1,5 +1,5 @@
 === Popups for WooCommerce: Add to Cart, Checkout & More ===
-Contributors: wpcodefactory,karzin, omardabbas, kousikmukherjeeli
+Contributors: wpcodefactory, omardabbas, karzin, anbinder, algoritmika, kousikmukherjeeli
 Tags: popup,notices,woocommerce,notice,modal
 Requires at least: 4.4
 Tested up to: 6.3
