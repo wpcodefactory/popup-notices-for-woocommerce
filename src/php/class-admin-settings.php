@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Admin Settings
  *
- * @version 1.3.8
+ * @version 1.4.3
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -20,7 +20,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 		/**
 		 * Setup settings class
 		 *
-		 * @version 1.2.4
+		 * @version 1.4.3
 		 * @since   1.0.0
 		 */
 		public function __construct() {
@@ -33,6 +33,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 			add_action( 'woocommerce_sections_' . $this->id, array( $this, 'output_sections' ) );
 			add_filter( 'ttt_pnwc_settings_general', array( $this, 'handle_admin_license_settings' ), PHP_INT_MAX );
 			add_filter( 'ttt_pnwc_settings_compatibility', array( $this, 'handle_admin_license_settings' ), PHP_INT_MAX );
+			add_filter( 'ttt_pnwc_settings_messages', array( $this, 'handle_admin_license_settings' ), PHP_INT_MAX );
 
 			// Allow regex values using allow_raw_values
 			add_filter( 'woocommerce_admin_settings_sanitize_option', array( $this, 'sanitize_raw_values' ), 10, 3 );
@@ -99,7 +100,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 		/**
 		 * Get sections.
 		 *
-		 * @version 1.3.6
+		 * @version 1.4.3
 		 * @since   1.0.0
 		 *
 		 * @return array
@@ -108,7 +109,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 			$sections = array(
 				''              => __( 'General', 'popup-notices-for-woocommerce' ),
 				'compatibility' => __( 'Compatibility', 'popup-notices-for-woocommerce' ),
-				//'messages' => __( 'Messages', 'popup-notices-for-woocommerce' )
+				'messages' => __( 'Messages', 'popup-notices-for-woocommerce' )
 			);
 			return apply_filters( 'woocommerce_get_sections_' . $this->id, $sections );
 		}
@@ -116,7 +117,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 		/**
 		 * Get settings array.
 		 *
-		 * @version 1.3.8
+		 * @version 1.4.3
 		 * @since   1.0.0
 		 *
 		 * @param string $current_section Optional. Defaults to empty string.
@@ -448,7 +449,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 					// Custom style
 					array(
 						'name'            => __( 'Custom style', 'popup-notices-for-woocommerce' ),
-						'premium_section' => true,
+						'premium_section' => false,
 						'type'            => 'title',
 						'desc'            => __( 'Style the pop-up using the Customizer.', 'popup-notices-for-woocommerce' ),
 						//'desc' => sprintf( __( 'Style the pop-up using the <a href="%s">Customizer</a>', 'popup-notices-for-woocommerce' ), add_query_arg( array( 'autofocus[panel]' => 'ttt_pnwc' ), admin_url( 'customize.php' ) ) ),
@@ -456,7 +457,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 					),
 					array(
 						'type'          => 'checkbox',
-						'premium_field' => true,
+						'premium_field' => false,
 						'id'            => 'ttt_pnwc_opt_style_enabled',
 						'name'          => __( 'Enable custom style', 'popup-notices-for-woocommerce' ),
 						'desc'          => sprintf( __( 'Enable pop-up custom style using the <a href="%s">Customizer</a>', 'popup-notices-for-woocommerce' ), add_query_arg( array( 'autofocus[panel]' => 'ttt_pnwc' ), admin_url( 'customize.php' ) ) ),
@@ -465,7 +466,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 					array(
 						'type'          => 'checkbox',
 						'id'            => 'ttt_pnwc_opt_fa',
-						'premium_field' => true,
+						'premium_field' => false,
 						'name'          => __( 'Use Font Awesome', 'popup-notices-for-woocommerce' ),
 						'desc'          => __( 'Check if you want to choose icons from FontAwesome', 'popup-notices-for-woocommerce' ),
 						'default'       => 'no'
@@ -473,7 +474,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 					array(
 						'type'          => 'text',
 						'id'            => 'ttt_pnwc_opt_fa_url',
-						'premium_field' => true,
+						'premium_field' => false,
 						'name'          => __( 'Font Awesome URL', 'popup-notices-for-woocommerce' ),
 						'desc_tip'      => __( 'Leave it empty if you are already using Font Awesome from somewhere else and do not want to load it twice', 'popup-notices-for-woocommerce' ),
 						'default'       => '//use.fontawesome.com/releases/v5.5.0/css/all.css'
@@ -481,7 +482,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 					array(
 						'type'          => 'textarea',
 						'id'            => 'ttt_pnwc_opt_modal_template',
-						'premium_field' => true,
+						'premium_field' => false,
 						'name'          => __( 'Modal template', 'popup-notices-for-woocommerce' ),
 						'desc'          => __( 'HTML template reponsible for displaying the modal', 'popup-notices-for-woocommerce' ),
 						'css'           => 'min-height:223px;width:100%',
@@ -632,6 +633,110 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 						'id'   => 'ttt_pnwc_comp_yithpar_opts',
 					),
 				) );
+			} elseif ( 'messages' === $current_section ) {
+				$settings = apply_filters( 'ttt_pnwc_settings_messages', array(
+				array(
+					'name' => __( 'Messages Customization', 'popup-notices-for-woocommerce' ),
+					'type' => 'title',
+					'premium_info' => true,
+					'desc' => __( 'Customize WooCommerce messages modifying or adding more content after or before them.', 'popup-notices-for-woocommerce' ),
+					'id'   => 'ttt_pnwc_opt_message_customization',
+				),
+				array(
+					'type'    => 'checkbox',
+					'premium_field' => true,
+					'id'      => 'ttt_pnwc_opt_message_customization_enable',
+					'name'    => __( 'Customize Messages', 'popup-notices-for-woocommerce' ),
+					'desc'    => __( 'Customize Notice messages', 'popup-notices-for-woocommerce' ),
+					'default' => 'no',
+				),
+				array(
+					'type'    => 'checkbox',
+					'premium_field' => true,
+					'id'      => 'ttt_pnwc_opt_message_customization_smart_content',
+					'name'    => __( 'Smart Additional Content', 'popup-notices-for-woocommerce' ),
+					'desc'    => __( 'Additional Content will be visible only inside the Popup', 'popup-notices-for-woocommerce' ),
+					'default' => 'yes',
+				),
+				array(
+					'type'    => 'checkbox',
+					'premium_field' => true,
+					'id'      => 'ttt_pnwc_opt_message_customization_shortcodes',
+					'name'    => __( 'Shortcodes', 'popup-notices-for-woocommerce' ),
+					'desc'    => __( 'Allow Shortcodes on Modified HTML Content', 'popup-notices-for-woocommerce' ),
+					'checkboxgroup' => 'start',
+					'default' => 'yes',
+				),
+				array(
+					'type'          => 'checkbox',
+					'premium_field' => true,
+					'id'            => 'ttt_pnwc_opt_message_customization_shortcodes_original_content',
+					'name'          => __( 'Allow Shortcodes', 'popup-notices-for-woocommerce' ),
+					'desc'          => __( 'Allow Shortcodes on Original HTML Content', 'popup-notices-for-woocommerce' ),
+					'desc_tip'      => sprintf( __( 'You can use the %s shortcode to get dynamic messages from any filter you wish. e.g. %s.', 'popup-notices-for-woocommerce' ), '<code>' . '[ttt_pnwc_get_message]' . '</code>', '<code>' . '[ttt_pnwc_get_message filter="wc_add_to_cart_message_html"]' . '</code>' ),
+					'checkboxgroup' => 'end',
+					'default'       => 'yes',
+				),
+				array(
+					'type'    => 'checkbox',
+					'premium_field' => true,
+					'id'      => 'ttt_pnwc_opt_message_customization_gettext',
+					'name'    => __( 'Customize Translated Text', 'popup-notices-for-woocommerce' ),
+					'desc'    => __( 'Try to customize the translated text with <code>gettext</code> filter', 'popup-notices-for-woocommerce' ),
+					'desc_tip'=> __( 'Only enable it if the text you want to customize is not getting modified, as it\'s slower and does not allow HTML.', 'popup-notices-for-woocommerce' ) . '<br />' . __( 'The correct way of creating a Notice in WooCommerce is using the <code>wc_add_notice()</code> or <code>WP_Error::add()</code> functions.', 'popup-notices-for-woocommerce' ) . '<br />' . __( 'If the message you want to customize is not getting modified, probably it was not created with these functions.', 'popup-notices-for-woocommerce' ),
+					'default' => 'no',
+				),
+				array(
+					'type'    => 'text',
+					'premium_field' => true,
+					'id'      => 'ttt_pnwc_opt_message_customization_content_tag',
+					'name'    => __( 'Additional Content Tag', 'popup-notices-for-woocommerce' ),
+					'desc'    => __( 'Additional Content HTML tag', 'popup-notices-for-woocommerce' ),
+					'default' => 'div',
+				),
+				array(
+					'type'              => 'number',
+					'premium_field' => true,
+					'id'                => 'ttt_pnwc_opt_message_customization_amount',
+					'name'              => __( 'Total Messages', 'popup-notices-for-woocommerce' ),
+					'desc'              => __( 'Total number of messages you want to customize', 'popup-notices-for-woocommerce' ),
+					'custom_attributes' => array( 'min' => 1 ),
+					'default'           => 1,
+				),
+				array(
+					'type' => 'sectionend',
+					'premium_section' => true,
+					'id'   => 'ttt_pnwc_opt_message_customization'
+				),
+				array(
+					'name' => __( 'Template Variables', 'popup-notices-for-woocommerce' ),
+					'type' => 'title',
+					'premium_info' => true,
+					'desc' => __( 'You can use some template variables on <strong>Modified HTML Content</strong> option, but some of them may only work according to the context.', 'popup-notices-for-woocommerce' ).'<br />'.$this->get_template_variables_str(),
+					'id'   => 'ttt_pnwc_opt_message_variables',
+				),
+				array(
+					'type' => 'sectionend',
+					'premium_section' => true,
+					'id'   => 'ttt_pnwc_opt_message_variables'
+				),
+				array(
+					'name' => __( 'Examples', 'popup-notices-for-woocommerce' ),
+					'type' => 'title',
+					'premium_info' => true,
+					'desc' => __( 'Examples you can use on <strong>Original HTML Content</strong>.', 'popup-notices-for-woocommerce' ) .
+					          $this->get_examples_str( array(
+						          sprintf( __( 'Use %s to modify the %s message (%s)', 'popup-notices-for-woocommerce' ), '<code>' . '[ttt_pnwc_get_message filter="wc_add_to_cart_message_html"]' . '</code>', '<strong>' . __( 'Add to cart', 'popup-notices-for-woocommerce' ) . '</strong>', '<strong>' . __( '%s has been added to your cart.', 'woocommerce' ) . '</strong>' ),
+						          sprintf( __( 'Use %s to modify the %s message (%s)', 'popup-notices-for-woocommerce' ), '<code>' . '[ttt_pnwc_get_message filter="woocommerce_cart_product_cannot_add_another_message"]' . '</code>', '<strong>' . __( 'Cannot add another', 'popup-notices-for-woocommerce' ) . '</strong>', '<strong>' . __( 'You cannot add another "%s" to your cart.', 'woocommerce' ) . '</strong>' )
+					          ) ),
+					'id'   => 'ttt_pnwc_opt_message_examples',
+				),
+				array(
+					'type' => 'sectionend',
+					'premium_section' => true,
+					'id'   => 'ttt_pnwc_opt_message_examples'
+				) 
+				) );
 			} else {
 				$settings = apply_filters( "ttt_pnwc_settings_{$current_section}", array() );
 			}
@@ -677,6 +782,63 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 
 			$settings = $this->get_settings( $current_section );
 			\WC_Admin_Settings::save_fields( $settings );
+		}
+		
+		/**
+		 * get_template_variables.
+		 *
+		 * @version 1.4.3
+		 * @since   1.4.3
+		 *
+		 * @return array
+		 */
+		function get_template_variables() {
+			return array(
+				'product_id'          => __( 'Product ID', 'popup-notices-for-woocommerce' ),
+				'post_title'          => __( 'Post or Product title', 'popup-notices-for-woocommerce' ),
+				'cart_permalink'      => __( 'Cart permalink', 'popup-notices-for-woocommerce' ),
+				'myaccount_permalink' => __( 'My account permalink', 'popup-notices-for-woocommerce' ),
+				'shop_permalink'      => __( 'Shop permalink', 'popup-notices-for-woocommerce' ),
+				'checkout_permalink'  => __( 'Checkout permalink', 'popup-notices-for-woocommerce' ),
+				'terms_permalink'     => __( 'Terms permalink', 'popup-notices-for-woocommerce' ),
+			);
+		}
+
+		/**
+		 * get_template_variables_str.
+		 *
+		 * @version 1.4.3
+		 * @since   1.4.3
+		 *
+		 * @return string
+		 */
+		function get_template_variables_str(){
+			$variables = $this->get_template_variables();
+			$output = '<ul class="ttt-pnwc-list-a">';
+			foreach ($variables as $key=>$value){
+				$output.='<li><strong>{{'.$key.'}}</strong>: '.$value.'</li>';
+			}
+			$output.='</ul>';
+			return $output;
+		}
+		
+		/**
+		 * get_examples_str.
+		 *
+		 * @version 1.4.3
+		 * @since   1.4.3
+		 *
+		 * @param $examples_array
+		 *
+		 * @return string
+		 */
+		function get_examples_str( $examples_array ) {
+			$output = '<ul class="ttt-pnwc-list-a">';
+			foreach ( $examples_array as $value ) {
+				$output .= '<li>' . $value . '</li>';
+			}
+			$output .= '</ul>';
+			return $output;
 		}
 	}
 }

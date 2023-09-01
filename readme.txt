@@ -1,9 +1,9 @@
-=== Pop-up Notices for WooCommerce ===
+=== Popups for WooCommerce: Add to Cart, Checkout & More ===
 Contributors: wpcodefactory,karzin, omardabbas, kousikmukherjeeli
 Tags: popup,notices,woocommerce,notice,modal
 Requires at least: 4.4
-Tested up to: 6.2
-Stable tag: 1.4.2
+Tested up to: 6.3
+Stable tag: 1.4.3
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -98,6 +98,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 3. An example of a WooCommerce Notice info on the Popup
 
 == Changelog ==
+
+= 1.4.3 - 01/09/2023 =
+* WC tested up to: 8.0.
+* Tested up to: 6.3.
+* Dev - open message for free version.
 
 = 1.4.2 - 18/06/2023 =
 * WC tested up to: 7.8.
