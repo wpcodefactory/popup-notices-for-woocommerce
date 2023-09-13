@@ -7,7 +7,7 @@
  */
 
 // Loads modules dynamically and asynchronously
-__webpack_public_path__ = ttt_pnwc_info.plugin_url + "/assets/";
+__webpack_public_path__ = ttt_pnwc_info.pluginURL + "/assets/";
 let modules = ttt_pnwc_info.modulesRequired;
 if (modules && modules.length) {
     modules.forEach(function (module) {
