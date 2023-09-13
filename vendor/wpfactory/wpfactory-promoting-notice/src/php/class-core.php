@@ -2,7 +2,7 @@
 /**
  * WPFactory Promoting Notice - Functions.
  *
- * @version 1.0.5
+ * @version 1.0.6
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -89,7 +89,7 @@ if ( ! class_exists( 'WPFactory\Promoting_Notice' ) ) {
 		/**
 		 * init.
 		 *
-		 * @version 1.0.4
+		 * @version 1.0.6
 		 * @since   1.0.0
 		 */
 		function init() {
@@ -99,12 +99,18 @@ if ( ! class_exists( 'WPFactory\Promoting_Notice' ) ) {
 			}
 			global $pagenow;
 			if (
-				! empty( $args['url_requirements'] )
-				&& ! empty( $page_filename = $args['url_requirements']['page_filename'] )
-				&& ! empty( $url_params = $args['url_requirements']['params'] )
-				&& ! empty( $pagenow )
-				&& $pagenow == $page_filename
-				&& array_intersect_assoc( $url_params, $_GET ) === $url_params
+				! empty( $args['url_requirements'] ) &&
+				! empty( $page_filename = $args['url_requirements']['page_filename'] ) &&
+				(
+					(
+						isset( $args['url_requirements']['params'] ) &&
+						! empty( $url_params = $args['url_requirements']['params'] ) &&
+						array_intersect_assoc( $url_params, $_GET ) === $url_params
+					) ||
+					! isset( $args['url_requirements']['params'] )
+				) &&
+				! empty( $pagenow ) &&
+				$pagenow == $page_filename
 			) {
 				add_action( 'admin_head', array( $this, 'create_style' ) );
 				add_action( 'admin_head', array( $this, 'highlight_notice_on_disabled_setting_click' ) );

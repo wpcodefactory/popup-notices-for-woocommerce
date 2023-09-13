@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Core Class
  *
- * @version 1.3.7
+ * @version 1.4.4
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -358,7 +358,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Core' ) ) {
 
 		/**
 		 * Adds scripts
-		 * @version 1.2.5
+		 * @version 1.4.4
 		 * @since   1.0.0
 		 */
 		public function add_scripts() {
@@ -371,33 +371,30 @@ if ( ! class_exists( 'WPFactory\PNWC\Core' ) ) {
 			$plugin_url = $plugin->get_plugin_url();
 
 			// Main css file
-			$css_file = 'src/assets/dist/frontend/css/ttt-pnwc' . $suffix . '.css';
-			$css_ver  = date( "ymd-Gis", filemtime( $plugin_dir . $css_file ) );
-			wp_register_style( 'ttt-pnwc', $plugin_url . $css_file, array(), $css_ver );
+			$css_file = 'pnwc-frontend' . $suffix . '.css';
+			$css_ver  = date( "ymd-Gis", filemtime( $plugin_dir . '/assets/css/' . $css_file ) );
+			wp_register_style( 'ttt-pnwc', $plugin_url . '/assets/css/' . $css_file, array(), $css_ver );
 			wp_enqueue_style( 'ttt-pnwc' );
 
 			// Main js file
-			$js_file = 'src/assets/dist/frontend/js/ttt-pnwc' . $suffix . '.js';
-			$js_ver  = date( "ymd-Gis", filemtime( $plugin_dir . $js_file ) );
-			wp_register_script( 'ttt-pnwc', $plugin_url . $js_file, array( 'jquery','ttt_pnwc_micromodal' ), $js_ver, true );
+			$js_file = 'pnwc-frontend' . $suffix . '.js';
+			$js_ver  = date( "ymd-Gis", filemtime( $plugin_dir . '/assets/js/' . $js_file ) );
+			wp_register_script( 'ttt-pnwc', $plugin_url . '/assets/js/' . $js_file, array(
+				'jquery',
+				'ttt_pnwc_micromodal'
+			), $js_ver, true );
 			wp_enqueue_script( 'ttt-pnwc' );
-
-
-			// Audio
-			//wp_register_script( 'ttt-pnwc-howler', 'https://cdnjs.cloudflare.com/ajax/libs/howler/2.1.1/howler.min.js', false, true );
-			//wp_enqueue_script( 'ttt-pnwc-howler' );
-
-
-			// Localize script
-			$localize_script = array(
-				'icon_default_class' => 'default-icon',
-				'error_icon_class'   => '',
-				'info_icon_class'    => '',
-				'success_icon_class' => '',
-				'click_inside_close' => get_option( 'ttt_pnwc_opt_click_inside_close', 'no' ),
+			wp_add_inline_script( 'ttt-pnwc', 'const ttt_pnwc_info = ' . json_encode( apply_filters( 'ttt_pnwc_localize_script', array(
+					'themeURI'           => get_theme_file_uri(),
+					'pluginURL'          => untrailingslashit( plugin_dir_url( $this->plugin_info['path'] ) ),
+					'icon_default_class' => 'default-icon',
+					'error_icon_class'   => '',
+					'info_icon_class'    => '',
+					'success_icon_class' => '',
+					'click_inside_close' => get_option( 'ttt_pnwc_opt_click_inside_close', 'no' ),
+					'modulesRequired'    => apply_filters( 'ttt_pnwc_frontend_js_modules_required', array() )
+				) ) ), 'before'
 			);
-			wp_localize_script( 'ttt-pnwc', 'ttt_pnwc_info', apply_filters( 'ttt_pnwc_localize_script', $localize_script ) );
-
 		}
 
 		/**

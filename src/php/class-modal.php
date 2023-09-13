@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Modal
  *
- * @version 1.2.7
+ * @version 1.4.4
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -50,19 +50,21 @@ if ( ! class_exists( 'WPFactory\PNWC\Modal' ) ) {
 			return $template;
 		}
 
+		/**
+		 * add_audio_html.
+		 *
+		 * @version 1.4.4
+		 * @since   1.0.0
+		 *
+		 * @return void
+		 */
 		public function add_audio_html() {
 			if ( 'yes' !== get_option( 'ttt_pnwc_opt_audio_enable','no' ) ) {
 				return;
 			}
 			$plugin = \WPFactory\PNWC\Core::instance();
-			echo '<iframe src="' . $plugin->get_plugin_url() . 'src/assets/dist/frontend/audio/silence.mp3' . '" allow="autoplay" id="ttt-pnwc-audio" style="display:none"></iframe>';
+			echo '<iframe src="' . $plugin->get_plugin_url() . 'assets/audio/silence.mp3' . '" allow="autoplay" id="ttt-pnwc-audio" style="display:none"></iframe>';
 		}
-
-		/*public function replace_template_variables( $template ) {
-			$template_obj     = new Template();
-			$default_template = $template_obj->replace_template_variables( $template );
-			return $default_template;
-		}*/
 
 		/**
 		 * Adds modal scripts

@@ -99,6 +99,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 == Changelog ==
 
+= 1.4.4 - 13/09/2023 =
+* Fix - Javascript Uncaught TypeError.
+* Dev - Migrate from Gulp to Webpack.
+* WC tested up to: 8.1.
+
 = 1.4.3 - 01/09/2023 =
 * WC tested up to: 8.0.
 * Tested up to: 6.3.

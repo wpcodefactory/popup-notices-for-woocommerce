@@ -2,7 +2,7 @@
 /**
  * WPFactory Autoloader.
  *
- * @version 1.0.1
+ * @version 1.0.2
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -132,7 +132,7 @@ if ( ! class_exists( 'WPFactory\WPFactory_Autoloader' ) ) {
 		/**
 		 * Load the mapped file for a namespace prefix and relative class.
 		 *
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * @since   1.0.0
 		 *
 		 * @param string $prefix The namespace prefix.
@@ -147,22 +147,28 @@ if ( ! class_exists( 'WPFactory\WPFactory_Autoloader' ) ) {
 				return false;
 			}
 
-			// look through base directories for this namespace prefix
+			// look through base directories for this namespace prefix.
 			foreach ( $this->prefixes[ $prefix ] as $base_dir ) {
-				$filename = $this->get_filename_from_relative_class( $relative_class );
-				$file     = $base_dir . str_replace( '\\', DIRECTORY_SEPARATOR, $filename );
-
-				// if the mapped file exists, require it
-				if ( $this->require_file( $file ) ) {
-					// yes, we're done
+				$possible_class_prefixes = array( 'class', 'trait', 'interface' );
+				$file_exists             = false;
+				foreach ( $possible_class_prefixes as $possible_prefix ) {
+					$filename    = $this->get_filename_from_relative_class( $relative_class, $possible_prefix );
+					$file        = $base_dir . str_replace( '\\', DIRECTORY_SEPARATOR, $filename );
+					$file_exists = $this->require_file( $file );
+					if ( $file_exists ) {
+						break;
+					}
+				}
+				// if the mapped file exists, require it.
+				if ( $file_exists ) {
+					// yes, we're done.
 					return $file;
 				} else {
 					if ( $this->args['debug'] ) {
-						error_log( sprintf( __( 'WPFactory_Autoloader couldn\'t find file %s relative to class %s', 'wpfactory-autoloader' ), $file, $relative_class ) );
+						error_log( sprintf( __( 'WPFactory_Autoloader couldn\'t find file %s relative to %s', 'wpfactory-autoloader' ), $file, $relative_class ) );
 					}
 				}
 			}
-
 			// never found it
 			return false;
 		}
@@ -170,18 +176,18 @@ if ( ! class_exists( 'WPFactory\WPFactory_Autoloader' ) ) {
 		/**
 		 * Get relative file path.
 		 *
-		 * @version 1.0.1
+		 * @version 1.0.2
 		 * @since   1.0.1
 		 *
 		 * @param $relative_class
 		 *
 		 * @return string
 		 */
-		protected function get_filename_from_relative_class( $relative_class ) {
+		protected function get_filename_from_relative_class( $relative_class, $possible_prefix ) {
 			$relative_class = str_replace( '_', '-', strtolower( $relative_class ) );
 			$pieces         = explode( '\\', $relative_class );
 			$last           = array_pop( $pieces );
-			$last           = 'class-' . $last . '.php';
+			$last           = $possible_prefix . '-' . $last . '.php';
 			$pieces[]       = $last;
 			return implode( DIRECTORY_SEPARATOR, $pieces );
 		}
