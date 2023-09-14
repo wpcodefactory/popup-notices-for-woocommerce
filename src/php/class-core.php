@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Core Class
  *
- * @version 1.4.4
+ * @version 1.4.5
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -357,8 +357,9 @@ if ( ! class_exists( 'WPFactory\PNWC\Core' ) ) {
 		}
 
 		/**
-		 * Adds scripts
-		 * @version 1.4.4
+		 * Adds scripts.
+         *
+		 * @version 1.4.5
 		 * @since   1.0.0
 		 */
 		public function add_scripts() {
@@ -372,14 +373,14 @@ if ( ! class_exists( 'WPFactory\PNWC\Core' ) ) {
 
 			// Main css file
 			$css_file = 'pnwc-frontend' . $suffix . '.css';
-			$css_ver  = date( "ymd-Gis", filemtime( $plugin_dir . '/assets/css/' . $css_file ) );
-			wp_register_style( 'ttt-pnwc', $plugin_url . '/assets/css/' . $css_file, array(), $css_ver );
+			$css_ver  = date( "ymd-Gis", filemtime( $plugin_dir . 'assets/css/' . $css_file ) );
+			wp_register_style( 'ttt-pnwc', $plugin_url . 'assets/css/' . $css_file, array(), $css_ver );
 			wp_enqueue_style( 'ttt-pnwc' );
 
 			// Main js file
 			$js_file = 'pnwc-frontend' . $suffix . '.js';
-			$js_ver  = date( "ymd-Gis", filemtime( $plugin_dir . '/assets/js/' . $js_file ) );
-			wp_register_script( 'ttt-pnwc', $plugin_url . '/assets/js/' . $js_file, array(
+			$js_ver  = date( "ymd-Gis", filemtime( $plugin_dir . 'assets/js/' . $js_file ) );
+			wp_register_script( 'ttt-pnwc', $plugin_url . 'assets/js/' . $js_file, array(
 				'jquery',
 				'ttt_pnwc_micromodal'
 			), $js_ver, true );

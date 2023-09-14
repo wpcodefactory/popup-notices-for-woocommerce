@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Modal
  *
- * @version 1.4.4
+ * @version 1.4.5
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -45,8 +45,9 @@ if ( ! class_exists( 'WPFactory\PNWC\Modal' ) ) {
 				'yes' === get_option( 'ttt_pnwc_opt_prevent_closing_if_clicking_out', 'no' )
 				&& preg_match( '/\<div.+class\=\"ttt-pnwc-overlay\".+\>/', $template, $output_array )
 			) {
-				$template = preg_replace('/(\<div.+class\=\"ttt-pnwc-overlay\")(.+)?(\sdata-micromodal-close)/', '$1$2', $template);
+				$template = preg_replace( '/(\<div.+class\=\"ttt-pnwc-overlay\")(.+)?(\sdata-micromodal-close)/', '$1$2', $template );
 			}
+
 			return $template;
 		}
 
@@ -59,7 +60,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Modal' ) ) {
 		 * @return void
 		 */
 		public function add_audio_html() {
-			if ( 'yes' !== get_option( 'ttt_pnwc_opt_audio_enable','no' ) ) {
+			if ( 'yes' !== get_option( 'ttt_pnwc_opt_audio_enable', 'no' ) ) {
 				return;
 			}
 			$plugin = \WPFactory\PNWC\Core::instance();
@@ -69,7 +70,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Modal' ) ) {
 		/**
 		 * Adds modal scripts
 		 *
-		 * @version 1.2.5
+		 * @version 1.4.5
 		 * @since   1.0.0
 		 */
 		public function add_modal_scripts() {
@@ -87,9 +88,9 @@ if ( ! class_exists( 'WPFactory\PNWC\Modal' ) ) {
 				$suffix     = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 				$plugin_url = $plugin->get_plugin_url();
 				$plugin_dir = $plugin->get_plugin_dir();
-				$js_file = 'src/assets/dist/frontend/js/vendor/micromodal' . $suffix . '.js';
-				$js_ver  = date( "ymd-Gis", filemtime( $plugin_dir . $js_file ) );
-				wp_register_script( 'ttt_pnwc_micromodal', $plugin_url . $js_file, array( 'jquery' ), $js_ver, true );
+				$js_file    = 'micromodal' . $suffix . '.js';
+				$js_ver     = date( "ymd-Gis", filemtime( $plugin_dir . 'assets/vendor/micromodal/' . $js_file ) );
+				wp_register_script( 'ttt_pnwc_micromodal', $plugin_url . 'assets/vendor/micromodal/' . $js_file, array( 'jquery' ), $js_ver, true );
 				wp_enqueue_script( 'ttt_pnwc_micromodal' );
 			}
 		}
