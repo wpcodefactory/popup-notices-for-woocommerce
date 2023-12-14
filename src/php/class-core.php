@@ -129,8 +129,8 @@ if ( ! class_exists( 'WPFactory\PNWC\Core' ) ) {
 		/**
 		 * Declare compatibility with custom order tables for WooCommerce.
 		 *
-		 * @version 3.0.3
-		 * @since   3.0.2
+		 * @version 1.4.7
+		 * @since   1.4.7
 		 *
 		 * @param $filesystem_path
 		 *
