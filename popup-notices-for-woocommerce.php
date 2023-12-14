@@ -3,7 +3,7 @@
  * Plugin Name: Popups for WooCommerce: Add to Cart, Checkout & More
  * Plugin URI: https://wordpress.org/plugins/popup-notices-for-woocommerce
  * Description: Turn your WooCommerce Notices into Popups
- * Version: 1.4.6
+ * Version: 1.4.7-dev
  * Author: WPFactory
  * Author URI: https://wpfactory.com
  * License: GNU General Public License v3.0
@@ -48,6 +48,12 @@ if (
         $plugin_parent_dir === $wp_plugin_dir
     )
 ) {
+	if ( class_exists( '\WPFactory\PNWC\Core' ) ) {
+		$plugin = \WPFactory\PNWC\Core::instance();
+		if ( method_exists( $plugin, 'set_free_version_filesystem_path' ) ) {
+			$plugin->set_free_version_filesystem_path( __FILE__ );
+		}
+	}
     return;
 }
 
