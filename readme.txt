@@ -2,7 +2,7 @@
 Contributors: wpcodefactory, omardabbas, karzin, anbinder, algoritmika, kousikmukherjeeli
 Tags: popup,notices,woocommerce,notice,modal
 Requires at least: 4.4
-Tested up to: 6.3
+Tested up to: 6.4
 Stable tag: 1.4.7
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
@@ -98,6 +98,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 3. An example of a WooCommerce Notice info on the Popup
 
 == Changelog ==
+
+= 1.4.7 - 14/12/2023 =
+* Add compatibility with HPOS.
+* WC tested up to: 8.4.
+* Tested up to: 6.4.
 
 = 1.4.6 - 26/09/2023 =
 * WC tested up to: 8.1.

@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Core Class
  *
- * @version 1.4.5
+ * @version 1.4.7
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -86,7 +86,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Core' ) ) {
 		/**
 		 * Initializes.
 		 *
-		 * @version 1.3.7
+		 * @version 1.4.7
 		 * @since   1.0.0
 		 *
 		 * @return Core
