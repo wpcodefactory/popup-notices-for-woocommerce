@@ -1,95 +1,161 @@
 === Popups for WooCommerce: Add to Cart, Checkout & More ===
 Contributors: wpcodefactory, omardabbas, karzin, anbinder, algoritmika, kousikmukherjeeli
 Tags: popup,notices,woocommerce,notice,modal
-Requires at least: 4.4
-Tested up to: 6.4
-Stable tag: 1.4.7
+Requires at least: 6.1
+Tested up to: 6.5
+Stable tag: 1.4.9
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Turn your WooCommerce Notices into Popups
+Make your WooCommerce Notices (sucess, info, and error) more visible to your customers by turning them into popups
 
 == Description ==
 
-Notices are important messages WooCommerce displays on your store for customers, like:
+> “Super plugin and support: Best woocommerce notifications plugin, super support, Pablo is the top of the developer” – ⭐⭐⭐⭐⭐  [giuliano61](https://wordpress.org/support/topic/super-plugin-and-support-11/)
 
-* Product has been added to cart
-* Field Name is a required field
-* Have a coupon?
-* And so on...
+[Main Page](https://wpfactory.com/item/popup-notices-for-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "**Main Page**") |  [Support Forum](https://wpfactory.com/support/item/popup-notices-for-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "**Support Forum**") | [Documentation & How to](https://wpfactory.com/docs/popup-notices-for-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "**Documentation & How to**") | [Demo](https://popupnotices.instawp.xyz/)
+
+WooCommerce has a built-in notices feature that appears on your store in difference cases, they used to show important messages for customers, like:
+
+* Product X has been added to your cart (Product notice)
+* Product X removed. Undo? (Cart notice)
+* Have a coupon? Click here to enter your code (Checkout notice)
+* X is a required field (checkout)
+
+And so on...
 
 And sometimes, depending on the theme, they get so discreet customers don't see it or there are cases where they are just too ugly.
 
-**Pop-up Notices for WooCommercee** adds WooCommerce Notices into beautiful Popups that will be noticed and appreciated.
+Our plugin **Popup Notices for WooCommercee** turns these WooCommerce Notices into beautiful Popups that will be noticed by your customers.
 
-### &#127942; Premium Version ###
-Do you like the free version of this plugin?
-Did you know We also have a [Premium Version](https://wpfactory.com/item/popup-notices-for-woocommerce/)?
+## 🚀 Main Features: FREE Version##
 
-Check some of its features for now:
+### 🚀 Turn Woo Notices into Popups ###
 
-* **Style options**
-Style the Pop-up the way you want with tons of options using the Customizer, including Icons from FontAwesome
+When you add/remove product to the cart, WooCommerce will show a plain text  notice, with this plugin, you can change this simple text into an interactive popup.
 
+### 🚀 Remove Woo Default Notices ###
 
-* **Customize Messages**
+The plugin allows you to choose removing the default notices (by Woo) if you're showing them in a popup, or keep both. This can be customized by each notice type (success, error, info).
+
+### 🚀 AJAX Support ###
+
+These popups won't require a page reload, the plugin will show the popup on the same page to maintain a seamless experience for your customers.
+
+### 🚀 Display Options ###
+
+* Show the popups on desktop, mobile, or both
+* Show popups for any notice type: Error, Success, Info, or all of them
+* Hide default WooCommerce notices when the related popup is enabled 
+* Control how to close the popup (clicking outside, clicking inside)
+___
+
+> “Shows more beautiful messages: I had a problem with users who did not notice the error messages and now it explodes on the screen and does not go unnoticed.” – ⭐⭐⭐⭐⭐ [Luiz Sobral](https://wordpress.org/support/topic/shows-more-beautiful-messages/)
+
+> “Native WooCommerce notice: An amazing plugin and a very professional developer, I received excellent support for a minor adjustment I need.” – ⭐⭐⭐⭐⭐ [goldatlas](https://wordpress.org/support/topic/native-woocommerce-notice/)
+
+___
+
+## 🏆 Do More: PRO Version ##
+
+To go further and beyond these options, we have [a premium version](https://wpfactory.com/item/popup-notices-for-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme) which unlocks more advanced features like:
+
+### 🏆 Styling Options  ###
+
+Customize the style (colors, position, appearance) of the different popups using your theme Customizer.
+
+Utilize icons from FontAwesome to show different icons on popups.
+
+### 🏆 Play Audio on Popup ###
+Create more engaging experience by playing any sound of your choice when the popup opens or closes.
+
+### 🏆 Customize Messages ###
 Customize WooCommerce messages modifying or adding more content after or before them
 
+### 🏆 Advanced Display Options ###
 
-* **Prevent page scrolling**
-Disable page scrolling on AJAX notices
+**Prevent Page Scrolling**: Disable page scrolling on AJAX notices
+**Restrictive Loading**: Load the plugin at some specific moment or place, like only on Cart or Checkout
+**Auto-Close**: Auto-close the popup after x seconds
 
+### 🏆 Premium Support  ###
 
-* **Ignore multiple messages**
-Ignore particular notices you don't want to display inside the Pop-up
+And much more.
+___
+## 💯 Why WPFactory?##
 
+* **Experience You Can Trust:** Over a decade in the business
+* **Wide Plugin Selection:** Offering 65+ unique and powerful plugins
+* **Highly-Rated Support:** Backed by hundreds of 5-star reviews
+* **Expert Team:** Dedicated developers and technical support at your service
+___
 
-* **Avoid repeated messages**
-Use Cookies to avoid messages that keep being displayed constantly. Set a expiration time for them and they will be only displayed again after the time expires
+## What's Next? Discover More Plugins by WPFactory ##
 
+WPFactory has a diverse range of plugins tailored to enhance your experience, some of our top-selling plugins are:
 
-* **Restrictive Loading**
-Load the plugin at some specific moment or place, like only on Cart or Checkout
+* [**Min Max Step Quantity**](https://wpfactory.com/item/product-quantity-for-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "**Min Max Step Quantity**"): Set minimum, maximum, step, and default product quantities, including dropdowns and decimal options on WooCommerce (**[Free version](https://wordpress.org/plugins/product-quantity-for-woocommerce/ "Free version")**)
 
+* [**Cost of Goods for WooCommerce**](https://wpfactory.com/item/cost-of-goods-for-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "**Cost of Goods WooCommerce**"): Enhance profit maximization and financial management by accurately calculating your WooCommerce store's COGS (**[Free version](https://wordpress.org/plugins/cost-of-goods-for-woocommerce/ "Free version")**)
 
-* **Auto-Close**
-Auto-close the popup after x seconds
+* [**Maximum Products per User**](https://wpfactory.com/item/maximum-products-per-user-for-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "**Maximum Products per User**"): Impose personalized purchase limits based on user roles and date ranges to manage customer buying behavior (**[Free version](https://wordpress.org/plugins/maximum-products-per-user-for-woocommerce/ "Free version")**)
 
+* [**Order Minimum/Maximum Amount**](https://wpfactory.com/item/order-minimum-maximum-amount-for-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "**Order Minimum/Maximum Amount**"): Customize order limits by amount, quantity, weight, or volume, including user role, category, and more (**[Free version](https://wordpress.org/plugins/order-minimum-amount-for-woocommerce/ "Free version")**)
 
-* **Audio**
-Play any sound you want when the Pop-up opens or when it closes
+* [**EU/UK VAT Manager for WooCommerce**](https://wpfactory.com/item/eu-vat-for-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "**EU/UK VAT Manager for WooCommerce**"): Automate VAT compliance for your WooCommerce store, including settings and VIES validation for a seamless experience (**[Free version](https://wordpress.org/plugins/eu-vat-for-woocommerce/ "Free version")**)
 
+* [**Email Verification for WooCommerce**](https://wpfactory.com/item/email-verification-for-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "**Email Verification for WooCommerce**"): Boost security and credibility by verifying customer emails, reducing spam, and improving email marketing (**[Free version](https://wordpress.org/plugins/maximum-products-per-user-for-woocommerce/ "Free version")**)
 
-* **Support**
+* [**Free Shipping Over Amount for WooCommerce**](https://wpfactory.com/item/amount-left-free-shipping-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "**Free Shipping Over Amount for WooCommerce**"): Encourage higher spending by offering free shipping based on amount, with a progress bar for customers (**[Free version](https://wordpress.org/plugins/amount-left-free-shipping-woocommerce/ "Free version")**)
+
+* [**Dynamic Pricing & Bulk Quantity Discounts**](https://wpfactory.com/item/product-price-by-quantity-for-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme "**Dynamic Pricing & Bulk Quantity Discounts**"): Advanced dynamic pricing and discount rules for WooCommerce, encouraging bulk purchases and driving more sales (**[Free version](https://wordpress.org/plugins/wholesale-pricing-woocommerce/ "Free version")**)
+
+___
+## ❤️ User Testimonials: See What Others Are Saying!##
+
+> “Very nice and original plugin. The developer of the plugin gave a fast and correct solution for a small language issue. Great job!” – ⭐⭐⭐⭐⭐ [Arjen Douwes](https://wpfactory.com/item/popup-notices-for-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme)
+
+> “This plugin is excellent and the support is really really good,please keep the good work up i really appreciate your plugin” – ⭐⭐⭐⭐⭐ [AHMAD SHEHU](https://wpfactory.com/item/popup-notices-for-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme)
+
+> “Excellent plugin and even better support. Pablo worked really hard to fix the issue when it broke. This plugin makes the WooCommerce messages look so much better.” – ⭐⭐⭐⭐⭐ [Cathleen](https://wpfactory.com/item/popup-notices-for-woocommerce/?utm_source=wporg&utm_medium=organic&utm_campaign=readme)
+
+> “Perfect plugin perfect support: We bought the plugin because we need a different and more clear management of the Woocommerce messages. We need a customization too and the author accepted to do it and include it in the official pro version of the plugin….so that was great. The support and the comunication with the author was awesome! Thank you very much!” – ⭐⭐⭐⭐⭐ [AngeloLazzari](https://wordpress.org/support/topic/perfect-plugin-perfect-support-11/)
 
 == Frequently Asked Questions ==
 
-= How can I contribute? Is there a github repository? =
-If you are interested in contributing - head over to the [Popup Notices for WooCommerce plugin GitHub Repository](https://github.com/wpcodefactory/popup-notices-for-woocommerce) to find out how you can pitch in.
+= What popups/notices I can control with this plugin? =
+These popups replace the generic WooCommerce notices, providing a richer user experience and ensuring customers are aware that their selected items have successfully been added to the cart.
 
-= Micromodal Credits =
+= Can I still use the standard WooCommerce notifications if I install this plugin? =
+Yes, the plugin gives you full flexibility to either retain or remove the standard WooCommerce notifications. You have the option to display all messages as popups to enhance visibility and user engagement.
 
-* [Indrashish Ghosh](https://twitter.com/_ighosh)
-* [Kalpesh Singh](https://twitter.com/knowkalpesh)
-
-= Micromodal License =
-
-MIT License
-
-Copyright (c) 2017 Indrashish Ghosh
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+= Does the plugin support AJAX "Add to Cart" notices? =
+Yes, the plugin supports AJAX "Add to Cart" notices, allowing for real-time notifications, especially on archive pages.
 
 == Installation ==
 
-1. Upload the entire 'popup-notices-for-woocommerce' folder to the '/wp-content/plugins/' directory.
-2. Activate the plugin through the 'Plugins' menu in WordPress.
-3. Start by visiting plugin settings at WooCommerce > Settings > Popup Notices.
+**Follow these simplified steps to get your plugin up and running:**
+
+**From the WordPress Admin Panel:**
+1. Navigate to “Plugins” > “Add New”.
+2. Use the search bar and find the plugin using the exact name.
+3. Click “Install Now” for the desired plugin.
+4. Once the installation is finished, and click “Activate”.
+
+**Manual Installation Using FTP:**
+1. Download the desired plugin from WordPress.org.
+2. Using your preferred FTP client, upload the entire plugin folder to the /wp-content/plugins/ directory of your WordPress installation.
+3. Go to “Plugins” > “Installed Plugins” in your dashboard and click “Activate”.
+
+**Manual download & upload from the WordPress Admin Panel:**
+1. Download the desired plugin in a ZIP format.
+2. On your site, navigate to “Plugins” > “Add New” and click the “Upload Plugin” button.
+3. Choose the downloaded plugin file and click “Install Now.”
+4. After the installation is complete, click “Activate”.
+
+**Post-Activation:**
+Once activated, access the plugin's settings by navigating to “WooCommerce > Settings” and look for the relevant tab.
 
 == Screenshots ==
 
@@ -98,6 +164,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 3. An example of a WooCommerce Notice info on the Popup
 
 == Changelog ==
+
+= 1.4.9 - 04/04/2024 =
+* Update readme.txt
+* WC tested up to: 8.7.
+* Tested up to: 6.5.
+
+= 1.4.8 - 14/12/2023 =
+* Declare compatibility with HPOS.
+* WC tested up to: 8.4.
+* Tested up to: 6.4.
 
 = 1.4.7 - 14/12/2023 =
 * Add compatibility with HPOS.
