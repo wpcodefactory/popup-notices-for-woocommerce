@@ -2,8 +2,8 @@
 Contributors: wpcodefactory, omardabbas, karzin, anbinder, algoritmika, kousikmukherjeeli
 Tags: popup,notices,woocommerce,notice,modal
 Requires at least: 6.1
-Tested up to: 6.5
-Stable tag: 1.4.9
+Tested up to: 6.6
+Stable tag: 1.4.10
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -164,6 +164,10 @@ Once activated, access the plugin's settings by navigating to “WooCommerce > S
 3. An example of a WooCommerce Notice info on the Popup
 
 == Changelog ==
+
+= 1.4.10 - 31/07/2024 =
+* WC tested up to: 9.1.
+* Tested up to: 6.6.
 
 = 1.4.9 - 04/04/2024 =
 * Update readme.txt
