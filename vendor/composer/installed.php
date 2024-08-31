@@ -3,7 +3,7 @@
         'name' => 'wpfactory/popup-notices-for-woocommerce',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => 'b0825b02b34849fc8edbe638a24afca1652d9a2a',
+        'reference' => '62d0bc6995f703ead17f38712a11140b756d8b35',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         'wpfactory/popup-notices-for-woocommerce' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => 'b0825b02b34849fc8edbe638a24afca1652d9a2a',
+            'reference' => '62d0bc6995f703ead17f38712a11140b756d8b35',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Core Class
  *
- * @version 1.4.7
+ * @version 1.5.0
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -522,14 +522,19 @@ if ( ! class_exists( 'WPFactory\PNWC\Core' ) ) {
 		/**
 		 * Creates admin settings.
 		 *
-		 * @version 1.0.0
-		 * @since 1.0.0
+		 * @version 1.5.0
+		 * @since   1.0.0
 		 *
 		 * @param $settings
 		 *
 		 * @return mixed
 		 */
 		public function create_admin_settings( $settings ) {
+			if ( is_object( ( $settings ) ) ) {
+				$obj        = $settings;
+				$settings   = array();
+				$settings[] = $obj;
+			}
 			$settings[] = new Admin_Settings();
 
 			return $settings;
