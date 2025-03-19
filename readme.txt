@@ -165,9 +165,10 @@ Once activated, access the plugin's settings by navigating to “WooCommerce > S
 
 == Changelog ==
 
-= 1.5.1 - 19/03/2024 =
+= 1.5.1 - 19/03/2025 =
 * Dev - Added new option to load micromodal from jsdelivr.com.
 * WC tested up to: 9.7.
+* Tested up to: 6.7.
 
 = 1.5.0 - 31/08/2024 =
 * Dev - Prevented possible conflicts with other plugins such as "Quick Buy Now Button for WooCommerce".
