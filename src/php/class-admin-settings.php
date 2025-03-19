@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Admin Settings
  *
- * @version 1.4.3
+ * @version 1.5.1
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -117,7 +117,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 		/**
 		 * Get settings array.
 		 *
-		 * @version 1.4.3
+		 * @version 1.5.1
 		 * @since   1.0.0
 		 *
 		 * @param string $current_section Optional. Defaults to empty string.
@@ -204,8 +204,9 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 						'desc_tip' => __( 'Micromodal is the library responsible for the popups.', 'popup-notices-for-woocommerce' ),
 						'default'  => 'externally',
 						'options'  => array(
-							'externally' => __( 'Externally from unpkg.com', 'popup-notices-for-woocommerce' ),
-							'locally'    => __( 'Locally', 'popup-notices-for-woocommerce' ),
+							'externally'          => __( 'Externally from unpkg.com', 'popup-notices-for-woocommerce' ),
+							'externally_jsdelivr' => __( 'Externally from jsdelivr.com', 'popup-notices-for-woocommerce' ),
+							'locally'             => __( 'Locally', 'popup-notices-for-woocommerce' ),
 						),
 					),
 					array(

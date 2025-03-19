@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Modal
  *
- * @version 1.4.5
+ * @version 1.5.1
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -70,7 +70,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Modal' ) ) {
 		/**
 		 * Adds modal scripts
 		 *
-		 * @version 1.4.5
+		 * @version 1.5.1
 		 * @since   1.0.0
 		 */
 		public function add_modal_scripts() {
@@ -79,20 +79,28 @@ if ( ! class_exists( 'WPFactory\PNWC\Modal' ) ) {
 			}
 			$plugin                    = \WPFactory\PNWC\Core::instance();
 			$micromodal_loading_method = get_option( 'ttt_pnwc_opt_micromodal_load_method', 'externally' );
+			$micromodal_path           = false;
+			$js_ver                    = null;
 
-			if ( 'externally' == $micromodal_loading_method ) {
-				$path = $plugin->plugin_info['path'];
-				wp_register_script( 'ttt_pnwc_micromodal', 'https://unpkg.com/micromodal/dist/micromodal.min.js', array( 'jquery' ), false, true );
-				wp_enqueue_script( 'ttt_pnwc_micromodal' );
-			} elseif ( 'locally' == $micromodal_loading_method ) {
-				$suffix     = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-				$plugin_url = $plugin->get_plugin_url();
-				$plugin_dir = $plugin->get_plugin_dir();
-				$js_file    = 'micromodal' . $suffix . '.js';
-				$js_ver     = date( "ymd-Gis", filemtime( $plugin_dir . 'assets/vendor/micromodal/' . $js_file ) );
-				wp_register_script( 'ttt_pnwc_micromodal', $plugin_url . 'assets/vendor/micromodal/' . $js_file, array( 'jquery' ), $js_ver, true );
-				wp_enqueue_script( 'ttt_pnwc_micromodal' );
+			switch ( $micromodal_loading_method ) {
+				case 'externally':
+					$micromodal_path = 'https://unpkg.com/micromodal/dist/micromodal.min.js';
+					break;
+				case 'externally_jsdelivr':
+					$micromodal_path = 'https://fastly.jsdelivr.net/npm/micromodal/dist/micromodal.min.js';
+					break;
+				case 'locally':
+					$suffix          = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+					$plugin_url      = $plugin->get_plugin_url();
+					$plugin_dir      = $plugin->get_plugin_dir();
+					$js_file         = 'micromodal' . $suffix . '.js';
+					$js_ver          = date( "ymd-Gis", filemtime( $plugin_dir . 'assets/vendor/micromodal/' . $js_file ) );
+					$micromodal_path = $plugin_url . 'assets/vendor/micromodal/' . $js_file;
+					break;
 			}
+
+			wp_register_script( 'ttt_pnwc_micromodal', $micromodal_path, array( 'jquery' ), $js_ver, true );
+			wp_enqueue_script( 'ttt_pnwc_micromodal' );
 		}
 
 		/**
