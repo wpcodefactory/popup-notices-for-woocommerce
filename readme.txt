@@ -1,9 +1,9 @@
 === Popups for WooCommerce: Add to Cart, Checkout & More ===
-Contributors: wpcodefactory, omardabbas, karzin, anbinder, algoritmika, kousikmukherjeeli
+Contributors: wpcodefactory, omardabbas, karzin, anbinder, kousikmukherjeeli
 Tags: popup,notices,woocommerce,notice,modal
 Requires at least: 6.1
-Tested up to: 6.7
-Stable tag: 1.5.1
+Tested up to: 6.8
+Stable tag: 1.5.2
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -164,6 +164,10 @@ Once activated, access the plugin's settings by navigating to “WooCommerce > S
 3. An example of a WooCommerce Notice info on the Popup
 
 == Changelog ==
+
+= 1.5.2 - 22/09/2025 =
+* WC tested up to: 10.1.
+* Tested up to: 6.8.
 
 = 1.5.1 - 19/03/2025 =
 * Dev - Added new option to load micromodal from jsdelivr.com.
