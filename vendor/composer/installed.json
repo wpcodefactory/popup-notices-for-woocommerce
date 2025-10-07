@@ -53,20 +53,20 @@
         },
         {
             "name": "wpfactory/wpfactory-autoloader",
-            "version": "v1.0.4",
-            "version_normalized": "1.0.4.0",
+            "version": "v1.0.5",
+            "version_normalized": "1.0.5.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/wpcodefactory/wpfactory-autoloader.git",
-                "reference": "4a1243c3b3c59b92c89ca89b3985e15bf6dd62af"
+                "reference": "28faccc98cd94edca1248e65793eb7b38a9e7ec5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wpcodefactory/wpfactory-autoloader/zipball/4a1243c3b3c59b92c89ca89b3985e15bf6dd62af",
-                "reference": "4a1243c3b3c59b92c89ca89b3985e15bf6dd62af",
+                "url": "https://api.github.com/repos/wpcodefactory/wpfactory-autoloader/zipball/28faccc98cd94edca1248e65793eb7b38a9e7ec5",
+                "reference": "28faccc98cd94edca1248e65793eb7b38a9e7ec5",
                 "shasum": ""
             },
-            "time": "2024-09-13T02:29:02+00:00",
+            "time": "2025-10-07T21:38:57+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -75,7 +75,7 @@
                 ]
             },
             "support": {
-                "source": "https://github.com/wpcodefactory/wpfactory-autoloader/tree/v1.0.4",
+                "source": "https://github.com/wpcodefactory/wpfactory-autoloader/tree/v1.0.5",
                 "issues": "https://github.com/wpcodefactory/wpfactory-autoloader/issues"
             },
             "install-path": "../wpfactory/wpfactory-autoloader"

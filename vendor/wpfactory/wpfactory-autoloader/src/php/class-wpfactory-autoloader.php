@@ -2,7 +2,7 @@
 /**
  * WPFactory Autoloader.
  *
- * @version 1.0.4
+ * @version 1.0.5
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -92,7 +92,7 @@ if ( ! class_exists( 'WPFactory\WPFactory_Autoloader' ) ) {
 		/**
 		 * get_source_prefix.
 		 *
-		 * @version 1.0.3
+		 * @version 1.0.5
 		 * @since   1.0.3
 		 *
 		 * @param $class
@@ -100,14 +100,19 @@ if ( ! class_exists( 'WPFactory\WPFactory_Autoloader' ) ) {
 		 * @return int|string
 		 */
 		function get_source_prefix( $class ) {
-			foreach ( array_keys( $this->prefixes ) as $prefix ) {
-				if ( strpos( $class, $prefix ) !== false ) {
-					return $prefix;
-					break;
+			$best_match           = '';
+			$longest_match_length = 0;
+			foreach ( array_keys( $this->prefixes ) as $item ) {
+				if ( strpos( $class, $item ) === 0 ) {
+					$length = strlen( $item );
+					if ( $length > $longest_match_length ) {
+						$longest_match_length = $length;
+						$best_match           = $item;
+					}
 				}
 			}
 
-			return '';
+			return $best_match;
 		}
 
 		/**

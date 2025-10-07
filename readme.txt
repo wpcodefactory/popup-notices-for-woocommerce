@@ -166,8 +166,9 @@ Once activated, access the plugin's settings by navigating to “WooCommerce > S
 == Changelog ==
 
 = 1.5.3 - 07/10/2025 =
-* Dev - Added WPFactory admin menu library.
 * Fix - Added errors inside `.woocommerce-NoticeGroup` classes.
+* Dev - Added WPFactory admin menu library.
+* Dev - Updated autoloader library.
 * WC tested up to: 10.2.
 
 = 1.5.2 - 22/09/2025 =
