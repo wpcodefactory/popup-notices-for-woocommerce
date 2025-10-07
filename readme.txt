@@ -166,6 +166,7 @@ Once activated, access the plugin's settings by navigating to “WooCommerce > S
 == Changelog ==
 
 = 1.5.3 - 07/10/2025 =
+* Fix - Fixed Custom Style action link that points to Customizer.
 * Fix - Added errors inside `.woocommerce-NoticeGroup` classes.
 * Dev - Added WPFactory admin menu library.
 * Dev - Updated autoloader library.
