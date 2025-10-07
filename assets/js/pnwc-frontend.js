@@ -20,7 +20,9 @@ var general = {
       general.onElementInserted('body', '.woocommerce-error', 'li', general.readNotice);
       general.onElementInserted('body', '.woocommerce-message', '', general.readNotice);
       general.onElementInserted('body', '.woocommerce-info', '', general.readNotice);
+      general.onElementInserted('body', '.woocommerce-NoticeGroup', 'div.woocommerce-error', general.readNotice);
     }
+    general.checkExistingElements('.woocommerce-NoticeGroup div.woocommerce-error');
     general.checkExistingElements('.woocommerce-error li');
     general.checkExistingElements('.woocommerce-message');
     general.checkExistingElements('.woocommerce-info');
@@ -529,7 +531,7 @@ __webpack_require__.r(__webpack_exports__);
  */
 
 // Loads modules dynamically and asynchronously
-__webpack_require__.p = ttt_pnwc_info.plugin_url + "/assets/";
+__webpack_require__.p = ttt_pnwc_info.pluginURL + "/assets/";
 var modules = ttt_pnwc_info.modulesRequired;
 if (modules && modules.length) {
   modules.forEach(function (module) {

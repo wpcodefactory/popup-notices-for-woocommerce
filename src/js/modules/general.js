@@ -8,15 +8,17 @@ const general = {
         this.handle_sounds();
 
         this.initializePopup();
-        if (ttt_pnwc_info.ajax_opt === 'yes') {
-            general.onElementInserted('body', '.woocommerce-error', 'li', general.readNotice);
-            general.onElementInserted('body', '.woocommerce-message', '', general.readNotice);
-            general.onElementInserted('body', '.woocommerce-info', '', general.readNotice);
+        if ( ttt_pnwc_info.ajax_opt === 'yes' ) {
+            general.onElementInserted( 'body', '.woocommerce-error', 'li', general.readNotice );
+            general.onElementInserted( 'body', '.woocommerce-message', '', general.readNotice );
+            general.onElementInserted( 'body', '.woocommerce-info', '', general.readNotice );
+            general.onElementInserted( 'body', '.woocommerce-NoticeGroup', 'div.woocommerce-error', general.readNotice );
         }
 
-        general.checkExistingElements('.woocommerce-error li');
-        general.checkExistingElements('.woocommerce-message');
-        general.checkExistingElements('.woocommerce-info');
+        general.checkExistingElements( '.woocommerce-NoticeGroup div.woocommerce-error' );
+        general.checkExistingElements( '.woocommerce-error li' );
+        general.checkExistingElements( '.woocommerce-message' );
+        general.checkExistingElements( '.woocommerce-info' );
 
         document.addEventListener('click', function (event) {
             if (event.target.matches('.enable-terms-checkbox')) {
