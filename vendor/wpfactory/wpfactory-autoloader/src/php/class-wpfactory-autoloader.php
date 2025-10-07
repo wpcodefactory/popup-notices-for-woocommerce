@@ -2,7 +2,7 @@
 /**
  * WPFactory Autoloader.
  *
- * @version 1.0.2
+ * @version 1.0.4
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -56,7 +56,7 @@ if ( ! class_exists( 'WPFactory\WPFactory_Autoloader' ) ) {
 		/**
 		 * Adds a base directory for a namespace prefix.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.4
 		 * @since   1.0.0
 		 *
 		 * @param string $prefix The namespace prefix.
@@ -70,18 +70,18 @@ if ( ! class_exists( 'WPFactory\WPFactory_Autoloader' ) ) {
 		 */
 		public function add_namespace( $prefix, $base_dir, $prepend = false ) {
 
-			// normalize namespace prefix
-			$prefix = trim( $prefix, '\\' ) . '\\';
+			// Normalize namespace prefix.
+			$prefix = trim( $prefix, '\\' );
 
-			// normalize the base directory with a trailing separator
+			// Normalize the base directory with a trailing separator.
 			$base_dir = rtrim( $base_dir, DIRECTORY_SEPARATOR ) . DIRECTORY_SEPARATOR;
 
-			// initialize the namespace prefix array
+			// Initialize the namespace prefix array.
 			if ( isset( $this->prefixes[ $prefix ] ) === false ) {
 				$this->prefixes[ $prefix ] = array();
 			}
 
-			// retain the base directory for the namespace prefix
+			// Retain the base directory for the namespace prefix.
 			if ( $prepend ) {
 				array_unshift( $this->prefixes[ $prefix ], $base_dir );
 			} else {
@@ -90,9 +90,30 @@ if ( ! class_exists( 'WPFactory\WPFactory_Autoloader' ) ) {
 		}
 
 		/**
+		 * get_source_prefix.
+		 *
+		 * @version 1.0.3
+		 * @since   1.0.3
+		 *
+		 * @param $class
+		 *
+		 * @return int|string
+		 */
+		function get_source_prefix( $class ) {
+			foreach ( array_keys( $this->prefixes ) as $prefix ) {
+				if ( strpos( $class, $prefix ) !== false ) {
+					return $prefix;
+					break;
+				}
+			}
+
+			return '';
+		}
+
+		/**
 		 * Loads the class file for a given class name.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.4
 		 * @since   1.0.0
 		 *
 		 * @param string $class The fully-qualified class name.
@@ -101,38 +122,24 @@ if ( ! class_exists( 'WPFactory\WPFactory_Autoloader' ) ) {
 		 * failure.
 		 */
 		public function load_class( $class ) {
-			// the current namespace prefix
-			$prefix = $class;
-
-			// work backwards through the namespace names of the fully-qualified
-			// class name to find a mapped file name
-			while ( false !== $pos = strrpos( $prefix, '\\' ) ) {
-
-				// retain the trailing namespace separator in the prefix
-				$prefix = substr( $class, 0, $pos + 1 );
-
-				// the rest is the relative class name
-				$relative_class = substr( $class, $pos + 1 );
-
-				// try to load a mapped file for the prefix and relative class
-				$mapped_file = $this->load_mapped_file( $prefix, $relative_class );
-				if ( $mapped_file ) {
-					return $mapped_file;
-				}
-
-				// remove the trailing namespace separator for the next iteration
-				// of strrpos()
-				$prefix = rtrim( $prefix, '\\' );
+			if ( empty( $source_prefix = $this->get_source_prefix( $class ) ) ) {
+				return false;
 			}
 
-			// never found a mapped file
+			$relative_class = str_replace( $source_prefix, '', $class );
+			$mapped_file    = $this->load_mapped_file( $source_prefix, $relative_class );
+			if ( $mapped_file ) {
+				return true;
+			}
+
+			// Never found a mapped file.
 			return false;
 		}
 
 		/**
 		 * Load the mapped file for a namespace prefix and relative class.
 		 *
-		 * @version 1.0.2
+		 * @version 1.0.4
 		 * @since   1.0.0
 		 *
 		 * @param string $prefix The namespace prefix.
@@ -142,44 +149,35 @@ if ( ! class_exists( 'WPFactory\WPFactory_Autoloader' ) ) {
 		 * name of the mapped file that was loaded.
 		 */
 		protected function load_mapped_file( $prefix, $relative_class ) {
-			// are there any base directories for this namespace prefix?
 			if ( isset( $this->prefixes[ $prefix ] ) === false ) {
 				return false;
 			}
-
-			// look through base directories for this namespace prefix.
 			foreach ( $this->prefixes[ $prefix ] as $base_dir ) {
 				$possible_class_prefixes = array( 'class', 'trait', 'interface' );
 				$file_exists             = false;
 				foreach ( $possible_class_prefixes as $possible_prefix ) {
-					$filename    = $this->get_filename_from_relative_class( $relative_class, $possible_prefix );
-					$file        = $base_dir . str_replace( '\\', DIRECTORY_SEPARATOR, $filename );
-					$file_exists = $this->require_file( $file );
-					if ( $file_exists ) {
+					$filename = $this->get_filename_from_relative_class( $relative_class, $possible_prefix );
+					$file     = $base_dir . str_replace( '\\', DIRECTORY_SEPARATOR, $filename );
+					if ( file_exists( $file ) ) {
+						require $file;
+						return true;
 						break;
 					}
 				}
-				// if the mapped file exists, require it.
-				if ( $file_exists ) {
-					// yes, we're done.
-					return $file;
-				} else {
-					if ( $this->args['debug'] ) {
-						error_log( sprintf( __( 'WPFactory_Autoloader couldn\'t find file %s relative to %s', 'wpfactory-autoloader' ), $file, $relative_class ) );
-					}
-				}
 			}
-			// never found it
+
+			// Never found it.
 			return false;
 		}
 
 		/**
 		 * Get relative file path.
 		 *
-		 * @version 1.0.2
+		 * @version 1.0.3
 		 * @since   1.0.1
 		 *
 		 * @param $relative_class
+		 * @param $possible_prefix
 		 *
 		 * @return string
 		 */
@@ -190,24 +188,6 @@ if ( ! class_exists( 'WPFactory\WPFactory_Autoloader' ) ) {
 			$last           = $possible_prefix . '-' . $last . '.php';
 			$pieces[]       = $last;
 			return implode( DIRECTORY_SEPARATOR, $pieces );
-		}
-
-		/**
-		 * If a file exists, require it from the file system.
-		 *
-		 * @version 1.0.0
-		 * @since   1.0.0
-		 *
-		 * @param string $file The file to require.
-		 *
-		 * @return bool True if the file exists, false if not.
-		 */
-		protected function require_file( $file ) {
-			if ( file_exists( $file ) ) {
-				require $file;
-				return true;
-			}
-			return false;
 		}
 	}
 }

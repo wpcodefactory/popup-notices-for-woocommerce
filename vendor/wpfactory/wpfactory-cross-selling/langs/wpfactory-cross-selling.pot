@@ -1,0 +1,226 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-08-18T22:06:50+02:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: wpfactory-cross-selling\n"
+
+#: class-products.php:46
+msgid "EAN Barcode Generator for WooCommerce: UPC, ISBN & GTIN Inventory"
+msgstr ""
+
+#: class-products.php:47
+msgid "Make Inventory Control a Breeze and Manage Your Products Seamlessly."
+msgstr ""
+
+#: class-products.php:57
+msgid "Wishlist for WooCommerce"
+msgstr ""
+
+#: class-products.php:58
+msgid "Encourage More Purchases by Offering Easy Multi-Wishlist Creation and Sharing Features."
+msgstr ""
+
+#: class-products.php:68
+msgid "Min Max Step Quantity Limits Manager for WooCommerce"
+msgstr ""
+
+#: class-products.php:69
+msgid "Control Product Quantities and make shopping perfectly tailored to your store's needs."
+msgstr ""
+
+#: class-products.php:79
+msgid "Cost of Goods: Product Cost & Profit Calculator for WooCommerce"
+msgstr ""
+
+#: class-products.php:80
+msgid "Understand your profits by accurately tracking costs. Make smarter decisions for your business and maximize your store's profitability with ease."
+msgstr ""
+
+#: class-products.php:90
+msgid "Maximum Products per User for WooCommerce"
+msgstr ""
+
+#: class-products.php:91
+msgid "Set maximum quantities based on your store's needs. Keep things fair, control stock, and manage sales your way!"
+msgstr ""
+
+#: class-products.php:101
+msgid "Order Minimum/Maximum Amount Limits for WooCommerce"
+msgstr ""
+
+#: class-products.php:102
+msgid "Control every order with customizable limits to optimize your sales strategy."
+msgstr ""
+
+#: class-products.php:112
+msgid "EU VAT Manager for WooCommerce"
+msgstr ""
+
+#: class-products.php:113
+msgid "Validate VAT Numbers Automatically and Stay Compliant Across Europe. ensuring your customers have a seamless experience while you handle VAT like a pro."
+msgstr ""
+
+#: class-products.php:123
+msgid "Email Verification for WooCommerce"
+msgstr ""
+
+#: class-products.php:124
+msgid "Secure Your WooCommerce Store by preventing fake accounts, and ensuring real customers with user-friendly email verification."
+msgstr ""
+
+#: class-products.php:134
+msgid "Additional Custom Emails & Recipients for WooCommerce"
+msgstr ""
+
+#: class-products.php:135
+msgid "Level Up Your Store’s Communication and Boost Customer Satisfaction with Custom Email Notifications for WooCommerce."
+msgstr ""
+
+#: class-products.php:146
+msgid "Free Shipping Over Amount: Amount Left Tracker for WooCommerce"
+msgstr ""
+
+#: class-products.php:147
+msgid "Unlock Higher Sales with Free Shipping Incentives."
+msgstr ""
+
+#: class-products.php:157
+msgid "Payment Methods by Product & Country for WooCommerce"
+msgstr ""
+
+#: class-products.php:158
+msgid "Control payment methods to keep higher profit, boost conversions, and offer a better checkout experience."
+msgstr ""
+
+#: class-products.php:167
+msgid "Product XML Feeds for WooCommerce"
+msgstr ""
+
+#: class-products.php:168
+msgid "Create unlimited product XML feeds using this feature-rich plugin, enabling you to generate, customize, and manage XML feeds based on merchant needs. Compatible with various platforms."
+msgstr ""
+
+#: class-products.php:177
+msgid "Popups for WooCommerce: Cart, Add to Cart, Checkout Notices to Popups"
+msgstr ""
+
+#: class-products.php:178
+msgid "Capture customer attention with eye-catching, customizable popups messages."
+msgstr ""
+
+#: class-products.php:187
+msgid "MSRP (RRP) Pricing for WooCommerce"
+msgstr ""
+
+#: class-products.php:188
+msgid "Encourage Purchases by Displaying MSRP and Proving Your Prices Beat the Market."
+msgstr ""
+
+#: class-products.php:198
+msgid "File Renaming on Upload – WordPress Plugin"
+msgstr ""
+
+#: class-products.php:199
+msgid "Elevate your WP media management with \"Rename Media Files on Upload for WordPress\" plugin.  Automatically rename media images & files based on rules, sanitizes filenames, and enriches SEO through smart naming conventions."
+msgstr ""
+
+#: class-products.php:209
+msgid "Coupons & Add to Cart by URL for WooCommerce"
+msgstr ""
+
+#: class-products.php:210
+msgid "Simplify Shopping with One-Click Coupons and Turn Links into Sales!"
+msgstr ""
+
+#: class-products.php:219
+msgid "Price by Quantity & Bulk Quantity Discounts for WooCommerce"
+msgstr ""
+
+#: class-products.php:220
+msgid "Boost Larger Orders and Maximize Revenue with Dynamic Pricing."
+msgstr ""
+
+#: class-products.php:230
+msgid "Download Plugins and Themes from Dashboard"
+msgstr ""
+
+#: class-products.php:231
+msgid "Download your WordPress plugins and themes in ZIP files directly from admin dashboard, get any or all plugins & themes without FTP or cPanel access in a single click."
+msgstr ""
+
+#: class-products.php:241
+msgid "Back Button Widget - WordPress Plugin"
+msgstr ""
+
+#: class-products.php:242
+msgid "Simplify navigation on your WordPress site with the \"Back Button Widget\" plugin, a light-weight & user-friendly tool to show a \"Back\" button anywhere on your website."
+msgstr ""
+
+#: class-products.php:251
+msgid "Slugs Manager: Delete Old Permalinks "
+msgstr ""
+
+#: class-products.php:252
+msgid "Optimize Your Site Performance by Cleaning Up Old and Unused Permalinks Effortlessly."
+msgstr ""
+
+#: class-products.php:262
+msgid "Name Your Price: Make Your Own Offer for WooCommerce"
+msgstr ""
+
+#: class-products.php:263
+msgid "A great way to engage shoppers and drive sales through customer-driven pricing."
+msgstr ""
+
+#: class-products.php:273
+msgid "Remove Special Characters From Permalinks (URLs) for WordPress"
+msgstr ""
+
+#: class-products.php:274
+msgid "A simple way to remove special characters from permalinks."
+msgstr ""
+
+#: class-products.php:284
+msgid "Product Filters for WooCommerce"
+msgstr ""
+
+#: class-products.php:285
+msgid "Filter products by price, categories, tags, and attributes, and enable or disable AJAX search. Take advantage of extensive sorting options and precisely adjust the price range"
+msgstr ""
+
+#: class-recommendation-box-tags.php:46
+msgid "Top picks"
+msgstr ""
+
+#: class-recommendation-box-tags.php:50
+msgid "Admin tools"
+msgstr ""
+
+#: class-recommendation-box-tags.php:54
+msgid "Marketing"
+msgstr ""
+
+#: class-recommendation-box-tags.php:58
+msgid "WP Utilities"
+msgstr ""
+
+#: class-recommendations-box.php:120
+msgid "Recommended Plugins"
+msgstr ""
+
+#: class-wpfactory-cross-selling.php:103
+msgid "WPFactory Recommendations"
+msgstr ""
+
+#: class-wpfactory-cross-selling.php:104
+#: class-wpfactory-cross-selling.php:113
+msgid "Recommendations"
+msgstr ""

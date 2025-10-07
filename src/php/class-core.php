@@ -92,7 +92,13 @@ if ( ! class_exists( 'WPFactory\PNWC\Core' ) ) {
 		 * @return Core
 		 */
 		public function init() {
+
+			//Localization.
 		    $this->handle_localization();
+
+			// Move WC Settings tab to WPFactory menu.
+			add_action( 'init', array( $this, 'move_wc_settings_tab_to_wpfactory_menu' ) );
+
 			// Adds compatibility with HPOS.
 			add_action( 'before_woocommerce_init', function () {
 				$this->declare_compatibility_with_hpos( $this->plugin_info['path'] );
@@ -124,6 +130,32 @@ if ( ! class_exists( 'WPFactory\PNWC\Core' ) ) {
 				// Hide WooCommerce Notices
 				add_action( 'wp_enqueue_scripts', array( $this, 'hide_woocommerce_notices' ) );
 			}
+		}
+
+		/**
+		 * move_wc_settings_tab_to_wpfactory_submenu.
+		 *
+		 * @version 1.5.3
+		 * @since   1.5.3
+		 *
+		 * @return void
+		 */
+		function move_wc_settings_tab_to_wpfactory_menu() {
+			if ( ! is_admin() ) {
+				return;
+			}
+			//require_once plugin_dir_path( $this->get_free_version_filesystem_path() ) . 'vendor/autoload.php';
+			$wpf_admin_menu = \WPFactory\WPFactory_Admin_Menu\WPFactory_Admin_Menu::get_instance();
+			$wpf_admin_menu->move_wc_settings_tab_to_wpfactory_menu( array(
+				'wc_settings_tab_id' => 'ttt-pnwc',
+				'menu_title'         => __( 'Popups', 'popup-notices-for-woocommerce' ),
+				'page_title'         => __( 'Popups for WooCommerce: Add to Cart, Checkout & More', 'popup-notices-for-woocommerce' ),
+				'plugin_icon' => array(
+					'get_url_method'    => 'wporg_plugins_api',
+					'wporg_plugin_slug' => 'popup-notices-for-woocommerce',
+					'style'             => 'margin-left:-4px',
+				)
+			) );
 		}
 
 		/**

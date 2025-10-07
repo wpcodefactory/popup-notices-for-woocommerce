@@ -1,21 +1,72 @@
 {
     "packages": [
         {
-            "name": "wpfactory/wpfactory-autoloader",
-            "version": "v1.0.2",
-            "version_normalized": "1.0.2.0",
+            "name": "wpfactory/wpfactory-admin-menu",
+            "version": "v1.0.8",
+            "version_normalized": "1.0.8.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/wpcodefactory/wpfactory-autoloader.git",
-                "reference": "d4387cb8fa8aa9f759dbc067ea9201d1d7a70cbc"
+                "url": "https://github.com/wpcodefactory/wpfactory-admin-menu.git",
+                "reference": "971a37f3b226a1884eeabae9c615d5b199784a31"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/wpcodefactory/wpfactory-autoloader/zipball/d4387cb8fa8aa9f759dbc067ea9201d1d7a70cbc",
-                "reference": "d4387cb8fa8aa9f759dbc067ea9201d1d7a70cbc",
+                "url": "https://api.github.com/repos/wpcodefactory/wpfactory-admin-menu/zipball/971a37f3b226a1884eeabae9c615d5b199784a31",
+                "reference": "971a37f3b226a1884eeabae9c615d5b199784a31",
                 "shasum": ""
             },
-            "time": "2023-03-29T21:59:00+00:00",
+            "require-dev": {
+                "wp-cli/wp-cli-bundle": "*"
+            },
+            "time": "2025-06-20T23:08:43+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "classmap": [
+                    "src/php/"
+                ]
+            },
+            "scripts": {
+                "wp": [
+                    "vendor/bin/wp"
+                ],
+                "wp-create-pot": [
+                    "wp i18n make-pot src/php ./langs/wpfactory-admin-menu.pot --domain=wpfactory-admin-menu"
+                ],
+                "wp-update-po": [
+                    "wp i18n update-po ./langs/wpfactory-admin-menu.pot"
+                ],
+                "wp-make-mo": [
+                    "wp i18n make-mo ./langs/"
+                ],
+                "translate": [
+                    "@composer run wp-create-pot",
+                    "@composer run wp-update-po",
+                    "@composer run wp-make-mo"
+                ]
+            },
+            "support": {
+                "source": "https://github.com/wpcodefactory/wpfactory-admin-menu/tree/v1.0.8",
+                "issues": "https://github.com/wpcodefactory/wpfactory-admin-menu/issues"
+            },
+            "install-path": "../wpfactory/wpfactory-admin-menu"
+        },
+        {
+            "name": "wpfactory/wpfactory-autoloader",
+            "version": "v1.0.4",
+            "version_normalized": "1.0.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wpcodefactory/wpfactory-autoloader.git",
+                "reference": "4a1243c3b3c59b92c89ca89b3985e15bf6dd62af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wpcodefactory/wpfactory-autoloader/zipball/4a1243c3b3c59b92c89ca89b3985e15bf6dd62af",
+                "reference": "4a1243c3b3c59b92c89ca89b3985e15bf6dd62af",
+                "shasum": ""
+            },
+            "time": "2024-09-13T02:29:02+00:00",
             "type": "library",
             "installation-source": "dist",
             "autoload": {
@@ -24,10 +75,64 @@
                 ]
             },
             "support": {
-                "source": "https://github.com/wpcodefactory/wpfactory-autoloader/tree/v1.0.2",
+                "source": "https://github.com/wpcodefactory/wpfactory-autoloader/tree/v1.0.4",
                 "issues": "https://github.com/wpcodefactory/wpfactory-autoloader/issues"
             },
             "install-path": "../wpfactory/wpfactory-autoloader"
+        },
+        {
+            "name": "wpfactory/wpfactory-cross-selling",
+            "version": "v1.0.6",
+            "version_normalized": "1.0.6.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/wpcodefactory/wpfactory-cross-selling.git",
+                "reference": "a371556ebb9bdadc8e5aa0f19bf7ecb5c69636c5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/wpcodefactory/wpfactory-cross-selling/zipball/a371556ebb9bdadc8e5aa0f19bf7ecb5c69636c5",
+                "reference": "a371556ebb9bdadc8e5aa0f19bf7ecb5c69636c5",
+                "shasum": ""
+            },
+            "require": {
+                "wpfactory/wpfactory-admin-menu": "*"
+            },
+            "require-dev": {
+                "wp-cli/wp-cli-bundle": "*"
+            },
+            "time": "2025-08-19T04:45:09+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "classmap": [
+                    "src/php/"
+                ]
+            },
+            "scripts": {
+                "wp": [
+                    "vendor/bin/wp"
+                ],
+                "wp-create-pot": [
+                    "wp i18n make-pot src/php ./langs/wpfactory-cross-selling.pot --domain=wpfactory-cross-selling"
+                ],
+                "wp-update-po": [
+                    "wp i18n update-po ./langs/wpfactory-cross-selling.pot"
+                ],
+                "wp-make-mo": [
+                    "wp i18n make-mo ./langs/"
+                ],
+                "translate": [
+                    "@composer run wp-create-pot",
+                    "@composer run wp-update-po",
+                    "@composer run wp-make-mo"
+                ]
+            },
+            "support": {
+                "source": "https://github.com/wpcodefactory/wpfactory-cross-selling/tree/v1.0.6",
+                "issues": "https://github.com/wpcodefactory/wpfactory-cross-selling/issues"
+            },
+            "install-path": "../wpfactory/wpfactory-cross-selling"
         },
         {
             "name": "wpfactory/wpfactory-promoting-notice",

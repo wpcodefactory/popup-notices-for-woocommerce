@@ -17,21 +17,24 @@
     {
       "type": "vcs",
       "url": "https://github.com/wpcodefactory/wpfactory-autoloader"
-    }
-  ],
-  "license": "MIT",
-  "authors": [
+    },
     {
-      "name": "Pablo Pacheco",
-      "email": "pablo.sg.pacheco@gmail.com"
+      "type": "vcs",
+      "url": "https://github.com/wpcodefactory/wpfactory-cross-selling"
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/wpcodefactory/wpfactory-admin-menu"
     }
   ],
+  "require": {
+    "wpfactory/wpfactory-promoting-notice": "*",
+    "wpfactory/wpfactory-autoloader": "*",
+    "wpfactory/wpfactory-cross-selling": "*",
+    "wpfactory/wpfactory-admin-menu": "*"
+  },
   "config": {
     "preferred-install": "dist",
     "optimize-autoloader": true
-  },
-  "require": {
-    "wpfactory/wpfactory-promoting-notice": "*",
-    "wpfactory/wpfactory-autoloader": "*"
   }
 }
