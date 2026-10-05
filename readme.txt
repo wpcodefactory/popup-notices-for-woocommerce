@@ -165,6 +165,9 @@ Once activated, access the plugin's settings by navigating to “WooCommerce > S
 
 == Changelog ==
 
+= 1.5.5 - 22/05/2026 =
+* Fix - Fixed wrong text-domains.
+
 = 1.5.4 - 22/05/2026 =
 * Tested up to: 7.0.
 * WC tested up to: 10.7.

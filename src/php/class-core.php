@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Core Class
  *
- * @version 1.5.0
+ * @version 1.5.6
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -425,7 +425,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Core' ) ) {
 		/**
 		 * Adds action links.
 		 *
-		 * @version 1.0.1
+		 * @version 1.5.4
 		 * @since 1.0.1
 		 *
 		 * @param $links
@@ -438,7 +438,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Core' ) ) {
 			);
 
 			//if ( true === apply_filters( 'ttt_pnwc_license_data', true, 'is_free') ) {
-			$mylinks[] = '<a href="https://wpfactory.com/item/popup-notices-for-woocommerce/">' . __( 'Unlock All', 'product-input-fields-for-woocommerce' ) . '</a>';
+			$mylinks[] = '<a href="https://wpfactory.com/item/popup-notices-for-woocommerce/">' . __( 'Unlock All', 'popup-notices-for-woocommerce' ) . '</a>';
 
 			//}
 

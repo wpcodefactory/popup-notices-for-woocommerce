@@ -12,3 +12,5 @@ vendor/tareq1988/wordpress-settings-api-class/example
 vendor/tareq1988/wordpress-settings-api-class/example/*
 
 **/*.log
+
+/ignore
