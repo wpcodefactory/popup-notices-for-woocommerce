@@ -2,7 +2,7 @@
 /**
  * WPFactory Cross-Selling
  *
- * @version 1.0.5
+ * @version 1.1.0
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -32,7 +32,7 @@ if ( ! class_exists( 'WPFactory\WPFactory_Cross_Selling\WPFactory_Cross_Selling'
 		 *
 		 * @var string
 		 */
-		protected $version = '1.0.6';
+		protected $version = '1.1.7';
 
 		/**
 		 * Setup args.
@@ -82,7 +82,7 @@ if ( ! class_exists( 'WPFactory\WPFactory_Cross_Selling\WPFactory_Cross_Selling'
 		/**
 		 * Setups the class.
 		 *
-		 * @version 1.0.5
+		 * @version 1.0.7
 		 * @since   1.0.0
 		 *
 		 * @param $args
@@ -96,6 +96,7 @@ if ( ! class_exists( 'WPFactory\WPFactory_Cross_Selling\WPFactory_Cross_Selling'
 				'plugin_file_path'     => '',
 				'recommendations_page' => array(),
 				'recommendations_box'  => array(),
+				'banners'              => array()
 			) );
 
 			// Recommendations page.
@@ -120,6 +121,17 @@ if ( ! class_exists( 'WPFactory\WPFactory_Cross_Selling\WPFactory_Cross_Selling'
 				'wc_settings_tab_id' => '',
 			) );
 
+			$args['banners'] = wp_parse_args( $args['banners'], array(
+				'enable'                  => true,
+				'get_banner_method'       => 'advanced_ads',
+				'banner_cache_duration'   => HOUR_IN_SECONDS, // `false` to not cache results.
+				'banner_dismiss_duration' => WEEK_IN_SECONDS, // `false` to always display it.
+				'advanced_ads_setup'      => array(
+					'dashboard_banner_group_name' => 'CS - Dashboard',
+					'recommendations_group_name' => 'CS - Recommendations'
+				)
+			) );
+
 			// Library file path.
 			$args['library_file_path'] = __FILE__;
 			$args['library_root_path'] = plugin_dir_path( dirname( __FILE__ ) );
@@ -130,7 +142,7 @@ if ( ! class_exists( 'WPFactory\WPFactory_Cross_Selling\WPFactory_Cross_Selling'
 		/**
 		 * Initializes the class.
 		 *
-		 * @version 1.0.4
+		 * @version 1.0.7
 		 * @since   1.0.0
 		 *
 		 * @return void
@@ -144,10 +156,6 @@ if ( ! class_exists( 'WPFactory\WPFactory_Cross_Selling\WPFactory_Cross_Selling'
 			// Products.
 			$this->products = new Products();
 
-			// Banners.
-			$this->banners = new Banners();
-			$this->banners->set_wpfactory_cross_selling( $this );
-
 			// Product Categories.
 			$this->product_categories = new Product_Categories();
 
@@ -160,6 +168,11 @@ if ( ! class_exists( 'WPFactory\WPFactory_Cross_Selling\WPFactory_Cross_Selling'
 			$recommendations_box = new Recommendations_Box();
 			$recommendations_box->set_wpfactory_cross_selling( $this );
 			$recommendations_box->init();
+
+			// Banners.
+			$this->banners = new Banners();
+			$this->banners->set_wpfactory_cross_selling( $this );
+			$this->banners->init();
 
 			// Enqueues admin syles.
 			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_styles' ) );

@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Modal
  *
- * @version 1.5.1
+ * @version 1.5.5
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -54,7 +54,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Modal' ) ) {
 		/**
 		 * add_audio_html.
 		 *
-		 * @version 1.4.4
+		 * @version 1.5.5
 		 * @since   1.0.0
 		 *
 		 * @return void
@@ -64,13 +64,13 @@ if ( ! class_exists( 'WPFactory\PNWC\Modal' ) ) {
 				return;
 			}
 			$plugin = \WPFactory\PNWC\Core::instance();
-			echo '<iframe src="' . $plugin->get_plugin_url() . 'assets/audio/silence.mp3' . '" allow="autoplay" id="ttt-pnwc-audio" style="display:none"></iframe>';
+			echo '<iframe src="' . esc_url( $plugin->get_plugin_url() . 'assets/audio/silence.mp3' ) . '" allow="autoplay" id="ttt-pnwc-audio" style="display:none"></iframe>';
 		}
 
 		/**
 		 * Adds modal scripts
 		 *
-		 * @version 1.5.1
+		 * @version 1.5.5
 		 * @since   1.0.0
 		 */
 		public function add_modal_scripts() {
@@ -78,7 +78,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Modal' ) ) {
 				return;
 			}
 			$plugin                    = \WPFactory\PNWC\Core::instance();
-			$micromodal_loading_method = get_option( 'ttt_pnwc_opt_micromodal_load_method', 'externally' );
+			$micromodal_loading_method = get_option( 'ttt_pnwc_opt_micromodal_load_method', 'locally' );
 			$micromodal_path           = false;
 			$js_ver                    = null;
 
@@ -89,12 +89,12 @@ if ( ! class_exists( 'WPFactory\PNWC\Modal' ) ) {
 				case 'externally_jsdelivr':
 					$micromodal_path = 'https://fastly.jsdelivr.net/npm/micromodal/dist/micromodal.min.js';
 					break;
-				case 'locally':
+				default:
 					$suffix          = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 					$plugin_url      = $plugin->get_plugin_url();
 					$plugin_dir      = $plugin->get_plugin_dir();
 					$js_file         = 'micromodal' . $suffix . '.js';
-					$js_ver          = date( "ymd-Gis", filemtime( $plugin_dir . 'assets/vendor/micromodal/' . $js_file ) );
+					$js_ver          = gmdate( "ymd-Gis", filemtime( $plugin_dir . 'assets/vendor/micromodal/' . $js_file ) );
 					$micromodal_path = $plugin_url . 'assets/vendor/micromodal/' . $js_file;
 					break;
 			}

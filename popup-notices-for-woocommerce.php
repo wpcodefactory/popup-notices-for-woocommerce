@@ -3,7 +3,7 @@
  * Plugin Name: Popups for WooCommerce: Add to Cart, Checkout & More
  * Plugin URI: https://wordpress.org/plugins/popup-notices-for-woocommerce
  * Description: Turn your WooCommerce Notices into Popups
- * Version: 1.5.5-dev
+ * Version: 1.5.5
  * Author: WPFactory
  * Author URI: https://wpfactory.com
  * License: GNU General Public License v3.0
@@ -11,7 +11,7 @@
  * Text Domain: popup-notices-for-woocommerce
  * Domain Path: /src/languages
  * WC requires at least: 3.0.0
- * WC tested up to: 10.7
+ * WC tested up to: 11.1
  * Requires Plugins: woocommerce
  */
 
@@ -30,6 +30,7 @@ if ( ! function_exists( 'ttt_pnwc_is_plugin_active' ) ) {
 	function ttt_pnwc_is_plugin_active( $plugin ) {
 		return ( function_exists( 'is_plugin_active' ) ? is_plugin_active( $plugin ) :
 			(
+				// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- WP core filter 'active_plugins'.
 				in_array( $plugin, apply_filters( 'active_plugins', ( array ) get_option( 'active_plugins', array() ) ) ) ||
 				( is_multisite() && array_key_exists( $plugin, ( array ) get_site_option( 'active_sitewide_plugins', array() ) ) )
 			)
@@ -43,9 +44,9 @@ if (
     (
         'popup-notices-for-woocommerce.php' === basename( __FILE__ ) &&
         ttt_pnwc_is_plugin_active( 'popup-notices-for-woocommerce-pro/popup-notices-for-woocommerce-pro.php' ) &&
-        ! empty( $wp_plugin_dir = str_replace( array( '/', '\\' ), DIRECTORY_SEPARATOR, trailingslashit( WP_PLUGIN_DIR ) ) ) &&
-        ! empty( $plugin_parent_dir = str_replace( array( '/', '\\' ), DIRECTORY_SEPARATOR, trailingslashit( dirname( __FILE__, 2 ) ) ) ) &&
-        $plugin_parent_dir === $wp_plugin_dir
+        ! empty( $ttt_pnwc_wp_plugin_dir = str_replace( array( '/', '\\' ), DIRECTORY_SEPARATOR, trailingslashit( WP_PLUGIN_DIR ) ) ) &&
+        ! empty( $ttt_pnwc_plugin_parent_dir = str_replace( array( '/', '\\' ), DIRECTORY_SEPARATOR, trailingslashit( dirname( __FILE__, 2 ) ) ) ) &&
+        $ttt_pnwc_plugin_parent_dir === $ttt_pnwc_wp_plugin_dir
     )
 ) {
 	if ( class_exists( '\WPFactory\PNWC\Core' ) ) {
@@ -63,10 +64,10 @@ if ( ! class_exists( '\WPFactory\PNWC\Core' ) ) {
 }
 
 // Autoloader.
-$autoloader = new WPFactory\WPFactory_Autoloader\WPFactory_Autoloader();
-$autoloader->add_namespace( 'WPFactory\PNWC', plugin_dir_path( __FILE__ ) . '/src/php' );
-do_action( 'pnwc_autoloader', $autoloader );
-$autoloader->init();
+$ttt_pnwc_autoloader = new WPFactory\WPFactory_Autoloader\WPFactory_Autoloader();
+$ttt_pnwc_autoloader->add_namespace( 'WPFactory\PNWC', plugin_dir_path( __FILE__ ) . '/src/php' );
+do_action( 'pnwc_autoloader', $ttt_pnwc_autoloader ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- The Pro version registers its namespace through this hook, so renaming it would break it.
+$ttt_pnwc_autoloader->init();
 
 // Starts plugin.
 $plugin = \WPFactory\PNWC\Core::instance();

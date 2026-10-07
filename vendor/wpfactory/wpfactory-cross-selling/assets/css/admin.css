@@ -143,6 +143,54 @@
   width: auto;
 }
 
+.wpfcs-dashboard-banner {
+  width: 100%;
+  display: inline-block;
+  margin: 30px 0 0;
+  text-align: center;
+}
+.wpfcs-dashboard-banner:last-child {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.wpfcs-dashboard-banner img {
+  max-width: 100%;
+  height: auto;
+}
+
+.wpfcs-dashboard-banner-inner {
+  display: inline-block;
+  position: relative;
+}
+
+.wpfcs-dashboard-banner-close-btn {
+  position: absolute;
+  top: -12px;
+  background: #2d2d2d;
+  border-radius: 27px;
+  cursor: pointer;
+  border: none;
+}
+.wpfcs-dashboard-banner-close-btn:hover {
+  background: #2271b1;
+}
+.wpfcs-dashboard-banner-close-btn .dashicons-before {
+  display: block;
+  position: relative;
+  left: -6px;
+  top: -1px;
+}
+.wpfcs-dashboard-banner-close-btn .dashicons-before:before {
+  font-size: 25px;
+  margin: 1px 0 0 0.5px;
+  color: #f0f0f1;
+}
+
+.wpfcs-dashboard-banner-close-btn, .wpfcs-dashboard-banner-close-btn .dashicons-before::before {
+  width: 27px;
+  height: 27px;
+}
+
 .wrap.woocommerce .form-table {
   table-layout: auto;
 }

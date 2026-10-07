@@ -115,7 +115,7 @@ if ( ! class_exists( 'WPFactory\WPFactory_Cross_Selling\Recommendations_Box' ) )
 			$box_tags       = $box_tags_class->get_tags();
 
 			// Banners.
-			$banners = $this->get_wpfactory_cross_selling()->banners->get_banners();
+			$banners = $this->get_wpfactory_cross_selling()->banners->get_recommendation_tab_banners();
 
 			?>
 			<div class="wpfcs-recommendations-box">
@@ -148,12 +148,7 @@ if ( ! class_exists( 'WPFactory\WPFactory_Cross_Selling\Recommendations_Box' ) )
 					<?php endforeach; ?>
 				</div>
 				<div class="wpfcs-banners">
-					<?php foreach ( $banners as $banner ): ?>
-						<div class="wpfcs-banner">
-							<?php $banner_img_src = $banner['img_src'] ?>
-							<a href="<?php echo esc_url( $banner['url'] ); ?>" target="<?php echo esc_attr( $banner['target'] ); ?>"><img src="<?php echo esc_attr( $banner_img_src ); ?>"/></a>
-						</div>
-					<?php endforeach; ?>
+					<?php echo $this->get_wpfactory_cross_selling()->banners->render_recommendation_tab_banners( $banners ) ?>
 				</div>
 			</div>
 			<?php

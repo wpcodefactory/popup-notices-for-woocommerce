@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Admin Settings
  *
- * @version 1.5.6
+ * @version 1.5.5
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -111,13 +111,14 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 				'compatibility' => __( 'Compatibility', 'popup-notices-for-woocommerce' ),
 				'messages' => __( 'Messages', 'popup-notices-for-woocommerce' )
 			);
+			// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- WooCommerce core filter.
 			return apply_filters( 'woocommerce_get_sections_' . $this->id, $sections );
 		}
 
 		/**
 		 * Get settings array.
 		 *
-		 * @version 1.5.6
+		 * @version 1.5.5
 		 * @since   1.0.0
 		 *
 		 * @param string $current_section Optional. Defaults to empty string.
@@ -147,7 +148,11 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 						'type'    => 'checkbox',
 						'id'      => 'ttt_pnwc_opt_enable',
 						'name'    => __( 'Enable Plugin', 'popup-notices-for-woocommerce' ),
-						'desc'    => sprintf( __( 'Enable %s plugin', 'popup-notices-for-woocommerce' ), '<strong>' . __( 'Pop-up Notices for WooCommerce', 'popup-notices-for-woocommerce' ) . '</strong>' ),
+						'desc'    => sprintf(
+							/* translators: %s: plugin name. */
+							__( 'Enable %s plugin', 'popup-notices-for-woocommerce' ),
+							'<strong>' . __( 'Pop-up Notices for WooCommerce', 'popup-notices-for-woocommerce' ) . '</strong>'
+						),
 						//'class'    => 'wc-enhanced-select',
 						'default' => 'yes',
 					),
@@ -184,7 +189,13 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 						'id'       => 'ttt_pnwc_opt_prevent_closing_if_clicking_out',
 						'name'     => __( 'Prevent closing if clicking outside', 'popup-notices-for-woocommerce' ),
 						'desc'     => __( 'Prevent closing the popup when clicking on the overlay outside the popup', 'popup-notices-for-woocommerce' ),
-						'desc_tip' => sprintf( __( 'If it doesn\'t work, try to remove the %s attribute from the %s div from the %s option.', 'popup-notices-for-woocommerce' ), '<code>data-micromodal-close</code>', '<code>ttt-pnwc-overlay</code>', '"' . __( 'Modal template', 'popup-notices-for-woocommerce' ) . '"' ),
+						'desc_tip' => sprintf(
+							/* translators: %1$s: HTML attribute, %2$s: HTML element, %3$s: option name. */
+							__( 'If it doesn\'t work, try to remove the %1$s attribute from the %2$s div from the %3$s option.', 'popup-notices-for-woocommerce' ),
+							'<code>data-micromodal-close</code>',
+							'<code>ttt-pnwc-overlay</code>',
+							'"' . __( 'Modal template', 'popup-notices-for-woocommerce' ) . '"'
+						),
 						'default'  => 'no',
 					),
 					array(
@@ -202,7 +213,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 						'name'     => __( 'Micromodal loading method', 'popup-notices-for-woocommerce' ),
 						'desc'     => __( 'How the micromodal library is going to be loaded.', 'popup-notices-for-woocommerce' ),
 						'desc_tip' => __( 'Micromodal is the library responsible for the popups.', 'popup-notices-for-woocommerce' ),
-						'default'  => 'externally',
+						'default'  => 'locally',
 						'options'  => array(
 							'externally'          => __( 'Externally from unpkg.com', 'popup-notices-for-woocommerce' ),
 							'externally_jsdelivr' => __( 'Externally from jsdelivr.com', 'popup-notices-for-woocommerce' ),
@@ -353,7 +364,11 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 						'name'            => __( 'AJAX add to cart notice', 'popup-notices-for-woocommerce' ),
 						'type'            => 'title',
 						'premium_section' => true,
-						'desc'            => sprintf( __( 'By default, WooCommerce doesn\'t display the notice when a product has been <a href="%s">added to cart via AJAX on archive pages</a>.', 'popup-notices-for-woocommerce' ), admin_url( 'admin.php?page=wc-settings&tab=products' ) ) . '<br />' .
+						'desc'            => sprintf(
+							/* translators: %s: link to the WooCommerce products settings page. */
+							__( 'By default, WooCommerce doesn\'t display the notice when a product has been <a href="%s">added to cart via AJAX on archive pages</a>.', 'popup-notices-for-woocommerce' ),
+							admin_url( 'admin.php?page=wc-settings&tab=products' )
+						) . '<br />' .
 						                     __( 'Below are the options of how you can enable and setup it.', 'popup-notices-for-woocommerce' ),
 						'id'              => 'ttt_pnwc_opt_ajax_add_to_cart_notice',
 					),
@@ -385,7 +400,11 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 						'id'       => 'ttt_pnwc_opt_ajax_add_to_cart_notice_wrapper_selector',
 						'name'     => __( 'Notices wrapper - Selector', 'popup-notices-for-woocommerce' ),
 						'desc'     => __( 'Add the notice wrapper manually by specifying a DOM selector.', 'popup-notices-for-woocommerce' ),
-						'desc_tip' => sprintf( __( 'Probably %s would be a good guess.', 'popup-notices-for-woocommerce' ), '<code>' . '.woocommerce-notices-wrapper' . '</code>' ),
+						'desc_tip' => sprintf(
+							/* translators: %s: CSS selector. */
+							__( 'Probably %s would be a good guess.', 'popup-notices-for-woocommerce' ),
+							'<code>' . '.woocommerce-notices-wrapper' . '</code>'
+						),
 						'default'  => '',
 					),
 					array(
@@ -461,24 +480,12 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 						'premium_field' => false,
 						'id'            => 'ttt_pnwc_opt_style_enabled',
 						'name'          => __( 'Enable custom style', 'popup-notices-for-woocommerce' ),
-						'desc'          => sprintf( __( 'Enable pop-up custom style using the <a href="%s">Customizer</a>', 'popup-notices-for-woocommerce' ), add_query_arg( array( 'autofocus[panel]' => 'ttt_pnwc' ), admin_url( 'customize.php' ) ) ),
+						'desc'          => sprintf(
+							/* translators: %s: link to the Customizer. */
+							__( 'Enable pop-up custom style using the <a href="%s">Customizer</a>', 'popup-notices-for-woocommerce' ),
+							add_query_arg( array( 'autofocus[panel]' => 'ttt_pnwc' ), admin_url( 'customize.php' ) )
+						),
 						'default'       => 'yes'
-					),
-					array(
-						'type'          => 'checkbox',
-						'id'            => 'ttt_pnwc_opt_fa',
-						'premium_field' => false,
-						'name'          => __( 'Use Font Awesome', 'popup-notices-for-woocommerce' ),
-						'desc'          => __( 'Check if you want to choose icons from FontAwesome', 'popup-notices-for-woocommerce' ),
-						'default'       => 'no'
-					),
-					array(
-						'type'          => 'text',
-						'id'            => 'ttt_pnwc_opt_fa_url',
-						'premium_field' => false,
-						'name'          => __( 'Font Awesome URL', 'popup-notices-for-woocommerce' ),
-						'desc_tip'      => __( 'Leave it empty if you are already using Font Awesome from somewhere else and do not want to load it twice', 'popup-notices-for-woocommerce' ),
-						'default'       => '//use.fontawesome.com/releases/v5.5.0/css/all.css'
 					),
 					array(
 						'type'          => 'textarea',
@@ -492,6 +499,37 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 					array(
 						'type' => 'sectionend',
 						'id'   => 'ttt_pnwc_opt_style'
+					),
+
+					// Font Awesome
+					array(
+						'name' => __( 'Font Awesome', 'popup-notices-for-woocommerce' ),
+						'desc' => __( "Font Awesome is a library responsible for presenting icons. You only need to enable it here if it's not being loaded already from some other plugin or theme.", 'popup-notices-for-woocommerce' ),
+						'type' => 'title',
+						'id'   => 'ttt_pnwc_opt_fa_opts',
+					),
+					array(
+						'name'    => __( 'Load FontAwesome', 'popup-notices-for-woocommerce' ),
+						'desc'    => __( 'Load FontAwesome', 'popup-notices-for-woocommerce' ),
+						'id'      => 'ttt_pnwc_opt_fa',
+						'default' => 'yes',
+						'type'    => 'checkbox',
+					),
+					array(
+						'name'    => __( 'Font Awesome source', 'popup-notices-for-woocommerce' ),
+						'desc'    => __( 'Choose whether Font Awesome is loaded from the bundled copy or from a CDN.', 'popup-notices-for-woocommerce' ),
+						'id'      => 'ttt_pnwc_opt_fa_source',
+						'default' => 'local',
+						'type'    => 'select',
+						'options' => array(
+							'local'      => __( 'Local (bundled)', 'popup-notices-for-woocommerce' ),
+							'cdn'        => __( 'CDN (Font Awesome 6.4.2)', 'popup-notices-for-woocommerce' ),
+							'cdn_latest' => __( 'CDN (latest 6.x version)', 'popup-notices-for-woocommerce' ),
+						),
+					),
+					array(
+						'type' => 'sectionend',
+						'id'   => 'ttt_pnwc_opt_fa_opts',
 					),
 
 					// Cookie
@@ -601,7 +639,11 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 					// JetWooBuilder for Elementor.
 					array(
 						'name'            => __( 'JetWooBuilder For Elementor', 'popup-notices-for-woocommerce' ),
-						'desc'            => sprintf( __( 'Compatibility with %s plugin.', 'popup-notices-for-woocommerce' ), sprintf( '<a href="%s" target="_blank">%s</a>', 'https://crocoblock.com/plugins/jetwoobuilder/', __( 'JetWooBuilder For Elementor', 'popup-notices-for-woocommerce' ) ) ),
+						'desc'            => sprintf(
+							/* translators: %s: plugin name. */
+							__( 'Compatibility with %s plugin.', 'popup-notices-for-woocommerce' ),
+							sprintf( '<a href="%s" target="_blank">%s</a>', 'https://crocoblock.com/plugins/jetwoobuilder/', __( 'JetWooBuilder For Elementor', 'popup-notices-for-woocommerce' ) )
+						),
 						'type'            => 'title',
 						'id'              => 'ttt_pnwc_comp_jetwoobuilder_opts',
 					),
@@ -619,7 +661,11 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 					// YITH Points and Rewards.
 					array(
 						'name' => __( 'YITH WooCommerce Points and Rewards', 'popup-notices-for-woocommerce' ),
-						'desc' => sprintf( __( 'Compatibility with %s plugin.', 'popup-notices-for-woocommerce' ), sprintf( '<a href="%s" target="_blank">%s</a>', 'https://yithemes.com/themes/plugins/yith-woocommerce-points-and-rewards/', __( 'YITH WooCommerce Points and Rewards', 'popup-notices-for-woocommerce' ) ) ),
+						'desc' => sprintf(
+							/* translators: %s: plugin name. */
+							__( 'Compatibility with %s plugin.', 'popup-notices-for-woocommerce' ),
+							sprintf( '<a href="%s" target="_blank">%s</a>', 'https://yithemes.com/themes/plugins/yith-woocommerce-points-and-rewards/', __( 'YITH WooCommerce Points and Rewards', 'popup-notices-for-woocommerce' ) )
+						),
 						'type' => 'title',
 						'id'   => 'ttt_pnwc_comp_yithpar_opts',
 					),
@@ -674,7 +720,12 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 					'id'            => 'ttt_pnwc_opt_message_customization_shortcodes_original_content',
 					'name'          => __( 'Allow Shortcodes', 'popup-notices-for-woocommerce' ),
 					'desc'          => __( 'Allow Shortcodes on Original HTML Content', 'popup-notices-for-woocommerce' ),
-					'desc_tip'      => sprintf( __( 'You can use the %s shortcode to get dynamic messages from any filter you wish. e.g. %s.', 'popup-notices-for-woocommerce' ), '<code>' . '[ttt_pnwc_get_message]' . '</code>', '<code>' . '[ttt_pnwc_get_message filter="wc_add_to_cart_message_html"]' . '</code>' ),
+						'desc_tip'      => sprintf(
+							/* translators: %1$s: shortcode name, %2$s: shortcode usage example. */
+							__( 'You can use the %1$s shortcode to get dynamic messages from any filter you wish. e.g. %2$s.', 'popup-notices-for-woocommerce' ),
+							'<code>' . '[ttt_pnwc_get_message]' . '</code>',
+							'<code>' . '[ttt_pnwc_get_message filter="wc_add_to_cart_message_html"]' . '</code>'
+						),
 					'checkboxgroup' => 'end',
 					'default'       => 'yes',
 				),
@@ -727,8 +778,26 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 					'premium_info' => true,
 					'desc' => __( 'Examples you can use on <strong>Original HTML Content</strong>.', 'popup-notices-for-woocommerce' ) .
 					          $this->get_examples_str( array(
-						          sprintf( __( 'Use %s to modify the %s message (%s)', 'popup-notices-for-woocommerce' ), '<code>' . '[ttt_pnwc_get_message filter="wc_add_to_cart_message_html"]' . '</code>', '<strong>' . __( 'Add to cart', 'popup-notices-for-woocommerce' ) . '</strong>', '<strong>' . __( '%s has been added to your cart.', 'woocommerce' ) . '</strong>' ),
-						          sprintf( __( 'Use %s to modify the %s message (%s)', 'popup-notices-for-woocommerce' ), '<code>' . '[ttt_pnwc_get_message filter="woocommerce_cart_product_cannot_add_another_message"]' . '</code>', '<strong>' . __( 'Cannot add another', 'popup-notices-for-woocommerce' ) . '</strong>', '<strong>' . __( 'You cannot add another "%s" to your cart.', 'woocommerce' ) . '</strong>' )
+						          sprintf(
+							          /* translators: %1$s: shortcode name, %2$s: message title, %3$s: example message. */
+							          __( 'Use %1$s to modify the %2$s message (%3$s)', 'popup-notices-for-woocommerce' ),
+							          '<code>' . '[ttt_pnwc_get_message filter="wc_add_to_cart_message_html"]' . '</code>',
+							          '<strong>' . __( 'Add to cart', 'popup-notices-for-woocommerce' ) . '</strong>',
+							          '<strong>' .
+							          /* translators: %s: product name. */
+							          __( '%s has been added to your cart.', 'woocommerce' ) .
+							          '</strong>'
+						          ),
+						          sprintf(
+							          /* translators: %1$s: shortcode name, %2$s: message title, %3$s: example message. */
+							          __( 'Use %1$s to modify the %2$s message (%3$s)', 'popup-notices-for-woocommerce' ),
+							          '<code>' . '[ttt_pnwc_get_message filter="woocommerce_cart_product_cannot_add_another_message"]' . '</code>',
+							          '<strong>' . __( 'Cannot add another', 'popup-notices-for-woocommerce' ) . '</strong>',
+							          '<strong>' .
+							          /* translators: %s: product name. */
+							          __( 'You cannot add another "%s" to your cart.', 'woocommerce' ) .
+							          '</strong>'
+						          )
 					          ) ),
 					'id'   => 'ttt_pnwc_opt_message_examples',
 				),
@@ -749,6 +818,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 			 *
 			 * @param array $settings Array of the plugin settings
 			 */
+			// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound -- WooCommerce core filter.
 			return apply_filters( 'woocommerce_get_settings_' . $this->id, $settings, $current_section );
 
 		}

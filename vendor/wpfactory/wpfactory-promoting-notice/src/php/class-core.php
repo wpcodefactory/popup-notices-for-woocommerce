@@ -2,7 +2,7 @@
 /**
  * WPFactory Promoting Notice - Functions.
  *
- * @version 1.0.6
+ * @version 1.0.7
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -16,12 +16,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 if ( ! class_exists( 'WPFactory\Promoting_Notice' ) ) {
 	class Core {
 
+		/**
+		 * Args.
+		 *
+		 * @var array
+		 */
 		private $args = array();
+
+		/**
+		 * Version.
+		 *
+		 * @since 1.0.6
+		 *
+		 * @var string
+		 */
+		private $version = '1.0.7';
 
 		/**
 		 * set_args.
 		 *
-		 * @version 1.0.5
+		 * @version 1.0.6
 		 * @since   1.0.0
 		 *
 		 * @param array $args
@@ -47,13 +61,13 @@ if ( ! class_exists( 'WPFactory\Promoting_Notice' ) ) {
 				'%pro_version_title%'    => __( 'Awesome plugin Pro', 'wpfactory-promoting-notice' ),
 				'%pro_version_url%'      => 'https://wpfactory.com/item/awesome-plugin/',
 				'%plugin_icon_url%'      => 'https://pluginfactory-tastystakes.netdna-ssl.com/img/site/plugin_icon.png',
-				'%plugin_icon_style%'    => 'width:39px;margin-right:10px;vertical-align:middle',
+				'%plugin_icon_style%'    => '',
 				'%btn_icon_class%'       => 'wpfactory-pan-btn-icon dashicons-before dashicons-unlock',
-				'%btn_icon_style%'       => 'position:relative;top:3px;margin:0 2px 0 -2px;',
+				'%btn_icon_style%'       => '',
 				'%btn_style%'            => 'vertical-align:middle;display:inline-block;margin:0',
 				'%btn_call_to_action%'   => __( 'Upgrade to Pro version', 'wpfactory-promoting-notice' ),
 				'%main_text%'            => __( 'Disabled options can be unlocked using <a href="%pro_version_url%" target="_blank"><strong>%pro_version_title%</strong></a>', 'wpfactory-promoting-notice' ),
-				'%main_text_style%'      => 'vertical-align: middle;margin:0 14px 0 0;',
+				'%main_text_style%'      => '',
 				'%content_template%'     => '<img class="wpfactory-pan-plugin-icon" src="%plugin_icon_url%"/>' .
 				                            '<span class="wpfactory-pan-main-text">%main_text%</span>' .
 				                            '<a target="_blank" class="wpfactory-pan-button button-primary" href="%pro_version_url%"><i class="%btn_icon_class%"></i>%btn_call_to_action%</a>',
@@ -214,7 +228,7 @@ if ( ! class_exists( 'WPFactory\Promoting_Notice' ) ) {
 		/**
 		 * create_style.
 		 *
-		 * @version 1.0.0
+		 * @version 1.0.7
 		 * @since   1.0.0
 		 */
 		function create_style() {
@@ -242,12 +256,14 @@ if ( ! class_exists( 'WPFactory\Promoting_Notice' ) ) {
 
 				<?php echo esc_attr($notice_selector); ?>
 				.wpfactory-pan-plugin-icon {
+					width:39px;margin-right:5px;vertical-align:middle;
 				<?php echo $image_rendering_style; ?>
 				<?php echo esc_attr($args['template_variables']['%plugin_icon_style%']); ?>
 				}
 
 				<?php echo esc_attr($notice_selector); ?>
 				.wpfactory-pan-main-text {
+					vertical-align: middle;margin:0 14px 0 0;
 				<?php echo esc_attr($args['template_variables']['%main_text_style%']); ?>
 				}
 
@@ -258,6 +274,7 @@ if ( ! class_exists( 'WPFactory\Promoting_Notice' ) ) {
 
 				<?php echo esc_attr($notice_selector); ?>
 				.wpfactory-pan-btn-icon {
+					position:relative;margin:0 2px 0 -2px;vertical-align: middle;top: 5px;
 				<?php echo esc_attr($args['template_variables']['%btn_icon_style%']); ?>
 				}
 

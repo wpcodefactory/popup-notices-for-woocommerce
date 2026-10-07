@@ -2,8 +2,8 @@
 Contributors: wpcodefactory, omardabbas, karzin, anbinder, kousikmukherjeeli
 Tags: popup,notices,woocommerce,notice,modal
 Requires at least: 6.1
-Tested up to: 7.0
-Stable tag: 1.5.4
+Tested up to: 7.1
+Stable tag: 1.5.5
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -165,8 +165,16 @@ Once activated, access the plugin's settings by navigating to “WooCommerce > S
 
 == Changelog ==
 
-= 1.5.5 - 22/05/2026 =
+= 1.5.5 - 07/10/2026 =
 * Fix - Fixed wrong text-domains.
+* Fix - Security and coding standards improvements.
+* Dev - Added option to load Font Awesome from a local bundled copy.
+* Dev - Micromodal is now loaded locally by default.
+* WC tested up to: 11.1.
+* Tested up to: 7.1.
+* Updated wpfactory-admin-menu (v1.0.8 => v1.1.3).
+* Updated wpfactory-cross-selling (v1.0.6 => v1.1.7).
+* Updated wpfactory-promoting-notice (v1.0.6 => v1.0.7).
 
 = 1.5.4 - 22/05/2026 =
 * Tested up to: 7.0.
