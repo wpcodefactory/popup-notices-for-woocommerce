@@ -3,7 +3,7 @@ Contributors: wpcodefactory, omardabbas, karzin, anbinder, kousikmukherjeeli
 Tags: popup,notices,woocommerce,notice,modal
 Requires at least: 6.1
 Tested up to: 7.1
-Stable tag: 1.5.5
+Stable tag: 1.5.6
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -169,6 +169,7 @@ Once activated, access the plugin's settings by navigating to “WooCommerce > S
 * Dev - Added frontend hooks (filters and actions on the `ttt_pnwc_general` JS object) so the Pro version can extend the free frontend behavior.
 * Dev - Code refactoring.
 * Updated wpfactory-admin-menu (v1.1.3 => v1.1.4).
+* WC tested up to: 11.2.
 
 = 1.5.5 - 07/10/2026 =
 * Fix - Fixed wrong text-domains.

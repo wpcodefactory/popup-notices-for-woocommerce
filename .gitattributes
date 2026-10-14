@@ -1,5 +1,9 @@
 .wordpress-org/ export-ignore
 .gitignore export-ignore
+.gitattributes export-ignore
+.distignore export-ignore
 README.md export-ignore
 # GIT - Release version
 /git-tag.sh export-ignore
+# Dev notes
+/ignore export-ignore
