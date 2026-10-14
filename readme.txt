@@ -3,7 +3,7 @@ Contributors: wpcodefactory, omardabbas, karzin, anbinder, kousikmukherjeeli
 Tags: popup,notices,woocommerce,notice,modal
 Requires at least: 6.1
 Tested up to: 7.1
-Stable tag: 1.5.6
+Stable tag: 1.5.7
 Requires PHP: 5.6.0
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -164,6 +164,10 @@ Once activated, access the plugin's settings by navigating to “WooCommerce > S
 3. An example of a WooCommerce Notice info on the Popup
 
 == Changelog ==
+
+= 1.5.7 - 14/10/2026 =
+* Dev - Included source code and build files (`src/`, `composer.json`, `package.json`, `webpack.config.js`) in the plugin package.
+* Dev - Documented source code, build process and external services in the readme.
 
 = 1.5.6 - 14/10/2026 =
 * Dev - Added frontend hooks (filters and actions on the `ttt_pnwc_general` JS object) so the Pro version can extend the free frontend behavior.
@@ -439,3 +443,43 @@ Once activated, access the plugin's settings by navigating to “WooCommerce > S
 
 = 1.0.0 =
 * Initial Release.
+
+== Source code ==
+
+The uncompiled source code for the compiled CSS and JavaScript assets is included with the plugin, so it can be reviewed, studied and modified:
+
+* `src/js/` - JavaScript sources. The compiled bundles `assets/js/pnwc-frontend.js` and `assets/js/pnwc-frontend.min.js` are generated from these files.
+* `src/scss/` - SCSS sources. The compiled stylesheets `assets/css/pnwc-frontend.css` and `assets/css/pnwc-frontend.min.css` are generated from these files.
+* `src/php/` - PHP sources.
+
+The assets are built with webpack and Babel. The build configuration is included with the plugin (`package.json` and `webpack.config.js`). To regenerate the assets, run the following commands from the plugin's root directory:
+
+1. `npm install` - installs the build dependencies declared in `package.json`.
+2. `npm run prod` - builds the minified production assets into `assets/`.
+3. `npm run dev` - builds the non-minified development assets into `assets/` and watches for changes.
+
+PHP dependencies are managed with Composer, see the included `composer.json` file.
+
+== External services ==
+
+This plugin can load assets from third-party CDNs. By default, everything is loaded locally from your own server and no external services are contacted. A CDN is only used when the corresponding option is explicitly set in the plugin settings (WooCommerce > Settings > Popup Notices).
+
+= Font Awesome CDN =
+
+Used to load the Font Awesome stylesheet and fonts that render the popup icons.
+
+When the "Load FontAwesome" option is enabled and "Font Awesome source" is set to a CDN option, the visitor's browser downloads the CSS and font files from `use.fontawesome.com` (or from `cdn.jsdelivr.net` for the "CDN (latest 6.x version)" source). The CDN may log standard technical data such as the visitor's IP address, browser user agent and the referring page. The plugin itself does not send any personal data.
+
+Font Awesome is a service provided by Fonticons, Inc. - license: https://fontawesome.com/license/free - privacy policy: https://fontawesome.com/privacy
+
+jsDelivr is a service provided by Prospect One - terms: https://www.jsdelivr.com/terms - privacy policy: https://www.jsdelivr.com/privacy-policy-jsdelivr-net
+
+= Micromodal CDN =
+
+Used to load the micromodal library that powers the popups.
+
+When the "Micromodal loading method" option is set to an external value, the visitor's browser downloads the library from `unpkg.com` or `fastly.jsdelivr.net`. The CDN may log standard technical data such as the visitor's IP address, browser user agent and the referring page. The plugin itself does not send any personal data.
+
+unpkg runs on Cloudflare's network - terms: https://www.cloudflare.com/website-terms/ - privacy policy: https://www.cloudflare.com/privacypolicy/
+
+jsDelivr is a service provided by Prospect One - terms: https://www.jsdelivr.com/terms - privacy policy: https://www.jsdelivr.com/privacy-policy-jsdelivr-net
