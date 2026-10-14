@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Core Class
  *
- * @version 1.5.5
+ * @version 1.5.6
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -538,7 +538,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Core' ) ) {
 		/**
 		 * Passes admin settings to JS.
 		 *
-		 * @version 1.2.5
+		 * @version 1.5.6
 		 * @since   1.0.2
 		 *
 		 * @param $data
@@ -560,25 +560,11 @@ if ( ! class_exists( 'WPFactory\PNWC\Core' ) ) {
 			// Ajax opt
 			$data['ajax_opt'] = get_option( 'ttt_pnwc_opt_ajax', 'yes' );
 
-			// Cookie opt
-			$data['cookie_opt']['enabled']        = 'no';
-			$data['cookie_opt']['time']           = 0.5;
-			$data['cookie_opt']['message_origin'] = 'static';
-
-			// Auto-close
-			$data['auto_close_time'] = 0;
-			$data['auto_close_types'] = array();
-
 			// Ignored Messages
 			$ignored_messages_field               = html_entity_decode( get_option( 'ttt_pnwc_opt_ignore_msg_field', '<p></p>' ) );
 			$data['ignored_msg']['field']         = ! empty( $ignored_messages_field ) ? explode( "\n", str_replace( "\r", "", $ignored_messages_field ) ) : '';
 			$data['ignored_msg']['search_method'] = get_option( 'ttt_pnwc_opt_ignore_search_method', 'full_comparison' );
 			$data['ignored_msg']['regex_flags']   = get_option( 'ttt_pnwc_opt_ignore_msg_regex_f', 'i' );
-
-			// Audio
-			$data['audio']['enabled'] = 'no';
-			$data['audio']['opening'] = '';
-			$data['audio']['closing'] = ''; //'http://freesound.org/data/previews/220/220170_4100837-lq.mp3';
 
 			return $data;
 		}

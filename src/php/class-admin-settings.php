@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Admin Settings
  *
- * @version 1.5.5
+ * @version 1.5.6
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -118,7 +118,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 		/**
 		 * Get settings array.
 		 *
-		 * @version 1.5.5
+		 * @version 1.5.6
 		 * @since   1.0.0
 		 *
 		 * @param string $current_section Optional. Defaults to empty string.
@@ -381,23 +381,26 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 						'default'       => 'no',
 					),
 					array(
-						'type'     => 'checkbox',
-						'id'       => 'ttt_pnwc_opt_ajax_add_to_cart_notice_wrapper_smart',
+						'type'          => 'checkbox',
+						'premium_field' => true,
+						'id'            => 'ttt_pnwc_opt_ajax_add_to_cart_notice_wrapper_smart',
 						'name'     => __( 'Notices wrapper - Smart find', 'popup-notices-for-woocommerce' ),
 						'desc'     => __( 'Try to find the notices wrapper automatically', 'popup-notices-for-woocommerce' ),
 						'desc_tip' => __( 'If it doesn\'t work, please disable it and use one of the options below.', 'popup-notices-for-woocommerce' ),
 						'default'  => 'yes',
 					),
 					array(
-						'type'    => 'text',
-						'id'      => 'ttt_pnwc_opt_ajax_add_to_cart_notice_wrapper_hook',
+						'type'          => 'text',
+						'premium_field' => true,
+						'id'            => 'ttt_pnwc_opt_ajax_add_to_cart_notice_wrapper_hook',
 						'name'    => __( 'Notices wrapper - Action hook', 'popup-notices-for-woocommerce' ),
 						'desc'    => __( 'Add the notice wrapper manually using an action hook.', 'popup-notices-for-woocommerce' ),
 						'default' => '',
 					),
 					array(
-						'type'     => 'text',
-						'id'       => 'ttt_pnwc_opt_ajax_add_to_cart_notice_wrapper_selector',
+						'type'          => 'text',
+						'premium_field' => true,
+						'id'            => 'ttt_pnwc_opt_ajax_add_to_cart_notice_wrapper_selector',
 						'name'     => __( 'Notices wrapper - Selector', 'popup-notices-for-woocommerce' ),
 						'desc'     => __( 'Add the notice wrapper manually by specifying a DOM selector.', 'popup-notices-for-woocommerce' ),
 						'desc_tip' => sprintf(
@@ -469,7 +472,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 					// Custom style
 					array(
 						'name'            => __( 'Custom style', 'popup-notices-for-woocommerce' ),
-						'premium_section' => false,
+						'premium_section' => true,
 						'type'            => 'title',
 						'desc'            => __( 'Style the pop-up using the Customizer.', 'popup-notices-for-woocommerce' ),
 						//'desc' => sprintf( __( 'Style the pop-up using the <a href="%s">Customizer</a>', 'popup-notices-for-woocommerce' ), add_query_arg( array( 'autofocus[panel]' => 'ttt_pnwc' ), admin_url( 'customize.php' ) ) ),
@@ -477,7 +480,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 					),
 					array(
 						'type'          => 'checkbox',
-						'premium_field' => false,
+						'premium_field' => true,
 						'id'            => 'ttt_pnwc_opt_style_enabled',
 						'name'          => __( 'Enable custom style', 'popup-notices-for-woocommerce' ),
 						'desc'          => sprintf(
@@ -490,7 +493,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 					array(
 						'type'          => 'textarea',
 						'id'            => 'ttt_pnwc_opt_modal_template',
-						'premium_field' => false,
+						'premium_field' => true,
 						'name'          => __( 'Modal template', 'popup-notices-for-woocommerce' ),
 						'desc'          => __( 'HTML template reponsible for displaying the modal', 'popup-notices-for-woocommerce' ),
 						'css'           => 'min-height:223px;width:100%',
@@ -650,6 +653,7 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 					array(
 						'name'          => __( 'AJAX add to cart', 'popup-notices-for-woocommerce' ),
 						'type'          => 'checkbox',
+						'premium_field' => true,
 						'desc'          => __( 'Detect AJAX add to cart', 'popup-notices-for-woocommerce' ),
 						'desc_tip'      => __( 'Useful for the "AJAX add to cart notice" option.', 'popup-notices-for-woocommerce' ),
 						'id'            => 'ttt_pnwc_comp_jetwoobuilder_detect_ajax_add_to_cart',
@@ -670,10 +674,11 @@ if ( ! class_exists( 'WPFactory\PNWC\Admin_Settings' ) ) {
 						'id'   => 'ttt_pnwc_comp_yithpar_opts',
 					),
 					array(
-						'name'     => __( 'Discount', 'popup-notices-for-woocommerce' ),
-						'type'     => 'checkbox',
-						'desc'     => __( 'Allow the discount to be applied inside the pop-up.', 'popup-notices-for-woocommerce' ),
-						'id'       => 'ttt_pnwc_comp_yithpar_enable_discount_in_popup',
+						'name'          => __( 'Discount', 'popup-notices-for-woocommerce' ),
+						'type'          => 'checkbox',
+						'premium_field' => true,
+						'desc'          => __( 'Allow the discount to be applied inside the pop-up.', 'popup-notices-for-woocommerce' ),
+						'id'            => 'ttt_pnwc_comp_yithpar_enable_discount_in_popup',
 					),
 					array(
 						'type' => 'sectionend',

@@ -2,7 +2,7 @@
 /**
  * Pop-up Notices for WooCommerce (TTT) - Modal
  *
- * @version 1.5.5
+ * @version 1.5.6
  * @since   1.0.0
  * @author  WPFactory
  */
@@ -19,12 +19,12 @@ if ( ! class_exists( 'WPFactory\PNWC\Modal' ) ) {
 
 		/**
 		 * Initializes
-		 * @version 1.0.0
+		 *
+		 * @version 1.5.6
 		 * @since   1.0.0
 		 */
 		public function init() {
 			add_action( 'wp_footer', array( $this, 'add_modal_html' ) );
-			add_action( 'wp_footer', array( $this, 'add_audio_html' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'add_modal_scripts' ) );
 			add_filter( 'ttt_pnwc_modal_template', array( $this, 'handle_outside_click' ), 20 );
 			//add_filter( 'ttt_pnwc_modal_template', array( $this, 'replace_template_variables' ) );
@@ -49,22 +49,6 @@ if ( ! class_exists( 'WPFactory\PNWC\Modal' ) ) {
 			}
 
 			return $template;
-		}
-
-		/**
-		 * add_audio_html.
-		 *
-		 * @version 1.5.5
-		 * @since   1.0.0
-		 *
-		 * @return void
-		 */
-		public function add_audio_html() {
-			if ( 'yes' !== get_option( 'ttt_pnwc_opt_audio_enable', 'no' ) ) {
-				return;
-			}
-			$plugin = \WPFactory\PNWC\Core::instance();
-			echo '<iframe src="' . esc_url( $plugin->get_plugin_url() . 'assets/audio/silence.mp3' ) . '" allow="autoplay" id="ttt-pnwc-audio" style="display:none"></iframe>';
 		}
 
 		/**

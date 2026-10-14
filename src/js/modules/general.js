@@ -1,11 +1,10 @@
 const general = {
 	messages: [],
 	open: false,
-	sounds: {},
+	filters: {},
+	actions: {},
 	init: function () {
 		general.open_popup_by_query_string();
-		//Handle Sounds
-		this.handle_sounds();
 
 		this.initializePopup();
 		if ( ttt_pnwc_info.ajax_opt === 'yes' ) {
@@ -20,18 +19,40 @@ const general = {
 		general.checkExistingElements( '.woocommerce-message' );
 		general.checkExistingElements( '.woocommerce-info' );
 
-		document.addEventListener( 'click', function ( event ) {
-			if ( event.target.matches( '.enable-terms-checkbox' ) ) {
-				event.preventDefault();
-				general.enable_terms_checkbox();
-			}
-		}, false );
-
 		document.addEventListener( 'click', this.handle_click_inside_close, true );
 
 		jQuery( 'body' ).trigger( {
 			type: 'ttt_pnwc',
 			obj: this
+		} );
+	},
+
+	/**
+	 * Hooks used by extensions, i.e. the Pro version.
+	 */
+	addFilter: function ( name, callback ) {
+		if ( ! general.filters[ name ] ) {
+			general.filters[ name ] = [];
+		}
+		general.filters[ name ].push( callback );
+	},
+	applyFilters: function ( name, value ) {
+		var args = Array.prototype.slice.call( arguments, 1 );
+		( general.filters[ name ] || [] ).forEach( function ( callback ) {
+			args[ 0 ] = callback.apply( null, args );
+		} );
+		return args[ 0 ];
+	},
+	addAction: function ( name, callback ) {
+		if ( ! general.actions[ name ] ) {
+			general.actions[ name ] = [];
+		}
+		general.actions[ name ].push( callback );
+	},
+	doAction: function ( name ) {
+		var args = Array.prototype.slice.call( arguments, 1 );
+		( general.actions[ name ] || [] ).forEach( function ( callback ) {
+			callback.apply( null, args );
 		} );
 	},
 	onElementInserted: function ( containerSelector, selector, childSelector, callback ) {
@@ -86,21 +107,6 @@ const general = {
 			var modal = e.target.closest( ".ttt-pnwc-modal" );
 			if ( modal ) {
 				MicroModal.close( 'ttt-pnwc-notice' );
-			}
-		}
-	},
-	enable_terms_checkbox: function () {
-		document.getElementById( "terms" ).checked = 'checked';
-	},
-	handle_sounds: function () {
-		if ( ttt_pnwc_info.audio.enabled === 'yes' ) {
-			//http://freesound.org/data/previews/220/220170_4100837-lq.mp3
-
-			if ( ttt_pnwc_info.audio.hasOwnProperty( 'opening' ) && ttt_pnwc_info.audio.opening !== '' ) {
-				general.sounds.opening = new Audio( ttt_pnwc_info.audio.opening );
-			}
-			if ( ttt_pnwc_info.audio.hasOwnProperty( 'closing' ) && ttt_pnwc_info.audio.closing !== '' ) {
-				general.sounds.closing = new Audio( ttt_pnwc_info.audio.closing );
 			}
 		}
 	},
@@ -163,38 +169,6 @@ const general = {
 		for ( var key in obj )
 			general.messages.push( obj[ key ] );
 	},
-	hashMessage: function ( s ) {
-		return s.split( "" ).reduce( function ( a, b ) {
-			a = ( ( a << 5 ) - a ) + b.charCodeAt( 0 );
-			return a & a
-		}, 0 );
-	},
-	setCookie: function ( name, value, time ) {
-		var expires;
-		if ( time ) {
-			var date = new Date();
-			//date.setTime(date.getTime() + (time * 24 * 60 * 60 * 1000));
-			date.setTime( date.getTime() + ( time * 60 * 60 * 1000 ) );
-			expires = "; expires=" + date.toGMTString();
-		} else {
-			expires = "";
-		}
-		document.cookie = name + "=" + value + expires + "; path=/";
-	},
-	getCookie: function ( c_name ) {
-		if ( document.cookie.length > 0 ) {
-			c_start = document.cookie.indexOf( c_name + "=" );
-			if ( c_start != -1 ) {
-				c_start = c_start + c_name.length + 1;
-				c_end = document.cookie.indexOf( ";", c_start );
-				if ( c_end == -1 ) {
-					c_end = document.cookie.length;
-				}
-				return unescape( document.cookie.substring( c_start, c_end ) );
-			}
-		}
-		return "";
-	},
 	isMessageValid: function ( message, dynamic ) {
 		if ( message.trim().length == 0 ) {
 			return false;
@@ -225,32 +199,14 @@ const general = {
 			}
 		}
 
-		// Cookie Opt
-		if (
-			ttt_pnwc_info.cookie_opt.enabled === 'yes' &&
-			(
-				( ttt_pnwc_info.cookie_opt.message_origin.search( 'dynamic' ) != -1 && dynamic ) ||
-				( ttt_pnwc_info.cookie_opt.message_origin.search( 'static' ) != -1 && !dynamic ) ||
-				ttt_pnwc_info.cookie_opt.message_origin.search( 'all' ) != -1
-			)
-		) {
-			if ( general.getCookie( general.hashMessage( message ) ) ) {
-				return false;
-			}
-		}
-		return true;
-	},
-	saveMessageInCookie: function ( message ) {
-		if ( ttt_pnwc_info.cookie_opt.enabled === 'yes' ) {
-			var hashedMessage = general.hashMessage( message );
-			general.setCookie( hashedMessage, hashedMessage, ttt_pnwc_info.cookie_opt.time );
-		}
+		// Hook for extensions, i.e. Pro version cookie check.
+		return general.applyFilters( 'isMessageValid', true, message, dynamic );
 	},
 	storeMessage: function ( notice, type, dynamic ) {
 		if ( general.isMessageValid( notice.html(), dynamic ) ) {
-			general.saveMessageInCookie( notice.html() );
 			general.messages.push( { message: notice.html().trim(), type: type, dynamic: dynamic } );
 			general.removeDuplicatedMessages();
+			general.doAction( 'afterStoreMessage', notice.html(), type, dynamic );
 		}
 	},
 	getAdditionalIconClass: function ( noticeType ) {
@@ -283,48 +239,27 @@ const general = {
 			awaitCloseAnimation: true,
 		} );
 	},
-	autoClose: function ( modal ) {
-		var currentTypes = general.messages.map( function ( item ) {
-			return item.type;
-		} );
-		currentTypes = currentTypes.filter( function ( value, index, self ) {
-			return self.indexOf( value ) === index;
-		} );
-		var intersection = currentTypes.filter( function ( n ) {
-			return ttt_pnwc_info.auto_close_types.indexOf( n ) !== -1;
-		} );
-		if (
-			ttt_pnwc_info.auto_close_types.length === 0 ||
-			intersection.length > 0
-		) {
-			if ( ttt_pnwc_info.auto_close_time > 0 ) {
-				setTimeout( function () {
-					MicroModal.close( modal.id );
-				}, ttt_pnwc_info.auto_close_time * 1000 );
-			}
-		}
-	},
 	openPopup: function () {
 		if ( !general.open && general.messages.length > 0 ) {
-			if ( ttt_pnwc_info.audio.enabled === 'yes' && general.sounds.opening ) {
-				general.sounds.opening.play();
-			}
+			general.doAction( 'beforeOpenPopup' );
 			MicroModal.show( 'ttt-pnwc-notice', {
 				awaitCloseAnimation: true,
 				onShow: function ( modal ) {
-					general.autoClose( modal );
+					general.doAction( 'onPopupShow', modal );
 				},
 				onClose: function ( modal ) {
 					general.open = false;
 					general.clearMessages();
-
-					if ( ttt_pnwc_info.audio.enabled === 'yes' && general.sounds.closing ) {
-						general.sounds.closing.play();
-					}
+					general.doAction( 'onPopupClose', modal );
 				}
 			} );
 		}
 
 	}
 }
+
+if ( typeof window !== 'undefined' ) {
+	window.ttt_pnwc_general = general;
+}
+
 module.exports = general;

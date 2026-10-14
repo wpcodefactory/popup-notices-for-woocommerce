@@ -2,7 +2,7 @@
 /**
  * WPFactory Admin Menu - WooCommerce Settings Menu Item Swapper.
  *
- * @version 1.0.8
+ * @version 1.1.4
  * @since   1.0.1
  * @author  WPFactory
  */
@@ -188,7 +188,7 @@ if ( ! class_exists( 'WPFactory\WPFactory_Admin_Menu\WC_Settings_Menu_Item_Swapp
 		/**
 		 * Hides WooCommerce settings tabs when accessing the plugin settings page.
 		 *
-		 * @version 1.0.8
+		 * @version 1.1.4
 		 * @since   1.0.1
 		 *
 		 * @return void
@@ -237,10 +237,6 @@ if ( ! class_exists( 'WPFactory\WPFactory_Admin_Menu\WC_Settings_Menu_Item_Swapp
 
 					.wpfam-plugin-title-wrapper .notice{
 						display:none;
-					}
-
-					.wrap.woocommerce{
-						margin-top:60px;
 					}
 
 					body.woocommerce_page_wc-settings #mainform{

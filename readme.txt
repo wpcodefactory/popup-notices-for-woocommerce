@@ -131,7 +131,7 @@ These popups replace the generic WooCommerce notices, providing a richer user ex
 Yes, the plugin gives you full flexibility to either retain or remove the standard WooCommerce notifications. You have the option to display all messages as popups to enhance visibility and user engagement.
 
 = Does the plugin support AJAX "Add to Cart" notices? =
-Yes, the plugin supports AJAX "Add to Cart" notices, allowing for real-time notifications, especially on archive pages.
+Yes, the plugin displays WooCommerce notices from AJAX requests without a page reload. Showing the "Add to Cart" notice on archive pages is available in the Pro version.
 
 == Installation ==
 
@@ -164,6 +164,11 @@ Once activated, access the plugin's settings by navigating to “WooCommerce > S
 3. An example of a WooCommerce Notice info on the Popup
 
 == Changelog ==
+
+= 1.5.6 - 14/10/2026 =
+* Dev - Added frontend hooks (filters and actions on the `ttt_pnwc_general` JS object) so the Pro version can extend the free frontend behavior.
+* Dev - Code refactoring.
+* Updated wpfactory-admin-menu (v1.1.3 => v1.1.4).
 
 = 1.5.5 - 07/10/2026 =
 * Fix - Fixed wrong text-domains.
